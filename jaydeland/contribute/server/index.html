@@ -83,7 +83,9 @@
 
     </head>
 <body>
-    <header>
+    
+<header class="with-notification-bar">
+
     <a href="../../"><img src="../../img/logo.svg" alt="Mattermost Logo" width="212px"></a>
     <div class="header__menu-toggle">
         <i class="fa fa-bars"></i>
@@ -133,6 +135,18 @@
         
     </ul>
 </header>
+
+
+<div class='notification-bar sticky-top'>
+    <div class="notification-bar__content">
+        <a class="notification-bar__close">
+            <span aria-hidden="true">×</span>
+        </a>
+        <a href="https://mattermost.com/careers">
+            We&#39;re hiring!
+        </a>
+    </div>
+</div>
 
 
 
@@ -899,6 +913,34 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
                             
+                                <a href="../../contribute/mobile/e2e/"> Mobile End-to-End Testing</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="../../contribute/mobile/e2e/file-structure/">Folder and File Structure</a>
+                            
+                                <a class="item " href="../../contribute/mobile/e2e/android/">Setup and Run Android E2E</a>
+                            
+                                <a class="item " href="../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
+                            
+                                <a class="item " href="../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
                                 <a href="../../contribute/mobile/push-notifications/"> Setup Push Notifications</a></span>
                             
                         </span>
@@ -913,6 +955,66 @@
                                 <a class="item " href="../../contribute/mobile/push-notifications/corporate-proxy/">Push Notification Service with Corporate Proxy</a>
                             
                                 <a class="item " href="../../contribute/mobile/push-notifications/migrate-gcm-fcm/">Migrate GCM to FCM</a>
+                            
+                        </ul>
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                    
+                        <a href="../../contribute/plugins/"> Plugins</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="../../contribute/plugins/help-wanted-tickets/"> Help Wanted Tickets</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="../../contribute/plugins/developer-setup/"> Developer Setup</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -1232,7 +1334,7 @@
                     <h1 class="mt-0 doc-title">
                         Server
                     </h1>
-                    <p>The server is the highly scalable backbone of the Mattermost project. Written in Go it compiles to a single, standalone binary. It is generally stateless except for the WebSocket connections and some in-memory caches.</p>
+                    <p>The server is the highly scalable backbone of the Mattermost project. Written in Go it compiles to a single, standalone binary. It&rsquo;s generally stateless except for the WebSocket connections and some in-memory caches.</p>
 <p>Communication with Mattermost clients and integrations mainly occurs through the RESTful JSON web API and WebSocket connections primarily used for event delivery.</p>
 <p>Data storage is done with MySQL or PostgreSQL for non-binary data. Files are stored locally, on network drives or in a service such as S3 or Minio.</p>
 <h2 id="repository">Repository&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#repository"></i></a> </h2>
