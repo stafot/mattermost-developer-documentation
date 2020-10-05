@@ -1362,12 +1362,12 @@
 <li>Tests are executed according to your selection and will display whether the tests passed or failed.</li>
 </ol>
 <h3 id="environment-variables">Environment Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-variables"></i></a> </h3>
-<p>There are several environment variables we&rsquo;re using for Cypress testing with the primary purpose:</p>
+<p>We use several environment variables for Cypress testing in order to:</p>
 <ul>
-<li>to easily change when running in CI, and</li>
-<li>to cater different values across developer machines.</li>
+<li>Easily change when running in CI.</li>
+<li>Cater to different values across developer machines.</li>
 </ul>
-<p>Environment variables are defined in &ldquo;<a href="https://github.com/mattermost/mattermost-webapp/blob/master/e2e/cypress.json">cypress.json</a>&rdquo; under <code>env</code> key. In most cases, you don&rsquo;t need to change the values as it make use of the default local developer setup, but when you do, the easiest is to override by exporting <code>CYPRESS_*</code>, where <code>*</code> is the key of the variable like <code>CYPRESS_adminUsername</code>. See <a href="https://docs.cypress.io/guides/guides/environment-variables.html#Setting">Cypress documentation</a> for details.</p>
+<p>Environment variables are <a href="https://github.com/mattermost/mattermost-webapp/blob/master/e2e/cypress.json">defined in cypress.json</a> under the <code>env</code> key. In most cases, you don&rsquo;t need to change the values as it makes use of the default local developer setup. However, when you do the easiest method is to override by exporting <code>CYPRESS_*</code>, where <code>*</code> is the key of the variable, for example: <code>CYPRESS_adminUsername</code>. See <a href="https://docs.cypress.io/guides/guides/environment-variables.html#Setting">Cypress documentation</a> for details.</p>
 <table>
 <thead>
 <tr>
@@ -1378,11 +1378,11 @@
 <tbody>
 <tr>
 <td>CYPRESS_adminUsername</td>
-<td>Admin&rsquo;s username the test server.<br><br>Default: <code>&quot;sysadmin&quot;</code> when server is seeded by <code>make test-data</code>.</td>
+<td>Admin&rsquo;s username for the test server.<br><br>Default: <code>&quot;sysadmin&quot;</code> when server is seeded by <code>make test-data</code>.</td>
 </tr>
 <tr>
 <td>CYPRESS_adminPassword</td>
-<td>Admin&rsquo;s password the test server.<br><br>Default: <code>&quot;Sys@dmin-sample1&quot;</code> when server is seeded by <code>make test-data</code>.</td>
+<td>Admin&rsquo;s password for the test server.<br><br>Default: <code>&quot;Sys@dmin-sample1&quot;</code> when server is seeded by <code>make test-data</code>.</td>
 </tr>
 <tr>
 <td>CYPRESS_dbClient</td>
