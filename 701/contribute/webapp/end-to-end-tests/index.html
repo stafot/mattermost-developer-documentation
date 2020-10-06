@@ -1367,7 +1367,7 @@
 <li>Easily change when running in CI.</li>
 <li>Cater to different values across developer machines.</li>
 </ul>
-<p>Environment variables are <a href="https://github.com/mattermost/mattermost-webapp/blob/master/e2e/cypress.json">defined in cypress.json</a> under the <code>env</code> key. In most cases, you don&rsquo;t need to change the values as it makes use of the default local developer setup. However, when you do the easiest method is to override by exporting <code>CYPRESS_*</code>, where <code>*</code> is the key of the variable, for example: <code>CYPRESS_adminUsername</code>. See <a href="https://docs.cypress.io/guides/guides/environment-variables.html#Setting">Cypress documentation</a> for details.</p>
+<p>Environment variables are <a href="https://github.com/mattermost/mattermost-webapp/blob/master/e2e/cypress.json">defined in cypress.json</a> under the <code>env</code> key. In most cases you don&rsquo;t need to change the values, because it makes use of the default local developer setup. If you do need to make changes, the easiest method is to override by exporting <code>CYPRESS_*</code>, where <code>*</code> is the key of the variable, for example: <code>CYPRESS_adminUsername</code>. See <a href="https://docs.cypress.io/guides/guides/environment-variables.html#Setting">Cypress documentation</a> for details.</p>
 <table>
 <thead>
 <tr>
@@ -1386,11 +1386,11 @@
 </tr>
 <tr>
 <td>CYPRESS_dbClient</td>
-<td>The database of the test server. It should match with the server config <code>SqlSettings.DriverName</code>.<br><br>Default: <code>postgres</code> <br>Valid values: <code>postgres</code> or <code>mysql</code></td>
+<td>The database of the test server. It should match the server config <code>SqlSettings.DriverName</code>.<br><br>Default: <code>postgres</code> <br>Valid values: <code>postgres</code> or <code>mysql</code></td>
 </tr>
 <tr>
 <td>CYPRESS_dbConnection</td>
-<td>The database connection string of the test server. It should match with the server config <code>SqlSettings.DataSource</code>.<br><br> Default: <code>&quot;postgres://mmuser:mostest@localhost/mattermost_test?sslmode=disable\u0026connect_timeout=10&quot;</code></td>
+<td>The database connection string of the test server. It should match the server config <code>SqlSettings.DataSource</code>.<br><br> Default: <code>&quot;postgres://mmuser:mostest@localhost/mattermost_test?sslmode=disable\u0026connect_timeout=10&quot;</code></td>
 </tr>
 <tr>
 <td>CYPRESS_enableVisualTest</td>
@@ -1410,7 +1410,7 @@
 </tr>
 <tr>
 <td>CYPRESS_resetBeforeTest</td>
-<td>When set to <code>true</code>, it deletes all teams and its channels where <code>sysadmin</code> are member of except <code>eligendi</code> team and its channels.<br><br>Default: <code>false</code><br>Valid values: <code>true</code> or <code>false</code></td>
+<td>When set to <code>true</code>, it deletes all teams and their channels where <code>sysadmin</code> is a member except <code>eligendi</code> team and its channels.<br><br>Default: <code>false</code><br>Valid values: <code>true</code> or <code>false</code></td>
 </tr>
 <tr>
 <td>CYPRESS_storybookUrl</td>
