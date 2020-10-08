@@ -620,26 +620,6 @@
                             
                         </ul>
                     
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
-                                <a href="../../../contribute/server/developer-setup/windows/"> </a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                    
                 </ul>
             
                 
@@ -927,6 +907,8 @@
                                 <a class="item " href="../../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
                             
                                 <a class="item " href="../../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/environment-vars/">Environment Variables</a>
                             
                         </ul>
                     
@@ -1361,6 +1343,67 @@
 </li>
 <li>Tests are executed according to your selection and will display whether the tests passed or failed.</li>
 </ol>
+<h3 id="environment-variables">Environment Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-variables"></i></a> </h3>
+<p>We use several environment variables for Cypress testing in order to:</p>
+<ul>
+<li>Easily change when running in CI.</li>
+<li>Cater to different values across developer machines.</li>
+</ul>
+<p>Environment variables are <a href="https://github.com/mattermost/mattermost-webapp/blob/master/e2e/cypress.json">defined in cypress.json</a> under the <code>env</code> key. In most cases you don&rsquo;t need to change the values, because it makes use of the default local developer setup. If you do need to make changes, the easiest method is to override by exporting <code>CYPRESS_*</code>, where <code>*</code> is the key of the variable, for example: <code>CYPRESS_adminUsername</code>. See <a href="https://docs.cypress.io/guides/guides/environment-variables.html#Setting">Cypress documentation</a> for details.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CYPRESS_adminUsername</td>
+<td>Admin&rsquo;s username for the test server.<br><br>Default: <code>sysadmin</code> when server is seeded by <code>make test-data</code>.</td>
+</tr>
+<tr>
+<td>CYPRESS_adminPassword</td>
+<td>Admin&rsquo;s password for the test server.<br><br>Default: <code>Sys@dmin-sample1</code> when server is seeded by <code>make test-data</code>.</td>
+</tr>
+<tr>
+<td>CYPRESS_dbClient</td>
+<td>The database of the test server. It should match the server config <code>SqlSettings.DriverName</code>.<br><br>Default: <code>postgres</code> <br>Valid values: <code>postgres</code> or <code>mysql</code></td>
+</tr>
+<tr>
+<td>CYPRESS_dbConnection</td>
+<td>The database connection string of the test server. It should match the server config <code>SqlSettings.DataSource</code>.<br><br> Default: <code>&quot;postgres://mmuser:mostest@localhost/mattermost_test?sslmode=disable\u0026connect_timeout=10&quot;</code></td>
+</tr>
+<tr>
+<td>CYPRESS_enableVisualTest</td>
+<td>Use for visual regression testing.<br><br>Default: <code>false</code><br>Valid values: <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>CYPRESS_ldapServer</td>
+<td>Host of LDAP server.<br><br>Default: <code>localhost</code></td>
+</tr>
+<tr>
+<td>CYPRESS_ldapPort</td>
+<td>Port of LDAP server.<br><br>Default: <code>389</code></td>
+</tr>
+<tr>
+<td>CYPRESS_runLDAPSync</td>
+<td>Option to run LDAP sync.<br><br>Default: <code>true</code><br>Valid values: <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>CYPRESS_resetBeforeTest</td>
+<td>When set to <code>true</code>, it deletes all teams and their channels where <code>sysadmin</code> is a member except <code>eligendi</code> team and its channels.<br><br>Default: <code>false</code><br>Valid values: <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>CYPRESS_storybookUrl</td>
+<td>Host for common components or widget testing. <br><br> Default: <code>http://localhost:6006/</code> when initiated <code>npm run storybook</code> from the root folder.</td>
+</tr>
+<tr>
+<td>CYPRESS_webhookBaseUrl</td>
+<td>A server used for testing webhook integration.<br><br>Default: <code>http://localhost:3000</code> when initiated <code>npm run start:webhook</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="in-continuous-integration-pipeline">In Continuous Integration Pipeline&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#in-continuous-integration-pipeline"></i></a> </h3>
 <p>We run all tests in our Continuous Integration (CI) pipeline. However, they are grouped according to test stability.</p>
 <ol>
@@ -1477,7 +1520,7 @@
 <p>Refer to <a href="https://github.com/mattermost/mattermost-webapp/pull/5891/files">this pull request</a> as a guide on how to write and submit an end-to-end testing PR.</p>
 </li>
 </ol>
-<h3 id="adding-test-metadata-on-spec-files">Adding test metadata on spec files&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-test-metadata-on-spec-files"></i></a> </h3>
+<h3 id="adding-test-metadata-on-spec-files">Adding Test Metadata on Spec Files&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-test-metadata-on-spec-files"></i></a> </h3>
 <p>Test metadata is used to identify each spec file ahead of time before it is forwarded for Cypress run. Currently, supported test metadata are the following:</p>
 <ol>
 <li>&ldquo;Stage&rdquo; - indicates environment for testing, e.g. <code>@prod</code>, <code>@smoke</code>, <code>@pull_request</code>. &ldquo;Stage&rdquo; metadata is owned and controlled by QA team who carefully analyze stability of test and promote/demote into a certain stage. This is not required when submitting a spec file.</li>

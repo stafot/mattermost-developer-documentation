@@ -338,6 +338,11 @@
   </url>
   
   <url>
+    <loc>/contribute/mobile/e2e/environment-vars/</loc>
+    <lastmod>2020-10-06T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/contribute/webapp/using-i18n-extract/</loc>
     <lastmod>2020-04-20T08:31:17-04:00</lastmod>
   </url>
@@ -574,6 +579,16 @@
   </url>
   
   <url>
+    <loc>/contribute/</loc>
+    <lastmod>2020-10-06T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-10-06T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
@@ -589,11 +604,6 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/performance/</loc>
     <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
@@ -601,11 +611,6 @@
   <url>
     <loc>/categories/testing/</loc>
     <lastmod>2020-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/</loc>
-    <lastmod>2020-09-02T09:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -896,10 +901,6 @@
   
   <url>
     <loc>/contribute/server/developer-setup/windows-wsl/</loc>
-  </url>
-  
-  <url>
-    <loc>/contribute/server/developer-setup/windows/</loc>
   </url>
   
   <url>

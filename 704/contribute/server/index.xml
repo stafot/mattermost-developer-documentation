@@ -18,7 +18,7 @@
       
       <guid>/contribute/server/developer-setup/</guid>
       <description>Set up your development environment for building, running, and testing the Mattermost server. For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.docker.com/docker-for-mac/.
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.docker.com/docker-for-mac/.
 Note: MM-9791 introduced using docker-compose to manage containers.</description>
     </item>
     
@@ -167,18 +167,6 @@ mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;g
   Install the Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10.
 Note: Docker for Windows expects path to have the format /c/foo/bar, but WSL uses /mnt/c/foo/bar instead.
 Run winver and check which version of Windows you have. If you are using 1803 or higher, then you need to create a file /etc/wsl.conf with the following content to make sure your drives are mounted at the root rather than inside /mnt:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/contribute/server/developer-setup/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/contribute/server/developer-setup/windows/</guid>
-      <description>Install and setup Docker.
- If you are using Windows 10 Pro or Enterprise, you can use Docker for Windows: https://docs.docker.com/docker-for-windows/ For other Windows versions, or if you prefer to use VirtualBox, use Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.</description>
     </item>
     
   </channel>

@@ -54,5 +54,15 @@ sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanag
 describe(&amp;#39;Messaging&amp;#39;, () =&amp;gt; { it(&amp;#39;MM-T109 User can\&amp;#39;t send the same message repeatedly&amp;#39;, () =&amp;gt; { // Test steps and assertion here  } }   Target an element using available matchers.</description>
     </item>
     
+    <item>
+      <title>Environment Variables</title>
+      <link>/contribute/mobile/e2e/environment-vars/</link>
+      <pubDate>Tue, 06 Oct 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/environment-vars/</guid>
+      <description>We use several environment variables for Detox testing in order to:
+ Easily change when running in CI. Cater to different values across developer machines.  Test configurations are defined at test_config.js and environment variables are used to override default values. In most cases you don&amp;rsquo;t need to change the values, because it makes use of the default local developer setup. If you do need to make changes, you may override by exporting, e.</description>
+    </item>
+    
   </channel>
 </rss>
