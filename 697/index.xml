@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2020 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -632,6 +632,16 @@ Not familiar with Cypress? Here is some documentation that will help you get sta
       <guid>/contribute/redux/selectors/</guid>
       <description>Selectors are functions used to compute data from the data in the Redux stores. This is done using Reselect, a library designed to do this efficiently by memoizing any results so that they are only recalculated if relevant parts of the store change. The code for this is in the src/selectors folder of the Mattermost Redux repository.
 For more information about reselect and how we use it at Mattermost, check out this developer talk given by core developer Harrison Healey.</description>
+    </item>
+    
+    <item>
+      <title>Environment Variables</title>
+      <link>/contribute/mobile/e2e/environment-vars/</link>
+      <pubDate>Tue, 06 Oct 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/environment-vars/</guid>
+      <description>We use several environment variables for Detox testing in order to:
+ Easily change when running in CI. Cater to different values across developer machines.  Test configurations are defined at test_config.js and environment variables are used to override default values. In most cases you don&amp;rsquo;t need to change the values, because it makes use of the default local developer setup. If you do need to make changes, you may override by exporting, e.</description>
     </item>
     
     <item>
