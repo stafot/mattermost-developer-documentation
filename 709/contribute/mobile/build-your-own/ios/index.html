@@ -1336,14 +1336,14 @@
                     <h1 class="mt-0 doc-title">
                         Build the iOS App
                     </h1>
-                    <p>At times, you may want to build the Mattermost mobile app, the most common use cases are:</p>
+                    <p>At times, you may want to build your own Mattermost mobile app. The most common use cases are:</p>
 <ul>
 <li>White label the Mattermost mobile app.</li>
 <li>Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).</li>
 </ul>
 <h4 id="build-preparations">Build Preparations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#build-preparations"></i></a> </h4>
 <h5 id="1-pre-requisites">1. Pre-requisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-pre-requisites"></i></a> </h5>
-<p>The Mattermost Mobile App for iOS, needs to be built on a MacOS computer with Xcode and the Xcode command line installed.</p>
+<p>The Mattermost Mobile App for iOS needs to be built on a MacOS computer with Xcode and the Xcode command line tools installed.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ xcode-select ---install
 </code></pre></div><h5 id="2-bundle-id-and-entitlements">2. Bundle ID and Entitlements&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-bundle-id-and-entitlements"></i></a> </h5>
 <ul>
@@ -1374,7 +1374,7 @@ profiles will be created based on the environment variables.</p>
 </tr>
 <tr>
 <td>BRANCH_TO_BUILD</td>
-<td>Defines the git branch that is going to be used for generating the build. <br><br><strong>Make sure you set this value is set if to an existing branch</strong>.</td>
+<td>Defines the git branch that is going to be used for generating the build. <br><br><strong>Make sure that, if this value is set, the branch it is set to exists</strong>.</td>
 <td>$GIT_BRANCH</td>
 <td>No</td>
 </tr>
@@ -1386,13 +1386,13 @@ profiles will be created based on the environment variables.</p>
 </tr>
 <tr>
 <td>RESET_GIT_BRANCH</td>
-<td>Defines if once the build is done the branch should reset to the initial state before building and delete the branch created to build the app.<br><br>Valid values are: true, false</td>
+<td>Defines if, once the build is done, the branch should be reset to the initial state before building and whether to also delete the branch created to build the app. <br><br>Valid values are: true, false</td>
 <td>false</td>
 <td>No</td>
 </tr>
 <tr>
 <td>VERSION_NUMBER</td>
-<td>Set the version of the app on build time if you want to use another one than the one set in the project.</td>
+<td>Set the version of the app at build time to a specific value, rather than using the one set in the project.</td>
 <td></td>
 <td>No</td>
 </tr>
@@ -1410,7 +1410,7 @@ profiles will be created based on the environment variables.</p>
 </tr>
 <tr>
 <td>BUILD_NUMBER</td>
-<td>Set the build number of the app on build time if you want to use another than the next number.</td>
+<td>Set the build number of the app at build time to a specific value, rathen than incrementing the last build number.</td>
 <td></td>
 <td>No</td>
 </tr>
@@ -1482,7 +1482,7 @@ profiles will be created based on the environment variables.</p>
 </tr>
 <tr>
 <td>SYNC_PROVISIONING_PROFILES</td>
-<td>Should we run <strong>match</strong> to sync the provisioning profiles. <strong>Note</strong>: Not synching the provisioning profiles, will cause the singing to fail. Valid values are: true, false</td>
+<td>Should we run <strong>match</strong> to sync the provisioning profiles. <strong>Note</strong>: Not syncing the provisioning profiles, will cause the singing to fail. Valid values are: true, false</td>
 <td>false</td>
 <td>Yes</td>
 </tr>

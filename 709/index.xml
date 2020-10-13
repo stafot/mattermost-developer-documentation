@@ -61,7 +61,7 @@ Manifest The plugin manifest provides required metadata about the plugin, such a
       <pubDate>Sun, 20 May 2018 11:35:32 -0400</pubDate>
       
       <guid>/contribute/mobile/build-your-own/android/</guid>
-      <description>At times, you may want to build the Mattermost mobile app, the most common use cases are:
+      <description>At times, you may want to build your own Mattermost mobile app. The most common use cases are:
  White label the Mattermost mobile app. Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).  Build Preparations 1. Package name and source files  Ensure the package ID of the mobile app remains the same as the one in the original mattermost-mobile GitHub repository.</description>
     </item>
     
@@ -227,8 +227,8 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       <pubDate>Sun, 20 May 2018 11:35:32 -0400</pubDate>
       
       <guid>/contribute/mobile/build-your-own/ios/</guid>
-      <description>At times, you may want to build the Mattermost mobile app, the most common use cases are:
- White label the Mattermost mobile app. Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).  Build Preparations 1. Pre-requisites The Mattermost Mobile App for iOS, needs to be built on a MacOS computer with Xcode and the Xcode command line installed.</description>
+      <description>At times, you may want to build your own Mattermost mobile app. The most common use cases are:
+ White label the Mattermost mobile app. Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).  Build Preparations 1. Pre-requisites The Mattermost Mobile App for iOS needs to be built on a MacOS computer with Xcode and the Xcode command line tools installed.</description>
     </item>
     
     <item>

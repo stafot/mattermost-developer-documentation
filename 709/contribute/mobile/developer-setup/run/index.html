@@ -1361,15 +1361,15 @@
 <li>You have made changes in the native code.</li>
 <li>You have added a new library that has native code.</li>
 </ul>
-<p>If none of the above cases apply, you could just simple start the React Native packager with <code>npm start</code> and
+<p>If none of the above cases apply, you could just simply start the React Native packager with <code>npm start</code> and
 launch the app you have already deployed to the device or simulator.</p>
 
     </div>
 </aside>
 
-<p>The above commands are shortcuts for the <code>react-native</code> CLI.  You can append <code>-- --help</code> to the above commands to see available options.</p>
+<p>The above commands are shortcuts for the <code>react-native</code> CLI.  You can append <code>-- --help</code> to the above commands to see available options, for example:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run android -- --help
-</code></pre></div><p>Make sure you are adding <code>--</code> before the options you want to include or run the <code>react-native</code> CLI directly.</p>
+</code></pre></div><p>Make sure you are adding <code>--</code> before the options you want to include or run the <code>react-native</code> CLI directly:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npx react-native run-android --help
 </code></pre></div><h2 id="run-on-a-device">Run on a Device&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#run-on-a-device"></i></a> </h2>
 <p>By default running the app will launch an Android emulator (if you created one) or an iOS simulator, but if you want to test the performance of the app or if you want to make a contribution it is always a good idea to run the app on an actual device.</p>
@@ -1390,14 +1390,14 @@ List of devices attached
 </code></pre></div><aside class="note">
     <div class="note-content">
         <strong>Note</strong><br>
-        If you don&rsquo;t see a green bar at the top loading the JavaScript code. See <a href="http://reactnative.dev/docs/running-on-device.html#method-1-using-adb-reverse-recommended">Using adb reverse</a>.
+        If you don&rsquo;t see a green bar at the top loading the JavaScript code then it&rsquo;s possible that the device is not connected to the development server. See <a href="http://reactnative.dev/docs/running-on-device.html#method-1-using-adb-reverse-recommended">Using adb reverse</a>.
     </div>
 </aside>
 
 <h4 id="run-on-ios-devices">Run on iOS Devices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#run-on-ios-devices"></i></a> </h4>
-<p>To be able to run the app on an iOS device you&rsquo;ll need to have <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> installed in Mac computer and follow this steps:</p>
+<p>To be able to run the app on an iOS device you&rsquo;ll need to have <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> installed on a Mac computer and follow this steps:</p>
 <h5 id="1-get-an-apple-developer-account">1. Get an Apple Developer Account&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-get-an-apple-developer-account"></i></a> </h5>
-<p>The apps that run on an iOS must be signed, to sign it, you&rsquo;ll need a set of provisioning profiles. If you already have an Apple Developer account enrolled in the Apple Developer program you can skip this step. If you don&rsquo;t have an account yet need to <a href="https://appleid.apple.com/account?appId=632&returnUrl=https%3A%2F%2Fdeveloper.apple.com%2Faccount%2F#!&page=create" target="_blank">create one</a> and enroll in the <a href="https://developer.apple.com/programs/" target="_blank">Apple Developer Program</a>.</p>
+<p>The apps that run on an iOS device must be signed. To sign it, you&rsquo;ll need a set of provisioning profiles. If you already have an Apple Developer account enrolled in the Apple Developer program you can skip this step. If you don&rsquo;t have an account yet you&rsquo;ll need to <a href="https://appleid.apple.com/account?appId=632&returnUrl=https%3A%2F%2Fdeveloper.apple.com%2Faccount%2F#!&page=create" target="_blank">create one</a> and enroll in the <a href="https://developer.apple.com/programs/" target="_blank">Apple Developer Program</a>.</p>
 <h5 id="2-open-the-project-in-xcode">2. Open the project in Xcode&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-open-the-project-in-xcode"></i></a> </h5>
 <p>Navigate to the <code>ios</code> folder in your <code>mattermost-mobile</code> project, then open the file <strong>Mattermost.xcworkspace</strong> in Xcode.</p>
 <h5 id="3-configure-code-signing--capabilities">3. Configure code signing &amp; capabilities&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-configure-code-signing--capabilities"></i></a> </h5>
@@ -1427,7 +1427,7 @@ List of devices attached
         <strong>Note</strong><br>
         <p>If you run into any issues, please take a look at Apple&rsquo;s <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4" target="_blank">Launching Your App on a
 Device</a> documentation.</p>
-<p>If the app fails to build, you can try either of the following options before trying to build the app again:</p>
+<p>If the app fails to build, you can try the following before trying to build the app again:</p>
 <ul>
 <li>Go to the <strong>Product</strong> menu and select <strong>Clean Build Folder</strong></li>
 </ul>

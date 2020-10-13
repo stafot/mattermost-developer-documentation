@@ -1340,7 +1340,8 @@
 <p>If you look at the <a href="../../../../contribute/mobile/developer-setup/structure/">Project Folder Structure</a>, you&rsquo;ll see that there is an assets folder containing a base folder with assets provided by Mattermost. These include localization files and images as well as a release folder that optionally contains the icons and the splash screen of the app when building in release mode.</p>
 <p>To replace these with your own assets, create a sub-directory called <code>override</code> in the <code>assets</code> folder. The assets that you add using the same directory structure and file names as in the <code>base</code> directory, will be used instead of the original ones.</p>
 <h3 id="localization-strings">Localization Strings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#localization-strings"></i></a> </h3>
-<p>To replace some or all of the strings in the app in any supported language, create a new json file for each locale you wish to override in <code>assets/override/i18n</code>. Any strings that you provide will be used instead of the ones located in <code>assets/base/i18n</code>, but any that you don&rsquo;t provide will fall back to the original ones.</p>
+<p>To replace these with your own assets, create a sub-directory called <code>override</code> in the <code>assets</code> folder. Using the same directory structure and file names as in the <code>base</code> directory, you can add assets to the override folder to be used instead.</p>
+<p>For example, to override <code>assets/base/images/logo.png</code> you would replace your own <code>logo.png</code> file in <code>assets/override/images/logo.png</code>.</p>
 <h3 id="images">Images&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#images"></i></a> </h3>
 <p>To replace an image, copy the image to <code>assets/override/images/</code> with the same location and file name as in the <code>base</code> folder.</p>
 <aside class="note">
@@ -1353,8 +1354,8 @@
 <h3 id="app-splash-screen-and-launch-icons">App Splash Screen and Launch Icons&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-splash-screen-and-launch-icons"></i></a> </h3>
 <p>In the <code>assets</code> directory you will find a folder named <code>assets/base/release</code> which contains an <code>icons</code> folder and a <code>splash_screen</code> folder under each platform directory.</p>
 <p>Copy the full <code>release</code> directory under <code>assets/override/release</code> and then replace each image with the same name. Make sure you replace all the icon images for the platform you are building the app - the same applies to the splash screen.</p>
-<p>The splash screen&rsquo;s background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen make sure that you also override the file <code>launch_screen.xml</code> for Android and <code>LaunchScreen.storyboard</code> for iOS. Both can be found under<code>assets/base/release/splash\_screen/\&lt;platform\&gt;</code>.</p>
-<p>Splash screen and launch icons assets are replaced at build time when the <a href="../../../../contribute/mobile/build-your-own/environment-vars/">Environment Variable</a> <code>REPLACE_ASSETS</code> is set to true (default is false).</p>
+<p>The splash screen&rsquo;s background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen make sure that you also override the file <code>launch_screen.xml</code> for Android and <code>LaunchScreen.storyboard</code> for iOS. Both can be found under<code>assets/base/release/splash_screen/\&lt;platform&gt;</code>.</p>
+<p>Splash screen and launch icons assets are replaced at build time when the environment variable <code>REPLACE_ASSETS</code> is set to true (default is false).</p>
 <aside class="note">
     <div class="note-content">
         <strong>Note</strong><br>

@@ -1348,34 +1348,32 @@
                     </h1>
                     <p>The following instructions apply to the mobile apps for iOS and Android built in React Native. Download the iOS version <a href="http://about.mattermost.com/mattermost-ios-app/" target="_blank">here</a> and the Android version <a href="http://about.mattermost.com/mattermost-android-app/" target="_blank">here</a>. Source code can be found at the <a href="https://github.com/mattermost/mattermost-mobile" target="_blank">GitHub Mattermost Mobile app repository</a>.</p>
 <p><strong>Note: This guide describes how to set up the development environment on MacOS or Linux.</strong></p>
-<p>If you run into any issues getting your environment set up, check the <a href="#troubleshooting">Troubleshooting</a> section at the bottom for common solutions.</p>
 <p>A macOS computer is required to build the Mattermost iOS mobile app.</p>
 <h2 id="environment-setup">Environment Setup&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-setup"></i></a> </h2>
 <h3 id="ios-and-android">iOS and Android&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#ios-and-android"></i></a> </h3>
 <p>Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using <a href="https://brew.sh/" target="_blank">Homebrew</a> as a package manager.</p>
 <h4 id="install-nodejs">Install NodeJS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejs"></i></a> </h4>
-<p>.
-This includes NPM which is also needed.</p>
+<p>This includes NPM which is also needed.</p>
 <p><strong>Known working node versions: 12.18.x &amp; 14.9.x</strong></p>
 <h5 id="macos">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos"></i></a> </h5>
 <ul>
-<li>To install using Homebrew open a terminal and execute ..</li>
+<li>To install using Homebrew open a terminal and execute:</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    $ brew install node
 </code></pre></div><h5 id="linux">Linux&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#linux"></i></a> </h5>
 <ul>
-<li>Install using your distributions package manager (Note that different distros provide
-different node versions, check that is a supported <a href="#install-nodejs">NodeJS version</a>)</li>
+<li>Install using your distribution&rsquo;s package manager (Note that different distros provide
+different node versions, check that it is a supported <a href="#install-nodejs">NodeJS version</a>)</li>
 </ul>
 <p>Other installation options:</p>
 <ul>
 <li>Using NVM by following the instructions <a href="https://github.com/creationix/nvm#install-script" target="_blank">here</a></li>
 <li>Download and install the package from the <a href="https://nodejs.org/en/" target="_blank">NodeJS website</a></li>
 </ul>
-<h4 id="install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490">Install <a href="https://facebook.github.io/watchman/" target="_blankn">Watchman</a>. (minimum required version is 4.9.0)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490"></i></a> </h4>
+<h4 id="install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490">Install <a href="https://facebook.github.io/watchman/" target="_blankn">Watchman</a>. (minimum required version is 4.9.0).&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490"></i></a> </h4>
 <h5 id="macos-1">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-1"></i></a> </h5>
 <ul>
-<li>To install using Homebrew open a terminal and execute ..
+<li>To install using Homebrew open a terminal and execute:
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install watchman
 </code></pre></div></li>
 </ul>
@@ -1404,9 +1402,10 @@ extension from you distros package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++)</
 <h3 id="additional-setup-for-android">Additional setup for Android&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#additional-setup-for-android"></i></a> </h3>
 <h5 id="download-and-install-a-hrefhttpsdeveloperandroidcomstudioindexhtmldownloads-target_blankandroid-studio-or-the-android-sdk-command-line-toolsa">Download and install <a href="https://developer.android.com/studio/index.html#downloads" target="_blank">Android Studio or the Android SDK command line tools</a>.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#download-and-install-a-hrefhttpsdeveloperandroidcomstudioindexhtmldownloads-target_blankandroid-studio-or-the-android-sdk-command-line-toolsa"></i></a> </h5>
 <h4 id="environment-variables">Environment Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-variables"></i></a> </h4>
-<p>Make sure you have the following ENV VARS configured:
-- <code>ANDROID_HOME</code> to where Android SDK is located (likely <code>/Users/&lt;username&gt;/Library/Android/sdk</code> or <code>/home/&lt;username&gt;/Android/Sdk</code>)
-- Make sure your <code>PATH</code> includes <code>ANDROID_HOME/tools</code> and <code>ANDROID_HOME/platform-tools</code></p>
+<p>Make sure you have the following ENV VARS configured:</p>
+<pre><code>- `ANDROID_HOME` to where Android SDK is located (likely `/Users/&lt;username&gt;/Library/Android/sdk` or `/home/&lt;username&gt;/Android/Sdk`)
+- Make sure your `PATH` includes `ANDROID_HOME/tools` and `ANDROID_HOME/platform-tools`
+</code></pre>
 <h5 id="macos-3">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-3"></i></a> </h5>
 <ul>
 <li>

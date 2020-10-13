@@ -1336,7 +1336,7 @@
                     <h1 class="mt-0 doc-title">
                         Build the Android App
                     </h1>
-                    <p>At times, you may want to build the Mattermost mobile app, the most common use cases are:</p>
+                    <p>At times, you may want to build your own Mattermost mobile app. The most common use cases are:</p>
 <ul>
 <li>White label the Mattermost mobile app.</li>
 <li>Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).</li>
@@ -1348,8 +1348,8 @@
 <li>Source files for the main package remain under the <code>android/app/src/main/java/com/mattermost/rnbeta</code> folder.</li>
 </ul>
 <h5 id="2-generating-a-signing-key">2. Generating a Signing Key&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-generating-a-signing-key"></i></a> </h5>
-<p>Building the Android app for distribution, requeries the app be asigned release APK as Android requires all apps to be digitally signed with a certificate before they can be installed.</p>
-<p>To generate the signed key, use <strong>keytool</strong> which comes with the JDK required to develop the Android app. (see <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a>)</p>
+<p>Building the Android app for distribution requeries the release APK to be signed as Android requires all apps to be digitally signed with a certificate before they can be installed.</p>
+<p>To generate the signed key, use <strong>keytool</strong> which comes with the JDK required to develop the Android app. (see <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a>).</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ keytool -genkey -v -keystore &lt;my-release-key&gt;.keystore -alias my-key-alias -keyalg RSA -keysize <span style="color:#f60">2048</span> -validity <span style="color:#f60">10000</span>
 </code></pre></div><p>The above command prompts you for passwords for the keystore and key (make sure you use the same password for both), and asks you to provide the Distinguished Name fields for your key. It then generates the keystore as a file called <code>&lt;my-release-key&gt;.keystore</code>.</p>
 <p>The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take a note of the alias.</p>
@@ -1371,13 +1371,13 @@
 <h5 id="3-create-a-new-app-in-google-play">3. Create a new app in Google Play&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-create-a-new-app-in-google-play"></i></a> </h5>
 <p>Create a new application using the <a href="https://play.google.com/console/developers" target="_blank">Google Play console</a>. If you already have an app registered in the Google Play console you can skip this step.</p>
 <h5 id="gradle">4. Setting up Gradle Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#gradle"></i></a> </h5>
-<p>Now that we have created the keystore file, is time to tell the build process to use that file.</p>
+<p>Now that we have created the keystore file we can tell the build process to use that file:</p>
 <ul>
 <li>
-<p>Copy or move the <em>my-release-key.keystore</em> file under a directory that you can access. It can be in your home directory or anywhere in the file system..</p>
+<p>Copy or move the <em>my-release-key.keystore</em> file under a directory that you can access. It can be in your home directory or anywhere in the file system.</p>
 </li>
 <li>
-<p>Edit the file the gradle.properties file in your <em>$HOME</em> directory (ex. <code>$HOME/.gradle/gradle.properties</code>), or create it if one does not exist, and add the following:</p>
+<p>Edit the gradle.properties file in your <em>$HOME</em> directory (ex. <code>$HOME/.gradle/gradle.properties</code>), or create it if one does not exist, and add the following:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#033">MATTERMOST_RELEASE_STORE_FILE</span><span style="color:#555">=</span>/full/path/to/directory/containing/my-release-key.keystore
 <span style="color:#033">MATTERMOST_RELEASE_KEY_ALIAS</span><span style="color:#555">=</span>my-key-alias
 <span style="color:#033">MATTERMOST_RELEASE_PASSWORD</span><span style="color:#555">=</span>*****
@@ -1419,7 +1419,7 @@
 </tr>
 <tr>
 <td>BRANCH_TO_BUILD</td>
-<td>Defines the git branch that is going to be used for generating the build. <br><br><strong>Make sure you set this value is set if to an existing branch</strong>.</td>
+<td>Defines the git branch that is going to be used for generating the build. <br><br><strong>Make sure that, if this value is set, the branch it is set to exists</strong>.</td>
 <td>$GIT_BRANCH</td>
 <td>No</td>
 </tr>
@@ -1431,13 +1431,13 @@
 </tr>
 <tr>
 <td>RESET_GIT_BRANCH</td>
-<td>Defines if once the build is done the branch should reset to the initial state before building and delete the branch created to build the app. <br><br>Valid values are: true, false</td>
+<td>Defines if, once the build is done, the branch should be reset to the initial state before building and whether to also delete the branch created to build the app. <br><br>Valid values are: true, false</td>
 <td>false</td>
 <td>No</td>
 </tr>
 <tr>
 <td>VERSION_NUMBER</td>
-<td>Set the version of the app on build time if you want to use another one than the one set in the project.</td>
+<td>Set the version of the app at build time to a specific value, rather than using the one set in the project.</td>
 <td></td>
 <td>No</td>
 </tr>
@@ -1455,7 +1455,7 @@
 </tr>
 <tr>
 <td>BUILD_NUMBER</td>
-<td>Set the build number of the app on build time if you want to use another than the next number.</td>
+<td>Set the build number of the app at build time to a specific value, rathen than incrementing the last build number.</td>
 <td></td>
 <td>No</td>
 </tr>
@@ -1509,7 +1509,7 @@
 </tr>
 <tr>
 <td>SUPPLY_TRACK</td>
-<td>The track of the application to use when submitting the app to Google Play Store. Valid values are: alpha, beta, production <br><br><strong>Recommended not submitting the app to to production, instead try any of the other tracks and then promote your app using the Google Play console</strong>.</td>
+<td>The track of the application to use when submitting the app to Google Play Store. Valid values are: alpha, beta, production <br><br><strong>Recommended not submitting the app to production, instead try any of the other tracks and then promote your app using the Google Play console</strong>.</td>
 <td>alpha</td>
 <td>Yes</td>
 </tr>
