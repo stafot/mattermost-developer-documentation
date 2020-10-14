@@ -1340,8 +1340,8 @@
 <h4 id="requisites">Requisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#requisites"></i></a> </h4>
 <ol>
 <li><a href="https://ibotpeaches.github.io/Apktool/" target="_blank">Apktool</a> is a tool for reverse engineering Android apk files.</li>
-<li><a href="http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html" target="_blank">XMLStarlet</a> is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using simple set of shell commands in similar way it is done for plain text files using UNIX grep, sed, awk, diff, patch, join, etc commands.</li>
-<li><a href="https://stedolan.github.io/jq/" target="_blank">JQ</a> is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.</li>
+<li><a href="http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html" target="_blank">XMLStarlet</a> is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using a simple set of shell commands in the same way it is done for plain text files using UNIX grep, sed, awk, diff, patch, join, etc., commands.</li>
+<li><a href="https://stedolan.github.io/jq/" target="_blank">JQ</a> is like sed for JSON data - you can use it to slice, filter, map, and transform structured data with the same ease that sed, awk, and grep let you work with text.</li>
 <li>Android SDK as described in the <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a></li>
 <li>Setup keys and Google Services as described
 in steps 2, 3, 4 &amp; 6 of the <a href="../../../../contribute/mobile/build-your-own/android/#build-preparations">Build your own App guide</a>.</li>
@@ -1383,7 +1383,7 @@ but you should really be using your own <code>package identifier</code>, <code>g
 <p>Download the <a href="https://github.com/mattermost/mattermost-mobile/releases" target="_blank">Android unsigned build</a> and save it in your working directory.</p>
 </li>
 <li>
-<p>Open a terminal to your working directory, make sure the <code>sign-android</code> script it is executable.</p>
+<p>Open a terminal to your working directory and make sure the <code>sign-android</code> script it is executable.</p>
 </li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -la
@@ -1397,11 +1397,11 @@ drwx------@ <span style="color:#f60">59</span> user  staff      <span style="col
 <li>Sign the app</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./sign-android Mattermost-unsigned.apk -p com.example.test -g google-services.json -d <span style="color:#c30">&#34;My App&#34;</span> MyApp-signed.apk
-</code></pre></div><p>once the code sign is complete you should have a signed APK in the working directory with the name <strong>MyApp-signed.apk</strong>.</p>
+</code></pre></div><p>Once the code sign is complete you should have a signed APK in the working directory with the name <strong>MyApp-signed.apk</strong>.</p>
 <aside class="note">
     <div class="note-content">
         <strong>Note</strong><br>
-        <p>The app name can be anything, use double quotes specially if the name has white spaces.</p>
+        <p>The app name can be anything but be sure to use double quotes if the name includes white spaces.</p>
 <p>If you are using a <code>Google Services</code> json file, you need to specify a <code>package identifier</code> that has a corresponding
 client in the json configuration file.</p>
 

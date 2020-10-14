@@ -1385,14 +1385,14 @@ and you should be using your own <code>provisioning profiles</code>, <code>certi
 </li>
 <li>
 <p>Download your <strong>Apple Distribution certificate</strong> from the
-<a href="https://developer.apple.com/account/resources/certificates/list" target="_blank">Apple Developers portal</a> and save it in your working directory.</p>
+<a href="https://developer.apple.com/account/resources/certificates/list" target="_blank">Apple Developer portal</a> and save it in your working directory.</p>
 </li>
 <li>
 <p>Install the previously downloaded certificate into your MacOS Keychain. <a href="https://developer.apple.com/support/certificates/" target="_blank">Learn more</a>.</p>
 </li>
 <li>
 <p>Download your <strong>Provisioning profiles</strong> from the
-<a href="https://developer.apple.com/account/resources/profiles/list" target="_blank">Apple Developers portal</a> and save it in your working directory.</p>
+<a href="https://developer.apple.com/account/resources/profiles/list" target="_blank">Apple Developer portal</a> and save it in your working directory.</p>
 </li>
 <li>
 <p>Download the <a href="../../../../scripts/sign-ios" download>sign-ios</a> script and save it in your working directory.</p>
@@ -1401,7 +1401,7 @@ and you should be using your own <code>provisioning profiles</code>, <code>certi
 <p>Download the <a href="https://github.com/mattermost/mattermost-mobile/releases" target="_blank">iOS unsigned build</a> and save it in your working directory.</p>
 </li>
 <li>
-<p>Open a terminal to your working directory, make sure the <code>sign-ios</code> script it is executable.</p>
+<p>Open a terminal to your working directory and make sure the <code>sign-ios</code> script it is executable.</p>
 </li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -la
@@ -1417,11 +1417,11 @@ drwxr-xr-x  <span style="color:#f60">8</span> user  staff       <span style="col
 <li>Sign the app</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./sign-ios Mattermost-unsigned.ipa -c <span style="color:#c30">&#34;Apple Distribution: XXXXXX. (XXXXXXXXXX)&#34;</span> -a app.mobileprovision -n noti.mobileprovision -s share.mobileprovision -g group.com.mattermost -d <span style="color:#c30">&#34;My App Display Name&#34;</span> MyApp-signed.ipa
-</code></pre></div><p>once the code sign is complete you should have a signed IPA in the working directory with the name <strong>MyApp-signed.ipa</strong>.</p>
+</code></pre></div><p>Once the code sign is complete you should have a signed IPA in the working directory with the name <strong>MyApp-signed.ipa</strong>.</p>
 <aside class="note">
     <div class="note-content">
         <strong>Note</strong><br>
-        <p>The app name can be anything, use double quotes specially if the name has white spaces.</p>
+        <p>The app name can be anything but be sure to use double quotes if the name includes white spaces.</p>
 <p>The name of the <code>certificate</code> should match the name in the MacOS Keychain.</p>
 
     </div>

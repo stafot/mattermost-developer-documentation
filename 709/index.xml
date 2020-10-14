@@ -106,7 +106,7 @@ i18n Files The i18n files define many of the contents seen in email notification
       
       <guid>/contribute/mobile/unsigned/android/</guid>
       <description>With every Mattermost mobile app release, we publish the Android unsigned apk in in the GitHub Releases page, this guide describes the steps needed to modify and sign the app, so it can be distributed and installed on Android devices.
-Requisites  Apktool is a tool for reverse engineering Android apk files. XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using simple set of shell commands in similar way it is done for plain text files using UNIX grep, sed, awk, diff, patch, join, etc commands.</description>
+Requisites  Apktool is a tool for reverse engineering Android apk files. XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using a simple set of shell commands in the same way it is done for plain text files using UNIX grep, sed, awk, diff, patch, join, etc.</description>
     </item>
     
     <item>
