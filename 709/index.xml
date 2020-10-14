@@ -228,7 +228,7 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       
       <guid>/contribute/mobile/build-your-own/ios/</guid>
       <description>At times, you may want to build your own Mattermost mobile app. The most common use cases are:
- White label the Mattermost mobile app. Use your own deployment of the Mattermost Push Notification Service. (always required if you are building your own version of the mobile app).  Build Preparations 1. Pre-requisites The Mattermost Mobile App for iOS needs to be built on a MacOS computer with Xcode and the Xcode command line tools installed.</description>
+ To white label the Mattermost mobile app. To use your own deployment of the Mattermost Push Notification Service (always required if you are building your own version of the mobile app).  Build Preparations 1. Prerequisites The Mattermost mobile app for iOS needs to be built on a macOS computer with Xcode and the Xcode command line tools installed.</description>
     </item>
     
     <item>

@@ -1367,6 +1367,13 @@
 </ul>
 </li>
 <li>
+<p>Prefix each comment line with appropriate indicator. Each line in a multi-line comment should be prefixed accordingly. Separate and group test step comments and assertion comments for better readability.</p>
+<ul>
+<li><code>#</code> indicates a test step (e.g. <code>// # Go to a screen</code>)</li>
+<li><code>*</code> indicates an assertion (e.g. <code>// * Check the title</code>)</li>
+</ul>
+</li>
+<li>
 <p>Simulate user interaction using available <a href="https://github.com/wix/Detox/blob/master/docs/APIRef.ActionsOnElement.md">actions</a>.</p>
 </li>
 <li>
