@@ -1336,7 +1336,7 @@
                     <h1 class="mt-0 doc-title">
                         White Labeling
                     </h1>
-                    <p>We&rsquo;ve made it easy to white label the mobile app and to replace and override the assets used, however, you have to <a href="../../../../contribute/mobile/build-your-own">Build Your Own App</a> from Source.</p>
+                    <p>We&rsquo;ve made it easy to white label the mobile app and to replace and override the assets used, however, you have to <a href="../../../../contribute/mobile/build-your-own">Build Your Own App</a> from source.</p>
 <p>If you look at the <a href="../../../../contribute/mobile/developer-setup/structure/">Project Folder Structure</a>, you&rsquo;ll see that there is an assets folder containing a base folder with assets provided by Mattermost. These include localization files and images as well as a release folder that optionally contains the icons and the splash screen of the app when building in release mode.</p>
 <p>To replace these with your own assets, create a sub-directory called <code>override</code> in the <code>assets</code> folder. The assets that you add using the same directory structure and file names as in the <code>base</code> directory, will be used instead of the original ones.</p>
 <h3 id="localization-strings">Localization Strings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#localization-strings"></i></a> </h3>
@@ -1344,39 +1344,30 @@
 <p>For example, to override <code>assets/base/images/logo.png</code> you would replace your own <code>logo.png</code> file in <code>assets/override/images/logo.png</code>.</p>
 <h3 id="images">Images&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#images"></i></a> </h3>
 <p>To replace an image, copy the image to <code>assets/override/images/</code> with the same location and file name as in the <code>base</code> folder.</p>
-<aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        Make sure the images have the same height, width and DPI as the images that you are overriding.
-    </div>
-</aside>
-
+<hr>
+<p><strong>Note:</strong></p>
+<p>Make sure the images have the same height, width, and DPI as the images that you are overriding.</p>
+<hr>
 <h3 id="app-splash-screen-and-launch-icons">App Splash Screen and Launch Icons&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-splash-screen-and-launch-icons"></i></a> </h3>
 <p>In the <code>assets</code> directory you will find a folder named <code>assets/base/release</code> which contains an <code>icons</code> folder and a <code>splash_screen</code> folder under each platform directory.</p>
 <p>Copy the full <code>release</code> directory under <code>assets/override/release</code> and then replace each image with the same name. Make sure you replace all the icon images for the platform you are building the app - the same applies to the splash screen.</p>
-<p>The splash screen&rsquo;s background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen make sure that you also override the file <code>launch_screen.xml</code> for Android and <code>LaunchScreen.storyboard</code> for iOS. Both can be found under<code>assets/base/release/splash_screen/\&lt;platform&gt;</code>.</p>
+<p>The splash screen&rsquo;s background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen make sure that you also override the file <code>launch_screen.xml</code> for Android and <code>LaunchScreen.storyboard</code> for iOS. Both can be found under <code>assets/base/release/splash_screen/\&lt;platform&gt;</code>.</p>
 <p>Splash screen and launch icons assets are replaced at build time when the environment variable <code>REPLACE_ASSETS</code> is set to true (default is false).</p>
-<aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        Make sure the images have the same height, width and DPI as the images that you are overriding.
-    </div>
-</aside>
-
+<hr>
+<p><strong>Note:</strong></p>
+<p>Make sure the images have the same height, width, and DPI as the images that you are overriding.</p>
+<hr>
 <h3 id="configuration">Configuration&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#configuration"></i></a> </h3>
-<p>The config.json file handles custom configuration for the app for settings that cannot be controlled by the Mattermost server. Like with localization strings, create a <code>config.json</code> file under <code>assets/override</code> and just include the keys and values that you wish to change that are present in <code>assets/base/config.json</code>.</p>
+<p>The <code>config.json</code> file handles custom configuration for the app for settings that cannot be controlled by the Mattermost server. Like with localization strings, create a <code>config.json</code> file under <code>assets/override</code> and just include the keys and values that you wish to change that are present in <code>assets/base/config.json</code>.</p>
 <p>For example, if you want the app to automatically provide a server URL and skip the screen to input it, you would add the following to <code>assets/override/config.json</code>:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#309;font-weight:bold">&#34;DefaultServerUrl&#34;</span>: <span style="color:#c30">&#34;http://192.168.0.13:8065&#34;</span>,
   <span style="color:#309;font-weight:bold">&#34;AutoSelectServerUrl&#34;</span>: <span style="color:#069;font-weight:bold">true</span>
 }
-</code></pre></div><aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        The above key/value pairs are taken from the original <code>config.json</code> file. Since we don’t need to change anything else, we only included these two settings.
-    </div>
-</aside>
-
+</code></pre></div><hr>
+<p><strong>Note:</strong></p>
+<p>The above key/value pairs are taken from the original <code>config.json</code> file. Since we don’t need to change anything else, we only included these two settings.</p>
+<hr>
 
 
                 </div>

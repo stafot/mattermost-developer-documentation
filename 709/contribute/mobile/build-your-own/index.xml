@@ -37,7 +37,7 @@
       <pubDate>Sun, 20 May 2018 11:35:32 -0400</pubDate>
       
       <guid>/contribute/mobile/build-your-own/white-label/</guid>
-      <description>We&amp;rsquo;ve made it easy to white label the mobile app and to replace and override the assets used, however, you have to Build Your Own App from Source.
+      <description>We&amp;rsquo;ve made it easy to white label the mobile app and to replace and override the assets used, however, you have to Build Your Own App from source.
 If you look at the Project Folder Structure, you&amp;rsquo;ll see that there is an assets folder containing a base folder with assets provided by Mattermost. These include localization files and images as well as a release folder that optionally contains the icons and the splash screen of the app when building in release mode.</description>
     </item>
     
