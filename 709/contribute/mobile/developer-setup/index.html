@@ -1355,25 +1355,26 @@
 <h4 id="install-nodejs">Install NodeJS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejs"></i></a> </h4>
 <p>This includes NPM which is also needed.</p>
 <p><strong>Known working node versions: 12.18.x &amp; 14.9.x</strong></p>
-<h5 id="macos">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos"></i></a> </h5>
+<h5 id="macos">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos"></i></a> </h5>
 <ul>
 <li>To install using Homebrew open a terminal and execute:</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    $ brew install node
 </code></pre></div><h5 id="linux">Linux&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#linux"></i></a> </h5>
 <ul>
-<li>Install using your distribution&rsquo;s package manager (Note that different distros provide
-different node versions, check that it is a supported <a href="#install-nodejs">NodeJS version</a>)</li>
+<li>Install using your distribution&rsquo;s package manager (Note that different distros provide different node versions, check that it is a supported <a href="#install-nodejs">NodeJS version</a>)</li>
 </ul>
 <p>Other installation options:</p>
 <ul>
-<li>Using NVM by following the instructions <a href="https://github.com/creationix/nvm#install-script" target="_blank">here</a></li>
-<li>Download and install the package from the <a href="https://nodejs.org/en/" target="_blank">NodeJS website</a></li>
+<li>Using NVM by following the instructions <a href="https://github.com/creationix/nvm#install-script">here</a>.</li>
+<li>Download and install the package from the <a href="https://nodejs.org/en">NodeJS website</a>.</li>
 </ul>
-<h4 id="install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490">Install <a href="https://facebook.github.io/watchman/" target="_blankn">Watchman</a>. (minimum required version is 4.9.0).&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-a-hrefhttpsfacebookgithubiowatchman-target_blanknwatchmana-minimum-required-version-is-490"></i></a> </h4>
-<h5 id="macos-1">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-1"></i></a> </h5>
+<h4 id="install-watchmanhttpsfacebookgithubiowatchman">Install [Watchman](<a href="https://facebook.github.io/watchman">https://facebook.github.io/watchman</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-watchmanhttpsfacebookgithubiowatchman"></i></a> </h4>
+<p>The minimum required version is 4.9.0.</p>
+<h5 id="macos-1">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-1"></i></a> </h5>
 <ul>
-<li>To install using Homebrew open a terminal and execute:
+<li>
+<p>To install using Homebrew open a terminal and execute:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install watchman
 </code></pre></div></li>
 </ul>
@@ -1381,32 +1382,31 @@ different node versions, check that it is a supported <a href="#install-nodejs">
 <ul>
 <li>On Linux you have to build Watchman yourself. See the official <a href="https://facebook.github.io/watchman/docs/install.html#installing-from-source">Watchman guide</a>.
 <ul>
-<li>Note that you need to increase your inotify limits for watchman to work properly</li>
-<li>If you encounter a warning about a missing C++ compiler you need to install the c++
-extension from you distros package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++)</li>
+<li>Note that you need to increase your <code>inotify</code> limits for Watchman to work properly.</li>
+<li>If you encounter a warning about a missing C++ compiler you need to install the c++ extension from your distro&rsquo;s package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++).</li>
 </ul>
 </li>
 </ul>
 <h4 id="install-bundler---version-202-gem">Install <code>bundler --version 2.0.2</code> gem&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-bundler---version-202-gem"></i></a> </h4>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gem install bundler --version 2.0.2
 </code></pre></div><h4 id="obtaining-the-source-code">Obtaining the source code&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#obtaining-the-source-code"></i></a> </h4>
-<p>We use GitHub to host the source code so we recommend that you install <a href="https://git-scm.com/" target="_blank">Git</a> to get the source code. Optionally, you can also contribute by submitting <a href="https://help.github.com/articles/creating-a-pull-request/" target="_blank">pull requests</a>. If you do not have git installed you can do so with Homebrew by opening a terminal and executing:</p>
-<h5 id="macos-2">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-2"></i></a> </h5>
+<p>We use GitHub to host the source code so we recommend that you install <a href="https://git-scm.com/">Git</a>. Optionally, you can also contribute by submitting <a href="https://help.github.com/articles/creating-a-pull-request">pull requests</a>. If you do not have Git installed you can do so with Homebrew by opening a terminal and executing:</p>
+<h5 id="macos-2">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-2"></i></a> </h5>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install git
 </code></pre></div><h5 id="linux-2">Linux&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#linux-2"></i></a> </h5>
-<p>Some distributions come with git preinstalled but you&rsquo;ll most likely have to install it yourself. For most distributions the package is simply called <code>git</code></p>
+<p>Some distributions come with Git preinstalled but you&rsquo;ll most likely have to install it yourself. For most distributions the package is simply called <code>git</code>.</p>
 <h3 id="additional-setup-for-ios">Additional setup for iOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#additional-setup-for-ios"></i></a> </h3>
 <ul>
-<li>Install <a href="https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12" target="_blank">Xcode</a> to build and run the app on iOS. (minimum required version is <strong>11.0</strong>)</li>
+<li>Install <a href="https://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">Xcode</a> to build and run the app on iOS. The minimum required version is 11.0.</li>
 </ul>
 <h3 id="additional-setup-for-android">Additional setup for Android&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#additional-setup-for-android"></i></a> </h3>
-<h5 id="download-and-install-a-hrefhttpsdeveloperandroidcomstudioindexhtmldownloads-target_blankandroid-studio-or-the-android-sdk-command-line-toolsa">Download and install <a href="https://developer.android.com/studio/index.html#downloads" target="_blank">Android Studio or the Android SDK command line tools</a>.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#download-and-install-a-hrefhttpsdeveloperandroidcomstudioindexhtmldownloads-target_blankandroid-studio-or-the-android-sdk-command-line-toolsa"></i></a> </h5>
+<h5 id="download-and-install-android-studio-or-the-android-sdk-command-line-toolshttpsdeveloperandroidcomstudioindexhtmldownloads">Download and install <a href="https://developer.android.com/studio/index.html#downloads">Android Studio or the Android SDK command line tools</a>.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#download-and-install-android-studio-or-the-android-sdk-command-line-toolshttpsdeveloperandroidcomstudioindexhtmldownloads"></i></a> </h5>
 <h4 id="environment-variables">Environment Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-variables"></i></a> </h4>
 <p>Make sure you have the following ENV VARS configured:</p>
 <pre><code>- `ANDROID_HOME` to where Android SDK is located (likely `/Users/&lt;username&gt;/Library/Android/sdk` or `/home/&lt;username&gt;/Android/Sdk`)
 - Make sure your `PATH` includes `ANDROID_HOME/tools` and `ANDROID_HOME/platform-tools`
 </code></pre>
-<h5 id="macos-3">MacOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-3"></i></a> </h5>
+<h5 id="macos-3">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-3"></i></a> </h5>
 <ul>
 <li>
 <p>On Mac, this usually requires adding the following lines to your <code>~/.bash_profile</code> file:</p>
@@ -1421,13 +1421,13 @@ extension from you distros package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++)</
 <h5 id="linux-3">Linux&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#linux-3"></i></a> </h5>
 <ul>
 <li>
-<p>On Linux the home folder is located under <code>/home/&lt;username&gt;</code> which results in a slightly different path</p>
+<p>On Linux the home folder is located under <code>/home/&lt;username&gt;</code> which results in a slightly different path:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">export</span> <span style="color:#033">ANDROID_HOME</span><span style="color:#555">=</span>/home/&lt;username&gt;/Android/Sdk
 <span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#033">$ANDROID_HOME</span>/platform-tools:<span style="color:#033">$PATH</span>
 <span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#033">$ANDROID_HOME</span>/tools:<span style="color:#033">$PATH</span>
 </code></pre></div></li>
 <li>
-<p>Then also relead you configuration</p>
+<p>Then reload your configuration</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">source</span> ~/.bash_profile
 </code></pre></div><ul>
 <li>Note that depending on the shell you&rsquo;re using this might need to be put into a different file such as <code>~/.zshrc</code>. Adjust this accordingly.</li>
@@ -1436,7 +1436,7 @@ extension from you distros package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++)</
 </li>
 </ul>
 <h3 id="installing-the-right-sdks-and-sdk-tools">Installing the right SDKs and SDK Tools&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-right-sdks-and-sdk-tools"></i></a> </h3>
-<p>In the SDK Manager using Android Studio or the <a href="https://developer.android.com/studio/command-line/sdkmanager.html">Android SDK command line tool</a>, ensure the following are installed</p>
+<p>In the SDK Manager using Android Studio or the <a href="https://developer.android.com/studio/command-line/sdkmanager.html">Android SDK command line tool</a>, ensure the following are installed:</p>
 <ul>
 <li>
 <p>SDK Tools (you may have to click &ldquo;Show Package Details&rdquo; to expand packages)
@@ -1465,7 +1465,7 @@ extension from you distros package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++)</
 <li>Google APIs</li>
 <li>SDK Platform
 <ul>
-<li>For Android Q or above -&gt; Android SDK Platform 29 or above</li>
+<li>For Android Q or above &gt; Android SDK Platform 29 or above</li>
 </ul>
 </li>
 <li>Intel or Google Play Intel x86 Atom_64 System Image</li>
