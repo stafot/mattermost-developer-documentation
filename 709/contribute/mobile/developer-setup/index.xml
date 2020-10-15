@@ -26,8 +26,8 @@
       <pubDate>Sun, 20 May 2018 11:35:32 -0400</pubDate>
       
       <guid>/contribute/mobile/developer-setup/run/</guid>
-      <description>We provide a set of scripts to help you run the App for the different platforms that are executed with npm
- npm start: Start the React Native packager. The packager has to be running in order to build the JavaScript code that powers the app. npm run android: Compile and run the mobile app on Android. npm run ios: Compile and run the mobile app on iOS.  Important</description>
+      <description>We provide a set of scripts to help you run the app for the different platforms that are executed with npm:
+ npm start: Start the React Native packager. The packager has to be running in order to build the JavaScript code that powers the app. npm run android: Compile and run the mobile app on Android. npm run ios: Compile and run the mobile app on iOS.   Important:</description>
     </item>
     
     <item>

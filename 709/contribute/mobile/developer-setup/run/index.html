@@ -1346,27 +1346,22 @@
                     <h1 class="mt-0 doc-title">
                         Run the app
                     </h1>
-                    <p>We provide a set of scripts to help you run the App for the different platforms that are executed with <code>npm</code></p>
+                    <p>We provide a set of scripts to help you run the app for the different platforms that are executed with <code>npm</code>:</p>
 <ul>
 <li><strong>npm start</strong>: Start the React Native packager. The packager has to be running in order to build the JavaScript code that powers the app.</li>
 <li><strong>npm run android</strong>: Compile and run the mobile app on Android.</li>
 <li><strong>npm run ios</strong>: Compile and run the mobile app on iOS.</li>
 </ul>
-<aside class="note">
-    <div class="note-content">
-        <strong>Important</strong><br>
-        <p>To speed up development, only compile &amp; run the apps in the following cases:</p>
+<hr>
+<p><strong>Important:</strong></p>
+<p>To speed up development, only compile and run the apps in the following cases:</p>
 <ul>
 <li>You have not deployed the app to a device or simulator with the <code>npm run &lt;platform&gt;</code> command.</li>
 <li>You have made changes in the native code.</li>
 <li>You have added a new library that has native code.</li>
 </ul>
-<p>If none of the above cases apply, you could just simply start the React Native packager with <code>npm start</code> and
-launch the app you have already deployed to the device or simulator.</p>
-
-    </div>
-</aside>
-
+<p>If none of the above cases apply, you could just simply start the React Native packager with <code>npm start</code> and launch the app you have already deployed to the device or simulator.</p>
+<hr>
 <p>The above commands are shortcuts for the <code>react-native</code> CLI.  You can append <code>-- --help</code> to the above commands to see available options, for example:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run android -- --help
 </code></pre></div><p>Make sure you are adding <code>--</code> before the options you want to include or run the <code>react-native</code> CLI directly:</p>
@@ -1375,11 +1370,11 @@ launch the app you have already deployed to the device or simulator.</p>
 <p>By default running the app will launch an Android emulator (if you created one) or an iOS simulator, but if you want to test the performance of the app or if you want to make a contribution it is always a good idea to run the app on an actual device.</p>
 <p>This will let you ensure that the app is working correctly and in a performant way before submitting a pull request.</p>
 <h4 id="run-on-android-devices">Run on Android Devices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#run-on-android-devices"></i></a> </h4>
-<p>To be able to run the app on an Android device you&rsquo;ll need to follow this steps:</p>
-<h5 id="1-enable-debugging-over-usb">1. Enable Debugging over USB&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-enable-debugging-over-usb"></i></a> </h5>
-<p>Most Android devices can only install and run apps downloaded from Google Play by default. In order to be able to install the Mattermost Mobile app in the device during development you will need to enable USB Debugging on your device in the &ldquo;Developer options&rdquo; menu by going to <strong>Settings -&gt; About phone</strong> and then tap the Build number row at the bottom seven times, then go back to <strong>Settings -&gt; Developer options</strong> and enable &ldquo;USB debugging&rdquo;.</p>
-<h5 id="2-plug-in-your-device-via-usb">2. Plug in Your Device via USB&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-plug-in-your-device-via-usb"></i></a> </h5>
-<p>Plug in your Android device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer) and check that your device is properly connecting to ADB (Android Debug Bridge) by running <strong>adb devices</strong>.</p>
+<p>To be able to run the app on an Android device you&rsquo;ll need to follow these steps:</p>
+<h5 id="1-enable-debugging-over-usb">1. Enable debugging over USB&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-enable-debugging-over-usb"></i></a> </h5>
+<p>Most Android devices can only install and run apps downloaded from Google Play by default. In order to be able to install the Mattermost Mobile app in the device during development you will need to enable USB Debugging on your device in the <strong>Developer options</strong> menu by going to <strong>Settings &gt; About phone</strong> and then tap the Build number row at the bottom seven times, then go back to <strong>Settings &gt; Developer options</strong> and enable <strong>USB debugging</strong>.</p>
+<h5 id="2-plug-in-your-device-via-usb">2. Plug in your device via USB&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-plug-in-your-device-via-usb"></i></a> </h5>
+<p>Plug in your Android device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer) and check that your device is properly connecting to ADB (Android Debug Bridge) by running <code>adb devices</code>.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ adb devices
 List of devices attached
 42006fb3e4fb25b8    device
@@ -1387,54 +1382,41 @@ List of devices attached
 <h5 id="3-compile-and-run">3. Compile and run&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-compile-and-run"></i></a> </h5>
 <p>With your device connected to the USB port execute the following in your command prompt to install and launch the app on the device:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run android
-</code></pre></div><aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        If you don&rsquo;t see a green bar at the top loading the JavaScript code then it&rsquo;s possible that the device is not connected to the development server. See <a href="http://reactnative.dev/docs/running-on-device.html#method-1-using-adb-reverse-recommended">Using adb reverse</a>.
-    </div>
-</aside>
-
+</code></pre></div><hr>
+<p><strong>Note:</strong></p>
+<p>If you don&rsquo;t see a green bar at the top loading the JavaScript code then it&rsquo;s possible that the device is not connected to the development server. See <a href="http://reactnative.dev/docs/running-on-device.html#method-1-using-adb-reverse-recommended">Using adb reverse</a>.</p>
+<hr>
 <h4 id="run-on-ios-devices">Run on iOS Devices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#run-on-ios-devices"></i></a> </h4>
-<p>To be able to run the app on an iOS device you&rsquo;ll need to have <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> installed on a Mac computer and follow this steps:</p>
+<p>To be able to run the app on an iOS device you&rsquo;ll need to have <a href="https://developer.apple.com/xcode/">Xcode</a> installed on a Mac computer and follow this steps:</p>
 <h5 id="1-get-an-apple-developer-account">1. Get an Apple Developer Account&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-get-an-apple-developer-account"></i></a> </h5>
-<p>The apps that run on an iOS device must be signed. To sign it, you&rsquo;ll need a set of provisioning profiles. If you already have an Apple Developer account enrolled in the Apple Developer program you can skip this step. If you don&rsquo;t have an account yet you&rsquo;ll need to <a href="https://appleid.apple.com/account?appId=632&returnUrl=https%3A%2F%2Fdeveloper.apple.com%2Faccount%2F#!&page=create" target="_blank">create one</a> and enroll in the <a href="https://developer.apple.com/programs/" target="_blank">Apple Developer Program</a>.</p>
+<p>The apps that run on an iOS device must be signed. To sign it, you&rsquo;ll need a set of provisioning profiles. If you already have an Apple Developer account enrolled in the Apple Developer program you can skip this step. If you don&rsquo;t have an account yet you&rsquo;ll need to <a href="https://appleid.apple.com/account?appId=632&amp;returnUrl=https%3A%2F%2Fdeveloper.apple.com%2Faccount%2F#!&amp;page=create">create one</a> and enroll in the <a href="https://developer.apple.com/programs/">Apple Developer Program</a>.</p>
 <h5 id="2-open-the-project-in-xcode">2. Open the project in Xcode&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-open-the-project-in-xcode"></i></a> </h5>
-<p>Navigate to the <code>ios</code> folder in your <code>mattermost-mobile</code> project, then open the file <strong>Mattermost.xcworkspace</strong> in Xcode.</p>
-<h5 id="3-configure-code-signing--capabilities">3. Configure code signing &amp; capabilities&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-configure-code-signing--capabilities"></i></a> </h5>
-<p>Select the <strong>Mattermost</strong> project in the Xcode Project Navigator, then select the <strong>Mattermost</strong> target. Look for the &ldquo;Signing &amp; Capabilities&rdquo; tab.</p>
+<p>Navigate to the <code>ios</code> folder in your <code>mattermost-mobile</code> project, then open the file <code>Mattermost.xcworkspace</code> in Xcode.</p>
+<h5 id="3-configure-code-signing-and-capabilities">3. Configure code signing and capabilities&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-configure-code-signing-and-capabilities"></i></a> </h5>
+<p>Select the <strong>Mattermost</strong> project in the Xcode Project Navigator, then select the <strong>Mattermost</strong> target. Look for the <strong>Signing &amp; Capabilities</strong> tab.</p>
 <ul>
-<li>Go to the &ldquo;Signing&rdquo; section and make sure your Apple developer account or team is selected under the Team dropdown and change the <em><a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids" target="_blank">Bundle Identifier</a></em>. Xcode will register your provisioning profiles in your account for the Bundle Identifier you&rsquo;ve entered if it doesn&rsquo;t exist.</li>
-<li>Go to the &ldquo;App Groups&rdquo; section and change the <em><a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups?language=objc" target="_blank">App Groups</a></em>. Xcode will register your AppGroupId and update the provision profile.</li>
-<li>Go to the &ldquo;iCloud&rdquo; section and change the <em><a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_icloud-container-identifiers?language=objc" target="_blank">Containers</a></em>. Xcode will register your iCloud container and update the provision profile.</li>
-<li>Go to the &ldquo;Keychain Sharing&rdquo; section and change the <em><a href="https://developer.apple.com/documentation/bundleresources/entitlements/keychain-access-groups?language=objc" target="_blank">Keychain Groups</a></em>. Xcode will register your Keychain access groups and update the provision profile.</li>
+<li>Go to the <strong>Signing</strong> section and make sure your Apple developer account or team is selected under the Team dropdown and change the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle Identifier</a>. Xcode will register your provisioning profiles in your account for the Bundle Identifier you&rsquo;ve entered if it doesn&rsquo;t exist.</li>
+<li>Go to the <strong>App Groups</strong> section and change the <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups?language=objc">App Groups</a>. Xcode will register your AppGroupId and update the provision profile.</li>
+<li>Go to the <strong>iCloud</strong> section and change the <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_icloud-container-identifiers?language=objc">Containers</a>. Xcode will register your iCloud container and update the provision profile.</li>
+<li>Go to the <strong>Keychain Sharing</strong> section and change the <a href="https://developer.apple.com/documentation/bundleresources/entitlements/keychain-access-groups?language=objc">Keychain Groups</a>. Xcode will register your Keychain access groups and update the provision profile.</li>
 </ul>
-<aside class="note">
-    <div class="note-content">
-        <strong>Important</strong><br>
-        <p><strong>Repeat the steps for the <code>MattermostShare</code> and <code>NotificationService</code> targets.</strong></p>
-<p>Each target must use a <strong>different</strong> <em>Bundle Identifier</em>.</p>
-
-    </div>
-</aside>
-
+<hr>
+<p><strong>Important:</strong></p>
+<p><strong>Repeat the steps for the <code>MattermostShare</code> and <code>NotificationService</code> targets.</strong> Each target must use a <strong>different</strong> <em>Bundle Identifier</em>.</p>
+<hr>
 <h5 id="4-compile-and-run">4. Compile and run&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#4-compile-and-run"></i></a> </h5>
 <p>Plug in your iOS device in any available USB port in your development computer.</p>
-<p>If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar, and it will also appear in the Devices Pane (⇧⌘2). You can press the <strong>Build and run</strong> button (⌘R) or select the <strong>Run</strong> from the Product menu to run the app.</p>
+<p>If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar, and it will also appear in the Devices Pane (⇧⌘2). You can press the <strong>Build and run</strong> button (⌘R) or select <strong>Run</strong> from the Product menu to run the app.</p>
 <p><img src="../../../../img/mobile/running_ios.png" alt="image"></p>
 <p>As an alternative you can select the targeted device by opening the <strong>Product</strong> menu in Xcode menu bar, then go to <strong>Destination</strong> and look for your device to select from the list.</p>
-<aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        <p>If you run into any issues, please take a look at Apple&rsquo;s <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4" target="_blank">Launching Your App on a
-Device</a> documentation.</p>
+<hr>
+<p><strong>Note:</strong>
+If you run into any issues, please take a look at Apple&rsquo;s <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4">Launching Your App on a Device</a> documentation.</p>
 <p>If the app fails to build, you can try the following before trying to build the app again:</p>
 <ul>
 <li>Go to the <strong>Product</strong> menu and select <strong>Clean Build Folder</strong></li>
 </ul>
-
-    </div>
-</aside>
-
+<hr>
 
 
                 </div>
