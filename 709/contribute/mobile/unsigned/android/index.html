@@ -1337,14 +1337,13 @@
                         Sign Unsigned Android
                     </h1>
                     <p>With every Mattermost mobile app release, we publish the Android unsigned apk in in the <a href="https://github.com/mattermost/mattermost-mobile/releases" target="_blank">GitHub Releases</a> page, this guide describes the steps needed to modify and sign the app, so it can be distributed and installed on Android devices.</p>
-<h4 id="requisites">Requisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#requisites"></i></a> </h4>
+<h4 id="prerequisites">Prerequisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#prerequisites"></i></a> </h4>
 <ol>
-<li><a href="https://ibotpeaches.github.io/Apktool/" target="_blank">Apktool</a> is a tool for reverse engineering Android apk files.</li>
-<li><a href="http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html" target="_blank">XMLStarlet</a> is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using a simple set of shell commands in the same way it is done for plain text files using UNIX grep, sed, awk, diff, patch, join, etc., commands.</li>
-<li><a href="https://stedolan.github.io/jq/" target="_blank">JQ</a> is like sed for JSON data - you can use it to slice, filter, map, and transform structured data with the same ease that sed, awk, and grep let you work with text.</li>
-<li>Android SDK as described in the <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a></li>
-<li>Setup keys and Google Services as described
-in steps 2, 3, 4 &amp; 6 of the <a href="../../../../contribute/mobile/build-your-own/android/#build-preparations">Build your own App guide</a>.</li>
+<li><a href="https://ibotpeaches.github.io/Apktool/">Apktool</a> is a tool for reverse engineering Android apk files.</li>
+<li><a href="http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html">XMLStarlet</a> is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files using a simple set of shell commands in the same way it is done for plain text files using UNIX <code>grep</code>, <code>sed</code>, <code>awk</code>, <code>diff</code>, <code>patch</code>, <code>join</code>, etc., commands.</li>
+<li><a href="https://stedolan.github.io/jq/">JQ</a> is like sed for JSON data - you can use it to slice, filter, map, and transform structured data with the same ease that <code>sed</code>, <code>awk</code>, and <code>grep</code> let you work with text.</li>
+<li>Android SDK as described in the <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a>.</li>
+<li>Setup keys and Google Services as described in steps 2, 3, 4 &amp; 6 of the <a href="../../../../contribute/mobile/build-your-own/android/#build-preparations">Build your own App guide</a>.</li>
 <li><code>sign-android</code> script to sign the Android app.</li>
 </ol>
 <h4 id="signing-tool">Signing Tool&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#signing-tool"></i></a> </h4>
@@ -1370,21 +1369,12 @@ Options:
 
 	-h, --help				        Display <span style="color:#366">help</span> message.
 </code></pre></div><h4 id="sign-the-mattermost-android-app">Sign the Mattermost Android app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#sign-the-mattermost-android-app"></i></a> </h4>
-<p>Now that all requisites are met, it&rsquo;s time to sign the Mattermost app for Android. Most of the options of the signing tool are optional
-but you should really be using your own <code>package identifier</code>, <code>google services settings</code> and maybe change the <code>display name</code>.</p>
+<p>Now that all requirements are met, it&rsquo;s time to sign the Mattermost app for Android. Most of the options of the signing tool are optional but you should really be using your own <code>package identifier</code>, <code>google services settings</code> and maybe change the <code>display name</code>.</p>
 <ul>
-<li>
-<p>Create a folder that will serve as your working directory to store all the needed files.</p>
-</li>
-<li>
-<p>Download the <a href="../../../../scripts/sign-android" download>sign-android</a> script and save it in your working directory.</p>
-</li>
-<li>
-<p>Download the <a href="https://github.com/mattermost/mattermost-mobile/releases" target="_blank">Android unsigned build</a> and save it in your working directory.</p>
-</li>
-<li>
-<p>Open a terminal to your working directory and make sure the <code>sign-android</code> script it is executable.</p>
-</li>
+<li>Create a folder that will serve as your working directory to store all the needed files.</li>
+<li>Download the <a href="../../../../scripts/sign-android">sign-android</a> script and save it in your working directory.</li>
+<li>Download the <a href="https://github.com/mattermost/mattermost-mobile/releases">Android unsigned build</a> and save it in your working directory.</li>
+<li>Open a terminal to your working directory and make sure the <code>sign-android</code> script it is executable.</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -la
 total <span style="color:#f60">49756</span>
@@ -1398,16 +1388,10 @@ drwx------@ <span style="color:#f60">59</span> user  staff      <span style="col
 </ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./sign-android Mattermost-unsigned.apk -p com.example.test -g google-services.json -d <span style="color:#c30">&#34;My App&#34;</span> MyApp-signed.apk
 </code></pre></div><p>Once the code sign is complete you should have a signed APK in the working directory with the name <strong>MyApp-signed.apk</strong>.</p>
-<aside class="note">
-    <div class="note-content">
-        <strong>Note</strong><br>
-        <p>The app name can be anything but be sure to use double quotes if the name includes white spaces.</p>
-<p>If you are using a <code>Google Services</code> json file, you need to specify a <code>package identifier</code> that has a corresponding
-client in the json configuration file.</p>
-
-    </div>
-</aside>
-
+<hr>
+<p><strong>Note:</strong>
+The app name can be anything but be sure to use double quotes if the name includes white spaces. If you are using a <code>Google Services</code> JSON file, you need to specify a <code>package identifier</code> that has a corresponding client in the JSON configuration file.</p>
+<hr>
 
 
                 </div>
