@@ -840,13 +840,11 @@
                         </span>
                         <ul class="sub-menu" >
                             
-                                <a class="item " href="../../../../contribute/mobile/developer-setup/developer-workflow/">Mobile Apps Workflow</a>
+                                <a class="item " href="../../../../contribute/mobile/developer-setup/structure/">Folder Structure</a>
                             
-                                <a class="item " href="../../../../contribute/mobile/developer-setup/makefile/">Makefile Commands</a>
+                                <a class="item " href="../../../../contribute/mobile/developer-setup/run/">Run the app</a>
                             
-                                <a class="item " href="../../../../contribute/mobile/developer-setup/run-on-device/">Run on a Device</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/developer-setup/troubleshooting/">Troubleshooting</a>
+                                <a class="item " href="../../../../contribute/mobile/developer-setup/dependecies/">Add new dependencies</a>
                             
                         </ul>
                     
@@ -870,45 +868,11 @@
                         </span>
                         <ul class="sub-menu" style="display: block">
                             
-                                <a class="item " href="../../../../contribute/mobile/build-your-own/preparation/">Build Preparations</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/build-your-own/environment-vars/">Environment Variables</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/build-your-own/assets-white-label/">Assets &amp; White Labeling</a>
-                            
                                 <a class="item active" href="../../../../contribute/mobile/build-your-own/android/">Build the Android App</a>
                             
                                 <a class="item " href="../../../../contribute/mobile/build-your-own/ios/">Build the iOS App</a>
                             
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
-                            
-                                <a href="../../../../contribute/mobile/e2e/"> Mobile End-to-End Testing</a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                                <a class="item " href="../../../../contribute/mobile/e2e/file-structure/">Folder and File Structure</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/e2e/android/">Setup and Run Android E2E</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
-                            
-                                <a class="item " href="../../../../contribute/mobile/e2e/environment-vars/">Environment Variables</a>
+                                <a class="item " href="../../../../contribute/mobile/build-your-own/white-label/">White Labeling</a>
                             
                         </ul>
                     
@@ -939,6 +903,60 @@
                                 <a class="item " href="../../../../contribute/mobile/push-notifications/corporate-proxy/">Push Notification Service with Corporate Proxy</a>
                             
                                 <a class="item " href="../../../../contribute/mobile/push-notifications/migrate-gcm-fcm/">Migrate GCM to FCM</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
+                                <a href="../../../../contribute/mobile/unsigned/"> Sign Unsigned Builds</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="../../../../contribute/mobile/unsigned/android/">Sign Unsigned Android</a>
+                            
+                                <a class="item " href="../../../../contribute/mobile/unsigned/ios/">Sign Unsigned iOS</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
+                                <a href="../../../../contribute/mobile/e2e/"> Mobile End-to-End Testing</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="../../../../contribute/mobile/e2e/file-structure/">Folder and File Structure</a>
+                            
+                                <a class="item " href="../../../../contribute/mobile/e2e/android/">Setup and Run Android E2E</a>
+                            
+                                <a class="item " href="../../../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
+                            
+                                <a class="item " href="../../../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
+                            
+                                <a class="item " href="../../../../contribute/mobile/e2e/environment-vars/">Environment Variables</a>
                             
                         </ul>
                     
@@ -1318,32 +1336,194 @@
                     <h1 class="mt-0 doc-title">
                         Build the Android App
                     </h1>
-                    <p>To distribute your Android application via the Google Play Store, you&rsquo;ll need to generate a signed release APK as Android requires all apps to be digitally signed with a certificate before they can be installed.</p>
-<h4 id="generating-a-signing-key">Generating a Signing Key&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#generating-a-signing-key"></i></a> </h4>
-<p>To generate the signed key, use <strong>keytool</strong> which comes with the JDK required to develop the Android app.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize <span style="color:#f60">2048</span> -validity <span style="color:#f60">10000</span>
-</code></pre></div><p>The above command prompts you for passwords for the keystore and key (make sure you use the same password for both), and asks you to provide the Distinguished Name fields for your key. It then generates the keystore as a file called my-release-key.keystore.</p>
+                    <p>At times, you may want to build your own Mattermost mobile app. The most common use cases are:</p>
+<ul>
+<li>To white label the Mattermost mobile app.</li>
+<li>To use your own deployment of the Mattermost Push Notification Service (always required if you are building your own version of the mobile app).</li>
+</ul>
+<h1 id="build-preparations">Build Preparations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#build-preparations"></i></a> </h1>
+<h3 id="1-package-name-and-source-files">1. Package name and source files&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1-package-name-and-source-files"></i></a> </h3>
+<ul>
+<li>Ensure the package ID of the mobile app remains the same as the one in the original <a href="https://github.com/mattermost/mattermost-mobile">mattermost-mobile GitHub repository</a> in <code>com.mattermost.rnbeta</code>.</li>
+<li>Source files for the main package remain under the <code>android/app/src/main/java/com/mattermost/rnbeta</code> folder.</li>
+</ul>
+<h3 id="2-generating-a-signing-key">2. Generating a signing key&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2-generating-a-signing-key"></i></a> </h3>
+<p>As Android requires all apps to be digitally signed with a certificate before they can be installed building the Android app for distribution requires the release APK to be signed.</p>
+<p>To generate the signed key, use <strong>keytool</strong> which comes with the JDK required to develop the Android app. (see <a href="../../../../contribute/mobile/developer-setup/#additional-setup-for-android">Developer Setup</a>).</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ keytool -genkey -v -keystore &lt;my-release-key&gt;.keystore -alias my-key-alias -keyalg RSA -keysize <span style="color:#f60">2048</span> -validity <span style="color:#f60">10000</span>
+</code></pre></div><p>The above command prompts you for passwords for the keystore and key (make sure you use the same password for both), and asks you to provide the Distinguished Name fields for your key. It then generates the keystore as a file called <code>&lt;my-release-key&gt;.keystore</code>.</p>
 <p>The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take a note of the alias.</p>
-<p><strong>Remember to keep your keystore file private and never commit it to version control.</strong></p>
-<h4 id="setting-up-gradle-variables">Setting up Gradle Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#setting-up-gradle-variables"></i></a> </h4>
+<hr>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Replace <code>&lt;my-release-key&gt;</code> with the filename you want to specify.</li>
+<li>Remember to keep your keystore file private and never commit it to version control.</li>
+</ul>
+<hr>
+<h3 id="3-create-a-new-app-in-google-play">3. Create a new app in Google Play&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#3-create-a-new-app-in-google-play"></i></a> </h3>
+<p>Create a new application using the <a href="https://play.google.com/console/developers">Google Play console</a>. If you already have an app registered in the Google Play console you can skip this step.</p>
+<h3 id="gradle">4. Setting up Gradle Variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#gradle"></i></a> </h3>
+<p>Now that we have created the keystore file we can tell the build process to use that file:</p>
 <ul>
 <li>
-<p>Place the <em>my-release-key.keystore</em> file under a directory that you can access. It can be in your home directory or even under <em>android/app</em> in the project folder so long as it is not checked in.</p>
+<p>Copy or move the <code>my-release-key.keystore</code> file under a directory that you can access. It can be in your home directory or anywhere in the file system.</p>
 </li>
 <li>
-<p>Edit the file ~/.gradle/gradle.properties, or create it if one does not exist, and add the following:</p>
+<p>Edit the <code>gradle.properties</code> file in your <code>$HOME</code> directory (e.g. <code>$HOME/.gradle/gradle.properties</code>), or create it if one does not exist, and add the following:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#033">MATTERMOST_RELEASE_STORE_FILE</span><span style="color:#555">=</span>/full/path/to/directory/containing/my-release-key.keystore
 <span style="color:#033">MATTERMOST_RELEASE_KEY_ALIAS</span><span style="color:#555">=</span>my-key-alias
 <span style="color:#033">MATTERMOST_RELEASE_PASSWORD</span><span style="color:#555">=</span>*****
 </code></pre></div></li>
 </ul>
-<p><strong>Replace <code>/full/path/to/directory/containing/my-release-key.keystore</code> with the full path to the actual keystore file and <code>\********</code> with the actual keystore password.</strong></p>
-<p><strong>Once you publish the app on the Play Store, you will need to republish your app under a different package id (losing all downloads and ratings) if you change the signing key at any point.</strong></p>
-<p><strong>Backup your keystore and don&rsquo;t forget the password.</strong></p>
-<h4 id="building-the-app">Building the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h4>
+<hr>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Replace <code>/full/path/to/directory/containing/my-release-key.keystore</code> with the full path to the actual keystore file and <code>********</code> with the actual keystore password.</li>
+<li>Back up your keystore and don&rsquo;t forget the password.</li>
+</ul>
+<hr>
+<hr>
+<p><strong>Important:</strong></p>
+<p>Once you publish the app on the Play Store, the app needs to be signed with the same key every time you want to distriibute a new build. If you lose this key, you will need to republish your app under a different package id (losing all downloads and ratings).</p>
+<hr>
+<h3 id="5-configure-environment-variables">5. Configure environment variables&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#5-configure-environment-variables"></i></a> </h3>
+<p>To make it easier to customize your build, we&rsquo;ve defined a few environment variables that are going to be used by Fastlane during the build process.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMMIT\_CHANGES\_TO\_GIT</code></td>
+<td>Should the Fastlane script ensure that there are no changes to Git before building the app and that every change made during the build is committed back to Git. <br><br>Valid values are: <code>true</code>, <code>false</code></td>
+<td><code>false</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>BRANCH\_TO\_BUILD</code></td>
+<td>Defines the Git branch that is going to be used for generating the build. <br><br><strong>Make sure that, if this value is set, the branch it is set to exists</strong>.</td>
+<td><code>$GIT_BRANCH</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>GIT\_LOCAL\_BRANCH</code></td>
+<td>Defines the local branch to be created from <code>BRANCH\_TO\_BUILD</code> to ensure the base branch does not get any new commits on it. <br><br><strong>Make sure a branch with this name does not yet exist in your local Git repository</strong>.</td>
+<td>build</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>RESET\_GIT\_BRANCH</code></td>
+<td>Defines if, once the build is done, the branch should be reset to the initial state before building and whether to also delete the branch created to build the app. <br><br>Valid values are: <code>true</code>, <code>false</code></td>
+<td><code>false</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>VERSION\_NUMBER </code></td>
+<td>Set the version of the app at build time to a specific value, rather than using the one set in the project.</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>INCREMENT\_VERSION\_&lt;br&gt;NUMBER\_MESSAGE</code></td>
+<td>Set the commit message when changing the app version number.</td>
+<td>Bump app version number to</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>INCREMENT\_BUILD\_NUMBER</code></td>
+<td>Defines if the app build number should be incremented. <br><br>Valid values are: <code>true</code>, <code>false</code></td>
+<td><code>false</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>BUILD\_NUMBER</code></td>
+<td>Set the build number of the app at build time to a specific value, rather than incrementing the last build number.</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>INCREMENT\_BUILD\_&lt;br&gt;NUMBER\_MESSAGE</code></td>
+<td>Set the commit message when changing the app build number.</td>
+<td>Bump app build number to</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>APP\_NAME</code></td>
+<td>The name of the app as it is going to be shown on the device home screen.</td>
+<td>Mattermost Beta</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>APP\_SCHEME</code></td>
+<td>The URL naming scheme for the app as used in direct deep links to app content from outside the app.</td>
+<td>mattermost</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>REPLACE\_ASSETS</code></td>
+<td>Override the assets as described in <a href="contribute/mobile/build-your-own/white-label/">White Labeling</a>. <br><br>Valid values are: <code>true</code>, <code>false</code></td>
+<td><code>false</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>MAIN\_APP\_IDENTIFIER</code></td>
+<td>The package identifier for the app.</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>BUILD\_FOR\_RELEASE</code></td>
+<td>Defines if the app should be built in release mode. <br><br>Valid values are: <code>true</code>, <code>false</code> <br><br><strong>Make sure you set this value to true if you plan to submit this app Google Play or distribute it in any other way</strong>.</td>
+<td><code>false</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>SEPARATE\_APKS</code></td>
+<td>Build one APK per achitecture (armeabi-v7a, x86, arm64-v8a and x86_64) as well as a universal APK. The advantage is the size of the APK is reduced by about 4MB. <br><br>People will download the correct APK from the Play Store based on the CPU architecture of their device.</td>
+<td><code>false</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>SUBMIT\_ANDROID\_TO\_&lt;br&gt;GOOGLE\_PLAY</code></td>
+<td>Should the app be submitted to the Play Store once it finishes building, use along with <code>SUPPLY\_TRACK</code>.<br><br>Valid values are: <code>true</code>, <code>false</code></td>
+<td><code>false</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>SUPPLY\_TRACK</code></td>
+<td>The track of the application to use when submitting the app to Google Play Store. Valid values are: <code>alpha</code>, <code>beta</code>, <code>production</code> <br><br><strong>RIt is not recommended to submit the app to production. First try any of the other tracks and then promote your app using the Google Play console</strong>.</td>
+<td><code>alpha</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>SUPPLY\_PACKAGE\_NAME</code></td>
+<td>The package Id of your application, make sure it matches <code>MAIN\_APP\_IDENTIFIER</code>.</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>SUPPLY\_JSON\_KEY</code></td>
+<td>The path to the service account <code>json</code> file used to authenticate with Google.<br><br>See the <a href="https://docs.fastlane.tools/actions/supply/#setup">Supply documentation</a> to learn more.</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Note:</strong>
+To configure your variables create the file <code>./mattermost-mobile/fastlane/.env</code> where <code>.env</code> is the filename. You can find the sample file <code>env_vars_example</code> <a href="https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example">here</a>.</p>
+<hr>
+<h3 id="6-google-services">6. Google Services&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#6-google-services"></i></a> </h3>
+<p>Replace the <code>google-services.json</code> file as instructed in the <a href="../../../../contribute/mobile/push-notifications/android/">Android Push Notification Guide</a> before you build the app.</p>
+<h2 id="building-the-app">Building the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
 <p>Once all the previous steps are done, execute the following command from within the project&rsquo;s directory:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ make build-android
-</code></pre></div><p>This will start the build process following the environment variables you&rsquo;ve set. Once it finishes, it will create an <em>.apk</em> file with the <code>APP_NAME</code> as the filename in the project&rsquo;s root directory. If you have not set Fastlane to submit the app to the Play Store, you can use this file to manually publish and distribute the app.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run build:android
+</code></pre></div><p>This will start the build process following the environment variables you&rsquo;ve set. Once it finishes, it will create the <code>.apk</code> file(s) with the <code>APP_NAME</code> as the filename in the project&rsquo;s root directory. If you have not set Fastlane to submit the app to the Play Store, you can use this file to manually publish and distribute the app.</p>
 
 
                 </div>

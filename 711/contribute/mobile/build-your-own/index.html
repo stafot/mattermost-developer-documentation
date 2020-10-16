@@ -840,13 +840,11 @@
                         </span>
                         <ul class="sub-menu" >
                             
-                                <a class="item " href="../../../contribute/mobile/developer-setup/developer-workflow/">Mobile Apps Workflow</a>
+                                <a class="item " href="../../../contribute/mobile/developer-setup/structure/">Folder Structure</a>
                             
-                                <a class="item " href="../../../contribute/mobile/developer-setup/makefile/">Makefile Commands</a>
+                                <a class="item " href="../../../contribute/mobile/developer-setup/run/">Run the app</a>
                             
-                                <a class="item " href="../../../contribute/mobile/developer-setup/run-on-device/">Run on a Device</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/developer-setup/troubleshooting/">Troubleshooting</a>
+                                <a class="item " href="../../../contribute/mobile/developer-setup/dependecies/">Add new dependencies</a>
                             
                         </ul>
                     
@@ -870,45 +868,11 @@
                         </span>
                         <ul class="sub-menu" style="display: block">
                             
-                                <a class="item " href="../../../contribute/mobile/build-your-own/preparation/">Build Preparations</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/build-your-own/environment-vars/">Environment Variables</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/build-your-own/assets-white-label/">Assets &amp; White Labeling</a>
-                            
                                 <a class="item " href="../../../contribute/mobile/build-your-own/android/">Build the Android App</a>
                             
                                 <a class="item " href="../../../contribute/mobile/build-your-own/ios/">Build the iOS App</a>
                             
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
-                            
-                                <a href="../../../contribute/mobile/e2e/"> Mobile End-to-End Testing</a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                                <a class="item " href="../../../contribute/mobile/e2e/file-structure/">Folder and File Structure</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/e2e/android/">Setup and Run Android E2E</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
-                            
-                                <a class="item " href="../../../contribute/mobile/e2e/environment-vars/">Environment Variables</a>
+                                <a class="item " href="../../../contribute/mobile/build-your-own/white-label/">White Labeling</a>
                             
                         </ul>
                     
@@ -939,6 +903,60 @@
                                 <a class="item " href="../../../contribute/mobile/push-notifications/corporate-proxy/">Push Notification Service with Corporate Proxy</a>
                             
                                 <a class="item " href="../../../contribute/mobile/push-notifications/migrate-gcm-fcm/">Migrate GCM to FCM</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
+                                <a href="../../../contribute/mobile/unsigned/"> Sign Unsigned Builds</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="../../../contribute/mobile/unsigned/android/">Sign Unsigned Android</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/unsigned/ios/">Sign Unsigned iOS</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
+                                <a href="../../../contribute/mobile/e2e/"> Mobile End-to-End Testing</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/file-structure/">Folder and File Structure</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/android/">Setup and Run Android E2E</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/ios/">Setup and Run iOS E2E</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/guide-for-writing/">Guide for Writing E2E</a>
+                            
+                                <a class="item " href="../../../contribute/mobile/e2e/environment-vars/">Environment Variables</a>
                             
                         </ul>
                     
@@ -1319,11 +1337,13 @@
                         Build Your Own App
                     </h1>
                     <p>You can build the app from source and distribute it within your team or company either using the App Stores, Enterprise App Stores or EMM providers, or another way of your choosing.</p>
-<p>We recommend using the <a href="../../../contribute/mobile/makefile"><strong>make build</strong>* commands</a> in conjunction with <a href="https://docs.fastlane.tools/#choose-your-installation-method">Fastlane</a>. With Fastlane, you can also configure the app using environment
-variables.</p>
-<h3 id="push-notifications-with-your-own-build">Push Notifications with Your Own Build&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#push-notifications-with-your-own-build"></i></a> </h3>
-<p>When building a custom version of the Mattermost mobile app, you will also need to host your own <a href="https://github.com/mattermost/mattermost-push-proxy">Mattermost Push Notification Service</a> and make a few modifications to your Mattermost mobile app to be able to get push notifications.</p>
-<p>Follow <a href="../../../contribute/mobile/push-notifications/">these steps</a> to receive push notifications in your custom app.</p>
+<p>At Mattermost, we build and deploy the Apps using a CI pipeline. The pipeline has different jobs and steps that run on specific contexts based on what we want to accomplish. You can check it out <a href="https://github.com/mattermost/mattermost-mobile/blob/master/.circleci/config.yml">here</a>.</p>
+<p>As an alternative we&rsquo;ve also created a set of <strong>scripts</strong> to help automate build tasks. Learn more about the scripts by reviewing the <a href="https://github.com/mattermost/mattermost-mobile/blob/master/package.json">package.json</a> file.</p>
+<p><strong>Note:</strong> By using the <strong>scripts</strong>, <a href="https://docs.fastlane.tools/#choose-your-installation-method">Fastlane</a> and other dependencies will be installed in your system.</p>
+<h5 id="buid-the-android-appandroid-or-buid-the-ios-appios"><a href="android">Buid the Android app</a> or <a href="ios">Buid the iOS app</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#buid-the-android-appandroid-or-buid-the-ios-appios"></i></a> </h5>
+<h3 id="push-notifications-with-your-own-app">Push Notifications with Your Own App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#push-notifications-with-your-own-app"></i></a> </h3>
+<p>When building your own Mattermost mobile app, you will also need to host the <a href="https://github.com/mattermost/mattermost-push-proxy">Mattermost Push Notification Service</a> in order to receive push notifications.</p>
+<p>See <a href="../../../contribute/mobile/push-notifications/">Setup Push Notifications</a> for more details.</p>
 
 
                 </div>

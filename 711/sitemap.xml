@@ -23,7 +23,12 @@
   </url>
   
   <url>
-    <loc>/contribute/mobile/build-your-own/preparation/</loc>
+    <loc>/contribute/mobile/build-your-own/android/</loc>
+    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/mobile/developer-setup/structure/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -34,6 +39,11 @@
   
   <url>
     <loc>/extend/customization/server-files/</loc>
+    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/mobile/unsigned/android/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -98,12 +108,22 @@
   </url>
   
   <url>
-    <loc>/contribute/mobile/build-your-own/environment-vars/</loc>
+    <loc>/contribute/mobile/build-your-own/ios/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/contribute/mobile/developer-setup/developer-workflow/</loc>
+    <loc>/contribute/mobile/build-your-own/</loc>
+    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/mobile/developer-setup/run/</loc>
+    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/mobile/unsigned/ios/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -158,12 +178,7 @@
   </url>
   
   <url>
-    <loc>/contribute/mobile/build-your-own/assets-white-label/</loc>
-    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/mobile/developer-setup/makefile/</loc>
+    <loc>/contribute/mobile/build-your-own/white-label/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -198,6 +213,11 @@
   </url>
   
   <url>
+    <loc>/contribute/mobile/push-notifications/</loc>
+    <lastmod>2015-05-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/contribute/mobile/e2e/ios/</loc>
     <lastmod>2020-09-01T09:00:00+00:00</lastmod>
   </url>
@@ -208,12 +228,12 @@
   </url>
   
   <url>
-    <loc>/contribute/mobile/build-your-own/android/</loc>
+    <loc>/contribute/mobile/developer-setup/dependecies/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/contribute/mobile/developer-setup/run-on-device/</loc>
+    <loc>/contribute/mobile/unsigned/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -268,16 +288,6 @@
   </url>
   
   <url>
-    <loc>/contribute/mobile/build-your-own/ios/</loc>
-    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/mobile/build-your-own/</loc>
-    <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/plugins/</loc>
     <lastmod>2018-03-19T12:01:23-04:00</lastmod>
   </url>
@@ -299,11 +309,6 @@
   
   <url>
     <loc>/contribute/redux/reducers/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/mobile/developer-setup/troubleshooting/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -330,11 +335,6 @@
   <url>
     <loc>/contribute/redux/selectors/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/mobile/push-notifications/</loc>
-    <lastmod>2015-05-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
