@@ -121,15 +121,6 @@ Customization steps With that in mind, customizing and deploying your Mattermost
     </item>
     
     <item>
-      <title>Help Wanted Tickets</title>
-      <link>/contribute/plugins/help-wanted-tickets/</link>
-      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
-      
-      <guid>/contribute/plugins/help-wanted-tickets/</guid>
-      <description>Each plugin&amp;rsquo;s Help Wanted tickets are located in the respective plugin&amp;rsquo;s GitHub repository. In order to browse all of the open tickets, see this issue in the server repository with links to specific plugin repositories, and queries for Help Wanted tickets in each repository. The &amp;ldquo;All Plugins Up for Grabs&amp;rdquo; link there is useful to browse all repositories at once.</description>
-    </item>
-    
-    <item>
       <title>Bump Version Number</title>
       <link>/internal/mobile-build-process/bump-version-number/</link>
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
@@ -249,15 +240,6 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       <guid>/contribute/mobile/unsigned/ios/</guid>
       <description>With every Mattermost mobile app release, we publish the iOS unsigned ipa in in the GitHub Releases page, this guide describes the steps needed to modify and sign the app, so it can be distributed and installed on iOS devices.
 Requisites  macOS with Xcode installed. The minimum required version is 11.0. Install the Xcode command line tools: $ xcode-select --install  Set up your Certificate and Provisioning profiles as described in steps 1 &amp;amp; 2 for Run on iOS Devices in the Developer Setup.</description>
-    </item>
-    
-    <item>
-      <title>Developer Setup</title>
-      <link>/contribute/plugins/developer-setup/</link>
-      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
-      
-      <guid>/contribute/plugins/developer-setup/</guid>
-      <description>Please see the plugin developer setup and developer workflow pages for information on the plugin development environment.</description>
     </item>
     
     <item>
