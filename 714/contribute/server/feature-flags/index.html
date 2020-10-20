@@ -1316,13 +1316,13 @@
                     <h1 class="mt-0 doc-title">
                         Feature Flags
                     </h1>
-                    <p>Feature flags allow us to be more confident in shipping features continuously to Mattermost Cloud. Feature flags allow us to control which features are enabled on a cluster level.</p>
+                    <p>Feature flags allow us to be more confident in shipping features continuously to Mattermost Cloud. Feature flags also allow us to control which features are enabled on a cluster level.</p>
 <h1 id="how-to-use">How to use&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-to-use"></i></a> </h1>
 <h2 id="adding-the-feature-flag-in-code">Adding the feature flag in code&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-the-feature-flag-in-code"></i></a> </h2>
 <ol>
 <li>Add the new flag to the feature flag struct located in <code>model/feature_flags.go</code>.</li>
 <li>Set a default value in the <code>SetDefaults</code> function in the same file.</li>
-<li>Use the feature flag in code as you would use a regular configuration setting. In tests, manipulate the configuration value to test value changes, such as activation and deactivation, of the feature flag.</li>
+<li>Use the feature flag in code as you would use a regular configuration setting. In tests, manipulate the configuration value to test value changes, such as activation and deactivation of the feature flag.</li>
 <li>Code may be merged regardless of setup in the management system. In this case it will always take the default value supplied in the <code>SetDefaults</code> function.</li>
 <li>Create a removal ticket for the feature flag. All feature flags should be removed as soon as they have been verified by Cloud. The ticket should encompass removal of the supporting code and archiving in the management system.</li>
 </ol>

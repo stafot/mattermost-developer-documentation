@@ -28,7 +28,7 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       <pubDate>Thu, 15 Oct 2020 16:00:00 -0700</pubDate>
       
       <guid>/contribute/server/feature-flags/</guid>
-      <description>Feature flags allow us to be more confident in shipping features continuously to Mattermost Cloud. Feature flags allow us to control which features are enabled on a cluster level.
+      <description>Feature flags allow us to be more confident in shipping features continuously to Mattermost Cloud. Feature flags also allow us to control which features are enabled on a cluster level.
 How to use Adding the feature flag in code  Add the new flag to the feature flag struct located in model/feature_flags.go. Set a default value in the SetDefaults function in the same file. Use the feature flag in code as you would use a regular configuration setting.</description>
     </item>
     
