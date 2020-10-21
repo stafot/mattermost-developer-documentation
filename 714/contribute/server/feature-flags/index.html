@@ -1341,6 +1341,9 @@
 </ol>
 <h2 id="timelines-for-rollouts">Timelines for rollouts&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#timelines-for-rollouts"></i></a> </h2>
 <p>&lt; Guidelines coming soon &gt;</p>
+<h2 id="on-prem-releases">On-prem releases&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#on-prem-releases"></i></a> </h2>
+<p>For a feature flagged feature to be included in an on-prem release, the feature flag should be removed.</p>
+<p>Feature flags are generally off by default and on-prem releases do not contact the management system. Therefore feature flags that are not ready for an on-prem release will be automatically disabled for all on-prem releases.</p>
 <h2 id="testing">Testing&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#testing"></i></a> </h2>
 <p>Tests should be written to verify all states of the feature flag. Tests should cover any migrations that may take place in both directions (ie. from off to on and from on to off).</p>
 <h1 id="when-to-use">When to use&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#when-to-use"></i></a> </h1>
@@ -1373,9 +1376,9 @@
     <div class="container-fluid">
         <div class="footer__copyright">© Mattermost, Inc. All Rights Reserved.</div>
         <div class="footer__icons">
-            <a href="https://www.facebook.com/Mattermost-2300985916642531/"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/mattermost"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
         </div>
     </div>
 </footer>

@@ -1329,8 +1329,15 @@
 <p>A macOS computer is required to build the Mattermost iOS mobile app.</p>
 <h2 id="environment-setup">Environment Setup&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-setup"></i></a> </h2>
 <h3 id="ios-and-android">iOS and Android&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#ios-and-android"></i></a> </h3>
-<p>Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using <a href="https://brew.sh/" target="_blank">Homebrew</a> as a package manager.</p>
-<h4 id="install-nodejs">Install NodeJS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejs"></i></a> </h4>
+<p>Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using <a href="https://brew.sh">Homebrew</a> as a package manager.</p>
+<h4 id="install-cygwin-windows-only">Install Cygwin (Windows only)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-cygwin-windows-only"></i></a> </h4>
+<h5 id="windows-10">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10"></i></a> </h5>
+<ul>
+<li><a href="https://cygwin.com/faq/faq.html#faq.what.supported">Which versions of Windows does Cygwin support</a>?</li>
+<li>Install Cygwin from <a href="https://www.cygwin.com/">here</a>.</li>
+<li>Make sure to install <code>make</code> and <code>patch</code> while installing Cygwin.</li>
+</ul>
+<h4 id="install-nodejshttpsnodejsorgen">Install <a href="https://nodejs.org/en/">NodeJS</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejshttpsnodejsorgen"></i></a> </h4>
 <p>This includes NPM which is also needed.</p>
 <p><strong>Known working node versions: 12.18.x &amp; 14.9.x</strong></p>
 <h5 id="macos">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos"></i></a> </h5>
@@ -1347,7 +1354,11 @@
 <li>Using NVM by following the instructions <a href="https://github.com/creationix/nvm#install-script">here</a>.</li>
 <li>Download and install the package from the <a href="https://nodejs.org/en">NodeJS website</a>.</li>
 </ul>
-<h4 id="install-watchmanhttpsfacebookgithubiowatchman">Install [Watchman](<a href="https://facebook.github.io/watchman">https://facebook.github.io/watchman</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-watchmanhttpsfacebookgithubiowatchman"></i></a> </h4>
+<h5 id="windows-10-1">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10-1"></i></a> </h5>
+<ul>
+<li>Download and install the package from the <a href="https://nodejs.org/en/">NodeJS website</a></li>
+</ul>
+<h4 id="install-watchmanhttpsfacebookgithubiowatchman">Install <a href="https://facebook.github.io/watchman">Watchman</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-watchmanhttpsfacebookgithubiowatchman"></i></a> </h4>
 <p>The minimum required version is 4.9.0.</p>
 <h5 id="macos-1">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos-1"></i></a> </h5>
 <ul>
@@ -1361,9 +1372,25 @@
 <li>On Linux you have to build Watchman yourself. See the official <a href="https://facebook.github.io/watchman/docs/install.html#installing-from-source">Watchman guide</a>.
 <ul>
 <li>Note that you need to increase your <code>inotify</code> limits for Watchman to work properly.</li>
-<li>If you encounter a warning about a missing C++ compiler you need to install the c++ extension from your distro&rsquo;s package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++).</li>
+<li>If you encounter a warning about a missing C++ compiler you need to install the C++ extension from your distro&rsquo;s package manager (Ubuntu: g++, RHEL/Fedora: gcc-g++).</li>
 </ul>
 </li>
+</ul>
+<h5 id="windows-10-2">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10-2"></i></a> </h5>
+<ul>
+<li>Download the latest package from <a href="https://github.com/facebook/watchman/releases/tag/v2020.07.27.00">here</a>. Note that it&rsquo;s currently in Beta.</li>
+</ul>
+<h4 id="install-react-native-cli-tools">Install <code>react-native-cli</code> tools&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-react-native-cli-tools"></i></a> </h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm -g install react-native-cli
+</code></pre></div><h4 id="install-ruby">Install Ruby&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-ruby"></i></a> </h4>
+<h5 id="windows-10-3">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10-3"></i></a> </h5>
+<ul>
+<li>Install Ruby from <a href="https://rubyinstaller.org/">here</a></li>
+</ul>
+<h4 id="install-git">Install Git&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-git"></i></a> </h4>
+<h5 id="windows-10-4">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10-4"></i></a> </h5>
+<ul>
+<li>Install git from <a href="https://git-scm.com/download/win">here</a></li>
 </ul>
 <h4 id="install-bundler---version-202-gem">Install <code>bundler --version 2.0.2</code> gem&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-bundler---version-202-gem"></i></a> </h4>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gem install bundler --version 2.0.2
@@ -1486,9 +1513,9 @@
     <div class="container-fluid">
         <div class="footer__copyright">© Mattermost, Inc. All Rights Reserved.</div>
         <div class="footer__icons">
-            <a href="https://www.facebook.com/Mattermost-2300985916642531/"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/mattermost"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
         </div>
     </div>
 </footer>

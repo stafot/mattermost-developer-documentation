@@ -377,7 +377,7 @@ Content-Length<span style="color:#555">:</span> 2
 </tr>
 <tr>
 <td>icon_emoji</td>
-<td>Overrides the profile picture and <code>icon_url</code> parameter. Defaults to none and is not set during webhook creation. Must be enabled <a href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">in the configuration</a>. The expected content is an emoji name, as typed in a message but without <code>:</code>.</td>
+<td>Overrides the profile picture and <code>icon_url</code> parameter.<br> Defaults to none and is not set during webhook creation.<br> Must be enabled <a href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">in the configuration</a>.<br> The expected content is an emoji name, as typed in a message, either with or without <code>:</code>.</td>
 <td>No</td>
 </tr>
 <tr>
@@ -392,7 +392,7 @@ Content-Length<span style="color:#555">:</span> 2
 </tr>
 <tr>
 <td>props</td>
-<td>Sets the post <code>props</code>, a JSON property bag for storing extra or meta data on the post.<br> Mainly used by other integrations accessing posts through the REST API.<br> The following keys are reserved: &ldquo;from_webhook&rdquo;, &ldquo;override_username&rdquo;, &ldquo;override_icon_url&rdquo;, &ldquo;override_icon_emoji&rdquo;, &ldquo;webhook_display_name&rdquo;, &ldquo;card&rdquo; and &ldquo;attachments&rdquo;.    Props <code>card</code> allows for extra information (markdown formatted text) to be sent to Mattermost that will only be displayed in the RHS panel after a user clicks on an &lsquo;info&rsquo; icon displayed alongside the post.  The info icon cannot be customized and is only rendered visible to the user if there is <code>card</code> data passed into the message. This is only available in v5.14+. There is currently no Mobile support for <code>card</code> functionality.</td>
+<td>Sets the post <code>props</code>, a JSON property bag for storing extra or meta data on the post.<br> Mainly used by other integrations accessing posts through the REST API.<br> The following keys are reserved: &ldquo;from_webhook&rdquo;, &ldquo;override_username&rdquo;, &ldquo;override_icon_url&rdquo;, &ldquo;override_icon_emoji&rdquo;, &ldquo;webhook_display_name&rdquo;, &ldquo;card&rdquo;, and &ldquo;attachments&rdquo;.<br> Props <code>card</code> allows for extra information (markdown formatted text) to be sent to Mattermost that will only be displayed in the RHS panel after a user clicks on an &lsquo;info&rsquo; icon displayed alongside the post.<br> The info icon cannot be customized and is only rendered visible to the user if there is <code>card</code> data passed into the message.<br> This is only available in v5.14+.<br> There is currently no Mobile support for <code>card</code> functionality.</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -443,9 +443,9 @@ Content-Type<span style="color:#555">:</span> application/json
     <div class="container-fluid">
         <div class="footer__copyright">© Mattermost, Inc. All Rights Reserved.</div>
         <div class="footer__icons">
-            <a href="https://www.facebook.com/Mattermost-2300985916642531/"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/mattermost"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
         </div>
     </div>
 </footer>
