@@ -1040,7 +1040,7 @@ Feature teams will commit a total of 4 engineers plus a lead to SET for each rot
       
       <guid>/blog/docker-content-trust-in-gitlab-with-delegation/</guid>
       <description>At the start of implementing Docker Content Trust in our workflow, I thought it shouldn&amp;rsquo;t take so long. I thought and of course I was wrong. The following is the boiled down version of what I learned and wished for starting out.
-Prerequisites  Docker version: 19.03.12 root *.key + passphrase for the Docker Content Trust delegation/signer private key *.key + public key *.pub+ passphrase for the delegated person/bot, who should sign the repository/image:tag Please make sure you have your keys backed up and versioned  Create a signed repository and add signer This is not part of the automation process, because it requires the root key:</description>
+Prerequisites  Docker version: 19.03.12 root *.key + passphrase for the Docker Content Trust delegation/signer private key *.key + public key *.pub + passphrase for the delegated person/bot, who should sign the repository/image:tag Please make sure you have your keys backed up and versioned.</description>
     </item>
     
     <item>

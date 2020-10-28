@@ -161,7 +161,7 @@
                         <div class="blog-item__title">Docker Content Trust in GitLab&#39;s .gitlab-ci.yml with Delegation<br> <small></small></div>
                         <div class="blog-item__info">
                             October 28, 2020
-                            <small class="blog-item__count">376 words</small>
+                            <small class="blog-item__count">377 words</small>
                         </div>
                     </div>
                     <hr>
@@ -172,8 +172,8 @@ The following is the boiled down version of what I learned and wished for starti
 <ul>
 <li>Docker version: 19.03.12</li>
 <li>root <code>*.key</code> + <code>passphrase</code> for the Docker Content Trust</li>
-<li>delegation/signer <code>private key *.key</code> + <code>public key *.pub</code>+ passphrase for the delegated person/bot, who should sign the <code>repository/image:tag</code></li>
-<li>Please make sure you have your keys backed up and versioned</li>
+<li>delegation/signer <code>private key *.key</code> + <code>public key *.pub</code> + passphrase for the delegated person/bot, who should sign the <code>repository/image:tag</code></li>
+<li>Please make sure you have your keys backed up and versioned.</li>
 </ul>
 <h2 id="create-a-signed-repository-and-add-signer">Create a signed repository and add signer&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#create-a-signed-repository-and-add-signer"></i></a> </h2>
 <p>This is not part of the automation process, because it requires the root key:</p>
