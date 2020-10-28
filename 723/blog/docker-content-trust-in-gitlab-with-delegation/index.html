@@ -211,7 +211,7 @@ This command does two things when first run:</p>
 </span><span style="color:#bbb">    </span>- chmod<span style="color:#bbb"> </span><span style="color:#f60">600</span><span style="color:#bbb"> </span>$DCT_SIGNER_PRIV_KEY<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- cp<span style="color:#bbb"> </span>$DCT_SIGNER_PRIV_KEY<span style="color:#bbb"> </span>$PATH_KEYS/$SIGNER_KEY_NAME.key<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># GitLab CI variable type file</span><span style="color:#bbb">
 </span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- export<span style="color:#bbb"> </span>DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE=$DCT_SIGNER_PASS<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># gitlab ci variable type variable</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- export<span style="color:#bbb"> </span>DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE=$DCT_SIGNER_PASS<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># GitLab CI variable type variable</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- docker<span style="color:#bbb"> </span>trust<span style="color:#bbb"> </span>key<span style="color:#bbb"> </span>load<span style="color:#bbb"> </span>$PATH_KEYS/$SIGNER_KEY_NAME.key<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- docker<span style="color:#bbb"> </span>trust<span style="color:#bbb"> </span>sign<span style="color:#bbb"> </span>${IMAGE}:${TAG}<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- docker<span style="color:#bbb"> </span>push<span style="color:#bbb"> </span>${IMAGE}:${TAG}<span style="color:#bbb">
