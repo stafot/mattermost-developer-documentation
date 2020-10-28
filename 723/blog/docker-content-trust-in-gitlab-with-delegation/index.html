@@ -161,7 +161,7 @@
                         <div class="blog-item__title">Docker Content Trust in GitLab&#39;s .gitlab-ci.yml with Delegation<br> <small></small></div>
                         <div class="blog-item__info">
                             October 28, 2020
-                            <small class="blog-item__count">379 words</small>
+                            <small class="blog-item__count">377 words</small>
                         </div>
                     </div>
                     <hr>
@@ -181,7 +181,7 @@ The following is the boiled down version of what I learned and wished for starti
 </code></pre><p>This will ask you for the root key passphrase and needs the encrypted root key locally in <code>$HOME/.docker/trust/private/ROOT_KEY_HASH.key</code>.
 This command does two things when first run:</p>
 <ol>
-<li>Upgrades the docker repository to use Docker Content Trust and therefore creates a new key, and you need to input a newly generated passphrase (Please back up and version)</li>
+<li>Upgrades the Docker repository to use Docker Content Trust and therefore creates a new key. You need to input a newly-generated passphrase (please back up and version)</li>
 <li>Adds the signer named <code>signer-name</code> to be allowed to sign new tags pushed</li>
 </ol>
 <h2 id="automation-concept-and-quirks">Automation concept and quirks&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#automation-concept-and-quirks"></i></a> </h2>
