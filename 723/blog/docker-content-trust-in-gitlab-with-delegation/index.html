@@ -192,7 +192,7 @@ This command does two things when first run:</p>
 <li>The keys should be located in <code>$HOME/.docker/trust/private/*</code> otherwise automated loading of keys fails</li>
 <li>Should you use <code>$</code> or <code>!</code> in the passphrases and use them as GitLab CI/CD secret variables, be aware that these characters need to be <a href="https://stackoverflow.com/questions/48870664/escape-char-in-gitlab-secret-variables">escaped</a></li>
 </ul>
-<h2 id="automation-of-pushing-signed-imagetag-in-gitlab">Automation of pushing signed image:tag in gitlab&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#automation-of-pushing-signed-imagetag-in-gitlab"></i></a> </h2>
+<h2 id="automation-of-pushing-signed-imagetag-in-gitlab">Automation of pushing signed <code>image:tag</code> in GitLab&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#automation-of-pushing-signed-imagetag-in-gitlab"></i></a> </h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#069;font-weight:bold">dockerhub-edge</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#069;font-weight:bold">variables</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">URL</span>:<span style="color:#bbb"> </span>docker.io<span style="color:#bbb">
@@ -209,7 +209,7 @@ This command does two things when first run:</p>
 </span><span style="color:#bbb">    </span>- PATH_KEYS=$HOME/.docker/trust/private<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- mkdir<span style="color:#bbb"> </span>-p<span style="color:#bbb"> </span>$PATH_KEYS<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- chmod<span style="color:#bbb"> </span><span style="color:#f60">600</span><span style="color:#bbb"> </span>$DCT_SIGNER_PRIV_KEY<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- cp<span style="color:#bbb"> </span>$DCT_SIGNER_PRIV_KEY<span style="color:#bbb"> </span>$PATH_KEYS/$SIGNER_KEY_NAME.key<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># gitlab ci variable type file</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- cp<span style="color:#bbb"> </span>$DCT_SIGNER_PRIV_KEY<span style="color:#bbb"> </span>$PATH_KEYS/$SIGNER_KEY_NAME.key<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># GitLab CI variable type file</span><span style="color:#bbb">
 </span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- export<span style="color:#bbb"> </span>DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE=$DCT_SIGNER_PASS<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># gitlab ci variable type variable</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>- docker<span style="color:#bbb"> </span>trust<span style="color:#bbb"> </span>key<span style="color:#bbb"> </span>load<span style="color:#bbb"> </span>$PATH_KEYS/$SIGNER_KEY_NAME.key<span style="color:#bbb">
