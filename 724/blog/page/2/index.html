@@ -158,6 +158,26 @@
                 
                     <div class="well well-sm">
     <h5>
+        <a href="../../../blog/layered-store-and-struct-embedding/">Layered Store and Struct Embedding in Go</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Feb 26, 2020
+            
+                
+                    by Jesús Espino
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>One of the most important parts of the Mattermost source code is the one responsible for accessing the Mattermost database - the store. Every single database access is handled by the store, so we needed to find a way to extend its functionality while introducing as little complexity as possible. This is the reason behind the current layered approach using struct embedding.
+Our store is responsible for storing and retrieving data, and sometimes we need to add functionality that is not strictly related to the database queries, for example, cache data or add instrumentation.</p>
+    <a class="btn btn-primary btn-sm" href="../../../blog/layered-store-and-struct-embedding/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
+                
+                    <div class="well well-sm">
+    <h5>
         <a href="../../../blog/incorporating-golangci-lint/">Incorporating GolangCI-Lint at Mattermost</a>
         <small class="blog-item__date pull-right">
             Posted
@@ -334,27 +354,6 @@ Instrumenting your API handler in Go is very straightforward - setup a connectio
     <hr>
     <p>I recently acquired a copy of Charles, the well-known Web Debugging Proxy Application. I&rsquo;ve actually stumbled across this product on multiple occasions, but never bothered to actually try it&hellip; almost exclusively because I thought the website looked a little dated. In trying to suss out the root cause behind MM-19091, I needed a way to debug against our community servers but running with my local copy of the mattermost webapp. This would allow me to insert console.</p>
     <a class="btn btn-primary btn-sm" href="../../../blog/debugging-using-charles/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="../../../blog/avoiding-flaky-tests/">Avoiding Flaky Tests</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Sep 29, 2019
-            
-                
-                    by Jesse Hallam
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>&ldquo;Your tests are failing.&rdquo;
- This comment on a pull request is crushing. After all the effort you&rsquo;ve spent writing your code, adding new unit tests, and rebasing your changes to make each commit almost a work of art: how could your tests possibly be failing?
-Begrudgingly, you sign into your CI server only to realize the failing tests have nothing to do with your code. You think, &ldquo;Hmm, maybe the code is more coupled than I expected.</p>
-    <a class="btn btn-primary btn-sm" href="../../../blog/avoiding-flaky-tests/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">
