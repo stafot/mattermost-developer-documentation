@@ -454,34 +454,34 @@ Content-Length<span style="color:#555">:</span> 696
 <p>To debug slash commands in System Console &gt; Logs, set System Console &gt; Logging &gt; Enable Webhook Debugging to true and set System Console &gt; Logging &gt; Console Log Level to DEBUG.</p>
 <h4 id="how-do-i-send-multiple-responses-from-a-slash-command">How do I send multiple responses from a slash command.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-send-multiple-responses-from-a-slash-command"></i></a> </h4>
 <p>You can send multiple responses with an <code>extra_responses</code> parameter as follows.</p>
-<pre><code>HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 696
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#069;font-weight:bold">HTTP</span><span style="color:#555">/</span><span style="color:#f60">1.1</span> <span style="color:#f60">200</span> <span style="color:#c00;font-weight:bold">OK</span>
+Content-Type<span style="color:#555">:</span> application/json
+Content-Length<span style="color:#555">:</span> 696
 
 {
-    &quot;response_type&quot;: &quot;in_channel&quot;,
-    &quot;text&quot;: &quot;\n#### Test results for July 27th, 2017\n@channel here are the requested test results.\n\n| Component  | Tests Run   | Tests Failed                                   |\n| ---------- | ----------- | ---------------------------------------------- |\n| Server     | 948         | :white_check_mark: 0                           |\n| Web Client | 123         | :warning: 2 [(see details)](http://linktologs) |\n| iOS Client | 78          | :warning: 3 [(see details)](http://linktologs) |\n\t\t      &quot;,
-    &quot;username&quot;: &quot;test-automation&quot;
-    &quot;icon_url&quot;: &quot;https://www.mattermost.org/wp-content/uploads/2016/04/icon.png&quot;,
-    &quot;props&quot;: {
-        &quot;test_data&quot;: {
-            &quot;ios&quot;: 78,
-            &quot;server&quot;: 948,
-            &quot;web&quot;: 123
+    <span style="color:#309;font-weight:bold">&#34;response_type&#34;</span>: <span style="color:#c30">&#34;in_channel&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;\n#### Test results for July 27th, 2017\n@channel here are the requested test results.\n\n| Component  | Tests Run   | Tests Failed                                   |\n| ---------- | ----------- | ---------------------------------------------- |\n| Server     | 948         | :white_check_mark: 0                           |\n| Web Client | 123         | :warning: 2 [(see details)](http://linktologs) |\n| iOS Client | 78          | :warning: 3 [(see details)](http://linktologs) |\n\t\t      &#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;username&#34;</span>: <span style="color:#c30">&#34;test-automation&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;icon_url&#34;</span>: <span style="color:#c30">&#34;https://www.mattermost.org/wp-content/uploads/2016/04/icon.png&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;props&#34;</span>: {
+        <span style="color:#309;font-weight:bold">&#34;test_data&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;ios&#34;</span>: <span style="color:#f60">78</span>,
+            <span style="color:#309;font-weight:bold">&#34;server&#34;</span>: <span style="color:#f60">948</span>,
+            <span style="color:#309;font-weight:bold">&#34;web&#34;</span>: <span style="color:#f60">123</span>
         }
     },
-    &quot;extra_responses&quot;: [
+    <span style="color:#309;font-weight:bold">&#34;extra_responses&#34;</span>: [
        {
-         &quot;text&quot;: &quot;message 2&quot;,
-         &quot;username&quot;: &quot;test-automation&quot;
+         <span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;message 2&#34;</span>,
+         <span style="color:#309;font-weight:bold">&#34;username&#34;</span>: <span style="color:#c30">&#34;test-automation&#34;</span>
        },
        {
-         &quot;text&quot;: &quot;message 3&quot;,
-         &quot;username&quot;: &quot;test-automation&quot;
+         <span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;message 3&#34;</span>,
+         <span style="color:#309;font-weight:bold">&#34;username&#34;</span>: <span style="color:#c30">&#34;test-automation&#34;</span>
        }
      ]
 }
-</code></pre><h4 id="what-if-my-slash-command-takes-time-to-build-a-response">What if my slash command takes time to build a response?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-if-my-slash-command-takes-time-to-build-a-response"></i></a> </h4>
+</code></pre></div><h4 id="what-if-my-slash-command-takes-time-to-build-a-response">What if my slash command takes time to build a response?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-if-my-slash-command-takes-time-to-build-a-response"></i></a> </h4>
 <p>Reply immediately with an <code>ephemeral</code> message to confirm response of the command, and then use the <code>response_url</code> to send up to five additional messages within a 30-minute time period from the original command invocation.</p>
 <h4 id="why-does-my-slash-command-fail-to-connect-to-localhost">Why does my slash command fail to connect to <code>localhost</code>?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#why-does-my-slash-command-fail-to-connect-to-localhost"></i></a> </h4>
 <p>By default, Mattermost prohibits outgoing connections that resolve to certain common IP ranges, including the loopback (<code>127.0.0.0/8</code>) and various private-use subnets.</p>

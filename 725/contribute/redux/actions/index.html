@@ -1479,8 +1479,8 @@ store.dispatch(loadAndSelectChannel(channelId));
 </code></pre></div></li>
 <li>
 <p>Make the necessary changes to the reducers to handle your action as well as adding a reducer to update the <code>requests</code> section of the store. In most cases, you can use the <code>handleRequest</code> and <code>initialRequestState</code> helper functions to construct the reducer for you. More information about reducers is available <a href="../../../contribute/redux/reducers">here</a>.</p>
-<pre><code>function getUser(state = initialRequestState(), action) {
-    return handleRequest(
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> getUser(state <span style="color:#555">=</span> initialRequestState(), action) {
+    <span style="color:#069;font-weight:bold">return</span> handleRequest(
         UserTypes.USER_REQUEST,
         UserTypes.USER_SUCCESS,
         UserTypes.USER_FAILURE,
@@ -1489,10 +1489,10 @@ store.dispatch(loadAndSelectChannel(channelId));
     );
 }
 
-export default combineReducers({
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> combineReducers({
     getUser
 });
-</code></pre></li>
+</code></pre></div></li>
 <li>
 <p>Add unit tests to make sure that the action has the intended effects on the store. Test location is adjacent to the file being tested. Example, for <code>src/actions/admin.js</code>, test is located at <code>src/actions/admin.test.js</code>.  Add test file if necessary. More information on unit testing reducers is available below.</p>
 </li>
