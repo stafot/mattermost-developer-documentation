@@ -709,7 +709,7 @@ class PluginClass { /** * initialize is called by the webapp when the plugin is 
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
       
       <guid>https://developers.mattermost.com/internal/onboarding/new-staff-guide/</guid>
-      <description>Helpful links  https://docs.mattermost.com/developer/developer-flow.html Jira bug ticket process PR cherry-picking process RN build process if you are joining the Mobile team Glance through the release processes:  https://docs.mattermost.com/process/feature-release.html https://docs.mattermost.com/process/bug-fix-release.html   Security: Read through the security channel/issues spreadsheet and look at past exploits Developer Reading List: Located in the header of the public Developer channel  Mentor For The Day  Meet with a dev team member every day for about 30 mins.</description>
+      <description>Helpful links  https://docs.mattermost.com/developer/developer-flow.html Jira bug ticket process Feature flag process RN build process if you are joining the Mobile team Glance through the release processes:  https://docs.mattermost.com/process/feature-release.html https://docs.mattermost.com/process/bug-fix-release.html   Security: Read through the security channel/issues spreadsheet and look at past exploits Developer Reading List: Located in the header of the public Developer channel  Mentor For The Day  Meet with a dev team member every day for about 30 mins.</description>
     </item>
     
     <item>
