@@ -80,7 +80,7 @@ Issue Labels  Area/&amp;lt;name&amp;gt;: Involves changes to the named area (API
       <pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/getting-started/branching/</guid>
-      <description>Mattermost used to adopt a tick-tock release strategy where every other release was a &amp;ldquo;quality release&amp;rdquo; that only had bug fixes and no new features.
+      <description>Mattermost previously adopted a tick-tock release strategy where every other release was a &amp;ldquo;quality release&amp;rdquo; that only had bug fixes and no new features.
 The following diagram provides an overview of the branching strategy that was used to accomplish this. As an example, release-5.4 is a feature release and release-5.5 is a quality release. Note the &amp;ldquo;quality release&amp;rdquo; branch is based on the previous release branch.
 Cherry Pick Process - Developer When your PR is required on a release branch, you will follow the cherry picking process.</description>
     </item>
