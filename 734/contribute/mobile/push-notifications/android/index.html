@@ -918,8 +918,6 @@
                             
                                 <a class="item " href="https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/">Push Notification Service with Corporate Proxy</a>
                             
-                                <a class="item " href="https://developers.mattermost.com/contribute/mobile/push-notifications/migrate-gcm-fcm/">Migrate GCM to FCM</a>
-                            
                         </ul>
                     
                         
@@ -1360,10 +1358,7 @@ downloaded the <em>google-services.json</em> file, you need to make some
 changes in the project.</p>
 <ul>
 <li>Replace <code>android/app/google-services.json</code> with the one you downloaded earlier</li>
-<li>Open <code>android/app/google-services.json</code>, find the project_number and copy the value</li>
-<li>Open <code>android/app/src/main/AndroidManifest.xml</code> file, look for the line <code>&lt;meta-data android:name=&quot;com.wix.reactnativenotifications.gcmSenderId&quot; android:value=&quot;184930218130\&quot;/&gt;</code> and replace the value with the one that you copied in the previous step</li>
 </ul>
-<p><strong>Leave the trailing \ intact</strong></p>
 <p>At this point, you can build the Mattermost app for Android and setup the <a href="https://developers.mattermost.com/contribute/mobile/push-notifications/service">Mattermost Push Notification Service</a>.</p>
 
 
