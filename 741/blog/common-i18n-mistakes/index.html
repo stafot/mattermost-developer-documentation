@@ -157,20 +157,20 @@
                         <div class="blog-item__title">Avoiding Common Internationalization Mistakes<br> <small></small></div>
                         <div class="blog-item__info">
                             March 26, 2020
-                            <small class="blog-item__count">1864 words</small>
+                            <small class="blog-item__count">2139 words</small>
                         </div>
                     </div>
                     <hr>
-                    <p>Languages are complicated, and every language is complicated in different ways that can be hard to understand. Some form words from multiple characters while others have symbols that represent entire concepts. Some features words without pluralization or gender and rely on context for that while others have two or more genders for words. Some are very phonetic while others pronounce words seemingly at random (<em>cough</em> English, though <em>cough</em>).</p>
-<p>Thanks to a tremendous contribution from then community member Elias Nahum long ago, we have full support for translation throughout Mattermost, and thanks to our community of translators, Mattermost is usable by many people speaking a variety of different languages.</p>
-<p>Because we support so many languages now, we have to be aware of how to keep our applications properly translatable. There&rsquo;s many easy mistakes you can make when writing an application in one language that can make it difficult to translate into others. We use <a href="https://formatjs.io/docs/react-intl/">react-intl</a> in our client-side applications and <a href="https://github.com/nicksnyder/go-i18n">go-i18n</a> on the server which both offer a variety of tools to help with this, but we still run into issues occasionally that they can&rsquo;t fix. Here&rsquo;s a few examples of problems that we&rsquo;ve run into and how to solve them.</p>
-<h2 id="mistake-1-not-translating-something-at-all">Mistake 1: Not translating something at all&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mistake-1-not-translating-something-at-all"></i></a> </h2>
-<p>This one is definitely the easiest to avoid, but it can particularly catch people who aren&rsquo;t used to using a system like we have.</p>
-<p>The easiest way for this to happen is if someone simply forgets to add a translation for something. For example, suppose someone is adding a new button to the web app using React. It&rsquo;s easy enough to just write</p>
+                    <p>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (<em>cough</em> English, though <em>cough</em>).</p>
+<p>Thanks to a tremendous contribution long ago from then community member Elias Nahum, we have full support for translation throughout Mattermost, and thanks to our community of translators, Mattermost is usable by many people speaking a variety of different languages.</p>
+<p>Because we support so many languages, we have to be aware of how to keep our applications properly translatable. There&rsquo;s many easy mistakes you can make when writing an application in one language that can make it difficult to translate into others. We use <a href="https://formatjs.io/docs/react-intl/">react-intl</a> in our client-side applications and <a href="https://github.com/nicksnyder/go-i18n">go-i18n</a> on the server which both offer a variety of features to help with this, but we can still cause problems if we&rsquo;re not careful when using translated text. Here&rsquo;s a few examples of common problems that we&rsquo;ve run into and how to solve them.</p>
+<h2 id="mistake-1-not-translating-something">Mistake 1: Not translating something&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mistake-1-not-translating-something"></i></a> </h2>
+<p>This one is definitely the easiest to avoid, but it can still catch people who aren&rsquo;t used to writing applications outside their native language.</p>
+<p>For example, suppose someone is adding a new button to the web app using React. If they forget to make it to use react-intl, they may write something like this:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">function</span> MyButton() {
     <span style="color:#069;font-weight:bold">return</span> &lt;<span style="color:#309;font-weight:bold">button</span>&gt;{<span style="color:#c30">&#39;Click me!&#39;</span>}&lt;/<span style="color:#309;font-weight:bold">button</span>&gt;;
 }
-</code></pre></div><p>without realizing that some additional work needs to be done to make it translatable.</p>
+</code></pre></div><p>That&rsquo;s fine if only English-speaking people use your application, but that doesn&rsquo;t work for us. Instead, we can use react-intl&rsquo;s <code>FormattedMessage</code> component to do the translation for us.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">import</span> {FormattedMessage} from <span style="color:#c30">&#39;react-intl&#39;</span>;
 
 <span style="color:#069;font-weight:bold">function</span> MyButton() {
@@ -183,10 +183,10 @@
         &lt;/<span style="color:#309;font-weight:bold">button</span>&gt;
     );
 }
-</code></pre></div><p>In this case, we&rsquo;re using react-intl&rsquo;s <code>FormattedMessage</code> component to do the translation for us. It ends up being a bit longer, but that&rsquo;s worth it for making the app usable by everyone.</p>
+</code></pre></div><p>The code ends up being a bit longer, but that&rsquo;s more than worth it for making the app translatable.</p>
 <h2 id="mistake-2-hard-coding-translations">Mistake 2: Hard coding translations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mistake-2-hard-coding-translations"></i></a> </h2>
-<p>This one occurs less often, but it comes from a real-world example in Mattermost.</p>
-<p>When you reply to an older message in Mattermost, we display &ldquo;Commented on Billy&rsquo;s message:&rdquo; to tell the user what you&rsquo;re responding to, but for a while after we had translation support added, the code for that looked like this:</p>
+<p>This mistake is a bit rarer since it requires mixing translated and non-translated text, but it comes from a real-world example in Mattermost.</p>
+<p>When you reply to an older message in Mattermost, we display &ldquo;Commented on Billy&rsquo;s message:&rdquo; to tell everyone that you&rsquo;re responding to Billy. For a while after we had translation support added, the code for that looked like this:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">let</span> username <span style="color:#555">=</span> <span style="color:#c30">&#39;@&#39;</span> <span style="color:#555">+</span> rootPost.username;
 <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>username.endsWith(<span style="color:#c30">&#39;s&#39;</span>)) {
     username <span style="color:#555">+=</span> <span style="color:#c30">&#39;\&#39;s&#39;</span>;
@@ -199,8 +199,8 @@
         <span style="color:#309">values</span><span style="color:#555">=</span>{{username}}
     /&gt;
 )
-</code></pre></div><p>Here, we&rsquo;re using react-intl to add the user&rsquo;s username into the message as a value, but we&rsquo;re making a mistake here by trying to make the username into a possessive adjective. By manually adding the &ldquo;&rsquo;s&rdquo;, we&rsquo;re applying English grammar regardless of the user&rsquo;s language setting, so in other languages, we&rsquo;re adding text that doesn&rsquo;t make sense.</p>
-<p>We solved this by moving the &ldquo;&rsquo;s&rdquo; into the translation string. That required changing our grammar rules to add &ldquo;&rsquo;s&rdquo; to the end of names that end in the letter S, but that&rsquo;s still correct by some grammar guidelines. Isn&rsquo;t English great?</p>
+</code></pre></div><p>Here, we&rsquo;re using react-intl to add Billy&rsquo;s name into the text as a value, but we&rsquo;re making a mistake here by trying to make the username into a possessive adjective ourselves. By manually adding the &ldquo;&rsquo;s&rdquo;, we&rsquo;re applying English grammar regardless of the user&rsquo;s language setting, so this label won&rsquo;t make sense in other languages.</p>
+<p>Instead, the &ldquo;&rsquo;s&rdquo; should be part of the translation string. That required changing our grammar rules slightly since we previously avoided adding &ldquo;&rsquo;s&rdquo; to the end of names that ended in the letter S, but the new way is still correct by other popular grammar guidelines. Isn&rsquo;t English great?</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;post.commentedOn&#39;</span>
@@ -209,8 +209,8 @@
     /&gt;
 );
 </code></pre></div><h2 id="mistake-3-incorrect-pluralization">Mistake 3: Incorrect pluralization&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mistake-3-incorrect-pluralization"></i></a> </h2>
-<p>Another common mistake is to forget that pluralization exists or to attempt to avoid it by adding (s) to the end of a word. While the latter is technically correct, it doesn&rsquo;t look very nice, and thankfully, our translation libraries can help us out there.</p>
-<p>Say you want to write something that sends an email to a list of any number of people, and you want it to report back on its progress as it sends those email in both the UI and in the server&rsquo;s logs.</p>
+<p>Another common mistake is to forget that pluralization exists when counting something, so you end up with text that looks like &ldquo;1 posts deleted&rdquo;. You can attempt to avoid that by adding (s) to the end of a word, but that doesn&rsquo;t look very nice, and other languages may not have anything comparable that they can do to replicate that. Thankfully, our translation libraries can help us out here.</p>
+<p>Say you&rsquo;re adding a feature that sends out an email to a number of people, and you want it to report back on its progress in both the UI and in the server&rsquo;s logs. You might write something like this:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;email_sender.remaining&#39;</span>
@@ -231,8 +231,8 @@
         <span style="color:#c30">&#34;Remaining&#34;</span>: remaining,
     }))
 }
-</code></pre></div><p>Note that the React example specifies that <code>remaining</code> is a number since otherwise zero would be treated as an empty string because it&rsquo;s falsey.</p>
-<p>As mentioned before, these are both technically correct since they add the number of remaining emails to the right place, but they both look ugly. Instead, both libraries support pluralization by passing in a count of some object which is the number of remaining emails in this case.</p>
+</code></pre></div><p>Note that the React example uses a feature of react-intl to specify that <code>remaining</code> is a number. Without it, &ldquo;0 emails remaining&rdquo; wouldn&rsquo;t be shown properly because it&rsquo;s a falsey value in JavaScript.</p>
+<p>That is an example of how we can tell react-intl to behave slightly differently though. If we use the <code>plural</code> modifier, we can specify different text based on the value of <code>remaining</code>. go-i18n has a similar feature, but it takes two different versions of the translated string instead of constructing a one that is more complicated.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;email_sender.remaining&#39;</span>
@@ -256,11 +256,15 @@
         <span style="color:#c30">&#34;Remaining&#34;</span>: remaining,
     }))
 }
-</code></pre></div><p>In both cases, we&rsquo;re defining different translation strings based on the value of remaining. react-intl lets you change how just part of the string is translated as opposed to go-intl which swaps out the entire string, but the result is the same either way.</p>
-<p>Since different languages provide different translation data, translators are free to handle pluralization differently as their language requires.</p>
+</code></pre></div><p>In both of these, we&rsquo;re defining different translation strings based on the value of remaining. As mentioned before, react-intl lets you change how a single part of the string is translated as opposed to go-i18n which swaps out the entire string, but the result is the same either way.</p>
+<p>In addition to just changing &ldquo;email&rdquo; to &ldquo;emails&rdquo;, this also lets translators handle pluralization differently for their own language. For example, some languages don&rsquo;t pluralize their word for email while others, such as Spanish, may also change pluralize &ldquo;remaining&rdquo; as well. Here&rsquo;s how the web app&rsquo;s translation file would look for the React example above:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#309;font-weight:bold">&#34;email_sender.remaining&#34;</span>: <span style="color:#c30">&#34;{remaining, number} {remaining, plural, one {correo pendiente} other {correos pendientes}}.&#34;</span>
+}
+</code></pre></div><p>Since &ldquo;pendiente&rdquo; for &ldquo;remaining&rdquo; changes based on the number of remaining emails, it has also been moved into the curly brackets.</p>
 <h2 id="mistake-4-concatenating-translated-strings">Mistake 4: Concatenating translated strings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mistake-4-concatenating-translated-strings"></i></a> </h2>
 <p>This last mistake is one we encounter more often, and it&rsquo;s one that&rsquo;s a bit harder to solve because it requires using some more complicated techniques that even we haven&rsquo;t adopted everywhere yet. It also takes a bit longer to describe the problem we can encounter here.</p>
-<p>Suppose you have a popup which contains some helpful information as well as a link to further documentation. It probably ends with the sentence &ldquo;<a href="https://mattermost.com">Click here</a> for more information.&rdquo; where &ldquo;Click here&rdquo; is a link. You might just write this as</p>
+<p>Suppose you have a popup which contains some helpful information as well as a link to further documentation. It probably ends with the sentence &ldquo;<a href="https://mattermost.com">Click here</a> for more information.&rdquo; where &ldquo;Click here&rdquo; is a link. You might just write this as follows:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;&gt;
         &lt;<span style="color:#309;font-weight:bold">a</span>
@@ -280,10 +284,10 @@
         /&gt;
     &lt;/&gt;
 );
-</code></pre></div><p>but that may not work in all langauges. For example, other languages may invert the sentence structure to be more like &ldquo;For more information, click here&rdquo; or they may not include the same space between words like in Chinese.</p>
-<p>Instead, you can pass in values like above to help construct the translation string in a way that lets translators rewrite the entire sentence. There&rsquo;s a few ways to do this that we&rsquo;ve been iterating and improving on, so I&rsquo;m going to present them separately and talk about why the final method is likely the best.</p>
+</code></pre></div><p>This works in English, but it may not work in other languages. For example, some languages may invert the sentence structure to be more like &ldquo;For more information, click here&rdquo; while others, like Chinese, may not include a space between words.</p>
+<p>Generally, we shouldn&rsquo;t be concatenating translated strings since it&rsquo;s a sign that the sentence structure may not work for everyone. Instead, we should move as much as we can into the translation string so that translators can construct the sentence as necessary. There&rsquo;s a few ways to do this that we&rsquo;ve been iterating and improving on, so I&rsquo;m going to present them separately and talk about why the final method is likely the best.</p>
 <h3 id="solution-1-react-elements-as-values">Solution 1: React elements as values&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#solution-1-react-elements-as-values"></i></a> </h3>
-<p>This technique has us pass the link with its text as a value into another translation string that represents the whole sentence.</p>
+<p>Similar to the example on pluralization, we can actually pass translated text into another block of translated text as a value to construct the sentence.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;popup.moreInformation&#39;</span>
@@ -304,9 +308,10 @@
         }}
     /&gt;
 );
-</code></pre></div><p>You&rsquo;ll often see this used in older Mattermost code to solve this problem. It allows us to add more complex formatting within translated text without making it impossible to translate, but it does make it harder for translators to understand the meaning of the text. They need to spend time reconstructing the entire string which may be difficult. It also makes the code more complicated to read since developers have to worry about more React elements.</p>
+</code></pre></div><p>You&rsquo;ll often see this used in older Mattermost code when we&rsquo;re trying to format part of a string. It allows us to add more complex formatting within translated text without making it impossible to translate.</p>
+<p>It does, however, make it harder for translators to understand the meaning of the text. They need to spend time reconstructing the entire sentence which may be difficult. It also makes the code more complicated to read for the same reason.</p>
 <h3 id="solution-2-formattedhtmlmessage">Solution 2: FormattedHTMLMessage&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#solution-2-formattedhtmlmessage"></i></a> </h3>
-<p><code>FormattedHTMLMessage</code> is another helper provided to us by <code>react-intl</code>. It lets us include HTML in the translation string to format the text.</p>
+<p><code>FormattedHTMLMessage</code> was another way to solve this problem, but it was removed in more recent versions. It&rsquo;s a compoent provided by react-intl, similar to <code>FormattedMessage</code>, but it allows us to include HTML in the translation string instead of nesting translated text. Since it&rsquo;s been removed, it can&rsquo;t be used any more, but it demonstrates another problem with ran into in the past.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#09f;font-style:italic">// import {FormattedHTMLMessage} from &#39;react-intl&#39;;
 </span><span style="color:#09f;font-style:italic"></span>
 <span style="color:#069;font-weight:bold">return</span> (
@@ -315,16 +320,17 @@
         <span style="color:#309">defaultMessage</span><span style="color:#555">=</span><span style="color:#c30">&#39;&lt;a href=&#34;https://mattermost.com&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt; for more information.&#39;</span>
     /&gt;
 );
-</code></pre></div><p>Again, this allows translators to reconstruct the sentence however they need, but it comes with a few downsides such as:</p>
+</code></pre></div><p>As with the previous solution, this allows translators to reconstruct the sentence however they need, but it comes with a few serious downsides such as:</p>
 <ol>
-<li>Translators need to understand HTML more, including more complicated things like the extra parameters on the <code>a</code> tag.</li>
-<li>It adds the chance that an incorrect translation could break part of the application by accidentally including malformed HTML within a string</li>
-<li>It also has potential performance negatives since we&rsquo;re going outside of React&rsquo;s DOM manipulation optimizations by using raw HTML</li>
-<li>We lose the ability to wrap parts of the string in React elements which can have more functionality, such as encapsulating the additional parameters passed into <code>a</code> tag.</li>
+<li>Translators needed to understand HTML, including more complicated things like the extra parameters on the <code>a</code> tag.</li>
+<li>It added the chance that an incorrect translation could break part of the application by accidentally including malformed HTML within a string.</li>
+<li>It also had potential performance impacts since we were going outside of React&rsquo;s DOM manipulation optimizations by using raw HTML.</li>
+<li>We lost the ability to wrap parts of the string in React elements which can have more functionality, such as encapsulating the additional parameters passed into <code>a</code> tag.</li>
+<li>Since it used HTML, <code>FormattedHTMLMessage</code> wasn&rsquo;t available in <code>react-native</code> for use in our mobile apps.</li>
 </ol>
-<p>For those reasons, you won&rsquo;t see this one used in Mattermost any more since it has been replaced by our own similar component.</p>
+<p>But despite these issues, it helped point us in the right direction since it lead to a custom component that is much nicer to work with.</p>
 <h3 id="solution-3-formattedmarkdownmessage">Solution 3: FormattedMarkdownMessage&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#solution-3-formattedmarkdownmessage"></i></a> </h3>
-<p><code>FormattedMarkdownMessage</code> was added by another one of our team members, Martin Kraft, as a safer and slightly simpler alternative to <code>FormattedHTMLMessage</code>. Instead of the translator needing to understand the complexities of HTML, they can instead use Markdown which is generally simpler.</p>
+<p><code>FormattedMarkdownMessage</code> was added by another one of our team members, Martin Kraft, as a safer and slightly simpler alternative to <code>FormattedHTMLMessage</code>. Instead of the translator needing to understand the complexities of HTML, they instead use Markdown which is generally simpler.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#09f;font-style:italic">// import {FormattedMarkdownMessage} from &#39;components/formatted_markdown_message&#39;;
 </span><span style="color:#09f;font-style:italic"></span>
 <span style="color:#069;font-weight:bold">return</span> (
@@ -333,10 +339,11 @@
         <span style="color:#309">defaultMessage</span><span style="color:#555">=</span><span style="color:#c30">&#39;[Click here](!https://mattermost.com) for more information.&#39;</span>
     /&gt;
 );
-</code></pre></div><p>Much simpler! It does require some knowledge to add the extra exclamation mark that tells <code>FormattedMarkdownMessage</code> to open a link to open in a new window, but there&rsquo;s a lot less overhead required there. That said, this formatting is even more limited than the previous options, and it may have minor performance issues due to having to parse Markdown.</p>
-<p>This technique is used frequently throughout our apps, and until recently, I&rsquo;d consider it to be the best way of doing this, but we&rsquo;ve recently upgraded react-intl which has added support for something that I think is even nicer.</p>
-<h3 id="solution-4-rich-text-formatting-in-react-intl-v3">Solution 4: Rich text formatting in react-intl v3&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#solution-4-rich-text-formatting-in-react-intl-v3"></i></a> </h3>
-<p>Instead of having to either pass in React elements as values or having to write out HTML or Markdown within the translation string, react-intl v3 now supports rich text formatting within the translation string. To do this, you can construct a HTML-like string such as <code>&lt;link&gt;Click here&lt;/link&gt; for more information.</code> using any sort of custom label such as link, and then the code can define what that means without the translator having to worry about the defails.</p>
+</code></pre></div><p>Much better! It does require some additional knowledge that adding an exclamation mark to the link tells <code>FormattedMarkdownMessage</code> to open it in a new window, but there&rsquo;s a lot less learning required compared to HTML. That said, this formatting is even more limited than the previous options, and <code>FormattedMarkdownMessage</code> doesn&rsquo;t fix the potential for performance problems because it still has to parse Markdown.</p>
+<p>This technique is used frequently throughout our apps, and until recently, I would&rsquo;ve considered it to be the best way of doing this, but now that we&rsquo;ve upgraded react-intl, we have access to a new feature which I think is even nicer.</p>
+<h3 id="solution-4-rich-text-formatting-in-react-intl">Solution 4: Rich text formatting in react-intl&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#solution-4-rich-text-formatting-in-react-intl"></i></a> </h3>
+<p>react-intl now supports custom HTML-like formatting within the translated text. To do this, you construct an HTML-like string such as <code>&lt;link&gt;Click here&lt;/link&gt; for more information.</code> using any number of custom tags, and then you define what those tags mean without the translator having to worry about the defails.</p>
+<p>In our case, we still want the link to open in a new tab, but now we can do that without the translator having to know anything about that.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;popup.moreInformation&#39;</span>
@@ -354,8 +361,8 @@
         }}
     /&gt;
 );
-</code></pre></div><p>The code ends up looking mostly like the first solution, but a function is now passed in as the <code>link</code> value instead and, most importantly, the translated string is now all in one piece.</p>
-<p>This gives us the most power when formatting a translated string without complicating the lives of our translators since we can once again style parts of the string with custom React elements. For example, if we had an <code>ExternalLink</code> component that encapsulated the extra parameters passed to the <code>a</code> tag, we could clean the code up a bit more.</p>
+</code></pre></div><p>The code itself looks similar to when we used nested translation strings, but there&rsquo;s only a single HTML-like string to translate and a function is passed in as the <code>link</code> value instead of a React node. That function defines how we want the link rendered, and it lets us include whatever potentially complex formatting we need without complicating the lives of the translators. It also lets us keep the existing translated string even if we need to change how the link works.</p>
+<p>In addition to being able to render HTML in this way, we can even use it to format translated text with custom React components too. For example, if we had an <code>ExternalLink</code> component that encapsulated the extra parameters passed to the <code>a</code> tag, we could simplify this code even further.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#069;font-weight:bold">return</span> (
     &lt;<span style="color:#309;font-weight:bold">FormattedMessage</span>
         <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#39;popup.moreInformation&#39;</span>
@@ -366,8 +373,8 @@
     /&gt;
 );
 </code></pre></div><h2 id="closing-thoughts">Closing Thoughts&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#closing-thoughts"></i></a> </h2>
-<p>Hopefully, we can do our best to avoid making translations completely impossible by avoiding most of these mistakes going forward while also finding more ways to reduce the workload on our translators, even as Mattermost grows and the amount of text that needs to be translated increases.</p>
-<p>Special thanks again to everyone who has helped translate Mattermost and make it usable by more people around the world. We tremendously appreciate your efforts and all the work you put in to make sure the translations stay up to date.</p>
+<p>Hopefully, we can do our best to make Mattermost easily translatable and available in many different languages, even as Mattermost grows and the amount of text that needs to be translated increases. By avoiding these mistakes and using some of these techniques, we can help to reduce the workload of our translators and make their jobs easier.</p>
+<p>Special thanks again to everyone who help translate Mattermost and who make it usable by so many more people around the world. We tremendously appreciate your efforts and all the work you put in to make sure the translations stay complete and up to date.</p>
 <p>If you&rsquo;re interested in helping out with localization or if you have any suggestions for how to improve our process, feel free to join us in the <code>~localization</code> channel on the Mattermost community server at <a href="https://community.mattermost.com">https://community.mattermost.com</a>.</p>
 
 
