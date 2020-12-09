@@ -570,12 +570,27 @@
   
   <url>
     <loc>https://developers.mattermost.com/blog/</loc>
-    <lastmod>2020-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://developers.mattermost.com/categories/</loc>
-    <lastmod>2020-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/categories/go/</loc>
+    <lastmod>2020-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/</loc>
+    <lastmod>2020-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/blog/mysql-index-merge/</loc>
+    <lastmod>2020-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -585,11 +600,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/blog/docker-content-trust-in-gitlab-with-delegation/</loc>
-    <lastmod>2020-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -650,11 +660,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/blog/hands-on-iouring-go/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/categories/go/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   

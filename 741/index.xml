@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -1022,6 +1022,17 @@ Enterprise Features Team  Scott Bishel - Engineering Lead Martin Kraft - Enginee
       <description>The Sustained Engineering Team (SET) is responsible for improving and maintaining quality.
 Team Members SET is a rotating team that is comprised of engineers from the different feature teams. The rotation is on a two week cycle. Who is currently on SET can be seen in the header of the ~Sustained Engineering channel.
 Feature teams will commit a total of 4 engineers plus a lead to SET for each rotation. While on SET, that engineer should attend their feature team&amp;rsquo;s sprint planning but should not be assigned any work from their feature team.</description>
+    </item>
+    
+    <item>
+      <title>Tuning MySQL and the Ghost of Index Merge Intersection</title>
+      <link>https://developers.mattermost.com/blog/mysql-index-merge/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/mysql-index-merge/</guid>
+      <description>Optimizing SQL queries is always fun, except when it isn&amp;rsquo;t. If you&amp;rsquo;re a MySQL veteran and have read the title, you already know where this is heading 😉. In that case, allow me to regale the uninitiated reader.
+This is the story of an (apparently) smart optimization to a SQL query that backfired spectacularly and how we finally fixed it.
+Act I: A slow query It started off with a customer noticing that a SQL query was running slowly in their environment.</description>
     </item>
     
     <item>
