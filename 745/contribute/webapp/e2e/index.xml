@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>End-to-End Testing on Mattermost Developers</title>
+    <link>https://developers.mattermost.com/contribute/webapp/e2e/</link>
+    <description>Recent content in End-to-End Testing on Mattermost Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Mar 2018 12:01:23 -0400</lastBuildDate>
+    
+	<atom:link href="https://developers.mattermost.com/contribute/webapp/e2e/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Folder and File Structure</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/folder-and-file-structure/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/folder-and-file-structure/</guid>
+      <description>The folder structure is mostly based on the Cypress scaffold which was created on initial run. Folders and files are:
+|-- e2e |-- cypress |-- fixtures |-- integration |-- plugins |-- support |-- utils |-- cypress.json |-- package-lock.json |-- package.json  /e2e/cypress/fixtures or Fixture Files:  Fixtures are used as external pieces of static data that can be used by tests. Typically used with the cy.fixture() command and most often when stubbing Network Requests.</description>
+    </item>
+    
+    <item>
+      <title>How to Run E2E Tests</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/running-e2e/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/running-e2e/</guid>
+      <description>Environment Variables We use several environment variables for Cypress testing in order to:
+ Easily change when running in CI. Cater to different values across developer machines.  Environment variables are defined in cypress.json under the env key. In most cases you don&amp;rsquo;t need to change the values, because it makes use of the default local developer setup. If you do need to make changes, the easiest method is to override by exporting CYPRESS_*, where * is the key of the variable, for example: CYPRESS_adminUsername.</description>
+    </item>
+    
+    <item>
+      <title>Guide for Writing E2E Test</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/guide-for-writing/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/guide-for-writing/</guid>
+      <description>Where should the new test go? Inside e2e/cypress/integration is where all of the tests live. Cypress is configured to look for and run tests that match the pattern of *_spec.js, so if you are creating a new test make sure to name it something like my_new_test_spec.js to ensure that it gets picked up.
+Inside of the integration directory, there are additional directories that break up the tests roughly by functional areas.</description>
+    </item>
+    
+    <item>
+      <title>Which query to use?</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/which-query-to-use/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/which-query-to-use/</guid>
+      <description>We love testing-library as it encourages to write maintainable tests, to develop with confidence and to ensure web application is accessible by default. Fortunately, there is @testing-library/cypress which provides simple and complete custom Cypress commands and utilities that encourage such good testing practices.
+With that, which query should I use when writing Cypress tests? There is a dedicated page from testing-library that helps answering the question. Read the said article to learn more.</description>
+    </item>
+    
+    <item>
+      <title>Interested in Contributing</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/interested-in-contributing/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/interested-in-contributing/</guid>
+      <description>All help wanted tickets are under server repository&amp;rsquo;s GitHub issues. Look for issues with Area/E2E Tests and Up For Grabs labels, and comment to let everyone know you&amp;rsquo;re working on it. Each ticket is filled up with specific test steps and verifications that need to be accomplished as a minimum requirement. Additional steps and assertions for robust test implementation are much welcome. Join our channel at UI Test Automation and talk to us as fellow contributors, and collaborate and learn with one another.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e/troubleshooting/</link>
+      <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e/troubleshooting/</guid>
+      <description>Cypress Failed To Start After Running &amp;lsquo;npm run cypress:run&amp;rsquo; Either the command line exits immediately without running any test or it logs out like the following.
+Error message ✖ Verifying Cypress can run /Users/user/Library/Caches/Cypress/3.1.3/Cypress.app → Cypress Version: 3.1.3 Cypress failed to start. This is usually caused by a missing library or dependency. Solution Clear node options by initiating unset NODE_OPTIONS in the command line. Running npm run cypress:run should proceed with Cypress testing.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cypress cheatsheet on Mattermost Developers</title>
+    <link>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/</link>
+    <description>Recent content in Cypress cheatsheet on Mattermost Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic code structure</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/basic-code-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/basic-code-structure/</guid>
+      <description>// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved. // See LICENSE.txt for license information.  // ********************************************************************** // - Use [#] in comment to indicate a test step (e.g. # Go to a page) // - Use [*] in comment to indicate an assertion (e.g. * Check the title) // - Query an element with @testing-library/cypress as much as possible // **********************************************************************  // Group: @change_group  describe(&amp;#39;Change to Functional Group&amp;#39;, () =&amp;gt; { before(() =&amp;gt; { // Add hard requirement to immediately fail and throw a descriptive error if not met  // cy.</description>
+    </item>
+    
+    <item>
+      <title>Account settings modal</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/account-settings-modal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/account-settings-modal/</guid>
+      <description>cy.uiOpenAccountSettingsModal(section) Open the settings modal when currently viewing the channel page.
+ section &amp;lt; string &amp;gt;  Possible values: &#39;General&#39;, &#39;Security&#39;, &#39;Notifications&#39;, &#39;Display&#39;, &#39;Sidebar&#39; and &#39;Advanced&#39;    Open the Account Settings modal // # Open &amp;#39;Account Settings&amp;#39; modal and view the default &amp;#39;General Settings&amp;#39; cy.uiOpenAccountSettingsModal(); Open the Account Settings modal and view a specific section // # Open &amp;#39;Advanced&amp;#39; section of &amp;#39;Account Settings&amp;#39; modal cy.uiOpenAccountSettingsModal(&amp;#39;Advanced&amp;#39;); Open the Account Settings modal, view a specific section and change a setting // # Open &amp;#39;Advanced&amp;#39; section of &amp;#39;Account Settings&amp;#39; modal cy.</description>
+    </item>
+    
+    <item>
+      <title>Channel Menu</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/channel-menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/channel-menu/</guid>
+      <description>cy.uiOpenChannelMenu(item) Open the Channel Menu by clicking the channel header title or dropdown icon at the center channel view.
+ item &amp;lt; string &amp;gt;  Possible values: &#39;View Info&#39;, &#39;Notification Preferences&#39;, &#39;Mute Channel&#39;, &#39;View Members&#39;, &#39;Edit Channel Header&#39;, &#39;Edit Channel Purpose&#39; and &#39;Rename Channel&#39;.    Open the Channel Menu // # Open &amp;#39;Channel Menu&amp;#39; cy.uiOpenChannelMenu(); Open the Channel Menu and click on specific item // # Open &amp;#39;Advanced&amp;#39; section of &amp;#39;Account Settings&amp;#39; modal cy.</description>
+    </item>
+    
+    <item>
+      <title>Main Menu</title>
+      <link>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/main-menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/webapp/e2e-cheatsheet/main-menu/</guid>
+      <description>cy.uiOpenMainMenu(item) Open the Main Menu by clicking the team header title or hamburger icon at the LHS.
+ item &amp;lt; string &amp;gt;  Possible values: &#39;Account Settings&#39;, &#39;Invite People&#39;, &#39;Team Settings&#39;, &#39;Manage Members&#39;, &#39;Create a Team&#39;, &#39;Join Another Team&#39;, &#39;Leave Team&#39;, &#39;Integrations&#39;, &#39;Plugin Marketplace&#39;, &#39;System Console&#39;, &#39;Help&#39;, &#39;Keyboard Shortcuts&#39;, &#39;Report a Problem&#39;, &#39;Download Apps&#39;, &#39;About Mattermost&#39; and &#39;Logout&#39;.    Open the Main Menu // # Open &amp;#39;Main Menu&amp;#39; cy.</description>
+    </item>
+    
+  </channel>
+</rss>
