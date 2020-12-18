@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -197,8 +197,8 @@ I want to know when someone says something Tracking what gets posted into a chan
       
       <guid>https://developers.mattermost.com/extend/plugins/developer-setup/</guid>
       <description>Once you have your server and webapp set up, you can start developing on plugins.
-For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
-Set up your environment to deploy plugins Deploying with Local Mode Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the Plugin Starter Template.</description>
+Note: Plugin development doesn&amp;rsquo;t require a development build of Mattermost. Development builds of Mattermost are only required if you want to develop for Mattermost internally.
+For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.</description>
     </item>
     
     <item>
@@ -207,9 +207,10 @@ Set up your environment to deploy plugins Deploying with Local Mode Note: Deploy
       <pubDate>Sat, 01 Feb 2020 19:50:32 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/server/developer-setup/</guid>
-      <description>Set up your development environment for building, running, and testing the Mattermost server. For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.docker.com/docker-for-mac/.
-Note: MM-9791 introduced using docker-compose to manage containers.</description>
+      <description>Set up your development environment for building, running, and testing the Mattermost server.
+Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
+For minimum software requirements, see the following table:
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
     </item>
     
     <item>
@@ -579,17 +580,6 @@ The manifest tells Mattermost what the plugin is and provides a set of metadata 
     </item>
     
     <item>
-      <title>Migrate GCM to FCM</title>
-      <link>https://developers.mattermost.com/contribute/mobile/push-notifications/migrate-gcm-fcm/</link>
-      <pubDate>Wed, 20 May 2015 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/mobile/push-notifications/migrate-gcm-fcm/</guid>
-      <description>As of April 10, 2018, Google has deprecated the Google Cloud Messaging (GCM) service. The GCM server and client APIs are deprecated and will be removed as of April 11, 2019. Migrate GCM apps to Firebase Cloud Messaging (FCM), which inherits the reliable and scalable GCM infrastructure, plus many new features.
-The Mattermost Push Notification Service version 5.8+ uses FCM to send Push notifications for Android.
-  Upgrade your Mattermost Push Notification service to version 5.</description>
-    </item>
-    
-    <item>
       <title>End-to-End Testing</title>
       <link>https://developers.mattermost.com/contribute/webapp/end-to-end-tests/</link>
       <pubDate>Tue, 04 Dec 2018 11:35:32 -0400</pubDate>
@@ -709,7 +699,7 @@ class PluginClass { /** * initialize is called by the webapp when the plugin is 
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
       
       <guid>https://developers.mattermost.com/internal/onboarding/new-staff-guide/</guid>
-      <description>Helpful links  https://docs.mattermost.com/developer/developer-flow.html Jira bug ticket process PR cherry-picking process RN build process if you are joining the Mobile team Glance through the release processes:  https://docs.mattermost.com/process/feature-release.html https://docs.mattermost.com/process/bug-fix-release.html   Security: Read through the security channel/issues spreadsheet and look at past exploits Developer Reading List: Located in the header of the public Developer channel  Mentor For The Day  Meet with a dev team member every day for about 30 mins.</description>
+      <description>Helpful links  https://docs.mattermost.com/developer/developer-flow.html Jira bug ticket process Feature flag process RN build process if you are joining the Mobile team Glance through the release processes:  https://docs.mattermost.com/process/feature-release.html https://docs.mattermost.com/process/bug-fix-release.html   Security: Read through the security channel/issues spreadsheet and look at past exploits Developer Reading List: Located in the header of the public Developer channel  Mentor For The Day  Meet with a dev team member every day for about 30 mins.</description>
     </item>
     
     <item>
@@ -740,8 +730,8 @@ How to create and use the variable that enables selection between installations 
       <pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/getting-started/branching/</guid>
-      <description>Mattermost uses a tick-tock release strategy where every other release is a &amp;ldquo;quality release&amp;rdquo; that only has bug fixes and no new features.
-The following diagram provides an overview of the branching strategy used to accomplish this. As an example, release-5.4 is a feature release and release-5.5 is a quality release. Note the &amp;ldquo;quality release&amp;rdquo; branch is based on the previous release branch.
+      <description>Mattermost previously adopted a tick-tock release strategy where every other release was a &amp;ldquo;quality release&amp;rdquo; that only had bug fixes and no new features.
+The following diagram provides an overview of the branching strategy that was used to accomplish this. As an example, release-5.4 is a feature release and release-5.5 is a quality release. Note the &amp;ldquo;quality release&amp;rdquo; branch is based on the previous release branch.
 Cherry Pick Process - Developer When your PR is required on a release branch, you will follow the cherry picking process.</description>
     </item>
     
@@ -1032,6 +1022,17 @@ Enterprise Features Team  Scott Bishel - Engineering Lead Martin Kraft - Enginee
       <description>The Sustained Engineering Team (SET) is responsible for improving and maintaining quality.
 Team Members SET is a rotating team that is comprised of engineers from the different feature teams. The rotation is on a two week cycle. Who is currently on SET can be seen in the header of the ~Sustained Engineering channel.
 Feature teams will commit a total of 4 engineers plus a lead to SET for each rotation. While on SET, that engineer should attend their feature team&amp;rsquo;s sprint planning but should not be assigned any work from their feature team.</description>
+    </item>
+    
+    <item>
+      <title>Tuning MySQL and the Ghost of Index Merge Intersection</title>
+      <link>https://developers.mattermost.com/blog/mysql-index-merge/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/mysql-index-merge/</guid>
+      <description>Optimizing SQL queries is always fun, except when it isn&amp;rsquo;t. If you&amp;rsquo;re a MySQL veteran and have read the title, you already know where this is heading 😉. In that case, allow me to regale the uninitiated reader.
+This is the story of an (apparently) smart optimization to a SQL query that backfired spectacularly and how we finally fixed it.
+Act I: A slow query It started off with a customer noticing that a SQL query was running slowly in their environment.</description>
     </item>
     
     <item>

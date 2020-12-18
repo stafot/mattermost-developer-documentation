@@ -30,8 +30,8 @@ Manifest The plugin manifest provides required metadata about the plugin, such a
       
       <guid>https://developers.mattermost.com/extend/plugins/developer-setup/</guid>
       <description>Once you have your server and webapp set up, you can start developing on plugins.
-For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
-Set up your environment to deploy plugins Deploying with Local Mode Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the Plugin Starter Template.</description>
+Note: Plugin development doesn&amp;rsquo;t require a development build of Mattermost. Development builds of Mattermost are only required if you want to develop for Mattermost internally.
+For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.</description>
     </item>
     
     <item>

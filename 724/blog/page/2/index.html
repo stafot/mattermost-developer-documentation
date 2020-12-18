@@ -154,6 +154,27 @@
                 
                     <div class="well well-sm">
     <h5>
+        <a href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast-2/">Instrumenting Go code via AST, Part 2</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Mar 15, 2020
+            
+                
+                    by Eli Yukelzon
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>Welcome! This is the second part of our AST blog post series, expanding on the subject of utilizing Go AST libraries to automate and improve your workflow.
+In this post I&rsquo;ll discuss a rather common problem that comes up while working with Go code and the way we&rsquo;ve solved it by sprinkling a little bit of AST magic dust. Let&rsquo;s dive in.
+Problem: A struct with no interface Let&rsquo;s say you are working on a large code base that was not built with interfaces in mind, meaning, there are structs and methods attached to those structs, but there is no interface describing it.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast-2/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
+                
+                    <div class="well well-sm">
+    <h5>
         <a href="https://developers.mattermost.com/blog/layered-store-and-struct-embedding/">Layered Store and Struct Embedding in Go</a>
         <small class="blog-item__date pull-right">
             Posted
@@ -333,25 +354,6 @@ Instrumenting your API handler in Go is very straightforward - setup a connectio
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
-                    <div class="well well-sm">
-    <h5>
-        <a href="https://developers.mattermost.com/blog/debugging-using-charles/">Debugging Using Charles</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Oct 21, 2019
-            
-                
-                    by Jesse Hallam
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>I recently acquired a copy of Charles, the well-known Web Debugging Proxy Application. I&rsquo;ve actually stumbled across this product on multiple occasions, but never bothered to actually try it&hellip; almost exclusively because I thought the website looked a little dated. In trying to suss out the root cause behind MM-19091, I needed a way to debug against our community servers but running with my local copy of the mattermost webapp. This would allow me to insert console.</p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/debugging-using-charles/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
                 <div class="blog-pagination">
                     
                         <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/page/3/"> &laquo; Previous Posts</a>
@@ -367,9 +369,9 @@ Instrumenting your API handler in Go is very straightforward - setup a connectio
     <div class="container-fluid">
         <div class="footer__copyright">© Mattermost, Inc. All Rights Reserved.</div>
         <div class="footer__icons">
-            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-youtube"></i></a>
         </div>
     </div>
 </footer>
