@@ -6,10 +6,21 @@
     <description>Recent content in Go on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tuning MySQL and the Ghost of Index Merge Intersection</title>
+      <link>https://developers.mattermost.com/blog/mysql-index-merge/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/mysql-index-merge/</guid>
+      <description>Optimizing SQL queries is always fun, except when it isn&amp;rsquo;t. If you&amp;rsquo;re a MySQL veteran and have read the title, you already know where this is heading 😉. In that case, allow me to regale the uninitiated reader.
+This is the story of an (apparently) smart optimization to a SQL query that backfired spectacularly and how we finally fixed it.
+Act I: A slow query It started off with a customer noticing that a SQL query was running slowly in their environment.</description>
+    </item>
     
     <item>
       <title>Getting Hands-on with io_uring using Go</title>

@@ -154,6 +154,25 @@
                 
                     <div class="well well-sm">
     <h5>
+        <a href="https://developers.mattermost.com/blog/debugging-using-charles/">Debugging Using Charles</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Oct 21, 2019
+            
+                
+                    by Jesse Hallam
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>I recently acquired a copy of Charles, the well-known Web Debugging Proxy Application. I&rsquo;ve actually stumbled across this product on multiple occasions, but never bothered to actually try it&hellip; almost exclusively because I thought the website looked a little dated. In trying to suss out the root cause behind MM-19091, I needed a way to debug against our community servers but running with my local copy of the mattermost webapp. This would allow me to insert console.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/debugging-using-charles/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
+                
+                    <div class="well well-sm">
+    <h5>
         <a href="https://developers.mattermost.com/blog/avoiding-flaky-tests/">Avoiding Flaky Tests</a>
         <small class="blog-item__date pull-right">
             Posted
@@ -329,28 +348,6 @@ Not all Go opinions are enforced by the compiler. Some are documented in Effecti
     <p>Mattermost 5.1 will include support for serving Mattermost from subpaths. This allows Mattermost to be exposed at something like https://example.com/company/mattermost, with your proxy server exposing different services at other subpaths. Subpath support is configured via the Site URL.
 Using subpaths in production In production, after configuration and restart, the application server expects all HTTP requests to be anchored to the configured subpath. This includes static assets, API calls, and WebSockets. For convenience, the application server redirects any unexpected requests back into this subpath, e.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/subpath/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="https://developers.mattermost.com/blog/npm-v6/">npm@6</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on May 22, 2018
-            
-                
-                    by Harrison Healey
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>Heads up that with PR#1239, we&rsquo;re effectively switching to npm@6.
-Why the change? Previously, doing a fresh npm install would unexpectedly change package-lock.json. Upgrading to npm@6 should resolve this going forward.
-What do I need to do? Make sure you&rsquo;re running npm@6:
-npm install -g npm@6 </p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/npm-v6/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">

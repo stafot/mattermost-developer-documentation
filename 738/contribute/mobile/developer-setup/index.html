@@ -922,8 +922,6 @@
                             
                                 <a class="item " href="https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/">Push Notification Service with Corporate Proxy</a>
                             
-                                <a class="item " href="https://developers.mattermost.com/contribute/mobile/push-notifications/migrate-gcm-fcm/">Migrate GCM to FCM</a>
-                            
                         </ul>
                     
                         
@@ -1321,11 +1319,16 @@
                         Developer Setup
                     </h1>
                     <p>The following instructions apply to the mobile apps for iOS and Android built in React Native. Download the iOS version <a href="http://about.mattermost.com/mattermost-ios-app">here</a> and the Android version <a href="http://about.mattermost.com/mattermost-android-app">here</a>. Source code can be found at the <a href="https://github.com/mattermost/mattermost-mobile">GitHub Mattermost Mobile app repository</a>.</p>
+<p>If you run into any issues getting your environment set up, check the <a href="https://developers.mattermost.com/contribute/mobile/developer-setup/troubleshooting/">Troubleshooting</a> section in the left sidebar for common solutions.</p>
 <p><strong>Note: This guide describes how to set up the development environment on macOS or Linux.</strong></p>
 <p>A macOS computer is required to build the Mattermost iOS mobile app.</p>
 <h2 id="environment-setup">Environment Setup&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environment-setup"></i></a> </h2>
 <h3 id="ios-and-android">iOS and Android&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#ios-and-android"></i></a> </h3>
 <p>Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using <a href="https://brew.sh">Homebrew</a> as a package manager.</p>
+<h4 id="install-nodejshttpsnodejsorgen">Install <a href="https://nodejs.org/en/">NodeJS</a>.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejshttpsnodejsorgen"></i></a> </h4>
+<p>This includes NPM which is also needed.
+<strong>Known working node versions: 12.18.x &amp; 14.9.x</strong>
+Please note that NodeJS version 11.x is <strong>not</strong> working.</p>
 <h4 id="install-cygwin-windows-only">Install Cygwin (Windows only)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-cygwin-windows-only"></i></a> </h4>
 <h5 id="windows-10">Windows 10&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#windows-10"></i></a> </h5>
 <ul>
@@ -1333,8 +1336,6 @@
 <li>Install Cygwin from <a href="https://www.cygwin.com/">here</a>.</li>
 <li>Make sure to install <code>make</code> and <code>patch</code> while installing Cygwin.</li>
 </ul>
-<h4 id="install-nodejshttpsnodejsorgen">Install <a href="https://nodejs.org/en/">NodeJS</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-nodejshttpsnodejsorgen"></i></a> </h4>
-<p>This includes NPM which is also needed.</p>
 <p><strong>Known working node versions: 12.18.x &amp; 14.9.x</strong></p>
 <h5 id="macos">macOS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#macos"></i></a> </h5>
 <ul>
@@ -1431,7 +1432,7 @@
 <p>Then reload your configuration</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">source</span> ~/.bash_profile
 </code></pre></div><ul>
-<li>Note that depending on the shell you&rsquo;re using this might need to be put into a different file such as <code>~/.zshrc</code>. Adjust this accordingly.</li>
+<li>Note that depending on the shell you&rsquo;re using, this might need to be put into a different file such as <code>~/.zshrc</code>. Adjust this accordingly.</li>
 <li>Also this documentation assumes you chose the default path for your Android SDK installation. If you chose a different path, adjust accordingly.</li>
 </ul>
 </li>

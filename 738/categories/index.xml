@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go</title>
+      <link>https://developers.mattermost.com/categories/go/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/categories/go/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>devops</title>
@@ -62,15 +71,6 @@
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://developers.mattermost.com/categories/ui-automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://developers.mattermost.com/categories/go/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/categories/go/</guid>
       <description></description>
     </item>
     
