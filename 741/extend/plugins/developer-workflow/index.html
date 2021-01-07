@@ -623,6 +623,7 @@
 <li><code>make disable</code> - Disables the plugin on the Mattermost server</li>
 <li><code>make reset</code> - Disables and re-enables the plugin on the Mattermost server</li>
 <li><code>make debug-plugin</code> - Starts a <code>delve</code> process and attaches it to your running plugin</li>
+<li><code>make clean</code> - Force deletes the content of build-related files. Use when running into build issues.</li>
 </ul>
 <p>You can run the development build of the plugin by setting the environment variable <code>MM_DEBUG=1</code>, or prefixing the variable at the beginning of the <code>make</code> command. For example, <code>MM_DEBUG=1 make deploy</code> will deploy the development build of the plugin to your server, allowing you to have a more fluid debugging experience. To use the production build of the plugin instead, unset the <code>MM_DEBUG</code> environment variable before running the <code>make</code> commands.</p>
 <h3 id="developing-in-the-plugins-webapp-folder">Developing in the plugin&rsquo;s webapp folder&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#developing-in-the-plugins-webapp-folder"></i></a> </h3>
