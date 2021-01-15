@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -1344,7 +1344,7 @@
 <h2 id="component-migration-steps">Component Migration Steps&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#component-migration-steps"></i></a> </h2>
 <p>There are a few steps involved with migrating a component to use Redux. Some of them may not apply to every component and they may change slightly based on the component you&rsquo;re working on. In general, you can these steps as a checklist for work that needs to be done on each component.</p>
 <ol>
-<li>Move any <code>PropTypes</code> from the bottom of the file to be defined at the top of the component, <a href="https://developers.mattermost.com/contribute/webapp/build-component#designing-your-component">as shown here</a>.
+<li>Move any <code>PropTypes</code> from the bottom of the file to be defined at the top of the component, <a href="https://developers.mattermost.com/contribute/webapp/build-component#designing-your-component/">as shown here</a>.
 <ul>
 <li>Also replace any <code>React.PropTypes</code> usages with just <code>PropTypes</code> and add <code>import PropTypes from 'prop-types';</code> to the file imports.</li>
 <li>Please make sure to add documentation for each prop, as shown in the above link.</li>
@@ -1354,10 +1354,10 @@
 <li>If the component imports any stores (ex. <code>user_store.jsx</code>), create a container by:
 <ol>
 <li>Creating props to hold the data pulled from the stores.</li>
-<li><a href="https://developers.mattermost.com/contribute/webapp/build-component#using-a-container">Following this guide</a> and creating a folder and <code>index.js</code> for the component.</li>
+<li><a href="https://developers.mattermost.com/contribute/webapp/build-component#using-a-container/">Following this guide</a> and creating a folder and <code>index.js</code> for the component.</li>
 <li>Using selectors from Redux inside the container to fill the props of the component.
 <ul>
-<li>The <a href="https://github.com/mattermost/mattermost-redux/tree/master/src/selectors/entities">existing Redux selectors are here</a>. If one does not exist for the data you need, you can <a href="https://developers.mattermost.com/contribute/redux/selectors">follow these steps to add new selectors</a>.</li>
+<li>The <a href="https://github.com/mattermost/mattermost-redux/tree/master/src/selectors/entities">existing Redux selectors are here</a>. If one does not exist for the data you need, you can <a href="https://developers.mattermost.com/contribute/redux/selectors/">follow these steps to add new selectors</a>.</li>
 </ul>
 </li>
 <li>Remove all store imports from the component.</li>
@@ -1365,10 +1365,10 @@
 </li>
 <li>If the component imports any actions (ex. <code>user_actions.jsx</code>), then:
 <ol>
-<li>Create an <code>actions</code> prop with each action as a child, <a href="https://developers.mattermost.com/contribute/webapp/build-component#using-a-container">similar to this</a>.</li>
+<li>Create an <code>actions</code> prop with each action as a child, <a href="https://developers.mattermost.com/contribute/webapp/build-component#using-a-container/">similar to this</a>.</li>
 <li>Use actions from Redux to fill the action props of the <code>mapDispatchToProps</code> function.
 <ul>
-<li>The <a href="https://github.com/mattermost/mattermost-redux/tree/master/src/actions">existing Redux actions are here</a>. If the action you need does not exist, you can <a href="https://developers.mattermost.com/contribute/redux/actions">follow these steps to add a new action</a>.</li>
+<li>The <a href="https://github.com/mattermost/mattermost-redux/tree/master/src/actions">existing Redux actions are here</a>. If the action you need does not exist, you can <a href="https://developers.mattermost.com/contribute/redux/actions/">follow these steps to add a new action</a>.</li>
 </ul>
 </li>
 <li>Replace each action call to use the actions in the props (ex. <code>this.props.actions.someAction()</code>).</li>

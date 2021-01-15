@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -151,6 +151,26 @@
         <div class="row">
             <div class="col-md-9 doc-content">
                 <h3>Mattermost Developer Blog</h3>
+                
+                    <div class="well well-sm">
+    <h5>
+        <a href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/">Instrumenting Go code via AST</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Oct 31, 2019
+            
+                
+                    by Eli Yukelzon
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>We&rsquo;ve been working on integrating call tracing in the server to provide exact measurements of all API and DB calls. We&rsquo;ve picked OpenTracing - a lovely open source project that allows you to setup trace reporting and enables you to support Distributed tracing.
+Instrumenting your API handler in Go is very straightforward - setup a connection to a collection server supporting the OpenTracing spec (we&rsquo;ve decided to use Jaeger) and wrap your code in spans.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
                 
                     <div class="well well-sm">
     <h5>
@@ -328,26 +348,6 @@ Not all Go opinions are enforced by the compiler. Some are documented in Effecti
     <hr>
     <p>Mattermost 5.2 will include major overhauls to the plugin system. Over the last six months of plugins being in beta, we&rsquo;ve received a lot of great feedback from our community and customers building Mattermost plugins, as well as from our core team. We&rsquo;ve taken this experience and feedback and used it to enhance our plugin system. This brings us a step closer to moving plugins out of beta and into a full stable release.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/plugins-v2/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="https://developers.mattermost.com/blog/subpath/">Subpath Support</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Jun 25, 2018
-            
-                
-                    by Jesse Hallam
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>Mattermost 5.1 will include support for serving Mattermost from subpaths. This allows Mattermost to be exposed at something like https://example.com/company/mattermost, with your proxy server exposing different services at other subpaths. Subpath support is configured via the Site URL.
-Using subpaths in production In production, after configuration and restart, the application server expects all HTTP requests to be anchored to the configured subpath. This includes static assets, API calls, and WebSockets. For convenience, the application server redirects any unexpected requests back into this subpath, e.</p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/subpath/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">

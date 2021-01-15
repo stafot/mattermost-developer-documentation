@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -151,6 +151,25 @@
         <div class="row">
             <div class="col-md-9 doc-content">
                 <h3>Mattermost Developer Blog</h3>
+                
+                    <div class="well well-sm">
+    <h5>
+        <a href="https://developers.mattermost.com/blog/maintaining-consistency-in-codebases-with-go-vet/">Maintaining Consistency in Codebases with Go vet</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Mar 17, 2020
+            
+                
+                    by Jesús Espino
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>Maintaining success in a large open-source project is one of the key objectives of Mattermost. We have hundreds of contributors and we want to create a project that could serve as a model in the Go community. Having said that, following idiomatic Go principles is the thing that we care most about while maintaining our code consistency. For this specific task, we utilized go vet and with this blog post, I would like to explain how we pushed the limits of this tool by extending it.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/maintaining-consistency-in-codebases-with-go-vet/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
                 
                     <div class="well well-sm">
     <h5>
@@ -332,26 +351,6 @@ Because we rely on contributors to do the translations, we want to make it easy 
     <p>Mattermost is starting a new Open Source campaign, this time around increasing the unit test coverage for the mmctl tool.
 The mmctl tool is a CLI application that mimics the commands and features of the current Mattermost CLI tool and uses the Mattermost REST API to communicate with the server. Using the tool, you can control and manage several Mattermost servers without having to access the specific machine on which the server is running.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/unit-testing-mmctl-commands/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/">Instrumenting Go code via AST</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Oct 31, 2019
-            
-                
-                    by Eli Yukelzon
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>We&rsquo;ve been working on integrating call tracing in the server to provide exact measurements of all API and DB calls. We&rsquo;ve picked OpenTracing - a lovely open source project that allows you to setup trace reporting and enables you to support Distributed tracing.
-Instrumenting your API handler in Go is very straightforward - setup a connection to a collection server supporting the OpenTracing spec (we&rsquo;ve decided to use Jaeger) and wrap your code in spans.</p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">

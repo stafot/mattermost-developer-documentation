@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -620,9 +620,10 @@
 <li><code>make test</code> - Runs the plugin&rsquo;s server tests and webapp tests</li>
 <li><code>make check-style</code> - Runs linting checks on the plugin&rsquo;s server and webapp folders</li>
 <li><code>make enable</code> - Enables the plugin on the Mattermost server</li>
-<li><code>make disable</code> - Disables the plugin on the Mattermost server</li>
-<li><code>make reset</code> - Disables and re-enables the plugin on the Mattermost server</li>
-<li><code>make debug-plugin</code> - Starts a <code>delve</code> process and attaches it to your running plugin</li>
+<li><code>make disable</code> - Disables the plugin on the Mattermost server.</li>
+<li><code>make reset</code> - Disables and re-enables the plugin on the Mattermost server.</li>
+<li><code>make attach-headless</code> - Starts a <code>delve</code> process and attaches it to your running plugin.</li>
+<li><code>make clean</code> - Force deletes the content of build-related files. Use when running into build issues.</li>
 </ul>
 <p>You can run the development build of the plugin by setting the environment variable <code>MM_DEBUG=1</code>, or prefixing the variable at the beginning of the <code>make</code> command. For example, <code>MM_DEBUG=1 make deploy</code> will deploy the development build of the plugin to your server, allowing you to have a more fluid debugging experience. To use the production build of the plugin instead, unset the <code>MM_DEBUG</code> environment variable before running the <code>make</code> commands.</p>
 <h3 id="developing-in-the-plugins-webapp-folder">Developing in the plugin&rsquo;s webapp folder&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#developing-in-the-plugins-webapp-folder"></i></a> </h3>
@@ -644,7 +645,7 @@
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh -R 80:localhost:8065 ssh.localhost.run
 </code></pre></div><p>An <code>http</code> URL pointing to your server should show in the terminal. The <code>https</code> version of this same URL should also work, which is what you will want to use for your webhook URLs. One disadvantage of using <code>localhost.run</code> is there is no request/response logging dasboard that is available with ngrok.</p>
 <h3 id="debugging-server-side-plugins-using-delve">Debugging server-side plugins using <code>delve</code>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#debugging-server-side-plugins-using-delve"></i></a> </h3>
-<p>Using the <code>make debug-plugin</code> command will allow you to use a debugger and step through the plugin&rsquo;s server code. A <a href="https://github.com/go-delve/delve">delve</a> process will be created and attach to your plugin. You can then use an IDE or debug console to connect to the <code>delve</code> process. If you are using VSCode, you can use this <code>launch.json</code> configuration to connect.</p>
+<p>Using the <code>make attach-headless</code> command will allow you to use a debugger and step through the plugin&rsquo;s server code. A <a href="https://github.com/go-delve/delve">delve</a> process will be created and attach to your plugin. You can then use an IDE or debug console to connect to the <code>delve</code> process. If you&rsquo;re using VSCode, you can use this <code>launch.json</code> configuration to connect.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;Attach remote&#34;</span>,
     <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;go&#34;</span>,
@@ -658,7 +659,7 @@
 <p>In order to be able to pause the debugger for more than 5 seconds, two modifications need to be done to the <code>mattermost-server</code> repository:</p>
 <ol>
 <li>
-<p>The plugin health check job needs to be disabled. This can be done by setting the server config setting <code>PluginSettings.EnableHealthCheck</code> to <code>false</code>. Note that if your plugin crashes, you&rsquo;ll need to restart it, using <code>make reset</code> for example. This command will also kill any currently running <code>delve</code> process. If you want to continue debugging with <code>delve</code>, you&rsquo;ll need to run <code>make debug-plugin</code> again after restarting the plugin.</p>
+<p>The plugin health check job needs to be disabled. This can be done by setting the server config setting <code>PluginSettings.EnableHealthCheck</code> to <code>false</code>. Note that if your plugin crashes, you&rsquo;ll need to restart it, using <code>make reset</code> for example. This command will also kill any currently running <code>delve</code> process. If you want to continue debugging with <code>delve</code>, you&rsquo;ll need to run <code>make attach-headless</code> again after restarting the plugin.</p>
 </li>
 <li>
 <p>The <code>go-plugin</code>'s RPC client needs to be configured with a larger timeout duration. You can change the code at <a href="https://github.com/mattermost/mattermost-server/blob/bf03f391e635b0b9b129768cec5ea13c571744fa/vendor/github.com/hashicorp/go-plugin/rpc_client.go#L63">mattermost-server/vendor/github.com/hashicorp/rpc_client.go</a> to increase the duration. Here&rsquo;s the change you can make to extend the timeout to 5 minutes:</p>
