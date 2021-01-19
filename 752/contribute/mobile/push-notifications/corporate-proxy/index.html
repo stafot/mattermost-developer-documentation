@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -1315,7 +1315,7 @@
 <h6 id="1---deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment">1 - Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#1---deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment"></i></a> </h6>
 <p>Some legacy corporate proxy configurations may be incompatible with the requirements of modern mobile architectures, such as the requirement of HTTP/2 requests from Apple to send push notifications to iOS devices.</p>
 <p>In this case, a <strong>post-proxy relay</strong> (which accepts network traffic from a corporate proxy such as NGINX, and transmits it to the final destination) can be deployed to take messages from the Mattermost server passing through your corporate IT proxy in the incompatible format, e.g. HTTP/1.1, transform it to HTTP/2 and relay it to its final destination, either to the <a href="https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1">Apple Push Notification Service (APNS)</a> and <a href="https://firebase.google.com/docs/cloud-messaging">Google Fire Cloud Messaging (FCM)</a> services.</p>
-<p>The <strong>post-proxy relay</strong> <a href="https://developers.mattermost.com/contribute/mobile/push-notifications/service">can be configured using the Mattermost Push Proxy installation guide</a> with connection restrictions to meet your custom security and compliance requirements.</p>
+<p>The <strong>post-proxy relay</strong> <a href="https://developers.mattermost.com/contribute/mobile/push-notifications/service/">can be configured using the Mattermost Push Proxy installation guide</a> with connection restrictions to meet your custom security and compliance requirements.</p>
 <p>You can also host in a trusted cloud environment such as AWS or Azure in place of a DMZ (this option may depend on your organization&rsquo;s internal policies).</p>
 <p><img src="https://developers.mattermost.com/img/mobile/post-proxy-relay.png" alt="image"></p>
 <h6 id="2---whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server">2 - Whitelist Mattermost push notification proxy to bypass your corporate proxy server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#2---whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server"></i></a> </h6>

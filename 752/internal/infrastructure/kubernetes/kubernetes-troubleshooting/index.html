@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -721,7 +721,7 @@
 <p>Make sure you have <code>kubectl</code> version 1.10 or later installed. If not, follow <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">these instructions</a>.</p>
 </li>
 <li>
-<p>Use your OneLogin account to retrieve AWS Keys for the main Mattermost AWS account following <a href="../../onelogin-aws">these instructions</a> to install onelogin-aws command line application.</p>
+<p>Use your OneLogin account to retrieve AWS Keys for the main Mattermost AWS account following <a href="../../onelogin-aws/">these instructions</a> to install onelogin-aws command line application.</p>
 </li>
 </ol>
 <p>Steps:</p>
@@ -759,8 +759,8 @@ mattermost-community-daily-jobserver-78f7cbf756-wls4f   1/1     Running   <span 
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ kubectl logs pods <span style="color:#a00">${</span><span style="color:#033">POD_NAME</span><span style="color:#a00">}</span> -n <span style="color:#a00">${</span><span style="color:#033">NAMESPACE</span><span style="color:#a00">}</span>
 </code></pre></div><h2 id="namespaces">Namespaces&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#namespaces"></i></a> </h2>
 <p>We are using two namespaces to deploy Mattermost</p>
-<pre><code>- `community` namespace holds the Mattermost deployment which uses the Release Branch or a stable release. The ingress is points to `https://community.mattermost.com` and `https://pre-release.mattermost.com`
-- `community-daily` namespace holds the Mattermost deployment which uses the `master` branch. The ingress points to `https://community-daily.mattermost.com`
+<pre><code>- `community` namespace holds the Mattermost deployment which uses the Release Branch or a stable release. The ingress is points to `https://community.mattermost.com/` and `https://pre-release.mattermost.com/`
+- `community-daily` namespace holds the Mattermost deployment which uses the `master` branch. The ingress points to `https://community-daily.mattermost.com/`
 </code></pre>
 <h2 id="troubleshooting">Troubleshooting&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#troubleshooting"></i></a> </h2>
 <p>This section will be populated nas we run into issues and find solutions to them.</p>

@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -619,20 +619,20 @@
 <p>A more detailed example is the <a href="https://github.com/mattermost/mattermost-plugin-demo">Demo Plugin</a>, which showcases many of the features of plugins.</p>
 <h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
 <p>The plugin manifest provides required metadata about the plugin, such as name and ID. It is defined in JSON or YAML. This is <code>plugin.json</code> in both the <a href="https://github.com/mattermost/mattermost-plugin-starter-template/blob/master/plugin.json">sample</a> and <a href="https://github.com/mattermost/mattermost-plugin-demo/blob/master/plugin.json">demo</a> plugins.</p>
-<p>See the <a href="https://developers.mattermost.com/extend/plugins/manifest-reference">manifest reference</a> for more information.</p>
+<p>See the <a href="https://developers.mattermost.com/extend/plugins/manifest-reference/">manifest reference</a> for more information.</p>
 <h3 id="server">Server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#server"></i></a> </h3>
 <p>The server component of a plugin is written in Go and runs as a subprocess of the Mattermost server process. The Go code extends the <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#MattermostPlugin">MattermostPlugin</a> struct that contains an <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API">API</a> and allows for the implementation of <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks">Hook</a> methods that enable the plugin to interact with the Mattermost server.</p>
 <p>The sample plugin implements this simply in <a href="https://github.com/mattermost/mattermost-plugin-starter-template/blob/master/server/plugin.go">plugin.go</a> and the demo plugin splits the API and hook usage throughout <a href="https://github.com/mattermost/mattermost-plugin-demo/tree/master/server">multiple files</a>.</p>
-<p>Read more about the server-side of plugins <a href="https://developers.mattermost.com/extend/plugins/server">here</a>.</p>
+<p>Read more about the server-side of plugins <a href="https://developers.mattermost.com/extend/plugins/server/">here</a>.</p>
 <h3 id="webdesktop-app">Web/Desktop App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#webdesktop-app"></i></a> </h3>
 <p>The web app component of a plugin is written in JavaScript with <a href="https://reactjs.org">React</a> and <a href="https://redux.js.org/">Redux</a>. The plugin&rsquo;s bundled JavaScript is included on the page and runs alongside the web app code as a <a href="https://developers.mattermost.com/extend/plugins/webapp/reference/#pluginclass">PluginClass</a> that has initialize and deinitialize methods available for implementation. The initialize function is passed through the <a href="https://developers.mattermost.com/extend/plugins/webapp/reference/#registry">registry</a> which allows the plugin to register React components, actions and hooks to modify and interact with the Mattermost web app.</p>
 <p>The sample plugin has a <a href="https://github.com/mattermost/mattermost-plugin-starter-template/blob/master/webapp/src/index.js">shell of an implemented PluginClass</a>, while the demo plugin <a href="https://github.com/mattermost/mattermost-plugin-demo/blob/master/webapp/src/plugin.jsx">contains a more complete example</a>.</p>
 <p>The desktop app is a shim of the web app, meaning any plugin that works in the web app will also work in the desktop app.</p>
-<p>Read more about the web app component of plugins <a href="https://developers.mattermost.com/extend/plugins/webapp">here</a>.</p>
+<p>Read more about the web app component of plugins <a href="https://developers.mattermost.com/extend/plugins/webapp/">here</a>.</p>
 <h3 id="mobile-app">Mobile App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mobile-app"></i></a> </h3>
 <p>Currently there is no mobile app component of plugins but it is planned for the near term.</p>
 <hr>
-<p>If you&rsquo;d like to better understand how plugins work, <a href="https://developers.mattermost.com/contribute/server/plugins">see the contributor documentation on plugins</a>.</p>
+<p>If you&rsquo;d like to better understand how plugins work, <a href="https://developers.mattermost.com/contribute/server/plugins/">see the contributor documentation on plugins</a>.</p>
 
 
                 </div>
