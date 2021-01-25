@@ -28,7 +28,7 @@ Prerequisites  Apktool is a tool for reverse engineering Android apk files. XMLS
       
       <guid>https://developers.mattermost.com/contribute/mobile/unsigned/ios/</guid>
       <description>With every Mattermost mobile app release, we publish the iOS unsigned ipa in in the GitHub Releases page, this guide describes the steps needed to modify and sign the app, so it can be distributed and installed on iOS devices.
-Requisites  macOS with Xcode installed. The minimum required version is 11.0. Install the Xcode command line tools: $ xcode-select --install  Set up your Certificate and Provisioning profiles as described in steps 1 &amp;amp; 2 for Run on iOS Devices in the Developer Setup.</description>
+Requisites  macOS with Xcode installed. The minimum required version is 11.0. Install the Xcode command line tools: $ xcode-select --install  Set up your Certificate and Provisioning profiles as described in steps 1 and 2 for Run on iOS Devices in the Developer Setup.</description>
     </item>
     
   </channel>
