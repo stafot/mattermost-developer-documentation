@@ -1030,7 +1030,7 @@ Feature teams will commit a total of 4 engineers plus a lead to SET for each rot
       <pubDate>Thu, 21 Jan 2021 00:00:00 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/</guid>
-      <description>With access to the enterprise source code, the developer build tooling now automates the setup of Prometheus and Grafana for performance monitoring. Even the canonical Grafana dashboards are setup without any manual configuration required!</description>
+      <description>With access to the Enterprise source code, the developer build tooling now automates the setup of Prometheus and Grafana for performance monitoring. Even the canonical Grafana dashboards are setup without any manual configuration required!</description>
     </item>
     
     <item>
