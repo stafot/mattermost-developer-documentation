@@ -157,7 +157,7 @@
                         <div class="blog-item__title">Streamlining Developer Access to Prometheus and Grafana<br> <small></small></div>
                         <div class="blog-item__info">
                             January 21, 2021
-                            <small class="blog-item__count">565 words</small>
+                            <small class="blog-item__count">577 words</small>
                         </div>
                     </div>
                     <hr>
@@ -181,7 +181,7 @@
 <li>invoking the <code>go</code> compiler to run the server code in your local repository</li>
 </ul>
 <h3 id="adding-prometheus--grafana">Adding Prometheus &amp; Grafana&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-prometheus--grafana"></i></a> </h3>
-<p>As of <a href="https://github.com/mattermost/mattermost-server/pull/16649,">https://github.com/mattermost/mattermost-server/pull/16649,</a> this build tooling now supports automating the setup of Prometheus and Grafana Docker containers. Together, these tools form the backbone of our <a href="https://docs.mattermost.com/deployment/metrics.html">Performance Monitoring (E20)</a> functionality, scraping metrics from Mattermost to help give enterprise customers insight into the performance of their clusters. Automating this setup makes it easier for developers to test in a production-like environment, and to help extend the monitoring available to customers.</p>
+<p>As of <a href="https://github.com/mattermost/mattermost-server/pull/16649,">https://github.com/mattermost/mattermost-server/pull/16649,</a> this build tooling now supports automating the setup of Prometheus and Grafana Docker containers. Together, these tools form the backbone of our <a href="https://docs.mattermost.com/deployment/metrics.html">Performance Monitoring (E20)</a> functionality, scraping metrics from Mattermost to help give enterprise customers insight into the performance of their clusters. Automating this setup makes it easier for developers to test in a production-like environment, to help extend the monitoring available to customers, and even to run our certain kinds of loadtests using our <a href="https://github.com/mattermost/mattermost-load-test-ng">loadtesting framework</a>.</p>
 <p>Since the corresponding Mattermost functionality is only available with access to the enterprise source code, these containers aren&rsquo;t enabled by default. To turn them on, export the following environment variable into your shell:</p>
 <pre><code>export ENABLED_DOCKER_SERVICES=&quot;mysql postgres inbucket prometheus grafana&quot;
 </code></pre><p>Alternatively, you can follow the instructions in <a href="https://github.com/mattermost/mattermost-server/blob/master/config.mk">config.mk</a>. (Note that it&rsquo;s not necessary to specify <code>minio</code>, <code>openldap</code> or <code>elasticsearch</code> &ndash; these are added automatically when an enterprise-enabled repository is detected.)</p>
