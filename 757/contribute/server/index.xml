@@ -24,13 +24,12 @@ For minimum software requirements, see the following table:
     </item>
     
     <item>
-      <title>Style guide</title>
+      <title>Go Style Guide</title>
       <link>https://developers.mattermost.com/contribute/server/style-guide/</link>
       <pubDate>Tue, 12 Jan 2021 16:00:00 +0530</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/server/style-guide/</guid>
-      <description>The overarching guideline is to just follow Effective Go along with CodeReviewComments. But currently, implementing those rules can lead to a clash between maintaining consistency and enforcing correctness. This document aims to codify some of the rules in the hope that any confusion is alleviated.
-Model package The model package is our public API which is consumed by multiple plugins. Having a non-idiomatic public API should not prevent us from improving the rest of the codebase.</description>
+      <description>Go is a more opinionated language than many others when it comes to coding style. The compiler enforces some basic stylistic elements, such as the removal of unused variables and imports. Many others are enforced by the gofmt tool, such as usage of white-space, semicolons, indentation, and alignment. The gofmt tool is run over all code in the Mattermost Server CI pipeline. Any code which is not consistent with the formatting enforced by gofmt will not be accepted into the repository.</description>
     </item>
     
     <item>

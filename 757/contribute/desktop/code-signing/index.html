@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -389,7 +389,7 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Style guide</a></span>
+                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Go Style Guide</a></span>
                             
                         </span>
                         <ul class="sub-menu" >
@@ -1351,7 +1351,7 @@ ba31f9e34b7ef88af514b0a23f1b72b8
 <h4 id="code-signing-on-windows">Code Signing on Windows&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#code-signing-on-windows"></i></a> </h4>
 <p>On Windows hosts, Microsoft&rsquo;s <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa387764(v=vs.85).aspx"><code>SignTool</code></a> utility can be used to code sign releases.</p>
 <p>To install <code>SignTool</code> you&rsquo;ll need the Microsoft Windows Software Development Kit (SDK). If you have a copy of Visual Studio installed, you might already have it included with the commandlines packaged with Visual Studio.</p>
-<p>After successfully <a href="https://developers.mattermost.com/contribute/desktop/developer-setup#building">building and packaging</a> the Mattermost Desktop application for Windows, you can run the signing command from the root of the repository:</p>
+<p>After successfully <a href="https://developers.mattermost.com/contribute/desktop/developer-setup/#building">building and packaging</a> the Mattermost Desktop application for Windows, you can run the signing command from the root of the repository:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SignTool sign /f <span style="color:#555">[</span>PATH_TO_THE_PFX_FILE<span style="color:#555">]</span> /p <span style="color:#555">[</span>PFX_FILE_PASSWORD<span style="color:#555">]</span> /tr http://tsa.starfieldtech.com /td SHA256 <span style="color:#555">[</span>PATH_TO_UNSIGNED_EXE<span style="color:#555">]</span>
 </code></pre></div><p>Where</p>
 <ul>
@@ -1366,7 +1366,7 @@ ba31f9e34b7ef88af514b0a23f1b72b8
 </code></pre></div><p>or via Apt on Ubuntu:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ sudo apt-get install openssl
 ~$ sudo apt-get install osslsigncode
-</code></pre></div><p>After successfully <a href="https://developers.mattermost.com/contribute/desktop/developer-setup#building">building and packaging</a> the Mattermost Desktop application for Windows, you can run the signing command from the root of the repository:</p>
+</code></pre></div><p>After successfully <a href="https://developers.mattermost.com/contribute/desktop/developer-setup/#building">building and packaging</a> the Mattermost Desktop application for Windows, you can run the signing command from the root of the repository:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ osslsigncode -pkcs12 <span style="color:#555">[</span>PATH_TO_THE_PFX_FILE<span style="color:#555">]</span> -pass <span style="color:#555">[</span>PFX_FILE_PASSWORD<span style="color:#555">]</span> -n <span style="color:#c30">&#34;Mattermost Desktop&#34;</span> -i https://mattermost.com -t http://timestamp.verisign.com/scripts/timstamp.dll -h sha2 -in <span style="color:#555">[</span>PATH_TO_UNSIGNED_EXE<span style="color:#555">]</span> -out <span style="color:#555">[</span>PATH_TO_WRITE_SIGNED_EXE_TO<span style="color:#555">]</span>
 Succeeded
 </code></pre></div><p>Where</p>
@@ -1465,7 +1465,7 @@ If you aren&rsquo;t a member of the Mattermost, Inc. team, talk to Joram Wilande
 <p>Finally, you&rsquo;ll need to install the <code>electron-osx-sign</code> utility via NPM:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ npm install -g electron-osx-sign
 </code></pre></div><h4 id="signing-the-release">Signing the Release&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#signing-the-release"></i></a> </h4>
-<p>Note that once the code signing certificate and private key have been imported as described in the <strong>Prerequisites</strong> section above, the application will automatically be code signed during <a href="https://developers.mattermost.com/contribute/desktop/developer-setup#building">building and packaging</a>. To confirm that this step has been completed, skip down to the <strong>Verifying the Signature</strong> section below.
+<p>Note that once the code signing certificate and private key have been imported as described in the <strong>Prerequisites</strong> section above, the application will automatically be code signed during <a href="https://developers.mattermost.com/contribute/desktop/developer-setup/#building">building and packaging</a>. To confirm that this step has been completed, skip down to the <strong>Verifying the Signature</strong> section below.
 If the application was built and packaged by somebody else, and you need to sign to the <code>.app</code> that they produced, you can run the signing command from the root of the repository:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ electron-osx-sign release/mac/Mattermost.app
  &gt; Name: Developer ID Application: Mattermost, Inc. <span style="color:#555">(</span>****<span style="color:#555">)</span>

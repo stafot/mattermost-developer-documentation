@@ -93,7 +93,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -739,9 +739,9 @@
 </ol>
 <h2 id="accessing-the-machines-on-aws">Accessing the Machines on AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#accessing-the-machines-on-aws"></i></a> </h2>
 <p>Most of the machines at the time of writing use an SSH key. If the description for the machine says it uses a key such as &ldquo;mm-admin&rdquo;, &ldquo;mm-ci&rdquo;, or &ldquo;mm-dev&rdquo;, you&rsquo;ll need to get that key from someone else.</p>
-<p>If the machine does not have an SSH key associated with it, you&rsquo;ll need to generate an SSH key and have it signed by <a href="../vault">Vault</a>.</p>
+<p>If the machine does not have an SSH key associated with it, you&rsquo;ll need to generate an SSH key and have it signed by <a href="../vault/">Vault</a>.</p>
 <h2 id="creating-machines-on-aws">Creating Machines on AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#creating-machines-on-aws"></i></a> </h2>
-<p>Unless the machine is for your personal use only, use <a href="../vault">Vault</a> to control access to it: Create it <em>without</em> a key, then give it the following user data.</p>
+<p>Unless the machine is for your personal use only, use <a href="../vault/">Vault</a> to control access to it: Create it <em>without</em> a key, then give it the following user data.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#09f;font-style:italic">#cloud-config</span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">bootcmd</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">  </span>- cloud-init-per<span style="color:#bbb"> </span>once<span style="color:#bbb"> </span>ssh-users-ca<span style="color:#bbb"> </span>echo<span style="color:#bbb"> </span><span style="color:#c30">&#34;TrustedUserCAKeys /etc/ssh/trusted_ca_keys.pub&#34;</span><span style="color:#bbb"> </span>&gt;&gt;<span style="color:#bbb"> </span>/etc/ssh/sshd_config<span style="color:#bbb">

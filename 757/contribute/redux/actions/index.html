@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -389,7 +389,7 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Style guide</a></span>
+                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Go Style Guide</a></span>
                             
                         </span>
                         <ul class="sub-menu" >
@@ -1454,7 +1454,7 @@ store.dispatch(loadAndSelectChannel(channelId));
 }
 </code></pre></div></li>
 <li>
-<p>If you&rsquo;re adding a new action type, add or update existing reducers to handle the new action. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers">here</a>.</p>
+<p>If you&rsquo;re adding a new action type, add or update existing reducers to handle the new action. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers/">here</a>.</p>
 </li>
 <li>
 <p>Add unit tests to make sure that the action has the intended effects on the store. Test location is adjacent to the file being tested. Example, for <code>src/actions/admin.js</code>, test is located at <code>src/actions/admin.test.js</code>.  Add test file if necessary. More information on unit testing reducers is available below.</p>
@@ -1492,7 +1492,7 @@ store.dispatch(loadAndSelectChannel(channelId));
 }
 </code></pre></div></li>
 <li>
-<p>Make the necessary changes to the reducers to handle your action as well as adding a reducer to update the <code>requests</code> section of the store. In most cases, you can use the <code>handleRequest</code> and <code>initialRequestState</code> helper functions to construct the reducer for you. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers">here</a>.</p>
+<p>Make the necessary changes to the reducers to handle your action as well as adding a reducer to update the <code>requests</code> section of the store. In most cases, you can use the <code>handleRequest</code> and <code>initialRequestState</code> helper functions to construct the reducer for you. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers/">here</a>.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> getUser(state <span style="color:#555">=</span> initialRequestState(), action) {
     <span style="color:#069;font-weight:bold">return</span> handleRequest(
         UserTypes.USER_REQUEST,
@@ -1518,7 +1518,7 @@ store.dispatch(loadAndSelectChannel(channelId));
 <li>Mock any actions that would contact the server. This is done using the <a href="https://github.com/node-nock/nock">nock server mocking framework</a> to mock the server.</li>
 <li>Dispatch the action and look for the results.</li>
 </ol>
-<p>For more information on running the unit tests, see the <a href="https://developers.mattermost.com/contribute/redux/developer-workflow">Developer Workflow documentation</a> or check out the <a href="https://github.com/mattermost/mattermost-redux/blob/master/README.md">README</a> in the mattermost-redux repository.</p>
+<p>For more information on running the unit tests, see the <a href="https://developers.mattermost.com/contribute/redux/developer-workflow/">Developer Workflow documentation</a> or check out the <a href="https://github.com/mattermost/mattermost-redux/blob/master/README.md">README</a> in the mattermost-redux repository.</p>
 
 
                 </div>

@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Style guide</title>
+<title> Go Style Guide</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <meta http-equiv="content-language" content="en-us" />
 
@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -152,7 +152,7 @@
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Style guide
+        Go Style Guide
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -393,7 +393,7 @@
                         <span class="item active">
                             <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/contribute/server/style-guide/"> Style guide</a></span>
+                                <a class="active" href="https://developers.mattermost.com/contribute/server/style-guide/"> Go Style Guide</a></span>
                             
                         </span>
                         <ul class="sub-menu" style="display: block">
@@ -1328,16 +1328,21 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Style guide
+                        Go Style Guide
                     </h1>
-                    <p>The overarching guideline is to just follow <a href="https://golang.org/doc/effective_go.html">Effective Go</a> along with <a href="https://github.com/golang/go/wiki/CodeReviewComments">CodeReviewComments</a>. But currently, implementing those rules can lead to a clash between maintaining consistency and enforcing correctness. This document aims to codify some of the rules in the hope that any confusion is alleviated.</p>
+                    <p>Go is a more opinionated language than many others when it comes to coding style. The compiler enforces some basic stylistic elements, such as the removal of unused variables and imports. Many others are enforced by the <code>gofmt</code> tool, such as usage of white-space, semicolons, indentation, and alignment. The <code>gofmt</code> tool is run over all code in the Mattermost Server CI pipeline. Any code which is not consistent with the formatting enforced by <code>gofmt</code> will not be accepted into the repository.</p>
+<p>Despite this, there are still many areas of coding style which are not dictated by these tools. Rather than reinventing the wheel, we are adopting <a href="https://golang.org/doc/effective_go.html">Effective Go</a> as a basis for our style guide. On top of that, we also follow the guidelines laid out by the Go project at <a href="https://github.com/golang/go/wiki/CodeReviewComments">CodeReviewComments</a>.</p>
+<p>However, at present, some of the guidelines from these sources come into conflict with existing patterns that are present in our codebase which cannot immediately be corrected due to the need to maintain backward compatibility.</p>
+<p>This document, which should be read in conjunction with <a href="https://golang.org/doc/effective_go.html">Effective Go</a> and <a href="https://github.com/golang/go/wiki/CodeReviewComments">CodeReviewComments</a>, outlines the small number of exceptions we make to maintain backward compatibility, as well as a number of additional stylistic rules we have adopted on top of those external recommendations.</p>
 <h3 id="model-package">Model package&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#model-package"></i></a> </h3>
-<p>The <code>model</code> package is our public API which is consumed by multiple plugins. Having a non-idiomatic public API should not prevent us from improving the rest of the codebase. More code keeps getting added, and it becomes practically impossible to fix all of the issues at once. Instead, we choose to have consistency in that package only if changing it makes it inconsistent from an API perspective. This includes both breaking changes and any inconsistencies that might appear in godocs.</p>
-<p>There are some rules which don’t need an API change and can be used everywhere. In all other packages, we should enforce correctness. Once we move to v6 of the <code>mattermost-server</code>, we can change the remaining places to match with the rest of the codebase.</p>
-<p>This does not, however, mean that a developer has to fix any surrounding code to fix the style issues too. It’s encouraged to keep fixing things as we go, but it&rsquo;s not compulsory to do so. There&rsquo;s also no need for a reviewer to ask for that change if it&rsquo;s not something that&rsquo;s added/edited in that PR.</p>
-<p>The following goes into some of the specific anti-patterns that have crept in our codebase and we should aim to correct. The rules which are exempt from being applied in the model package are specifically indicated.</p>
+<p>The <code>model</code> package is our public API which is consumed by many plugins and third-party integrations. The need to maintain backward compatibility for these external users of the <code>model</code> package prevents us from immediately bringing it into compliance with some of the rules outlined in this document.</p>
+<p>In order to avoid delaying the adoption of these rules in the wider codebase, we have chosen to temporarily exempt only the <code>model</code> package from certain rules (indicated below). However, outside of the <code>model</code> package, these rules should be followed in all new or modified code.</p>
+<h3 id="application-of-guidelines">Application of guidelines&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#application-of-guidelines"></i></a> </h3>
+<p>In addition to the specific exceptions made for backward compatibility in the <code>model</code> package, all new commits should also follow the rules as outlined in this and the linked documents, for both new and modified code.</p>
+<p>This does not, however, mean that a developer is <em>required</em> to fix any surrounding code that contravenes the rules in the style guide. It&rsquo;s encouraged to keep fixing things as you go, but it is not compulsory to do so. Reviewers should refrain from asking for stylistic changes in surrounding code if the submitter has not included them in their pull request.</p>
 <h2 id="guidelines">Guidelines&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#guidelines"></i></a> </h2>
-<h3 id="default-to-sync-instead-of-async">Default to sync instead of async&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#default-to-sync-instead-of-async"></i></a> </h3>
+<h3 id="functional">Functional&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functional"></i></a> </h3>
+<h4 id="default-to-sync-instead-of-async">Default to sync instead of async&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#default-to-sync-instead-of-async"></i></a> </h4>
 <p>Always prefer synchronous functions by default. Async calls are hard to get right. They have no control over goroutine lifetimes and introduce data races. If you think something needs to be asynchronous, measure it and prove it. Ask these questions:</p>
 <ul>
 <li>Does it improve performance? If so, by how much?</li>
@@ -1346,20 +1351,38 @@
 <li>What about back-pressure?</li>
 <li>What should be my concurrency model?</li>
 </ul>
-<p>Avoid creating one-off goroutines without knowing when/how they exit. They cause problems that are hard to debug, and can often cause performance degradation rather than an improvement. Have a look at:</p>
+<p>Do not create one-off goroutines without knowing when/how they exit. They cause problems that are hard to debug, and can often cause performance degradation rather than an improvement. Have a look at:</p>
 <ul>
 <li><a href="https://github.com/golang/go/wiki/CodeReviewComments#goroutine-lifetimes">https://github.com/golang/go/wiki/CodeReviewComments#goroutine-lifetimes</a></li>
 <li><a href="https://github.com/golang/go/wiki/CodeReviewComments#synchronous-functions">https://github.com/golang/go/wiki/CodeReviewComments#synchronous-functions</a></li>
 </ul>
-<h3 id="pointers-to-slices-exempt-from-model">Pointers to slices (exempt from model)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#pointers-to-slices-exempt-from-model"></i></a> </h3>
-<p>Avoid using pointers to slices. Slices are already reference types which point to an underlying array. If you want a function to modify a slice, then return that slice from the function, rather than passing a pointer.</p>
-<h3 id="camelcase-variablesconstantshttpsgithubcomgolanggowikicodereviewcommentsmixed-caps-exempt-from-model"><a href="https://github.com/golang/go/wiki/CodeReviewComments#mixed-caps">CamelCase variables/constants</a> (exempt from model)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#camelcase-variablesconstantshttpsgithubcomgolanggowikicodereviewcommentsmixed-caps-exempt-from-model"></i></a> </h3>
-<p>We prefer to use names like WebsocketEventPostEdited, not WEBSOCKET_EVENT_POST_EDITED.</p>
-<h3 id="empty-string-check">Empty string check&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#empty-string-check"></i></a> </h3>
-<p>Use == &quot;&rdquo; to check empty strings, not len(s) == 0. This will be enforced with a linter soon.</p>
-<h3 id="reduce-indentationhttpsgithubcomgolanggowikicodereviewcommentsindent-error-flow"><a href="https://github.com/golang/go/wiki/CodeReviewComments#indent-error-flow">Reduce indentation</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#reduce-indentationhttpsgithubcomgolanggowikicodereviewcommentsindent-error-flow"></i></a> </h3>
+<h4 id="pointers-to-slices">Pointers to slices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#pointers-to-slices"></i></a> </h4>
+<p>Do not use pointers to slices. Slices are already reference types which point to an underlying array. If you want a function to modify a slice, then return that slice from the function, rather than passing a pointer.</p>
+<p>This rule is not yet fully applied to the <code>model</code> package due to backward compatibility requirements.</p>
+<h4 id="avoid-creating-more-tojson-methods">Avoid creating more ToJSON methods&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#avoid-creating-more-tojson-methods"></i></a> </h4>
+<p>Do not create new <code>ToJSON</code> methods for model structs. Instead, just use <code>json.Marshal</code> at the call site. This has two major benefits:</p>
+<ul>
+<li>It avoids bugs due to the suppression of the JSON error which happens with <code>ToJSON</code> methods (we&rsquo;ve had a number of bugs caused by this).</li>
+<li>It&rsquo;s a common pattern to pass the output to something (like a network call) which accepts a byte-slice, leading to a double conversion from byte-slice to string to a byte-slice again if <code>ToJSON</code> methods are used.</li>
+</ul>
+<h4 id="interfaceshttpsgithubcomgolanggowikicodereviewcommentsinterfaces"><a href="https://github.com/golang/go/wiki/CodeReviewComments#interfaces">Interfaces</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#interfaceshttpsgithubcomgolanggowikicodereviewcommentsinterfaces"></i></a> </h4>
+<ul>
+<li>Return structs, accept interfaces.</li>
+<li>Interface names should end with “-er”. This is not a strict rule. Just a guideline which indicates the fact that interface functionalities are designed around the concept of “doing” something.</li>
+<li>Try not to define interfaces on the implementer side of an API &ldquo;for mocking&rdquo;; instead, design the API so that it can be tested using the public API of the real implementation.</li>
+</ul>
+<p>As an example, if you&rsquo;re trying to integrate with a third-party service, it&rsquo;s tempting to create an interface and use that in the code so that it can be easily mocked in the test. This is an anti-pattern and masks real bugs. Instead, you should try to use the real implementation via a docker container or if that&rsquo;s not feasible, mock the network response coming from the external process.</p>
+<p>Another common pattern is to preemptively declare the interface in the source package itself, so that the consumer can just directly import the interface. Instead, try to declare the interface in the package which is going to consume the functionality. Often, different packages have non-overlapping set of functionalities to consume. If you do find several consumers of the package, remember that interfaces can be composed. So define small chunks of functionalities in different interfaces, and let consumers compose them as needed. Take a look at the set of interfaces in the <a href="https://golang.org/pkg/io/">io</a> package.</p>
+<p>These are just guidelines and not strict rules. Understand your use case and apply them appropriately.</p>
+<h3 id="stylistic">Stylistic&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#stylistic"></i></a> </h3>
+<h4 id="camelcase-variablesconstantshttpsgithubcomgolanggowikicodereviewcommentsmixed-caps"><a href="https://github.com/golang/go/wiki/CodeReviewComments#mixed-caps">CamelCase variables/constants</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#camelcase-variablesconstantshttpsgithubcomgolanggowikicodereviewcommentsmixed-caps"></i></a> </h4>
+<p>We use CamelCase names like WebsocketEventPostEdited, not WEBSOCKET_EVENT_POST_EDITED.</p>
+<p>This rule is not yet fully applied to the <code>model</code> package due to backward compatibility requirements.</p>
+<h4 id="empty-string-check">Empty string check&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#empty-string-check"></i></a> </h4>
+<p>Use <code>foo == &quot;&quot;</code> to check for empty strings, not <code>len(foo) == 0</code>.</p>
+<h4 id="reduce-indentationhttpsgithubcomgolanggowikicodereviewcommentsindent-error-flow"><a href="https://github.com/golang/go/wiki/CodeReviewComments#indent-error-flow">Reduce indentation</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#reduce-indentationhttpsgithubcomgolanggowikicodereviewcommentsindent-error-flow"></i></a> </h4>
 <p>If there are multiple return statements in an if-else statement, remove the else block and outdent it.</p>
-<p>This is a sample code from <code>mlog/human/parser.go</code>:</p>
+<p>This is an example from <code>mlog/human/parser.go</code>:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">// Look for an initial &#34;{&#34;
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span> token, err <span style="color:#555">:=</span> dec.<span style="color:#c0f">Token</span>(); err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
 	<span style="color:#069;font-weight:bold">return</span> result, err
@@ -1378,30 +1401,69 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 <span style="color:#069;font-weight:bold">if</span> !ok <span style="color:#555">||</span> d <span style="color:#555">!=</span> <span style="color:#c30">&#39;{&#39;</span> {
 	<span style="color:#069;font-weight:bold">return</span> result, fmt.<span style="color:#c0f">Errorf</span>(<span style="color:#c30">&#34;input is not a JSON object, found: %v&#34;</span>, token)
 }
-</code></pre></div><h3 id="avoid-creating-more-tojson-methods">Avoid creating more ToJSON methods&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#avoid-creating-more-tojson-methods"></i></a> </h3>
-<p>We should avoid creating ToJSON methods for model structs. And just use <code>json.Marshal</code> at the call site. This has two main benefits:</p>
-<ul>
-<li>We’ve had to fix multiple bugs due to suppressing the JSON error which happens with ToJSON methods.</li>
-<li>A lot of times, we pass the output to something (like a network call) which accepts a byte slice, leading to a double conversion from byte-slice to string to a byte-slice again.</li>
-</ul>
-<h3 id="initialismshttpsgithubcomgolanggowikicodereviewcommentsinitialisms-exempt-from-model"><a href="https://github.com/golang/go/wiki/CodeReviewComments#initialisms">Initialisms</a> (exempt from model)&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#initialismshttpsgithubcomgolanggowikicodereviewcommentsinitialisms-exempt-from-model"></i></a> </h3>
-<p>We prefer to use userID rather than userId. Same for abbreviations; HTTP is preferred over Http or http. This will be enforced with the linter soon.</p>
-<h3 id="interfaceshttpsgithubcomgolanggowikicodereviewcommentsinterfaces"><a href="https://github.com/golang/go/wiki/CodeReviewComments#interfaces">Interfaces</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#interfaceshttpsgithubcomgolanggowikicodereviewcommentsinterfaces"></i></a> </h3>
-<ul>
-<li>Return structs, accept interfaces.</li>
-<li>Interface names should end with “-er”. This is not a strict rule. Just a guideline which indicates the fact that interface functionalities are designed around the concept of “doing” something.</li>
-<li>Try not to define interfaces on the implementer side of an API &ldquo;for mocking&rdquo;; instead, design the API so that it can be tested using the public API of the real implementation.</li>
-</ul>
-<h3 id="receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"><a href="https://github.com/golang/go/wiki/CodeReviewComments#receiver-names">Receiver Names</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"></i></a> </h3>
-<p>The name of a method&rsquo;s receiver should be a reflection of its identity; often a one or two letter abbreviation of its type suffices (such as &ldquo;c&rdquo; or &ldquo;cl&rdquo; for &ldquo;Client&rdquo;). Don&rsquo;t use generic names such as &ldquo;me&rdquo;, &ldquo;this&rdquo; or &ldquo;self&rdquo;, identifiers typical of object-oriented languages that give the method a special meaning.</p>
-<p>The above was just a short list of existing issues in the repo which should be rectified. In general, the broad list of rules are already available at <a href="https://golang.org/doc/effective_go.html">Effective Go</a> and <a href="https://github.com/golang/go/wiki/CodeReviewComments.">CodeReviewComments</a>. They should be referred to whenever doing a code review.</p>
+</code></pre></div><h4 id="initialismshttpsgithubcomgolanggowikicodereviewcommentsinitialisms"><a href="https://github.com/golang/go/wiki/CodeReviewComments#initialisms">Initialisms</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#initialismshttpsgithubcomgolanggowikicodereviewcommentsinitialisms"></i></a> </h4>
+<p>Use <code>userID</code> rather than <code>userId</code>. Same for abbreviations; <code>HTTP</code> is preferred over <code>Http</code> or <code>http</code>.</p>
+<p>This rule is not yet fully applied to the <code>model</code> package due to backward compatibility requirements.</p>
+<h4 id="receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"><a href="https://github.com/golang/go/wiki/CodeReviewComments#receiver-names">Receiver Names</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"></i></a> </h4>
+<p>The name of a method&rsquo;s receiver should be a reflection of its identity; often a one or two letter abbreviation of its type suffices (such as &ldquo;c&rdquo; or &ldquo;cl&rdquo; for &ldquo;Client&rdquo;). Don&rsquo;t use generic names such as &ldquo;me&rdquo;, &ldquo;this&rdquo;, or &ldquo;self&rdquo; identifiers typical of object-oriented languages that give the variable a special meaning.</p>
 <h3 id="log-levels">Log levels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#log-levels"></i></a> </h3>
-<p>The ultimate goal of logging is to provide observability. Hence, logs have a very important role for the application to communicate back to us in a healthy way. The most important features of effective communication is that it should be meaningful and concise. To achieve this, a log line should conform one of the definitions below.</p>
-<p><strong>Critical</strong>: It represents the most urgent situations for the service to work properly and it is unable to meet even the minimum requirements. When a critical thing happens it is expected the service to stop.</p>
-<p><strong>Error</strong>: Unlike “Critical”, in case of an error log, something important happened but it does not cause loss of the service. The administrator should investigate the incident. Hence it should provide enough information to start an investigation. An error can be a loss of service for a single user or something affecting a part of the application but does not break the service entirely.</p>
-<p><strong>Warn</strong>: Something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of function. A possible investigation should be carried out at some point but is not urgent. This level of messages should be as less as possible since warnings are quite a gray area and we want to be more clear about logs.</p>
-<p><strong>Info</strong>: These logs correspond to normal application behavior even if it leads to an error to the end user. We don&rsquo;t care too much about these as they are normal operations, but they provide useful information about what is going on. Eg. It might interest the administrator as they probably want to see if a service like mailservice is started or stopped.</p>
-<p><strong>Debug</strong>: These messages probably won’t interest the administrator. It should contain enough diagnostic information so that it could be used for an effective debugging.</p>
+<p>The purpose of logging is to provide observability - it enables the application communicate back to the administrator about what is happening. To communicate effectively logs should be meaningful and concise. To achieve this, log lines should conform to one of the definitions below:</p>
+<p><strong>Critical:</strong> This represents the most urgent situations for the service to work properly and it is unable to meet even the minimum requirements. When a critical thing happens it is expected that the service will stop.</p>
+<p>As an example, the code block below demonstrates a critical situation where the server creation is failed. This error causes total failure of the service.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">runServer</span>(..) {
+	..
+	server, err <span style="color:#555">:=</span> app.<span style="color:#c0f">NewServer</span>(options<span style="color:#555">...</span>)
+	<span style="color:#069;font-weight:bold">if</span> err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		mlog.<span style="color:#c0f">Critical</span>(err.<span style="color:#c0f">Error</span>())
+		<span style="color:#069;font-weight:bold">return</span>
+	}
+	..
+}
+</code></pre></div><p><strong>Error:</strong> This indicates that something important happened to the system, but it does not cause loss of service. The administrator should investigate the incident. Hence it should provide enough information to start an investigation. An error can be a loss of service for a single user or something affecting a part of the application but does not break the service entirely.</p>
+<p>In the following example we log as error level since it is affecting only a part of the application.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">SyncPlugins</span>(..) {
+	..
+	reader, appErr <span style="color:#555">:=</span> a.<span style="color:#c0f">FileReader</span>(plugin.path)
+	<span style="color:#069;font-weight:bold">if</span> appErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		mlog.<span style="color:#c0f">Error</span>(<span style="color:#c30">&#34;Failed to open plugin bundle from file store.&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;bundle&#34;</span>, plugin.path), mlog.<span style="color:#c0f">Err</span>(appErr))
+		<span style="color:#069;font-weight:bold">return</span>
+	}
+	..
+}
+</code></pre></div><p><strong>Warn:</strong> Something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of function. A possible investigation should be carried out at some point but is not urgent. This level of messages should be as detailed as possible since warnings are quite a gray area and we want to be more clear about logs.</p>
+<p>One of the most prominent features of warning logs is that the operation can be continued in case of an error.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">UpdateUserRoles</span>(..) {
+	..
+	<span style="color:#069;font-weight:bold">if</span> result <span style="color:#555">:=</span> <span style="color:#555">&lt;-</span>schan; result.NErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		<span style="color:#09f;font-style:italic">// soft error since the user roles were still updated
+</span><span style="color:#09f;font-style:italic"></span>		mlog.<span style="color:#c0f">Warn</span>(<span style="color:#c30">&#34;Error during updating user roles&#34;</span>, mlog.<span style="color:#c0f">Err</span>(result.NErr))
+	}
+
+	a.<span style="color:#c0f">InvalidateCacheForUser</span>(userId)
+	..
+}
+</code></pre></div><p><strong>Info:</strong> These logs correspond to normal application behavior even if it results in an error for the end user. These are not critical as they are normal operations, but they provide useful information about what is going on.</p>
+<p>For example, information about services stopping and starting may be relevant to administrators.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (s <span style="color:#555">*</span>Schedulers) <span style="color:#c0f">Start</span>(..) {
+	s.startOnce.<span style="color:#c0f">Do</span>(<span style="color:#069;font-weight:bold">func</span>() {
+		mlog.<span style="color:#c0f">Info</span>(<span style="color:#c30">&#34;Starting schedulers.&#34;</span>)
+		..
+	})
+	..
+}
+</code></pre></div><p><strong>Debug:</strong> These messages contain enough diagnostic information to be used for effective debugging.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (worker <span style="color:#555">*</span>Worker) <span style="color:#c0f">Run</span>() {
+	mlog.<span style="color:#c0f">Debug</span>(<span style="color:#c30">&#34;Worker started&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;worker&#34;</span>, worker.name))
+	..
+}
+</code></pre></div><h2 id="proposing-a-new-rule">Proposing a new rule&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#proposing-a-new-rule"></i></a> </h2>
+<p>To propose a new rule, follow the process below:</p>
+<ul>
+<li>Add it to the agenda in the <a href="https://community.mattermost.com/core/channels/developers-server">Server</a> Guild meeting, and propose it.</li>
+<li>If it gets accepted, create a go-vet rule (if possible), or a golangci-lint rule to prevent new regressions from creeping in.</li>
+<li>Fix all existing issues.</li>
+<li>Add it to this guide.</li>
+</ul>
 
 
                 </div>

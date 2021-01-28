@@ -93,7 +93,7 @@
             
             
                 
-                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started">Contribute</a></li>
+                    <li class="active"><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
                 
             
         
@@ -101,7 +101,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/integrate/getting-started">Integrate</a></li>
+                    <li><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
                 
             
         
@@ -109,7 +109,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/extend/getting-started">Extend</a></li>
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
                 
             
         
@@ -117,7 +117,7 @@
             
             
                 
-                    <li><a href="https://developers.mattermost.com/blog">Blog</a></li>
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
                 
             
         
@@ -389,7 +389,7 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Style guide</a></span>
+                                <a href="https://developers.mattermost.com/contribute/server/style-guide/"> Go Style Guide</a></span>
                             
                         </span>
                         <ul class="sub-menu" >
@@ -1341,7 +1341,7 @@
 
 <span style="color:#069;font-weight:bold">const</span> selectedPost <span style="color:#555">=</span> getSelectedPost(state);
 <span style="color:#069;font-weight:bold">const</span> postsInSelectedThread <span style="color:#555">=</span> getPostsInThread(state, selectedPost.root_id);
-</code></pre></div><p>For an example of how a selector like <code>makeGetPostInThread</code> could be used with React, see <a href="https://developers.mattermost.com/contribute/redux/react-redux">here</a>.</p>
+</code></pre></div><p>For an example of how a selector like <code>makeGetPostInThread</code> could be used with React, see <a href="https://developers.mattermost.com/contribute/redux/react-redux/">here</a>.</p>
 <h2 id="adding-a-selector">Adding a Selector&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-a-selector"></i></a> </h2>
 <p>The most basic selector is just a function that takes in the state and returns a part of it without any memoization or complicated logic. All these provide is that they make it easier to access part of the store without having to remember exactly where the data is.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">function</span> getCurrentUserId(state) {
@@ -1385,7 +1385,7 @@
 <li>Construct the initial test state. Note that this doesn&rsquo;t need to be shared between tests as it is in many other cases.</li>
 <li>Pass the state into the selector and check the results. The tests for some more complicated selectors do this multiple times while changing different parts of the store to ensure that the memoization is working correctly since it can be very important in certain areas of the app.</li>
 </ol>
-<p>For more information on running the unit tests, see the <a href="https://developers.mattermost.com/contribute/redux/developer-workflow">Developer Workflow documentation</a> or check out the <a href="https://github.com/mattermost/mattermost-redux/blob/master/README.md">README</a> in the mattermost-redux repository.</p>
+<p>For more information on running the unit tests, see the <a href="https://developers.mattermost.com/contribute/redux/developer-workflow/">Developer Workflow documentation</a> or check out the <a href="https://github.com/mattermost/mattermost-redux/blob/master/README.md">README</a> in the mattermost-redux repository.</p>
 
 
                 </div>

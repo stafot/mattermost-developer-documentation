@@ -240,7 +240,7 @@ For minimum software requirements, see the following table:
       
       <guid>https://developers.mattermost.com/contribute/mobile/unsigned/ios/</guid>
       <description>With every Mattermost mobile app release, we publish the iOS unsigned ipa in in the GitHub Releases page, this guide describes the steps needed to modify and sign the app, so it can be distributed and installed on iOS devices.
-Requisites  macOS with Xcode installed. The minimum required version is 11.0. Install the Xcode command line tools: $ xcode-select --install  Set up your Certificate and Provisioning profiles as described in steps 1 &amp;amp; 2 for Run on iOS Devices in the Developer Setup.</description>
+Requisites  macOS with Xcode installed. The minimum required version is 11.0. Install the Xcode command line tools: $ xcode-select --install  Set up your Certificate and Provisioning profiles as described in steps 1 and 2 for Run on iOS Devices in the Developer Setup.</description>
     </item>
     
     <item>
@@ -302,13 +302,12 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
     </item>
     
     <item>
-      <title>Style guide</title>
+      <title>Go Style Guide</title>
       <link>https://developers.mattermost.com/contribute/server/style-guide/</link>
       <pubDate>Tue, 12 Jan 2021 16:00:00 +0530</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/server/style-guide/</guid>
-      <description>The overarching guideline is to just follow Effective Go along with CodeReviewComments. But currently, implementing those rules can lead to a clash between maintaining consistency and enforcing correctness. This document aims to codify some of the rules in the hope that any confusion is alleviated.
-Model package The model package is our public API which is consumed by multiple plugins. Having a non-idiomatic public API should not prevent us from improving the rest of the codebase.</description>
+      <description>Go is a more opinionated language than many others when it comes to coding style. The compiler enforces some basic stylistic elements, such as the removal of unused variables and imports. Many others are enforced by the gofmt tool, such as usage of white-space, semicolons, indentation, and alignment. The gofmt tool is run over all code in the Mattermost Server CI pipeline. Any code which is not consistent with the formatting enforced by gofmt will not be accepted into the repository.</description>
     </item>
     
     <item>
@@ -339,7 +338,7 @@ sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanag
       <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/extend/plugins/developer-workflow/</guid>
-      <description>Common make commands for working with plugins  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server make reset - Disables and re-enables the plugin on the Mattermost server make debug-plugin - Starts a delve process and attaches it to your running plugin make clean - Force deletes the content of build-related files.</description>
+      <description>Common make commands for working with plugins  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server.</description>
     </item>
     
     <item>
@@ -1020,7 +1019,7 @@ Blog posts can cover a wide range of topics, such as:
       
       <guid>https://developers.mattermost.com/internal/rd-teams/</guid>
       <description>Leadership  Corey Hulen - CTO Chris Overton - VP Engineering Chandar Venkataraman - CPO  Feature Teams Feature teams are full-stack teams owning collections of features within the Mattermost product.
-Enterprise Features Team  Scott Bishel - Engineering Lead Martin Kraft - Engineeer Hossein Ahmadian - Engineer Anurag Shivarathri - Engineer Dennis Kittrell - Product Manager Furqan Malik - QA SDET Michael Gamble - UX Designer  Core Features Team  Scott Bishel - Engineering Lead Jesus Espino - Engineer Eli Yukelzon - Engineer Ashish Bhate - Engineer Caleb Roseland - Engineer Eric Sethna - Product Manager Ogi Marusic - QA Andrew Brown - UX Designer  Integrations Team  Catalin Tomai - Engineering Lead Lev Brouk - Engineer Jason Frerich - Engineer Michael Kochell - Engineer Shota Gvinepadze - Engineer Ben Schumacher - Engineer Daniel Espino Garcia - Engineer Aaron Rothschild - Product Manager Dylan Haussermann - QA Justine Geffen - Technical Writer  Workflows Team  Jesse Hallam - Engineering Lead Christopher Speller - Engineer Christopher Poile - Engineer Alejandro García Montoro - Engineer Ian Tao - Product Manager Prapti Shrestha - QA SDET Justine Geffen - Technical Writer  Cloud Features Team  Maria Nuñez - Engineering Lead Mario de Frutos - Engineer Nick Misasi - Engineer Adam Clarkson - Product Manager Steve Mudie - QA Matt Birtch - UX Designer  Platform Teams Platform Teams are focused on an individual technical specialisation or layer of the Mattermost software stack.</description>
+Enterprise Features Team  Scott Bishel - Engineering Lead Martin Kraft - Engineeer Hossein Ahmadian - Engineer Anurag Shivarathri - Engineer Furqan Malik - QA SDET Katie Wiersgalla - Product Manager Michael Gamble - UX Designer Carrie Warner - Technical Writer  Core Features Team  Scott Bishel - Engineering Lead Jesus Espino - Engineer Eli Yukelzon - Engineer Ashish Bhate - Engineer Caleb Roseland - Engineer Ogi Marusic - QA Eric Sethna - Product Manager Andrew Brown - UX Designer Carrie Warner - Technical Writer  Integrations Team  Catalin Tomai - Engineering Lead Lev Brouk - Engineer Jason Frerich - Engineer Michael Kochell - Engineer Shota Gvinepadze - Engineer Ben Schumacher - Engineer Daniel Espino Garcia - Engineer Dylan Haussermann - QA Aaron Rothschild - Product Manager Abhijit Singh - UX Designer Justine Geffen - Technical Writer  Workflows Team  Jesse Hallam - Engineering Lead Christopher Speller - Engineer Christopher Poile - Engineer Alejandro García Montoro - Engineer Prapti Shrestha - QA SDET Ian Tao - Product Manager Alex Siclari - UX Designer Justine Geffen - Technical Writer  Cloud Features Team  Maria Nuñez - Engineering Lead Allan Guwatudde - Engineer Mario de Frutos - Engineer Pablo Vélez Vidal - Engineer Nick Misasi - Engineer Steve Mudie - QA Adam Clarkson - Product Manager Matt Birtch - UX Designer Carrie Warner - Technical Writer  Platform Teams Platform Teams are focused on an individual technical specialisation or layer of the Mattermost software stack.</description>
     </item>
     
     <item>
