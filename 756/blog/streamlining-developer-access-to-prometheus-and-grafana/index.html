@@ -156,7 +156,7 @@
                     <div class="blog-item__header">
                         <div class="blog-item__title">Streamlining Developer Access to Prometheus and Grafana<br> <small></small></div>
                         <div class="blog-item__info">
-                            January 21, 2021
+                            February 2, 2021
                             <small class="blog-item__count">581 words</small>
                         </div>
                     </div>
@@ -193,14 +193,14 @@
 <li>Installing our canonical Grafana dashboards (<a href="https://grafana.com/grafana/dashboards/2539">Mattermost Performance KPI Metrics</a>, <a href="https://grafana.com/grafana/dashboards/2542">Mattermost Performance Monitoring</a>, <a href="https://grafana.com/grafana/dashboards/2545">Mattermost Performance Monitoring (Bonus Metrics)</a>).</li>
 </ul>
 <p>This means that simply running <code>make run-server</code> gets you immediate access to the Mattermost Performance dashboards at <code>http://localhost:3000</code>:</p>
-<p><img src="https://developers.mattermost.com/blog/2021-01-21-streamlining-developer-access-to-prometheus-and-grafana/grafana.png" alt="Grafana home dashboard"></p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/grafana.png" alt="Grafana home dashboard"></p>
 <p>Prometheus is also available at <code>http://localhost:9090</code>:</p>
-<p><img src="https://developers.mattermost.com/blog/2021-01-21-streamlining-developer-access-to-prometheus-and-grafana/prometheus.png" alt="Prometheus landing page"></p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/prometheus.png" alt="Prometheus landing page"></p>
 <h3 id="enabling-metrics">Enabling Metrics&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#enabling-metrics"></i></a> </h3>
 <p>Although the tooling is all set up to scrape metrics and display the dashboards, you&rsquo;ll need to do some one-time work to enable metrics within the Mattermost server.</p>
 <p>First, be sure you have an Enterprise license installed. Staff members should have access to the shared developer license, but you can also request a trial license in-product. Browse to <code>/admin_console/about/license</code> on your local Mattermost instance to set up the license.</p>
 <p>Second, enable performance monitoring. You can do this manually via <code>config.json</code> and setting <code>MetricsSettings.Enable</code> to <code>true</code>, or by exporting <code>MM_METRICSSETTINGS_ENABLE=true</code> into your shell before starting the server, or by enabling this manually via the System Console at <code>/admin_console/environment/performance_monitoring</code>:</p>
-<p><img src="https://developers.mattermost.com/blog/2021-01-21-streamlining-developer-access-to-prometheus-and-grafana/performance-monitoring-config.png" alt="Performance monitoring configuration"></p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/performance-monitoring-config.png" alt="Performance monitoring configuration"></p>
 <h3 id="whats-next">What&rsquo;s next?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#whats-next"></i></a> </h3>
 <p>These changes weren&rsquo;t just made in isolation - in fact, this is all just infrastructure work for another recent project to improve Mattermost performance monitoring. Stay tuned for a follow-up blog post!</p>
 
