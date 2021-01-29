@@ -210,7 +210,7 @@ For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup inst
       <description>Set up your development environment for building, running, and testing the Mattermost server.
 Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
 For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
     </item>
     
     <item>
@@ -299,6 +299,15 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
       <description>Push notifications on iOS are managed and dispatched using Apple&amp;rsquo;s Push Notification Service. You must have a Paid Apple Developer account to create certificates needed to send notifications using this service.
   Generate a Certificate from Keychain Access
   Launch the Keychain Access application in your Mac and select KeyChain Access -\Certificate Assistant -\Request a Certificate From a Certificate Authority&amp;hellip;   Enter your email address in User Email Address and check the &amp;ldquo;Save to disk&amp;rdquo; option, then click Continue   Save the certificate request     Log in to Apple developer account and click Certificates, Identifiers and Profiles   Select iOS from the dropdown   Select App IDs from the side menu and look for the Bundle Identifier you are using for the Mattermost app   Select the App ID and click Edit   Scroll down to the Push Notification Section and click Create a Production SSL Certificate   In the About Creating a Certificate Signing Request (CSR) screen click Continue /img/ios_csr.</description>
+    </item>
+    
+    <item>
+      <title>Go Style Guide</title>
+      <link>https://developers.mattermost.com/contribute/server/style-guide/</link>
+      <pubDate>Tue, 12 Jan 2021 16:00:00 +0530</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/style-guide/</guid>
+      <description>Go is a more opinionated language than many others when it comes to coding style. The compiler enforces some basic stylistic elements, such as the removal of unused variables and imports. Many others are enforced by the gofmt tool, such as usage of white-space, semicolons, indentation, and alignment. The gofmt tool is run over all code in the Mattermost Server CI pipeline. Any code which is not consistent with the formatting enforced by gofmt will not be accepted into the repository.</description>
     </item>
     
     <item>

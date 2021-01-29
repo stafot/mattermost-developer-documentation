@@ -153,6 +153,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/contribute/server/style-guide/</loc>
+    <lastmod>2021-01-12T16:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/contribute/server/feature-flags/</loc>
     <lastmod>2020-10-15T16:00:00-07:00</lastmod>
   </url>
@@ -599,6 +604,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/contribute/</loc>
+    <lastmod>2021-01-12T16:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/categories/go/</loc>
     <lastmod>2020-11-17T00:00:00+00:00</lastmod>
   </url>
@@ -626,11 +636,6 @@
   <url>
     <loc>https://developers.mattermost.com/categories/security/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/</loc>
-    <lastmod>2020-10-15T16:00:00-07:00</lastmod>
   </url>
   
   <url>
