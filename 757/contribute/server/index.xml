@@ -20,7 +20,7 @@
       <description>Set up your development environment for building, running, and testing the Mattermost server.
 Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
 For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.14.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
     </item>
     
     <item>

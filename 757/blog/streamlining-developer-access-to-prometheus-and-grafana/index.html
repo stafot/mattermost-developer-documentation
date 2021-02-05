@@ -9,13 +9,13 @@
 <head>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Improving performance (and more) through load testing</title>
+<title> Streamlining Developer Access to Prometheus and Grafana</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <meta http-equiv="content-language" content="en-us" />
 
 
 
-<link rel="canonical" href="https://developers.mattermost.com/blog/improving-performance-through-load-testing/">
+<link rel="canonical" href="https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -154,81 +154,73 @@
             <div class="col-md-9 doc-content">
                 <div class="well well-sm">
                     <div class="blog-item__header">
-                        <div class="blog-item__title">Improving performance (and more) through load testing<br> <small></small></div>
+                        <div class="blog-item__title">Streamlining Developer Access to Prometheus and Grafana<br> <small></small></div>
                         <div class="blog-item__info">
-                            September 7, 2020
-                            <small class="blog-item__count">1029 words</small>
+                            February 2, 2021
+                            <small class="blog-item__count">581 words</small>
                         </div>
                     </div>
                     <hr>
-                    <p>Have you ever wondered how many active users your application can handle at the same time? If so, you&rsquo;re not alone. Here at Mattermost we&rsquo;re building a highly concurrent messaging platform for team collaboration that needs to potentially serve up to several thousands of users simultaneously.</p>
-<p>While standard functional testing (e.g. unit tests) is critical to verify correct behavior of your application, it&rsquo;s usually not sufficient to guarantee its performance at scale. This is where some form of performance testing can be particularly useful. Benchmarks do a good job at measuring the performance impact of single functions or limited portions of a codebase, but they can&rsquo;t capture how an application is going to perform as a whole under real-world conditions. To achieve this you need <strong>load testing</strong>.</p>
-<h2 id="what-is-load-testing">What is load testing?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-is-load-testing"></i></a> </h2>
-<p>Load testing is the process of applying a certain amount of load to a target system in order to understand how it behaves.
-The more realistic the generated load is, the more accurate and insightful the final results will be.</p>
-<h2 id="why-does-it-matter">Why does it matter?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#why-does-it-matter"></i></a> </h2>
-<p>Load testing can be used to improve both the performance and the overall quality of your application by helping you to:</p>
+                    <p>Our <a href="https://github.com/mattermost/mattermost-server/blob/master/Makefile">Makefile</a> entrypoint for developing against the <a href="https://github.com/mattermost/mattermost-server">Mattermost Server</a> already tries to simplify things for developers as much as possible.</p>
+<p>For example, when invoking <code>make run-server</code>, this build tooling takes care of all of the following (among other things!):</p>
 <ul>
-<li>Identify performance bottlenecks in your system.</li>
-<li>Determine the overall capacity of your application.</li>
-<li>Prevent performance regressions between releases.</li>
-<li>Discover insidious bugs that passed functional testing.</li>
-</ul>
-<p>As an example, these are some of non-performance related, but rather significant issues we&rsquo;ve been able to detect while load testing:</p>
+<li>Downloading a suitable version of <code>mmctl</code> for API-driven command line interaction.</li>
+<li>Checking your installed Go version to avoid cryptic error messages.</li>
+<li>Downloading and starting various Docker containers:
 <ul>
-<li>Data races</li>
-<li>Application crashes</li>
-<li>Deadlocks</li>
-<li>Memory leaks</li>
+<li><code>mysql</code> and <code>postgres</code>, both for a backend to the server and also to automate tests.</li>
+<li><code>inbucket</code> to simplify email testing without routing outside your machine.</li>
+<li><code>minio</code> to expose an S3-compatible interface to your local disk for hosting uploaded files</li>
+<li><code>openldap</code> to simplify testing alternate modes of authentication (requires access to the enterprise source).</li>
+<li><code>elasticsearch</code> to expose an improved search backend for posts and channels (requires access to the Enterprise source code).</li>
 </ul>
-<p>As you can see, running load tests can guard your software against problems of different nature. By simulating users you get a chance to realistically test a system before it hits production and potentially avoid several issues down the line.</p>
-<h2 id="how-are-we-doing-it">How are we doing it?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-are-we-doing-it"></i></a> </h2>
-<p>There are plenty of high quality load testing frameworks available; some of the best are free and open source (<a href="https://jmeter.apache.org/">JMeter</a>, <a href="https://gatling.io/">Gatling</a>, <a href="https://k6.io/">k6</a> to name a few). In our case, after a thorough examination, we decided to develop a custom, in-house tool. We accepted trading implementation time and complexity for improved simulation and finer control over the entire process. We&rsquo;ve recently released <a href="https://github.com/mattermost/mattermost-load-test-ng/releases/tag/v1.0.0">version 1.0</a> and we&rsquo;re quite happy with the choice we made. While the tool itself is not designed for general purpose use, it can still serve as a good example of how we tackled the problem of designing and developing a custom load testing engine.</p>
-<h3 id="simulating-the-load">Simulating the load&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#simulating-the-load"></i></a> </h3>
-<p>As the definition says, the core of the process is load generation. It&rsquo;s important to note that, similarly to what happens in other tools of this kind, the load will be generated at the HTTP (and Websocket) level through a series of API calls. This means that, from a performance perspective, we&rsquo;re going to be testing everything in between the user (client) and the physical machine running our target application (server). Furthermore, in order for results to be meaningful, we need the software to mimic actual user behavior. We achieve this by leveraging data coming from real users through the use of:</p>
+</li>
+<li>Linking your server to an automatically-detected <code>mattermost-webapp</code> directory.</li>
+<li>Optionally starting the server in the foreground if <code>RUN_SERVER_IN_BACKGROUND</code> is <code>false</code>.</li>
+<li>Piping the structured server logs through a <code>logrus</code> decorator for easier reading.</li>
+<li>Invoking the <code>go</code> compiler to run the server code in your local repository.</li>
+</ul>
+<h3 id="adding-prometheus-and-grafana">Adding Prometheus and Grafana&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-prometheus-and-grafana"></i></a> </h3>
+<p>As of <a href="https://github.com/mattermost/mattermost-server/pull/16649,">https://github.com/mattermost/mattermost-server/pull/16649,</a> this build tooling now supports automating the setup of Prometheus and Grafana Docker containers. Together, these tools form the backbone of our <a href="https://docs.mattermost.com/deployment/metrics.html">Performance Monitoring (E20)</a> functionality, scraping metrics from Mattermost to help give enterprise customers insight into the performance of their clusters. Automating this setup makes it easier for developers to test in a production-like environment, to help extend the monitoring available to customers, and even to run our certain kinds of loadtests using our <a href="https://github.com/mattermost/mattermost-load-test-ng">loadtesting framework</a>.</p>
+<p>Since the corresponding Mattermost functionality is only available with access to the Enterprise source code, these containers aren&rsquo;t enabled by default. To turn them on, export the following environment variable into your shell:</p>
+<pre><code>export ENABLED_DOCKER_SERVICES=&quot;mysql postgres inbucket prometheus grafana&quot;
+</code></pre><p>Alternatively, you can follow the instructions in <a href="https://github.com/mattermost/mattermost-server/blob/master/config.mk">config.mk</a>. Note that it&rsquo;s not necessary to specify <code>minio</code>, <code>openldap</code>, or <code>elasticsearch</code> - these are added automatically when an Enterprise-enabled repository is detected.</p>
+<p>The build tooling does more than just spin up two new containers, however. <a href="https://github.com/mattermost/mattermost-server/tree/master/build/docker">Various configuration files</a> also automate the following:</p>
 <ul>
-<li>Server-side metrics (e.g. frequency of a given API call)</li>
-<li>User telemetry data (e.g. frequency of a user event/action)</li>
+<li>Configuring Prometheus to scrape the Mattermost <code>:8067/metrics</code> endpoint (requires access to the Enterprise source code).</li>
+<li>Enabling anonymous access to Grafana (you can still log in with the default <code>admin</code>/<code>admin</code> credentials if needed).</li>
+<li>Configuring Grafana with the containerized Prometheus as the default data source.</li>
+<li>Installing our canonical Grafana dashboards (<a href="https://grafana.com/grafana/dashboards/2539">Mattermost Performance KPI Metrics</a>, <a href="https://grafana.com/grafana/dashboards/2542">Mattermost Performance Monitoring</a>, <a href="https://grafana.com/grafana/dashboards/2545">Mattermost Performance Monitoring (Bonus Metrics)</a>).</li>
 </ul>
-<p>Fortunately, here at Mattermost we have a convenient advantage: we use our own application in our day-to-day work. This means we&rsquo;re able to continuously collect a considerable amount of realistic metrics from our community servers. We can then use such data to model user behavior. To do this we create a table of a user&rsquo;s actions with their respective frequencies. This action-frequency map will feed the simulation process: a simulated user will randomly pick and perform an action based on its frequency so that the most common actions will be picked more often.</p>
-<p><img src="https://developers.mattermost.com/blog/2020-09-07-improving-performance-through-load-testing/actions-map.png" alt="actions-map"></p>
-<p>In such an example, the chance of a user switching a channel will be double the chance of creating a new post and four times that of replying to a thread.</p>
-<h3 id="getting-some-answers">Getting some answers&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#getting-some-answers"></i></a> </h3>
-<p>Now that we have a simulation in place, we come back to the original question of this blog post: how can we make our load testing software tell us how many concurrently active users our target application can support?</p>
-<p>Instead of relying on <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">magic formulas</a> which are hard to explain (and sometime defend) or on endless and error-prone manual testing, we thought of picking an idea out of <a href="https://en.wikipedia.org/wiki/Control_theory">control theory</a> that could give us both automation and precision at the same time: it&rsquo;s called a <strong>feedback loop</strong>.</p>
-<p><img src="https://developers.mattermost.com/blog/2020-09-07-improving-performance-through-load-testing/feedback-loop.png" alt="feedback-loop"></p>
-<p>The idea is quite simple: have the load testing engine react to what&rsquo;s happening on the target system by dynamically changing the amount of load applied in response to some event. This is achieved through the monitoring of those metrics that can best signal service degradation. Some that we make use of are:</p>
-<ul>
-<li>Request durations (average and percentiles)</li>
-<li>Request errors rate</li>
-<li>Client timeouts rate</li>
-</ul>
-<p><img src="https://developers.mattermost.com/blog/2020-09-07-improving-performance-through-load-testing/graph.png" alt="graph"></p>
-<p>The load testing software constantly increases the number of active users up until it detects signs of performance degradation. This happens when the metrics being monitored reach their configured thresholds (e.g. 100ms for average request duration).
-In response to such an event, the load testing engine starts to lower the number of users. This process continues for a while until an <strong>equilibrium point</strong> is reached. This value, over which performance starts to degrade, gives us a fairly good estimate on the user capacity our target application can comfortably support.</p>
-<h2 id="wrapping-up">Wrapping up&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#wrapping-up"></i></a> </h2>
-<p>The success of a software system greatly depends on its performance, especially in today&rsquo;s cloud-oriented world. A small outage can have a serious impact on your customers and eventually affect your company&rsquo;s revenue, especially when a <a href="https://en.wikipedia.org/wiki/Service_level_agreement">service level agreement</a> is in place.</p>
-<p>Load testing is a precious tool that can help your team to improve both the overall quality and stability of your system by preventing performance issues and application bugs while improving scalability and minimizing the risk of down times.</p>
-<p>Stay tuned for a follow-up article including an in depth technical discussion on the internals of our custom engine plus a full section on how to interpret and leverage load testing results.
-If you&rsquo;d like to know more about this particular topic or discuss performance in general, you can reach us in the <a href="https://community.mattermost.com/core/channels/developers-performance">Developers: Performance</a> channel.</p>
+<p>This means that simply running <code>make run-server</code> gets you immediate access to the Mattermost Performance dashboards at <code>http://localhost:3000</code>:</p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/grafana.png" alt="Grafana home dashboard"></p>
+<p>Prometheus is also available at <code>http://localhost:9090</code>:</p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/prometheus.png" alt="Prometheus landing page"></p>
+<h3 id="enabling-metrics">Enabling Metrics&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#enabling-metrics"></i></a> </h3>
+<p>Although the tooling is all set up to scrape metrics and display the dashboards, you&rsquo;ll need to do some one-time work to enable metrics within the Mattermost server.</p>
+<p>First, be sure you have an Enterprise license installed. Staff members should have access to the shared developer license, but you can also request a trial license in-product. Browse to <code>/admin_console/about/license</code> on your local Mattermost instance to set up the license.</p>
+<p>Second, enable performance monitoring. You can do this manually via <code>config.json</code> and setting <code>MetricsSettings.Enable</code> to <code>true</code>, or by exporting <code>MM_METRICSSETTINGS_ENABLE=true</code> into your shell before starting the server, or by enabling this manually via the System Console at <code>/admin_console/environment/performance_monitoring</code>:</p>
+<p><img src="https://developers.mattermost.com/blog/2021-02-02-streamlining-developer-access-to-prometheus-and-grafana/performance-monitoring-config.png" alt="Performance monitoring configuration"></p>
+<h3 id="whats-next">What&rsquo;s next?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#whats-next"></i></a> </h3>
+<p>These changes weren&rsquo;t just made in isolation - in fact, this is all just infrastructure work for another recent project to improve Mattermost performance monitoring. Stay tuned for a follow-up blog post!</p>
 
 
                     <hr>
                     
                     Written by
                     
-                    Claudio Costa
+                    Jesse Hallam
 -
-<a href="https://community.mattermost.com/core/messages/@claudio.costa" target="_blank">
-    @claudio.costa
+<a href="https://community.mattermost.com/core/messages/@jesse.hallam" target="_blank">
+    @jesse.hallam
 </a>
 on
 <a href="https://community.mattermost.com/signup_user_complete" target="_blank">
     community.mattermost.com
 </a>
 and
-<a href="https://github.com/streamer45" target="_blank">
-    @streamer45
+<a href="https://github.com/lieut-data" target="_blank">
+    @lieut-data
 </a>
 on GitHub
 
@@ -254,8 +246,6 @@ on GitHub
                         
                         
                         
-                        <li class="blog-item__sidebar">- <a href="https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/">Streamlining Developer Access to Prometheus and Grafana</a></li>
-                        
                         
                         
                         <li class="blog-item__sidebar">- <a href="https://developers.mattermost.com/blog/mysql-index-merge/">Tuning MySQL and the Ghost of Index Merge Intersection</a></li>
@@ -265,6 +255,8 @@ on GitHub
                         <li class="blog-item__sidebar">- <a href="https://developers.mattermost.com/blog/docker-content-trust-in-gitlab-with-delegation/">Docker Content Trust in GitLab&#39;s .gitlab-ci.yml with Delegation</a></li>
                         
                         
+                        
+                        <li class="blog-item__sidebar">- <a href="https://developers.mattermost.com/blog/improving-performance-through-load-testing/">Improving performance (and more) through load testing</a></li>
                         
                         
                         
@@ -311,9 +303,9 @@ on GitHub
                     <h6>Categories</h6>
                     <ul class="list-unstyled">
                         
-                    <li>- <a href="https://developers.mattermost.com/categories/performance">performance</a></li>
-                        
                     <li>- <a href="https://developers.mattermost.com/categories/testing">testing</a></li>
+                        
+                    <li>- <a href="https://developers.mattermost.com/categories/performance">performance</a></li>
                            
                     </ul>
                 </div>
