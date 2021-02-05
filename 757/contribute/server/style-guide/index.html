@@ -1410,7 +1410,7 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 <p>The purpose of logging is to provide observability - it enables the application communicate back to the administrator about what is happening. To communicate effectively logs should be meaningful and concise. To achieve this, log lines should conform to one of the definitions below:</p>
 <p><strong>Critical:</strong> This represents the most urgent situations for the service to work properly and it is unable to meet even the minimum requirements. When a critical thing happens it is expected that the service will stop.</p>
 <p>As an example, the code block below demonstrates a critical situation where the server creation is failed. This error causes total failure of the service.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">runServer</span>(..) {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">runServer</span>(..) {
 	..
 	server, err <span style="color:#555">:=</span> app.<span style="color:#c0f">NewServer</span>(options<span style="color:#555">...</span>)
 	<span style="color:#069;font-weight:bold">if</span> err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
@@ -1421,7 +1421,7 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 }
 </code></pre></div><p><strong>Error:</strong> This indicates that something important happened to the system, but it does not cause loss of service. The administrator should investigate the incident. Hence it should provide enough information to start an investigation. An error can be a loss of service for a single user or something affecting a part of the application but does not break the service entirely.</p>
 <p>In the following example we log as error level since it is affecting only a part of the application.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">SyncPlugins</span>(..) {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">SyncPlugins</span>(..) {
 	..
 	reader, appErr <span style="color:#555">:=</span> a.<span style="color:#c0f">FileReader</span>(plugin.path)
 	<span style="color:#069;font-weight:bold">if</span> appErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
@@ -1432,7 +1432,7 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 }
 </code></pre></div><p><strong>Warn:</strong> Something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of function. A possible investigation should be carried out at some point but is not urgent. This level of messages should be as detailed as possible since warnings are quite a gray area and we want to be more clear about logs.</p>
 <p>One of the most prominent features of warning logs is that the operation can be continued in case of an error.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">UpdateUserRoles</span>(..) {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">UpdateUserRoles</span>(..) {
 	..
 	<span style="color:#069;font-weight:bold">if</span> result <span style="color:#555">:=</span> <span style="color:#555">&lt;-</span>schan; result.NErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
 		<span style="color:#09f;font-style:italic">// soft error since the user roles were still updated
@@ -1444,7 +1444,7 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 }
 </code></pre></div><p><strong>Info:</strong> These logs correspond to normal application behavior even if it results in an error for the end user. These are not critical as they are normal operations, but they provide useful information about what is going on.</p>
 <p>For example, information about services stopping and starting may be relevant to administrators.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (s <span style="color:#555">*</span>Schedulers) <span style="color:#c0f">Start</span>(..) {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (s <span style="color:#555">*</span>Schedulers) <span style="color:#c0f">Start</span>(..) {
 	s.startOnce.<span style="color:#c0f">Do</span>(<span style="color:#069;font-weight:bold">func</span>() {
 		mlog.<span style="color:#c0f">Info</span>(<span style="color:#c30">&#34;Starting schedulers.&#34;</span>)
 		..
@@ -1452,7 +1452,7 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 	..
 }
 </code></pre></div><p><strong>Debug:</strong> These messages contain enough diagnostic information to be used for effective debugging.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#069;font-weight:bold">func</span> (worker <span style="color:#555">*</span>Worker) <span style="color:#c0f">Run</span>() {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (worker <span style="color:#555">*</span>Worker) <span style="color:#c0f">Run</span>() {
 	mlog.<span style="color:#c0f">Debug</span>(<span style="color:#c30">&#34;Worker started&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;worker&#34;</span>, worker.name))
 	..
 }
