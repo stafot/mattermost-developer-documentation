@@ -6,10 +6,19 @@
     <description>Recent content in testing on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/categories/testing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Streamlining Developer Access to Prometheus and Grafana</title>
+      <link>https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/</guid>
+      <description>With access to the Enterprise source code, the developer build tooling now automates the setup of Prometheus and Grafana for performance monitoring. Even the canonical Grafana dashboards are setup without any manual configuration required!</description>
+    </item>
     
     <item>
       <title>Improving performance (and more) through load testing</title>
