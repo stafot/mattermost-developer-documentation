@@ -89,11 +89,7 @@ After signing into the master account, you can access other accounts within the 
       <pubDate>Wed, 07 Nov 2018 16:10:15 +0100</pubDate>
       
       <guid>https://developers.mattermost.com/internal/infrastructure/onelogin-aws/</guid>
-      <description>Generating AWS Keys using OneLogin authentication We use https://github.com/physera/onelogin-aws-cli to generate temporary AWS keys.
-Installation To install, use pip:
-$ pip install onelogin-aws-cli Note that onelogin-aws-cli requires Python 3. It is not recommended to install Python packages globally on your system.
-Usage Running onelogin-aws-login will perform the authentication against OneLogin, and cache the credentials in the AWS CLI Shared Credentials File.
-For every required piece of information, the program will present interactive inputs, unless that value has already been provided through either command line parameters, environment variables, or configuration file directives.</description>
+      <description>Please refer to https://docs.google.com/document/d/1S4i1XFGn7a1VXbtFV28GtbAe56m7fOHDZDgRmm5FBkg/edit#heading=h.ortqmqq1zjyx for the latest instructions to generate AWS credentials for development environments.</description>
     </item>
     
     <item>

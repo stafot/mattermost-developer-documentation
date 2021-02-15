@@ -9,11 +9,24 @@
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title> Blogs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">   
+<meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
+<meta name="og:site_name" value="Mattermost.com">
+<meta name="og:title" value="Blogs">
+
+ 
+  
+    
+      <meta name="description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="twitter:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="og:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+
+    
+  
 
 
+ 
 <link rel="canonical" href="https://developers.mattermost.com/blog/">
 
 
@@ -165,7 +178,7 @@
             
         </small>
     </h5>
-    <small></small>
+    <small>In 2018, we overhauled our entire plugin system. Read about the biggest challenges and takeaways from that experience.</small>
     <hr>
     <p>Mattermost 5.2 will include major overhauls to the plugin system. Over the last six months of plugins being in beta, we&rsquo;ve received a lot of great feedback from our community and customers building Mattermost plugins, as well as from our core team. We&rsquo;ve taken this experience and feedback and used it to enhance our plugin system. This brings us a step closer to moving plugins out of beta and into a full stable release.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/plugins-v2/">Read More <span class="fa fa-angle-right"></span></a>
@@ -184,7 +197,7 @@
             
         </small>
     </h5>
-    <small></small>
+    <small>Mattermost 5.1 includes support for serving Mattermost from subpaths. Learn how to configure subpaths in production.</small>
     <hr>
     <p>Mattermost 5.1 will include support for serving Mattermost from subpaths. This allows Mattermost to be exposed at something like https://example.com/company/mattermost, with your proxy server exposing different services at other subpaths. Subpath support is configured via the Site URL.
 Using subpaths in production In production, after configuration and restart, the application server expects all HTTP requests to be anchored to the configured subpath. This includes static assets, API calls, and WebSockets. For convenience, the application server redirects any unexpected requests back into this subpath, e.</p>
@@ -204,7 +217,7 @@ Using subpaths in production In production, after configuration and restart, the
             
         </small>
     </h5>
-    <small></small>
+    <small>Find out why Mattermost switched to npm@6 in May 2018 and what was needed to upgrade.</small>
     <hr>
     <p>Heads up that with PR#1239, we&rsquo;re effectively switching to npm@6.
 Why the change? Previously, doing a fresh npm install would unexpectedly change package-lock.json. Upgrading to npm@6 should resolve this going forward.
@@ -226,7 +239,7 @@ npm install -g npm@6 </p>
             
         </small>
     </h5>
-    <small></small>
+    <small>Here is a reminder that Mattermost separated the /platform repo into two repositories on September 6, 2017.</small>
     <hr>
     <p>A reminder that Mattermost will be separating the /platform repo into two repositories on September 6th, 2017:
  a new repository for webapp client code, hosted at github.com/mattermost/mattermost-webapp existing repository (/platform) renamed to /mattermost-server, containing the server code.  Why the change? Separates PRs for client and server with better naming conventions. This is similar to React Native and Redux repositories and helps us:
