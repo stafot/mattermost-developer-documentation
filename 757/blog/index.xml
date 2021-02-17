@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Avoiding Common Internationalization Mistakes</title>
+      <link>https://developers.mattermost.com/blog/common-i18n-mistakes/</link>
+      <pubDate>Fri, 04 Dec 2020 12:00:00 -0500</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/common-i18n-mistakes/</guid>
+      <description>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (cough English, though cough).</description>
+    </item>
+    
+    <item>
       <title>Tuning MySQL and the Ghost of Index Merge Intersection</title>
       <link>https://developers.mattermost.com/blog/mysql-index-merge/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
@@ -106,15 +115,6 @@ The following are my speaking notes from the session, slightly modified from the
       
       <guid>https://developers.mattermost.com/blog/all-about-emojis/</guid>
       <description>In person, you can easily tell someone&amp;rsquo;s mood based on their body language and how they speak, but that&amp;rsquo;s much more difficult with text alone. Emojis are a great way to add tone to a piece of text and also help make text-based conversation feel more casual, relaxed, and fun. Thanks to emojis, we can chat with much more real emotion than you might get by being careful about your word choice or by including just the right number of exclamation marks and periods at the end of a sentence.</description>
-    </item>
-    
-    <item>
-      <title>Avoiding Common Internationalization Mistakes</title>
-      <link>https://developers.mattermost.com/blog/common-i18n-mistakes/</link>
-      <pubDate>Thu, 26 Mar 2020 12:00:00 -0500</pubDate>
-      
-      <guid>https://developers.mattermost.com/blog/common-i18n-mistakes/</guid>
-      <description>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (cough English, though cough).</description>
     </item>
     
     <item>

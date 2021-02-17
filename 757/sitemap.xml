@@ -609,6 +609,16 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/blog/common-i18n-mistakes/</loc>
+    <lastmod>2020-12-04T12:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/categories/i18n/</loc>
+    <lastmod>2020-12-04T12:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/categories/go/</loc>
     <lastmod>2020-11-17T00:00:00+00:00</lastmod>
   </url>
@@ -685,16 +695,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/blog/all-about-emojis/</loc>
-    <lastmod>2020-03-26T12:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/blog/common-i18n-mistakes/</loc>
-    <lastmod>2020-03-26T12:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/categories/i18n/</loc>
     <lastmod>2020-03-26T12:00:00-05:00</lastmod>
   </url>
   
@@ -919,27 +919,11 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/server/developer-setup/arch/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/server/developer-setup/centos/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/server/developer-setup/osx/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</loc>
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/extend/plugins/server/debugging/</loc>
+    <loc>https://developers.mattermost.com/contribute/server/developer-setup/arch/</loc>
   </url>
   
   <url>
@@ -951,6 +935,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/contribute/server/developer-setup/centos/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/contribute/containers/</loc>
   </url>
   
@@ -959,7 +947,19 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/extend/plugins/server/debugging/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/contribute/mvp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/server/developer-setup/osx/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</loc>
   </url>
   
 </urlset>

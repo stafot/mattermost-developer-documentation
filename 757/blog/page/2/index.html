@@ -9,11 +9,24 @@
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title> Blogs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">   
+<meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
+<meta name="og:site_name" value="Mattermost.com">
+<meta name="og:title" value="Blogs">
+
+ 
+  
+    
+      <meta name="description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="twitter:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="og:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+
+    
+  
 
 
+ 
 <link rel="canonical" href="https://developers.mattermost.com/blog/">
 
 
@@ -154,7 +167,7 @@
                 
                     <div class="well well-sm">
     <h5>
-        <a href="https://developers.mattermost.com/blog/common-i18n-mistakes/">Avoiding Common Internationalization Mistakes</a>
+        <a href="https://developers.mattermost.com/blog/all-about-emojis/">All About Emojis</a>
         <small class="blog-item__date pull-right">
             Posted
             on Mar 26, 2020
@@ -165,10 +178,10 @@
             
         </small>
     </h5>
-    <small></small>
+    <small>Emojis are a great way to add tone to a piece of text and also help make text-based conversation feel more casual, relaxed, and fun.</small>
     <hr>
-    <p>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (cough English, though cough).</p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/common-i18n-mistakes/">Read More <span class="fa fa-angle-right"></span></a>
+    <p>In person, you can easily tell someone&rsquo;s mood based on their body language and how they speak, but that&rsquo;s much more difficult with text alone. Emojis are a great way to add tone to a piece of text and also help make text-based conversation feel more casual, relaxed, and fun. Thanks to emojis, we can chat with much more real emotion than you might get by being careful about your word choice or by including just the right number of exclamation marks and periods at the end of a sentence.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/all-about-emojis/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                     <div class="well well-sm">
@@ -203,7 +216,7 @@
             
         </small>
     </h5>
-    <small></small>
+    <small>This is the second part of our AST blog post series, expanding on the subject of utilizing Go AST libraries to automate and improve your workflow.</small>
     <hr>
     <p>Welcome! This is the second part of our AST blog post series, expanding on the subject of utilizing Go AST libraries to automate and improve your workflow.
 In this post I&rsquo;ll discuss a rather common problem that comes up while working with Go code and the way we&rsquo;ve solved it by sprinkling a little bit of AST magic dust. Let&rsquo;s dive in.
@@ -224,7 +237,7 @@ Problem: A struct with no interface Let&rsquo;s say you are working on a large c
             
         </small>
     </h5>
-    <small></small>
+    <small>One of the most important parts of the Mattermost source code is the one responsible for accessing the Mattermost database: the store.</small>
     <hr>
     <p>One of the most important parts of the Mattermost source code is the one responsible for accessing the Mattermost database - the store. Every single database access is handled by the store, so we needed to find a way to extend its functionality while introducing as little complexity as possible. This is the reason behind the current layered approach using struct embedding.
 Our store is responsible for storing and retrieving data, and sometimes we need to add functionality that is not strictly related to the database queries, for example, cache data or add instrumentation.</p>
@@ -245,7 +258,7 @@ Our store is responsible for storing and retrieving data, and sometimes we need 
             
         </small>
     </h5>
-    <small></small>
+    <small>Although go vet and gofmt work well, there are a lot of other powerful linters out there which we’re potentially missing out on.</small>
     <hr>
     <p>At Mattermost, we have traditionally relied on the trusty go vet and gofmt checks for our CI runs. Although it works well, there are a lot of other powerful linters out there which we&rsquo;re potentially missing out on.
 Speaking of linters, the first name that inevitably comes up is staticcheck. It&rsquo;s a powerful metalinter with a whole slew of checks. But simply running staticcheck is not sufficient, because it misses out on other linters which perform a single task, but nevertheless are very powerful.</p>
@@ -265,7 +278,7 @@ Speaking of linters, the first name that inevitably comes up is staticcheck. It&
             
         </small>
     </h5>
-    <small></small>
+    <small>Read about how Mattermost uses Hermes, Facebook’s new JavaScript engine, to boost performance.</small>
     <hr>
     <p>With the upgrade to React Native 61 came the prospect of substantially improving performance of our Android app. How? Through the use of Hermes, Facebook’s new JavaScript engine. To say that we were excited is an understatement. And with that excitement came curiosity: how is this new JavaScript engine achieving performance boosts?
 Let’s first chat a bit about JS engines in general.
@@ -286,7 +299,7 @@ How does your JavaScript code eventually get executed by the CPU on the machine?
             
         </small>
     </h5>
-    <small></small>
+    <small>Learn about what the remote onboarding process is like for new hires at Mattermost.</small>
     <hr>
     <p>I recently joined Mattermost as a Remote Software Engineer and while I’ve worked in remote environments before, I was really surprised at how amazing this company is to work with. During my onboarding I discovered that they have really developed a culture built around being remote; one that allowed for me to feel as part of a larger team and always engaged, rather than separated from my peers and working alone.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/onboarding-with-mattermost/">Read More <span class="fa fa-angle-right"></span></a>
@@ -305,7 +318,7 @@ How does your JavaScript code eventually get executed by the CPU on the machine?
             
         </small>
     </h5>
-    <small></small>
+    <small>Takeaways from our team&#39;s experience at KubeCon &#43; CloudNativeCon North America 2019.</small>
     <hr>
     <p>It wasn’t my first time flying. It also wasn’t the first time I had arrived at the airport early enough to require multiple cups of coffee. As I sat at my gate, however, I did find myself wondering for the first time: had I ever heard the words “Lambda,” “stateful set&rdquo;, and “yaml” while waiting to board?
 You see, a bunch of us were coming from all over to attend KubeCon + CloudNativeCon North America 2019.</p>
@@ -325,7 +338,7 @@ You see, a bunch of us were coming from all over to attend KubeCon + CloudNative
             
         </small>
     </h5>
-    <small></small>
+    <small>Monitoring the state of your clusters is an effective way to discover bottlenecks in your multi-cluster production environment.</small>
     <hr>
     <p>Monitoring the state of your clusters is an effective way to discover bottlenecks in your multi-cluster production environment. It is one of the key challenges that development teams are facing and factors such as the team experience as well as the number and distribution of the applications can make things even more complex.
 Better monitoring can help identify single points of failure. Being able to get information about things like the number of applications running on each node or the CPU and memory performance can help to get closer to zero downtime deployments.</p>
@@ -345,7 +358,7 @@ Better monitoring can help identify single points of failure. Being able to get 
             
         </small>
     </h5>
-    <small></small>
+    <small>Matterpoll is a plugin that allows users to create polls in Mattermost. Learn about how we localized it.</small>
     <hr>
     <p>Matterpoll is a plugin that allows users to create polls in Mattermost. Since Mattermost is localized in 16 different languages, it’s optimal that Matterpoll is similarly localized.
 Because we rely on contributors to do the translations, we want to make it easy for them to translate new strings and determine whether already translated strings need to be updated because the &ldquo;source&rdquo; text changed. On the other hand, Matterpoll only has two maintainers (@kaakaa and me) and no infrastructure of its own to work with.</p>

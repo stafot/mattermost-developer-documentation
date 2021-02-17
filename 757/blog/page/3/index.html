@@ -9,11 +9,24 @@
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title> Blogs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">   
+<meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
+<meta name="og:site_name" value="Mattermost.com">
+<meta name="og:title" value="Blogs">
+
+ 
+  
+    
+      <meta name="description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="twitter:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+<meta name="og:description" content="Read the latest technical how-tos and articles from the Mattermost team and community on the Mattermost Developer Blog.">
+
+    
+  
 
 
+ 
 <link rel="canonical" href="https://developers.mattermost.com/blog/">
 
 
@@ -165,7 +178,7 @@
             
         </small>
     </h5>
-    <small></small>
+    <small>Mattermost is starting a new open source campaign, this time around increasing the unit test coverage for the mmctl tool.</small>
     <hr>
     <p>Mattermost is starting a new Open Source campaign, this time around increasing the unit test coverage for the mmctl tool.
 The mmctl tool is a CLI application that mimics the commands and features of the current Mattermost CLI tool and uses the Mattermost REST API to communicate with the server. Using the tool, you can control and manage several Mattermost servers without having to access the specific machine on which the server is running.</p>
@@ -185,7 +198,7 @@ The mmctl tool is a CLI application that mimics the commands and features of the
             
         </small>
     </h5>
-    <small></small>
+    <small>Learn about what Go AST is, why we need it, and instrumenting our handlers with tracing code.</small>
     <hr>
     <p>We&rsquo;ve been working on integrating call tracing in the server to provide exact measurements of all API and DB calls. We&rsquo;ve picked OpenTracing - a lovely open source project that allows you to setup trace reporting and enables you to support Distributed tracing.
 Instrumenting your API handler in Go is very straightforward - setup a connection to a collection server supporting the OpenTracing spec (we&rsquo;ve decided to use Jaeger) and wrap your code in spans.</p>
@@ -205,7 +218,7 @@ Instrumenting your API handler in Go is very straightforward - setup a connectio
             
         </small>
     </h5>
-    <small></small>
+    <small>Learn about using Charles to debug against community servers while running a local copy of the mattermost webapp.</small>
     <hr>
     <p>I recently acquired a copy of Charles, the well-known Web Debugging Proxy Application. I&rsquo;ve actually stumbled across this product on multiple occasions, but never bothered to actually try it&hellip; almost exclusively because I thought the website looked a little dated. In trying to suss out the root cause behind MM-19091, I needed a way to debug against our community servers but running with my local copy of the mattermost webapp. This would allow me to insert console.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/debugging-using-charles/">Read More <span class="fa fa-angle-right"></span></a>
@@ -224,7 +237,7 @@ Instrumenting your API handler in Go is very straightforward - setup a connectio
             
         </small>
     </h5>
-    <small></small>
+    <small>Flaky tests are no stranger to the Mattermost code base. Find out what we&#39;ve done to avoid flaky tests.</small>
     <hr>
     <p>&ldquo;Your tests are failing.&rdquo;
  This comment on a pull request is crushing. After all the effort you&rsquo;ve spent writing your code, adding new unit tests, and rebasing your changes to make each commit almost a work of art: how could your tests possibly be failing?
@@ -245,7 +258,7 @@ Begrudgingly, you sign into your CI server only to realize the failing tests hav
             
         </small>
     </h5>
-    <small></small>
+    <small>Elias Nahum shares his thoughts on learning about Hermes and how it can improve the Mattermost Android app.</small>
     <hr>
     <p>- Yes, yes... - for real? - Yes I come all the way from Taiwan... and you? - Oh I'm from here.. and what about you - me? hmm I flew 18 hours to get here (me) In short, the above is how the whole thing started. It is really interesting how people from all over the globe attended the event. It was a fun learning experience and even the unexpected was waiting on us.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/chain-react-2019-higlights-hermes/">Read More <span class="fa fa-angle-right"></span></a>
@@ -264,7 +277,7 @@ Begrudgingly, you sign into your CI server only to realize the failing tests hav
             
         </small>
     </h5>
-    <small></small>
+    <small>This post describes what LDAP “nested groups” are and how we ended up modelling and representing them in code.</small>
     <hr>
     <p>LDAP Group Sync in Mattermost In Mattermost v5.8 we deployed LDAP group sync feature to enable Enterprise Edition customers to create and synchronize groups in Mattermost matching their LDAP groups. The goal was to ease onboarding by automatically adding group members to configured teams and channels.
 With the upcoming Mattermost v5.12 we&rsquo;re adding the ability to create teams and channels that are only accessible to those synced groups. This post describes what LDAP &ldquo;nested groups&rdquo; are and how we ended up modelling and representing them in code.</p>
@@ -284,7 +297,7 @@ With the upcoming Mattermost v5.12 we&rsquo;re adding the ability to create team
             
         </small>
     </h5>
-    <small></small>
+    <small>Everything you need to know about database replication and how it applies to Mattermost.</small>
     <hr>
     <p>This past week, I was privileged to attend Percona Live 2019, an open-source database conference held this year in Austin, Texas. With the breadth of the sessions I attended being captured on a community.mattermost.com post, I wanted to use this blog post to dive into a recurring topic from the conference: database replication.
 What is replication? Replication is a means by which data on one database server is automatically copied &ndash; or replicated &ndash; to other database servers called replicas.</p>
@@ -304,7 +317,7 @@ What is replication? Replication is a means by which data on one database server
             
         </small>
     </h5>
-    <small></small>
+    <small>Check out these takeaways from CanSecWest 2019, which was full of exploits and interesting anecdotes.</small>
     <hr>
     <p>This year I had the opportunity to attend the security conference CanSecWest in Vancouver, BC. Like any security conference, it was full of exploits and interesting anecdotes. There were plenty of interesting talks, but this post focuses on a talk by Zhiniang Peng and Minrui Yang on the dangers of homomorphic encryption. This post gives a high level overview and avoids giving too much technical detail.
 What is Homomorphic Encryption? Homomorphic encryption is defined as an encryption scheme which allows computations to be performed on ciphertext that, when decrypted, match the result of the operation as if it was applied to the plain text.</p>
@@ -324,7 +337,7 @@ What is Homomorphic Encryption? Homomorphic encryption is defined as an encrypti
             
         </small>
     </h5>
-    <small></small>
+    <small>Learn how to submit optimal pull requests to increase the chances your contributions are added to open source projects.</small>
     <hr>
     <p>If you want to submit good pull requests, start with our contribution checklist. Today, that page talks about what to fork, how to style your code, how to write unit tests and where to push your code. Implicit in all of that is the need to write great code, of course!
 But this blog post isn&rsquo;t about writing great code, it&rsquo;s about making your pull request a great experience for you and your reviewers.</p>
@@ -344,7 +357,7 @@ But this blog post isn&rsquo;t about writing great code, it&rsquo;s about making
             
         </small>
     </h5>
-    <small></small>
+    <small>At Mattermost, we’re in the midst of an epic to make our error handling code more idiomatic and thus ultimately more accessible.</small>
     <hr>
     <p>Go is an extremely opinionated programming language. import something in a file that&rsquo;s not used? It won&rsquo;t compile, and there&rsquo;s no flag to override. While there are workarounds, the end result remains the same: Go files are never cluttered by unused imports. This is true for all Go code everywhere, making every Go project more accessible.
 Not all Go opinions are enforced by the compiler. Some are documented in Effective Go, and yet others are reflected only in the coding style of the Go standard library.</p>

@@ -9,11 +9,20 @@
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title> OneLogin and AWS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">   
+<meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
+<meta name="og:site_name" value="Mattermost.com">
+<meta name="og:title" value="OneLogin and AWS">
+
+ 
+  <meta name="description" content="Find out how the Mattermost team generates AWS keys using OneLogin authentication.">
+<meta name="twitter:description" content="Find out how the Mattermost team generates AWS keys using OneLogin authentication.">
+<meta name="og:description" content="Find out how the Mattermost team generates AWS keys using OneLogin authentication.">
 
 
+
+ 
 <link rel="canonical" href="https://developers.mattermost.com/internal/infrastructure/onelogin-aws/">
 
 
@@ -716,28 +725,8 @@
                     <h1 class="mt-0 doc-title">
                         OneLogin and AWS
                     </h1>
-                    <h1 id="generating-aws-keys-using-onelogin-authentication">Generating AWS Keys using OneLogin authentication&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#generating-aws-keys-using-onelogin-authentication"></i></a> </h1>
-<p>We use <a href="https://github.com/physera/onelogin-aws-cli">https://github.com/physera/onelogin-aws-cli</a> to generate temporary AWS keys.</p>
-<h2 id="installation">Installation&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installation"></i></a> </h2>
-<p>To install, use pip:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ pip install onelogin-aws-cli
-</code></pre></div><p>Note that <code>onelogin-aws-cli</code> requires Python 3. It is not recommended to install Python packages globally on your system.</p>
-<h2 id="usage">Usage&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#usage"></i></a> </h2>
-<p>Running <code>onelogin-aws-login</code>  will perform the authentication against OneLogin, and cache the credentials in the AWS CLI Shared Credentials File.</p>
-<p>For every required piece of information, the program will present interactive inputs, unless that value has already been provided through either <a href="#command-line-parameters">command line parameters</a>, <a href="#environment-variables">environment variables</a>, or <a href="#configuration-file">configuration file directives</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ onelogin-aws-login
-Onelogin Username: myuser@mattermost.com
-Onelogin Password:
-Google Authenticator Token: <span style="color:#f60">579114</span>
-Pick a role:
-<span style="color:#555">[</span>1<span style="color:#555">]</span>: arn:aws:iam::xoxoxoxo:role/onelogin-test-ec2
-<span style="color:#555">[</span>2<span style="color:#555">]</span>: arn:aws:iam::xoxoxoxo:role/onelogin-test-s3
-<span style="color:#555">[</span>3<span style="color:#555">]</span>: arn:aws:iam::xoxoxoxo:role/onelogin-test-s3
-? <span style="color:#f60">3</span>
-Credentials cached in <span style="color:#c30">&#39;/Users/myuser/.aws/credentials&#39;</span>
-Expires at 2018-05-24 15:15:41+00:00
-Use aws cli with --profile xoxoxoxo:role/onelogin-test-s3/myuser@mattermost.com
-</code></pre></div>
+                    <p>Please refer to <a href="https://docs.google.com/document/d/1S4i1XFGn7a1VXbtFV28GtbAe56m7fOHDZDgRmm5FBkg/edit#heading=h.ortqmqq1zjyx">https://docs.google.com/document/d/1S4i1XFGn7a1VXbtFV28GtbAe56m7fOHDZDgRmm5FBkg/edit#heading=h.ortqmqq1zjyx</a> for the latest instructions to generate AWS credentials for development environments.</p>
+
 
                 </div>
             </div>

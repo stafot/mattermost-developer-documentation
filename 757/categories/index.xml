@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>i18n</title>
+      <link>https://developers.mattermost.com/categories/i18n/</link>
+      <pubDate>Fri, 04 Dec 2020 12:00:00 -0500</pubDate>
+      
+      <guid>https://developers.mattermost.com/categories/i18n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Go</title>
       <link>https://developers.mattermost.com/categories/go/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
@@ -80,15 +89,6 @@
       <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://developers.mattermost.com/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>i18n</title>
-      <link>https://developers.mattermost.com/categories/i18n/</link>
-      <pubDate>Thu, 26 Mar 2020 12:00:00 -0500</pubDate>
-      
-      <guid>https://developers.mattermost.com/categories/i18n/</guid>
       <description></description>
     </item>
     

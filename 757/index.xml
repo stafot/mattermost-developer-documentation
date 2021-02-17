@@ -210,7 +210,7 @@ For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup inst
       <description>Set up your development environment for building, running, and testing the Mattermost server.
 Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
 For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31    Install and configure Docker CE: https://docs.</description>
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31   title: &amp;ldquo;OSX Development Environment Setup&amp;rdquo; description: &amp;ldquo;Read about how to set up your developer environment in Mattermost using a Mac OS X.</description>
     </item>
     
     <item>
@@ -871,11 +871,7 @@ After signing into the master account, you can access other accounts within the 
       <pubDate>Wed, 07 Nov 2018 16:10:15 +0100</pubDate>
       
       <guid>https://developers.mattermost.com/internal/infrastructure/onelogin-aws/</guid>
-      <description>Generating AWS Keys using OneLogin authentication We use https://github.com/physera/onelogin-aws-cli to generate temporary AWS keys.
-Installation To install, use pip:
-$ pip install onelogin-aws-cli Note that onelogin-aws-cli requires Python 3. It is not recommended to install Python packages globally on your system.
-Usage Running onelogin-aws-login will perform the authentication against OneLogin, and cache the credentials in the AWS CLI Shared Credentials File.
-For every required piece of information, the program will present interactive inputs, unless that value has already been provided through either command line parameters, environment variables, or configuration file directives.</description>
+      <description>Please refer to https://docs.google.com/document/d/1S4i1XFGn7a1VXbtFV28GtbAe56m7fOHDZDgRmm5FBkg/edit#heading=h.ortqmqq1zjyx for the latest instructions to generate AWS credentials for development environments.</description>
     </item>
     
     <item>
@@ -1043,6 +1039,15 @@ Feature teams will commit a total of 4 engineers plus a lead to SET for each rot
     </item>
     
     <item>
+      <title>Avoiding Common Internationalization Mistakes</title>
+      <link>https://developers.mattermost.com/blog/common-i18n-mistakes/</link>
+      <pubDate>Fri, 04 Dec 2020 12:00:00 -0500</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/common-i18n-mistakes/</guid>
+      <description>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (cough English, though cough).</description>
+    </item>
+    
+    <item>
       <title>Tuning MySQL and the Ghost of Index Merge Intersection</title>
       <link>https://developers.mattermost.com/blog/mysql-index-merge/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
@@ -1128,15 +1133,6 @@ The following are my speaking notes from the session, slightly modified from the
       
       <guid>https://developers.mattermost.com/blog/all-about-emojis/</guid>
       <description>In person, you can easily tell someone&amp;rsquo;s mood based on their body language and how they speak, but that&amp;rsquo;s much more difficult with text alone. Emojis are a great way to add tone to a piece of text and also help make text-based conversation feel more casual, relaxed, and fun. Thanks to emojis, we can chat with much more real emotion than you might get by being careful about your word choice or by including just the right number of exclamation marks and periods at the end of a sentence.</description>
-    </item>
-    
-    <item>
-      <title>Avoiding Common Internationalization Mistakes</title>
-      <link>https://developers.mattermost.com/blog/common-i18n-mistakes/</link>
-      <pubDate>Thu, 26 Mar 2020 12:00:00 -0500</pubDate>
-      
-      <guid>https://developers.mattermost.com/blog/common-i18n-mistakes/</guid>
-      <description>Languages are complicated, and every language is complicated in different ways that can be hard to understand without learning every single one of them. Some languages form words from multiple characters while others have symbols that represent entire concepts. Some feature words without pluralization or gender and rely on context for that while others have two or even more genders for words. Some are very phonetic while others pronounce words seemingly at random (cough English, though cough).</description>
     </item>
     
     <item>
@@ -1382,44 +1378,6 @@ The signing procedure varies depending on the platform that the release is desti
     
     <item>
       <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/arch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/arch/</guid>
-      <description>Install and configure Docker CE:
-sudo pacman -S docker sudo gpasswd -a $USER docker sudo systemctl enable docker.service sudo systemctl start docker.service newgrp docker Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.0.0.1 &amp;gt; mm_postgres_backup.bak Then after upgrading and starting the new docker-compose managed containers, restore the data:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/centos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/centos/</guid>
-      <description>Install and configure Docker CE:
-curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
- https://docs.docker.com/install/linux/docker-ce/centos/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/osx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/osx/</guid>
-      <description>Install and configure Docker CE: https://docs.docker.com/docker-for-mac/.
-Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.0.0.1 &amp;gt; mm_postgres_backup.bak Then after upgrading and starting the new docker-compose managed containers, restore the data:
-mysql -u mmuser -p -h 127.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1432,25 +1390,15 @@ mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;g
     </item>
     
     <item>
-      <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</link>
+      <title>Arch Linux Development Environment Setup</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/arch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</guid>
-      <description>This is an unofficial guide. Community testing, feedback, and improvements are welcome and greatly appreciated.
-  Install the Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10.
-Note: Docker for Windows expects path to have the format /c/foo/bar, but WSL uses /mnt/c/foo/bar instead.
-Run winver and check which version of Windows you have. If you are using 1803 or higher, then you need to create a file /etc/wsl.conf with the following content to make sure your drives are mounted at the root rather than inside /mnt:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://developers.mattermost.com/extend/plugins/server/debugging/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/extend/plugins/server/debugging/</guid>
-      <description>Plugins communicate with the main Mattermost server by RPC. In order to debug them with Delve, a few steps are necessary.
-MacOS  After starting the main Mattermost application, run ps aux | grep name.of.your.plugin. This will print a list of running processes that match that name, as such: username 78836 0.0 0.1 4397696 12492 s006 S 7:07AM 0:00.03 plugins/name.of.your.plugin/server/dist/plugin-darwin-amd64. Grab the pid, which is the second number after your username in the output above.</description>
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/arch/</guid>
+      <description>Install and configure Docker CE:
+sudo pacman -S docker sudo gpasswd -a $USER docker sudo systemctl enable docker.service sudo systemctl start docker.service newgrp docker Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
+First, backup from any existing containers:
+mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.0.0.1 &amp;gt; mm_postgres_backup.bak Then after upgrading and starting the new docker-compose managed containers, restore the data:</description>
     </item>
     
     <item>
@@ -1471,6 +1419,54 @@ How can plugins make sure http requests are authentic? Plugins can implement the
       <guid>https://developers.mattermost.com/extend/plugins/webapp/best-practices/</guid>
       <description>Design Best Practices Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
  Example: Jira project actions  Actions that apply to specific messages  Recommendation: Have your plugin register a post dropdown menu component with some text, icon and an action function.</description>
+    </item>
+    
+    <item>
+      <title>CentOS Development Environment Setup</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/centos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/centos/</guid>
+      <description>Install and configure Docker CE:
+curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
+ https://docs.docker.com/install/linux/docker-ce/centos/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
+First, backup from any existing containers:
+mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
+    </item>
+    
+    <item>
+      <title>Debugging Server Plugins</title>
+      <link>https://developers.mattermost.com/extend/plugins/server/debugging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/extend/plugins/server/debugging/</guid>
+      <description>Plugins communicate with the main Mattermost server by RPC. In order to debug them with Delve, a few steps are necessary.
+MacOS  After starting the main Mattermost application, run ps aux | grep name.of.your.plugin. This will print a list of running processes that match that name, as such: username 78836 0.0 0.1 4397696 12492 s006 S 7:07AM 0:00.03 plugins/name.of.your.plugin/server/dist/plugin-darwin-amd64. Grab the pid, which is the second number after your username in the output above.</description>
+    </item>
+    
+    <item>
+      <title>OSX Development Environment Setup</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/osx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/osx/</guid>
+      <description>Install and configure Docker CE: https://docs.docker.com/docker-for-mac/.
+Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
+First, backup from any existing containers:
+mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.0.0.1 &amp;gt; mm_postgres_backup.bak Then after upgrading and starting the new docker-compose managed containers, restore the data:
+mysql -u mmuser -p -h 127.</description>
+    </item>
+    
+    <item>
+      <title>Windows with WSL Development Environment Setup</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/windows-wsl/</guid>
+      <description>This is an unofficial guide. Community testing, feedback, and improvements are welcome and greatly appreciated.
+  Install the Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10.
+Note: Docker for Windows expects path to have the format /c/foo/bar, but WSL uses /mnt/c/foo/bar instead.
+Run winver and check which version of Windows you have. If you are using 1803 or higher, then you need to create a file /etc/wsl.conf with the following content to make sure your drives are mounted at the root rather than inside /mnt:</description>
     </item>
     
   </channel>
