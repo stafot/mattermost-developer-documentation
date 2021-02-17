@@ -1399,19 +1399,23 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <p>&lt; add some examples when we create them &gt;</p>
 <h2 id="faq">FAQ&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#faq"></i></a> </h2>
 <ol>
-<li>
-<p>What is the expected default value for boolean feature flags? Is it &ldquo;false&rdquo;? In the sense of &ldquo;the normal product is when the feature is not around, and therefore the default should be the normal product&rdquo;. Or should it be &ldquo;true&rdquo; as in &ldquo;the product now has this, we only shut it down if something weird happens&rdquo;?
-Definitely off. The idea is to use them to slowly roll out a feature. So when the code is deployed, its not on yet. Then you roll out to a small portion, make sure everything is OK and gradually roll out from there.</p>
-</li>
-<li>
-<p>Is it possible to use a plugin feature flag like <code>PluginIncidentManagement</code> to &ldquo;prepackage&rdquo; a plugin only on cloud by only setting a plugin version to that flag on cloud? Could on-prem customers manually set that flag to install such plugin?
-Yes. If you leave the default &quot;&rdquo; then nothing will happen for on-prem installations. Then you can have cloud team set split.io/environment to set a specific version. On-prem can set environment variables to set feature flag values.</p>
-</li>
-<li>
-<p>How do feature flags work on Webapp?
-To add a feature flag that affects frontend, the following is needed: 1. PR to server code to add the new feature flag. 2. PR to redux to update the types. 3. PR to webapp to actually use the feature flag.</p>
-</li>
+<li>What is the expected default value for boolean feature flags? Is it &ldquo;false&rdquo;? In the sense of &ldquo;the normal product is when the feature is not around, and therefore the default should be the normal product&rdquo;. Or should it be &ldquo;true&rdquo; as in &ldquo;the product now has this, we only shut it down if something weird happens&rdquo;?</li>
 </ol>
+<ul>
+<li>Definitely off. The idea is to use them to slowly roll out a feature. So when the code is deployed, its not on yet. Then you roll out to a small portion, make sure everything is OK and gradually roll out from there.</li>
+</ul>
+<ol start="2">
+<li>Is it possible to use a plugin feature flag like <code>PluginIncidentManagement</code> to &ldquo;prepackage&rdquo; a plugin only on cloud by only setting a plugin version to that flag on cloud? Could on-prem customers manually set that flag to install such plugin?</li>
+</ol>
+<ul>
+<li>Yes. If you leave the default &quot;&rdquo; then nothing will happen for on-prem installations. Then you can have cloud team set split.io/environment to set a specific version. On-prem can set environment variables to set feature flag values.</li>
+</ul>
+<ol start="3">
+<li>How do feature flags work on Webapp?</li>
+</ol>
+<ul>
+<li>To add a feature flag that affects frontend, the following is needed: 1. PR to server code to add the new feature flag. 2. PR to redux to update the types. 3. PR to webapp to actually use the feature flag.</li>
+</ul>
 
 
                 </div>
