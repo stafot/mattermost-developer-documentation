@@ -919,10 +919,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/arch/</loc>
   </url>
   
@@ -948,6 +944,14 @@
   
   <url>
     <loc>https://developers.mattermost.com/extend/plugins/server/debugging/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/gsoc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</loc>
   </url>
   
   <url>

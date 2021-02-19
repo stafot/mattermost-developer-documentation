@@ -621,7 +621,9 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Migrating Plugins
+                        
+                            Migrating Plugins from Mattermost 5.5
+                        
                     </h1>
                     <h2 id="migrating-plugins-from-mattermost-55-and-earlier">Migrating Plugins from Mattermost 5.5 and earlier&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#migrating-plugins-from-mattermost-55-and-earlier"></i></a> </h2>
 <p>The plugin package exposed by Mattermost 5.6 and later drops support for automatically unmarshalling a plugin&rsquo;s configuration onto the struct embedding <code>MattermostPlugin</code>. As server plugins are inherently concurrent (hooks being called asynchronously) and the plugin configuration can change at any time, access to the configuration must be synchronized.</p>

@@ -723,9 +723,11 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Guidelines for New Infrastructure
+                        
+                            Guidelines for New Infrastructure - Mattermost
+                        
                     </h1>
-                    <h1 id="all-new-infrastructure-should-meet-these-requirements">All new infrastructure should meet these requirements.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#all-new-infrastructure-should-meet-these-requirements"></i></a> </h1>
+                    <h2 id="all-new-infrastructure-should-meet-these-requirements">All new infrastructure should meet these requirements.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#all-new-infrastructure-should-meet-these-requirements"></i></a> </h2>
 <h3 id="authentication-should-be-centralized">Authentication should be centralized.&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#authentication-should-be-centralized"></i></a> </h3>
 <p>OneLogin, LDAP, IAM Groups, GitHub, or even Mattermost should define the level of access granted to a person. We want to minimize the number of steps required to onboard or offboard new team members and don&rsquo;t want to have to grant or revoke access service-by-service.</p>
 <p>For example, new machines in AWS should be created without a keypair and use Vault+OneLogin to control SSH access.</p>
