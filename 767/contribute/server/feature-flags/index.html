@@ -1424,25 +1424,25 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <li>What is the expected default value for boolean feature flags? Is it <code>true</code> or <code>false</code>?</li>
 </ol>
 <ul>
-<li>Definitely <code>false</code>. The idea is to use them to slowly roll out a feature. So when the code is deployed, the feature flag is not enabled yet. Then you roll out to a small portion, make sure everything is OK and gradually roll out from there.</li>
+<li>Definitely <code>false</code>. The idea is to use them to slowly roll out a feature. When the code is deployed, the feature flag is not enabled yet. See more details on feature flag rollout timelines here: <a href="https://developers.mattermost.com/contribute/server/feature-flags/#timelines-for-rollouts">https://developers.mattermost.com/contribute/server/feature-flags/#timelines-for-rollouts</a>.</li>
 </ul>
 <ol start="2">
-<li>Is it possible to use a plugin feature flag like <code>PluginIncidentManagement</code> to &ldquo;prepackage&rdquo; a plugin only on Cloud by only setting a plugin version to that flag on Cloud? Can Self-Managed customers manually set that flag to install such plugin?</li>
+<li>Is it possible to use a plugin feature flag such as <code>PluginIncidentManagement</code> to &ldquo;prepackage&rdquo; a plugin only on Cloud by only setting a plugin version to that flag on Cloud? Can Self-Managed customers manually set that flag to install the said plugin?</li>
 </ol>
 <ul>
-<li>Yes. If you leave the default &quot;&rdquo; then nothing will happen for Self-Managed installations. You can ask the Cloud team to set split.io/environment to a specific version. Self-Managed can set environment variables to set feature flag values.</li>
+<li>Yes. If you leave the default &quot;&rdquo; then nothing will happen for Self-Managed installations. You can ask the Cloud team to set split.io/environment to a specific version. Self-Managed installations can set environment variables to set feature flag values.</li>
 </ul>
 <ol start="3">
-<li>How do feature flags work on Webapp?</li>
+<li>How do feature flags work on webapp?</li>
 </ol>
 <ul>
 <li>To add a feature flag that affects frontend, the following is needed: 1. PR to server code to add the new feature flag. 2. PR to redux to update the types. 3. PR to webapp to actually use the feature flag.</li>
 </ul>
 <ol start="4">
-<li>How do we enable a feature flag for testing on community-daily?</li>
+<li>How do we enable a feature flag for testing on community-daily and on Cloud test servers?</li>
 </ol>
 <ul>
-<li>You can post in ~Developers: Cloud channel with the feature flag name and what you want the Cloud team to set it to.</li>
+<li>You can post in <a href="https://community.mattermost.com/core/channels/cloud">~Developers: Cloud channel</a> with the feature flag name and what you want the Cloud team to set it to.</li>
 </ul>
 
 
