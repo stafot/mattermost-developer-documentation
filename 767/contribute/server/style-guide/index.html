@@ -1007,6 +1007,26 @@
                             
                         </ul>
                     
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/contribute/mobile/storybook/"> Storybook</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
                 </ul>
             
                 
@@ -1441,7 +1461,29 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 <p>This rule is not yet fully applied to the <code>model</code> package due to backward compatibility requirements.</p>
 <h4 id="receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"><a href="https://github.com/golang/go/wiki/CodeReviewComments#receiver-names">Receiver Names</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"></i></a> </h4>
 <p>The name of a method&rsquo;s receiver should be a reflection of its identity; often a one or two letter abbreviation of its type suffices (such as &ldquo;c&rdquo; or &ldquo;cl&rdquo; for &ldquo;Client&rdquo;). Don&rsquo;t use generic names such as &ldquo;me&rdquo;, &ldquo;this&rdquo;, or &ldquo;self&rdquo; identifiers typical of object-oriented languages that give the variable a special meaning.</p>
-<h2 id="proposing-a-new-rule">Proposing a new rule&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#proposing-a-new-rule"></i></a> </h2>
+<h4 id="error-variable-names">Error variable names&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#error-variable-names"></i></a> </h4>
+<p>The name of any <code>error</code> variable must be <code>err</code> or prefixed with <code>err</code>. The name of any <code>*model.AppError</code> variable must be <code>appErr</code> or prefixed with <code>appErr</code>. This allows us to avoid confusion about how to handle different kind of errors inside Mattermost. If you are storing the error value from a function that returns an <code>error</code> type in its signature, it&rsquo;s considered an <code>error</code>, regardless of whether the function, internally, is returning a <code>*model.AppError</code> instance.</p>
+<p>For example, when the function signature returns an <code>error</code>, we use the <code>err</code> variable name:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">MyFunction</span>() <span style="color:#078;font-weight:bold">error</span> {
+    <span style="color:#069;font-weight:bold">return</span> model.<span style="color:#c0f">NewAppError</span>(<span style="color:#555">...</span>)
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">OtherFunction</span>() {
+    <span style="color:#555">...</span>
+    err <span style="color:#555">:=</span> <span style="color:#c0f">MyFunction</span>()
+    <span style="color:#555">...</span>
+}
+</code></pre></div><p>When the function signature returns an <code>*model.AppError</code>, we use the <code>appErr</code> variable name:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">MyFunction</span>() <span style="color:#555">*</span>model.AppError {
+    <span style="color:#069;font-weight:bold">return</span> model.<span style="color:#c0f">NewAppError</span>(<span style="color:#555">...</span>)
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">OtherFunction</span>() {
+    <span style="color:#555">...</span>
+    appErr <span style="color:#555">:=</span> <span style="color:#c0f">MyFunction</span>()
+    <span style="color:#555">...</span>
+}
+</code></pre></div><h2 id="proposing-a-new-rule">Proposing a new rule&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#proposing-a-new-rule"></i></a> </h2>
 <p>To propose a new rule, follow the process below:</p>
 <ul>
 <li>Add it to the agenda in the <a href="https://community.mattermost.com/core/channels/developers-server">Server</a> Guild meeting, and propose it.</li>

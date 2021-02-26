@@ -574,17 +574,27 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/contribute/</loc>
+    <lastmod>2021-02-25T11:17:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/</loc>
+    <lastmod>2021-02-25T11:17:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/mobile/storybook/</loc>
+    <lastmod>2021-02-25T11:17:44+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/blog/</loc>
     <lastmod>2021-02-02T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://developers.mattermost.com/categories/</loc>
-    <lastmod>2021-02-02T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/</loc>
     <lastmod>2021-02-02T00:00:00-04:00</lastmod>
   </url>
   
@@ -601,11 +611,6 @@
   <url>
     <loc>https://developers.mattermost.com/categories/testing/</loc>
     <lastmod>2021-02-02T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/</loc>
-    <lastmod>2021-01-12T16:00:00+05:30</lastmod>
   </url>
   
   <url>
