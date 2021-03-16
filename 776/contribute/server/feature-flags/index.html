@@ -1385,7 +1385,6 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <h2 id="self-managed-releases">Self-Managed releases&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#self-managed-releases"></i></a> </h2>
 <p>For a feature-flagged feature to be included in a Self-Managed release, the feature flag should be removed.</p>
 <p>Feature flags are generally off by default and self-managed releases do not contact the management system. Therefore feature flags that are not ready for a self-managed release will be automatically disabled for all self-managed releases.</p>
-<p>The downside of enabling feature flags by default for self-managed is that the feature flag would be less useful and we’d have more feature flags to keep track of. The correct process is to remove the flag and there should be some level of slow rollout. The long-term solution is to have weekly Cloud releases to be able to iterate on features faster.</p>
 <h2 id="testing">Testing&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#testing"></i></a> </h2>
 <p>Tests should be written to verify all states of the feature flag. Tests should cover any migrations that may take place in both directions (ie. from off to on and from on to off). Ideally E2E tests should be written before the feature is merged, or at least before the feature flag is removed.</p>
 <h1 id="when-to-use">When to use&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#when-to-use"></i></a> </h1>
@@ -1419,7 +1418,7 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <li>Is it possible to use a plugin feature flag such as <code>PluginIncidentManagement</code> to &ldquo;prepackage&rdquo; a plugin only on Cloud by only setting a plugin version to that flag on Cloud? Can Self-Managed customers manually set that flag to install the said plugin?</li>
 </ol>
 <ul>
-<li>Yes. If you leave the default &quot;&rdquo; then nothing will happen for Self-Managed installations. You can ask the Cloud team to set split.io/environment to a specific version. Self-Managed installations can set environment variables to set feature flag values. However, users should recognize that the feature is still considered &ldquo;experimental&rdquo; and should not be enabled on production servers.</li>
+<li>Yes. If you leave the default &quot;&rdquo; then nothing will happen for Self-Managed installations. You can ask the Cloud team to set split.io/environment to a specific version.</li>
 </ul>
 <ol start="3">
 <li>How do feature flags work on webapp?</li>
@@ -1458,10 +1457,10 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <li>This is something we&rsquo;re going to be evaluating using split.io. We have already implemented support for this in the server.</li>
 </ul>
 <ol start="9">
-<li>Do feature flags need to be restarted?</li>
+<li>Do feature flag changes require the server to be restarted?</li>
 </ol>
 <ul>
-<li>Feature flags don’t have to be restarted unless the feature requires that.</li>
+<li>Feature flags don’t require a server restart unless the feature being flagged requires a restart itself.</li>
 </ul>
 <ol start="10">
 <li>For features that are requested by self-managed customers, why do we have to deploy to Cloud first, rather than having the customer who has the test case test it?</li>
@@ -1474,6 +1473,12 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 </ol>
 <ul>
 <li>The process hasn’t changed much from the old release process: Features can still be tested on self-managed servers once they have been rolled out to Cloud. The primary goal is that bugs are first identified on Cloud servers.</li>
+</ul>
+<ol start="12">
+<li>How can self-managed installations set feature flags?</li>
+</ol>
+<ul>
+<li>Self-managed installations can set environment variables to set feature flag values. However, users should recognize that the feature is still considered &ldquo;experimental&rdquo; and should not be enabled on production servers.</li>
 </ul>
 
 
