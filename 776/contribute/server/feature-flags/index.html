@@ -1381,11 +1381,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p>For smaller, non-risky features, the above process can be more fast tracked as needed, such as starting with a 10% rollout to test servers, then 100%.
 Features have to soak on cloud for at least 2 weeks for testing. Focus is on severity and number of bugs found; if there are major bugs found at any stage, the feature flag can be turned off to roll back the feature.</p>
-<p>When the feature is rolled out to customers, logs will show if there are crashes, and normally users will report if a feature is broken and/or if the feature is useful.</p>
-<h2 id="on-prem-releases">On-prem releases&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#on-prem-releases"></i></a> </h2>
-<p>For a feature flagged feature to be included in an on-prem release, the feature flag should be removed.</p>
+<p>When the feature is rolled out to customers, logs will show if there are crashes, and normally users will report feedback on the feature (e.g. bugs).</p>
+<h2 id="self-managed-releases">Self-Managed releases&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#self-managed-releases"></i></a> </h2>
+<p>For a feature flagged feature to be included in a Self-Managed release, the feature flag should be removed.</p>
 <p>Feature flags are generally off by default and on-prem releases do not contact the management system. Therefore feature flags that are not ready for an on-prem release will be automatically disabled for all on-prem releases.</p>
-<p>The downside of enabling feature flags by default for on-prem is that the feature flag would be less useful and we’d have more feature flags to keep track of. The correct process is to remove the flag and there should be some level of slow rollout. The real solution is releasing to Cloud more often.</p>
+<p>The downside of enabling feature flags by default for Self-Managed is that the feature flag would be less useful and we’d have more feature flags to keep track of. The correct process is to remove the flag and there should be some level of slow rollout. The long-term solution is to have weekly Cloud releases to be able to iterate on features faster.</p>
 <h2 id="testing">Testing&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#testing"></i></a> </h2>
 <p>Tests should be written to verify all states of the feature flag. Tests should cover any migrations that may take place in both directions (ie. from off to on and from on to off). Ideally E2E tests should be written before the feature is merged, or at least before the feature flag is removed.</p>
 <h1 id="when-to-use">When to use&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#when-to-use"></i></a> </h1>
@@ -1461,19 +1461,19 @@ Features have to soak on cloud for at least 2 weeks for testing. Focus is on sev
 <li>Do feature flags need to be restarted?</li>
 </ol>
 <ul>
-<li>Feature flags don’t have to be restarted unless the feature requires that (the feature team would know this).</li>
+<li>Feature flags don’t have to be restarted unless the feature requires that.</li>
 </ul>
 <ol start="10">
 <li>For features that are requested by Self-Managed customers, why do we have to deploy to Cloud first, rather than having the customer who has the test case test it?</li>
 </ol>
 <ul>
-<li>Cloud is the way to validate the stability of the feature before it goes to that customer. Or can say can use environment variables but it’s experimental.</li>
+<li>Cloud is the way to validate the stability of the feature before it goes to Self-Managed customers. In exceptional cases we can let the Self-Managed customer know that they can use environment variables to enable the feature flag (but specify that the feature is experimental).</li>
 </ul>
 <ol start="11">
 <li>How does the current process take into account bugs that may arise on Self-Managed specifically?</li>
 </ol>
 <ul>
-<li>Process hasn’t changed much; hopefully bugs are first caught on Cloud.</li>
+<li>Process hasn’t changed much from the old release process: features can still be tested on Self-Managed servers once they have been rolled out to Cloud. the main goal is that bugs are first caught on Cloud servers.</li>
 </ul>
 
 
