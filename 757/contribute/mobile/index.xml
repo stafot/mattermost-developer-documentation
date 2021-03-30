@@ -11,5 +11,15 @@
 	<atom:link href="https://developers.mattermost.com/contribute/mobile/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Storybook</title>
+      <link>https://developers.mattermost.com/contribute/mobile/storybook/</link>
+      <pubDate>Thu, 25 Feb 2021 11:17:44 +0530</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/mobile/storybook/</guid>
+      <description>Storybook has been added to the mobile repository to help prototype components. To use Storybook:
+ In the root of the repository, run npm run storybook. This step automatically scans and loads all stories, then opens a new browser tab with the Storybook interface.  Note: When using a real device, you may need to configure the Storybook Host URL by updating the .env file in the root of the repository.</description>
+    </item>
+    
   </channel>
 </rss>

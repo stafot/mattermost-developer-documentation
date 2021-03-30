@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2021 11:17:44 +0530</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -210,7 +210,7 @@ For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup inst
       <description>Set up your development environment for building, running, and testing the Mattermost server.
 Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
 For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31   title: &amp;ldquo;OSX Development Environment Setup&amp;rdquo; description: &amp;ldquo;Read about how to set up your developer environment in Mattermost using a Mac OS X.</description>
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31   title: &amp;ldquo;OSX Development Environment Setup&amp;rdquo; heading: &amp;ldquo;How to Set Up Mattermost in Mac OS X&amp;rdquo; description: &amp;ldquo;Read about how to set up your developer environment in Mattermost using a Mac OS X.</description>
     </item>
     
     <item>
@@ -347,9 +347,9 @@ sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanag
       <pubDate>Tue, 22 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/desktop/debugging/</guid>
-      <description>Developer Tools The electron app itself can be inspected using the developer tools, available from the View menu:
+      <description>The electron app itself can be inspected using the developer tools, available from the View menu:
 However, this view does not expose the contents of the webviews for inspection. To open the developer tools for a webview, first access the console for the electron shell as above, and then run
-document.getElementById(&amp;#34;mattermostView0&amp;#34;).openDevTools(); Use mattermostView0 to inspect the first opened tab, mattermostView1 to inspect the second opened tab, and so on.</description>
+document.getElementById(&amp;#34;mattermostView0&amp;#34;).openDevTools(); Use mattermostView0 to inspect the first opened tab, mattermostView1 to inspect the second opened tab, and so on. A new window will appear with the developer tools for that webview:</description>
     </item>
     
     <item>
@@ -1030,6 +1030,16 @@ Feature teams will commit a total of 4 engineers plus a lead to SET for each rot
     </item>
     
     <item>
+      <title>Storybook</title>
+      <link>https://developers.mattermost.com/contribute/mobile/storybook/</link>
+      <pubDate>Thu, 25 Feb 2021 11:17:44 +0530</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/mobile/storybook/</guid>
+      <description>Storybook has been added to the mobile repository to help prototype components. To use Storybook:
+ In the root of the repository, run npm run storybook. This step automatically scans and loads all stories, then opens a new browser tab with the Storybook interface.  Note: When using a real device, you may need to configure the Storybook Host URL by updating the .env file in the root of the repository.</description>
+    </item>
+    
+    <item>
       <title>Streamlining Developer Access to Prometheus and Grafana</title>
       <link>https://developers.mattermost.com/blog/streamlining-developer-access-to-prometheus-and-grafana/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 -0400</pubDate>
@@ -1377,19 +1387,6 @@ The signing procedure varies depending on the platform that the release is desti
     </item>
     
     <item>
-      <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</guid>
-      <description>Install and configure Docker CE:
-curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
- https://docs.docker.com/install/linux/docker-ce/ubuntu/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
-    </item>
-    
-    <item>
       <title>Arch Linux Development Environment Setup</title>
       <link>https://developers.mattermost.com/contribute/server/developer-setup/arch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1442,6 +1439,19 @@ mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;g
       <guid>https://developers.mattermost.com/extend/plugins/server/debugging/</guid>
       <description>Plugins communicate with the main Mattermost server by RPC. In order to debug them with Delve, a few steps are necessary.
 MacOS  After starting the main Mattermost application, run ps aux | grep name.of.your.plugin. This will print a list of running processes that match that name, as such: username 78836 0.0 0.1 4397696 12492 s006 S 7:07AM 0:00.03 plugins/name.of.your.plugin/server/dist/plugin-darwin-amd64. Grab the pid, which is the second number after your username in the output above.</description>
+    </item>
+    
+    <item>
+      <title>Mattermost Developer Setup: Ubuntu</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</guid>
+      <description>Install and configure Docker CE:
+curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
+ https://docs.docker.com/install/linux/docker-ce/ubuntu/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
+First, backup from any existing containers:
+mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
     </item>
     
     <item>

@@ -39,55 +39,22 @@
 <link rel="stylesheet" href="https://developers.mattermost.com/css/note.css">
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script async src="//cdn.bizible.com/scripts/bizible.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64458817-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-64458817-2');
-</script>
 
 
-<script type="text/javascript">
-    (function() {
-    var didInit = false;
-    function initMunchkin() {
-    if(didInit === false) {
-    didInit = true;
-    Munchkin.init('161-FBE-733');
-    }
-    }
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = '//munchkin.marketo.net/munchkin.js';
-    s.onreadystatechange = function() {
-    if (this.readyState == 'complete' || this.readyState == 'loaded') {
-    initMunchkin();
-    }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53S4TVZ');</script>
 
-
-<script type="text/javascript" charset="utf-8">
-    var _eiq = _eiq || [];
-    var _engagio_settings = {
-      accountId: "cb6a404b72e9141b70d1f82abc04db92b4e56238"
-    };
-    (function() {
-      var ei = document.createElement('script'); ei.type = 'text/javascript'; ei.async = true;
-      ei.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'web-analytics.engagio.com/js/ei.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ei, s);
-    })();
-  </script>
 
     </head>
 <body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53S4TVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
     
 <header class="with-notification-bar">
 
@@ -621,7 +588,9 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Overview
+                        
+                            An Overview of Mattermost Plugins
+                        
                     </h1>
                     <p>Plugins are defined by a manifest file and contain at least a server or web app component, or both.</p>
 <p>The <a href="https://github.com/mattermost/mattermost-plugin-starter-template">Plugin Starter Template</a> is a starting point and illustrates the different components of a Mattermost plugin.</p>
@@ -630,7 +599,7 @@
 <p>The plugin manifest provides required metadata about the plugin, such as name and ID. It is defined in JSON or YAML. This is <code>plugin.json</code> in both the <a href="https://github.com/mattermost/mattermost-plugin-starter-template/blob/master/plugin.json">sample</a> and <a href="https://github.com/mattermost/mattermost-plugin-demo/blob/master/plugin.json">demo</a> plugins.</p>
 <p>See the <a href="https://developers.mattermost.com/extend/plugins/manifest-reference/">manifest reference</a> for more information.</p>
 <h3 id="server">Server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#server"></i></a> </h3>
-<p>The server component of a plugin is written in Go and runs as a subprocess of the Mattermost server process. The Go code extends the <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#MattermostPlugin">MattermostPlugin</a> struct that contains an <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API">API</a> and allows for the implementation of <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks">Hook</a> methods that enable the plugin to interact with the Mattermost server.</p>
+<p>The server component of a plugin is written in Go and runs as a subprocess of the Mattermost server process. The Go code extends the <a href="https://godoc.org/github.com/mattermost/mattermost-server/v5/plugin#MattermostPlugin">MattermostPlugin</a> struct that contains an <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API">API</a> and allows for the implementation of <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks">Hook</a> methods that enable the plugin to interact with the Mattermost server.</p>
 <p>The sample plugin implements this simply in <a href="https://github.com/mattermost/mattermost-plugin-starter-template/blob/master/server/plugin.go">plugin.go</a> and the demo plugin splits the API and hook usage throughout <a href="https://github.com/mattermost/mattermost-plugin-demo/tree/master/server">multiple files</a>.</p>
 <p>Read more about the server-side of plugins <a href="https://developers.mattermost.com/extend/plugins/server/">here</a>.</p>
 <h3 id="webdesktop-app">Web/Desktop App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#webdesktop-app"></i></a> </h3>

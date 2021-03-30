@@ -39,55 +39,22 @@
 <link rel="stylesheet" href="https://developers.mattermost.com/css/note.css">
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script async src="//cdn.bizible.com/scripts/bizible.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64458817-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-64458817-2');
-</script>
 
 
-<script type="text/javascript">
-    (function() {
-    var didInit = false;
-    function initMunchkin() {
-    if(didInit === false) {
-    didInit = true;
-    Munchkin.init('161-FBE-733');
-    }
-    }
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = '//munchkin.marketo.net/munchkin.js';
-    s.onreadystatechange = function() {
-    if (this.readyState == 'complete' || this.readyState == 'loaded') {
-    initMunchkin();
-    }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53S4TVZ');</script>
 
-
-<script type="text/javascript" charset="utf-8">
-    var _eiq = _eiq || [];
-    var _engagio_settings = {
-      accountId: "cb6a404b72e9141b70d1f82abc04db92b4e56238"
-    };
-    (function() {
-      var ei = document.createElement('script'); ei.type = 'text/javascript'; ei.async = true;
-      ei.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'web-analytics.engagio.com/js/ei.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ei, s);
-    })();
-  </script>
 
     </head>
 <body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53S4TVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
     
 <header class="with-notification-bar">
 
@@ -621,7 +588,9 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Plugin Helpers
+                        
+                            Plugin Helpers at Mattermost
+                        
                     </h1>
                     <p>The plugin architecture consists of an <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API">API</a>, <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks">hooks</a>, and plugin helpers.</p>
 <p>When a plugin invokes an API method, it makes an RPC call to the Mattermost server and waits for a response. When the Mattermost server invokes a hook method, it makes an RPC call to the plugin and waits for a response:</p>
@@ -649,7 +618,7 @@
         <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span>    }
 }
-</code></pre></div><p>Although plugin helpers are defined in the <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#Helpers">github.com/mattermost/mattermost-server/plugin</a> package, they aren&rsquo;t part of the RPC exchange with the Mattermost server. This distinction has a number of advantages:</p>
+</code></pre></div><p>Although plugin helpers are defined in the <a href="https://godoc.org/github.com/mattermost/mattermost-server/v5/plugin#Helpers">github.com/mattermost/mattermost-server/v5/plugin</a> package, they aren&rsquo;t part of the RPC exchange with the Mattermost server. This distinction has a number of advantages:</p>
 <ul>
 <li>Compatibility with older Mattermost servers (so long as they support the underlying API and hooks).</li>
 <li>Flexibility in adding new helpers without cluttering the RPC protocol and corresponding API documentation.</li>
@@ -667,7 +636,7 @@
 </span><span style="color:#09f;font-style:italic"></span>	<span style="color:#c0f">GetUsers</span>(options <span style="color:#555">*</span>model.UserGetOptions) ([]<span style="color:#555">*</span>model.User, <span style="color:#555">*</span>model.AppError)
 </code></pre></div><p>Old servers won&rsquo;t do anything with new, unrecognized fields, but also won&rsquo;t break if they are present. When adding new options that will only be supported by some Mattermost server versions, consider wrapping the functionality with a plugin helper to help plugin authors safely use the API.</p>
 <h2 id="how-do-i-add-a-plugin-helper">How do I add a plugin helper?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-add-a-plugin-helper"></i></a> </h2>
-<p>To add a helper to the official <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#Helpers">github.com/mattermost/mattermost-server/plugin</a> package:</p>
+<p>To add a helper to the official <a href="https://godoc.org/github.com/mattermost/mattermost-server/v5/plugin#Helpers">github.com/mattermost/mattermost-server/v5/plugin</a> package:</p>
 <ul>
 <li>Extend the <a href="https://github.com/mattermost/mattermost-server/blob/master/plugin/helpers.go"><code>Helpers</code> interface</a> with the new method.</li>
 <li>Add a new method to the concrete <code>HelpersImpl</code> struct in a new or existing <code>helpers_*</code> file:</li>

@@ -20,7 +20,7 @@
       <description>Set up your development environment for building, running, and testing the Mattermost server.
 Note: If you&amp;rsquo;re developing plugins, see the plugin developer setup documentation.
 For minimum software requirements, see the following table:
-   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31   title: &amp;ldquo;OSX Development Environment Setup&amp;rdquo; description: &amp;ldquo;Read about how to set up your developer environment in Mattermost using a Mac OS X.</description>
+   Software Minimum Version     Docker 17.12.0+   Docker Compose 1.21.0+   Go 1.15.0+    Mac OS X Ubuntu 16.04/18.04 Windows WSL Archlinux CentOS 7/Fedora 31   title: &amp;ldquo;OSX Development Environment Setup&amp;rdquo; heading: &amp;ldquo;How to Set Up Mattermost in Mac OS X&amp;rdquo; description: &amp;ldquo;Read about how to set up your developer environment in Mattermost using a Mac OS X.</description>
     </item>
     
     <item>
@@ -127,19 +127,6 @@ To use Dejavu, execute docker-compose up -d dejavu.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</guid>
-      <description>Install and configure Docker CE:
-curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
- https://docs.docker.com/install/linux/docker-ce/ubuntu/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
-First, backup from any existing containers:
-mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
-    </item>
-    
-    <item>
       <title>Arch Linux Development Environment Setup</title>
       <link>https://developers.mattermost.com/contribute/server/developer-setup/arch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -160,6 +147,19 @@ mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;g
       <description>Install and configure Docker CE:
 curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
  https://docs.docker.com/install/linux/docker-ce/centos/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
+First, backup from any existing containers:
+mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
+    </item>
+    
+    <item>
+      <title>Mattermost Developer Setup: Ubuntu</title>
+      <link>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</guid>
+      <description>Install and configure Docker CE:
+curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh sudo usermod -aG docker $(whoami) docker login If you prefer to perform these steps manually:
+ https://docs.docker.com/install/linux/docker-ce/ubuntu/ https://docs.docker.com/install/linux/linux-postinstall/  Note: MM-9791 introduced using docker-compose to manage containers. To preserve your data on upgrade, execute the following steps.
 First, backup from any existing containers:
 mysqldump -h 127.0.0.1 --column-statistics=0 -u mmuser -p mattermost_test &amp;gt; mm_mysql_backup.sql pg_dump -U mmuser -W -d mattermost_test -h 127.</description>
     </item>

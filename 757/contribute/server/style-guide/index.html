@@ -43,55 +43,22 @@
 <link rel="stylesheet" href="https://developers.mattermost.com/css/note.css">
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script async src="//cdn.bizible.com/scripts/bizible.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64458817-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-64458817-2');
-</script>
 
 
-<script type="text/javascript">
-    (function() {
-    var didInit = false;
-    function initMunchkin() {
-    if(didInit === false) {
-    didInit = true;
-    Munchkin.init('161-FBE-733');
-    }
-    }
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = '//munchkin.marketo.net/munchkin.js';
-    s.onreadystatechange = function() {
-    if (this.readyState == 'complete' || this.readyState == 'loaded') {
-    initMunchkin();
-    }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53S4TVZ');</script>
 
-
-<script type="text/javascript" charset="utf-8">
-    var _eiq = _eiq || [];
-    var _engagio_settings = {
-      accountId: "cb6a404b72e9141b70d1f82abc04db92b4e56238"
-    };
-    (function() {
-      var ei = document.createElement('script'); ei.type = 'text/javascript'; ei.async = true;
-      ei.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'web-analytics.engagio.com/js/ei.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ei, s);
-    })();
-  </script>
 
     </head>
 <body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53S4TVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
     
 <header class="with-notification-bar">
 
@@ -586,26 +553,6 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/"> </a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
                                 <a href="https://developers.mattermost.com/contribute/server/developer-setup/arch/"> Arch Linux Development Environment Setup</a></span>
                             
                         </span>
@@ -627,6 +574,26 @@
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
                                 <a href="https://developers.mattermost.com/contribute/server/developer-setup/centos/"> CentOS Development Environment Setup</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/"> Mattermost Developer Setup: Ubuntu</a></span>
                             
                         </span>
                         <ul class="sub-menu" >
@@ -1007,6 +974,26 @@
                             
                         </ul>
                     
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/contribute/mobile/storybook/"> Storybook</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
                 </ul>
             
                 
@@ -1322,6 +1309,26 @@
                 <span class="item ">
                     <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                     
+                        <a href="https://developers.mattermost.com/contribute/gsoc/"> Google Summer of Code 2021</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
                         <a href="https://developers.mattermost.com/contribute/mvp/"> MVP</a>
                     
                 </span>
@@ -1341,7 +1348,9 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Go Style Guide
+                        
+                            Go Style Guide
+                        
                     </h1>
                     <p>Go is a more opinionated language than many others when it comes to coding style. The compiler enforces some basic stylistic elements, such as the removal of unused variables and imports. Many others are enforced by the <code>gofmt</code> tool, such as usage of white-space, semicolons, indentation, and alignment. The <code>gofmt</code> tool is run over all code in the Mattermost Server CI pipeline. Any code which is not consistent with the formatting enforced by <code>gofmt</code> will not be accepted into the repository.</p>
 <p>Despite this, there are still many areas of coding style which are not dictated by these tools. Rather than reinventing the wheel, we are adopting <a href="https://golang.org/doc/effective_go.html">Effective Go</a> as a basis for our style guide. On top of that, we also follow the guidelines laid out by the Go project at <a href="https://github.com/golang/go/wiki/CodeReviewComments">CodeReviewComments</a>.</p>
@@ -1354,6 +1363,31 @@
 <p>In addition to the specific exceptions made for backward compatibility in the <code>model</code> package, all new commits should also follow the rules as outlined in this and the linked documents, for both new and modified code.</p>
 <p>This does not, however, mean that a developer is <em>required</em> to fix any surrounding code that contravenes the rules in the style guide. It&rsquo;s encouraged to keep fixing things as you go, but it is not compulsory to do so. Reviewers should refrain from asking for stylistic changes in surrounding code if the submitter has not included them in their pull request.</p>
 <h2 id="guidelines">Guidelines&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#guidelines"></i></a> </h2>
+<h3 id="project-layout">Project layout&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#project-layout"></i></a> </h3>
+<p>When starting with a new application, it&rsquo;s very tempting to declare a bunch of packages and interfaces right off the bat. Avoid that.</p>
+<p>It&rsquo;s very hard to know how the project will grow or what the ideal package boundaries are when starting with a project. Don&rsquo;t split your code into <code>model</code>, <code>store</code>, <code>app</code> along with a bunch of interfaces in the first commit itself. Prematurely separating them will lead to an incorrect package API that may be hard to correct later on.</p>
+<p>Instead, put everything inside an <code>internal</code> package as your starting point. For example, if the name of your project is <code>mattercool</code>, the following can be a good first initial structure:</p>
+<pre><code>|
+|- cmd/mattercool
+|- internal/server
+|- go.mod,go.sum
+</code></pre><p>Putting everything under <code>internal</code> has the advantage that you&rsquo;re free to change whatever you want without any fallout. After some time, when the project grows, package boundaries will start to appear. At that point, start to separate into sub-packages.</p>
+<p>Following are some of the anti-patterns to keep in mind:</p>
+<ul>
+<li>Don&rsquo;t use the <code>pkg</code> pattern. This is a common standard used by many projects. But it goes against the Go philosophy of naming packages that signify what they contain. From <a href="https://blog.golang.org/package-names:">https://blog.golang.org/package-names:</a></li>
+</ul>
+<blockquote>
+<p>A package&rsquo;s name provides context for its contents, making it easier for clients to understand what the package is for and how to use it.</p>
+</blockquote>
+<p>The <code>pkg</code> directory was used long ago in the Go project when there weren&rsquo;t any well-defined standards. But it was later removed to just have normal packages.</p>
+<ul>
+<li>
+<p>Same for <code>util</code> or <code>misc</code> packages. Don&rsquo;t use them. Instead break out related <code>util</code> functionalities into its own package or if it&rsquo;s not used by a lot of packages, make it part of the original package itself.</p>
+</li>
+<li>
+<p>Don&rsquo;t have too many small packages with only one file. It&rsquo;s usually a sign of splitting packages without giving thought into them. Look at the API boundaries and group the packages into bigger chunks.</p>
+</li>
+</ul>
 <h3 id="functional">Functional&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functional"></i></a> </h3>
 <h4 id="default-to-sync-instead-of-async">Default to sync instead of async&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#default-to-sync-instead-of-async"></i></a> </h4>
 <p>Always prefer synchronous functions by default. Async calls are hard to get right. They have no control over goroutine lifetimes and introduce data races. If you think something needs to be asynchronous, measure it and prove it. Ask these questions:</p>
@@ -1419,10 +1453,32 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 <p>This rule is not yet fully applied to the <code>model</code> package due to backward compatibility requirements.</p>
 <h4 id="receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"><a href="https://github.com/golang/go/wiki/CodeReviewComments#receiver-names">Receiver Names</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#receiver-nameshttpsgithubcomgolanggowikicodereviewcommentsreceiver-names"></i></a> </h4>
 <p>The name of a method&rsquo;s receiver should be a reflection of its identity; often a one or two letter abbreviation of its type suffices (such as &ldquo;c&rdquo; or &ldquo;cl&rdquo; for &ldquo;Client&rdquo;). Don&rsquo;t use generic names such as &ldquo;me&rdquo;, &ldquo;this&rdquo;, or &ldquo;self&rdquo; identifiers typical of object-oriented languages that give the variable a special meaning.</p>
-<h3 id="log-levels">Log levels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#log-levels"></i></a> </h3>
+<h4 id="error-variable-names">Error variable names&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#error-variable-names"></i></a> </h4>
+<p>The name of any <code>error</code> variable must be <code>err</code> or prefixed with <code>err</code>. The name of any <code>*model.AppError</code> variable must be <code>appErr</code> or prefixed with <code>appErr</code>. This allows us to avoid confusion about how to handle different kind of errors inside Mattermost. If you are storing the error value from a function that returns an <code>error</code> type in its signature, it&rsquo;s considered an <code>error</code>, regardless of whether the function, internally, is returning a <code>*model.AppError</code> instance.</p>
+<p>For example, when the function signature returns an <code>error</code>, we use the <code>err</code> variable name:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">MyFunction</span>() <span style="color:#078;font-weight:bold">error</span> {
+    <span style="color:#069;font-weight:bold">return</span> model.<span style="color:#c0f">NewAppError</span>(<span style="color:#555">...</span>)
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">OtherFunction</span>() {
+    <span style="color:#555">...</span>
+    err <span style="color:#555">:=</span> <span style="color:#c0f">MyFunction</span>()
+    <span style="color:#555">...</span>
+}
+</code></pre></div><p>When the function signature returns an <code>*model.AppError</code>, we use the <code>appErr</code> variable name:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">MyFunction</span>() <span style="color:#555">*</span>model.AppError {
+    <span style="color:#069;font-weight:bold">return</span> model.<span style="color:#c0f">NewAppError</span>(<span style="color:#555">...</span>)
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">OtherFunction</span>() {
+    <span style="color:#555">...</span>
+    appErr <span style="color:#555">:=</span> <span style="color:#c0f">MyFunction</span>()
+    <span style="color:#555">...</span>
+}
+</code></pre></div><h3 id="log-levels">Log levels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#log-levels"></i></a> </h3>
 <p>The purpose of logging is to provide observability - it enables the application communicate back to the administrator about what is happening. To communicate effectively logs should be meaningful and concise. To achieve this, log lines should conform to one of the definitions below:</p>
-<p><strong>Critical:</strong> This represents the most urgent situations for the service to work properly and it is unable to meet even the minimum requirements. When a critical thing happens it is expected that the service will stop.</p>
-<p>As an example, the code block below demonstrates a critical situation where the server creation is failed. This error causes total failure of the service.</p>
+<p><strong>Critical:</strong> This log-level represents the most severe situations when the service is entirely unable to continue operating. After emitting a <em>critical</em> log line, it is expected that the service will terminate.</p>
+<p>For example, the code block below demonstrates a <em>critical</em> situation where the server startup routine fails, meaning the service is unable to start and must terminate.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">runServer</span>(..) {
 	..
 	server, err <span style="color:#555">:=</span> app.<span style="color:#c0f">NewServer</span>(options<span style="color:#555">...</span>)
@@ -1432,8 +1488,8 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 	}
 	..
 }
-</code></pre></div><p><strong>Error:</strong> This indicates that something important happened to the system, but it does not cause loss of service. The administrator should investigate the incident. Hence it should provide enough information to start an investigation. An error can be a loss of service for a single user or something affecting a part of the application but does not break the service entirely.</p>
-<p>In the following example we log as error level since it is affecting only a part of the application.</p>
+</code></pre></div><p><strong>Error:</strong> This log-level is used when something unexpected has happened to the service, but it does not result in a total loss of service. Log lines using the <em>error</em> level must be actionable, so that the system administrator can investigate and resolve the incident. The <em>error</em> log level may indicate a loss of service for an individual user or request or it may indicate a total failure of a non-critical subsystem within the service.</p>
+<p>For example, the <em>error</em> log level is used in the code snippet below as it represents a partial failure of one non-critical subsystem of the service. Administrator intervention is required to resolve this situation, but the rest of the service is able to continue operating in the meantime.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">SyncPlugins</span>(..) {
 	..
 	reader, appErr <span style="color:#555">:=</span> a.<span style="color:#c0f">FileReader</span>(plugin.path)
@@ -1443,8 +1499,8 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 	}
 	..
 }
-</code></pre></div><p><strong>Warn:</strong> Something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of function. A possible investigation should be carried out at some point but is not urgent. This level of messages should be as detailed as possible since warnings are quite a gray area and we want to be more clear about logs.</p>
-<p>One of the most prominent features of warning logs is that the operation can be continued in case of an error.</p>
+</code></pre></div><p><strong>Warn:</strong> This log level is used to indicate that something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of functionality as a consequence of this failure. System administrators may wish to investigate the cause of log lines at this level, but the need is typically less pressing than for those at <em>error</em> level. System administrators may also wish to monitor the rate of occurrence of individual log-lines at this level as this may be indicative of a wider problem. Log lines at the <em>warning</em> level should be as detailed as possible, since these are often the least clear-cut category of message.</p>
+<p>For example, the <em>warning</em> log level may be used to indicate that something went wrong but the overall operation was still able to complete successfully.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">UpdateUserRoles</span>(..) {
 	..
 	<span style="color:#069;font-weight:bold">if</span> result <span style="color:#555">:=</span> <span style="color:#555">&lt;-</span>schan; result.NErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
@@ -1455,8 +1511,8 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 	a.<span style="color:#c0f">InvalidateCacheForUser</span>(userId)
 	..
 }
-</code></pre></div><p><strong>Info:</strong> These logs correspond to normal application behavior even if it results in an error for the end user. These are not critical as they are normal operations, but they provide useful information about what is going on.</p>
-<p>For example, information about services stopping and starting may be relevant to administrators.</p>
+</code></pre></div><p><strong>Info:</strong> This log level should be used to record normal, expected application behavior, even if it results in an error for the end user. They are not actionable individually, but the significant changes in the frequency of occurrence of individual log lines at this level may be indicative of a possible problem.</p>
+<p>For example, the <em>info</em> log level may be used to communicate to administrators that certain subsystems within the service have been started or stopped.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (s <span style="color:#555">*</span>Schedulers) <span style="color:#c0f">Start</span>(..) {
 	s.startOnce.<span style="color:#c0f">Do</span>(<span style="color:#069;font-weight:bold">func</span>() {
 		mlog.<span style="color:#c0f">Info</span>(<span style="color:#c30">&#34;Starting schedulers.&#34;</span>)
@@ -1464,11 +1520,10 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
 	})
 	..
 }
-</code></pre></div><p><strong>Debug:</strong> These messages contain enough diagnostic information to be used for effective debugging.</p>
+</code></pre></div><p><strong>Debug:</strong> This log-level is used for diagnostic information which may be used to debug issues but is not necessary for normal production system logging, nor actionable by system administrators.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (worker <span style="color:#555">*</span>Worker) <span style="color:#c0f">Run</span>() {
 	mlog.<span style="color:#c0f">Debug</span>(<span style="color:#c30">&#34;Worker started&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;worker&#34;</span>, worker.name))
 	..
-}
 </code></pre></div><h2 id="proposing-a-new-rule">Proposing a new rule&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#proposing-a-new-rule"></i></a> </h2>
 <p>To propose a new rule, follow the process below:</p>
 <ul>

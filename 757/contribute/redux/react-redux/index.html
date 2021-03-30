@@ -39,55 +39,22 @@
 <link rel="stylesheet" href="https://developers.mattermost.com/css/note.css">
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script async src="//cdn.bizible.com/scripts/bizible.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64458817-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-64458817-2');
-</script>
 
 
-<script type="text/javascript">
-    (function() {
-    var didInit = false;
-    function initMunchkin() {
-    if(didInit === false) {
-    didInit = true;
-    Munchkin.init('161-FBE-733');
-    }
-    }
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = '//munchkin.marketo.net/munchkin.js';
-    s.onreadystatechange = function() {
-    if (this.readyState == 'complete' || this.readyState == 'loaded') {
-    initMunchkin();
-    }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53S4TVZ');</script>
 
-
-<script type="text/javascript" charset="utf-8">
-    var _eiq = _eiq || [];
-    var _engagio_settings = {
-      accountId: "cb6a404b72e9141b70d1f82abc04db92b4e56238"
-    };
-    (function() {
-      var ei = document.createElement('script'); ei.type = 'text/javascript'; ei.async = true;
-      ei.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'web-analytics.engagio.com/js/ei.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ei, s);
-    })();
-  </script>
 
     </head>
 <body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53S4TVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
     
 <header class="with-notification-bar">
 
@@ -578,26 +545,6 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/"> </a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
                                 <a href="https://developers.mattermost.com/contribute/server/developer-setup/arch/"> Arch Linux Development Environment Setup</a></span>
                             
                         </span>
@@ -619,6 +566,26 @@
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
                                 <a href="https://developers.mattermost.com/contribute/server/developer-setup/centos/"> CentOS Development Environment Setup</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/"> Mattermost Developer Setup: Ubuntu</a></span>
                             
                         </span>
                         <ul class="sub-menu" >
@@ -999,6 +966,26 @@
                             
                         </ul>
                     
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/contribute/mobile/storybook/"> Storybook</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
                 </ul>
             
                 
@@ -1318,6 +1305,26 @@
                 <span class="item ">
                     <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                     
+                        <a href="https://developers.mattermost.com/contribute/gsoc/"> Google Summer of Code 2021</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
                         <a href="https://developers.mattermost.com/contribute/mvp/"> MVP</a>
                     
                 </span>
@@ -1337,7 +1344,9 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Using Redux with React
+                        
+                            Using Redux with React in Mattermost
+                        
                     </h1>
                     <p>Using Redux with React is fairly straightforward thanks to the <a href="https://github.com/reactjs/react-redux">React Redux</a> library. It provides the <code>connect</code> function to create higher order components that have access to the Redux store to set their props.</p>
 <p>A typical Redux-connected component will be in its own folder with two files: <code>index.jsx</code> containing the code to connect to the Redux store and the file where the component is actually implemented. This helps to keep the Redux logic separate from the rendering for the component which keeps it more easily readable and makes it easier to test since it can be done without the whole Redux store.</p>
