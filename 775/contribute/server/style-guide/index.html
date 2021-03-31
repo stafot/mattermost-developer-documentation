@@ -1475,6 +1475,55 @@ d, ok <span style="color:#555">:=</span> token.(json.Delim)
     appErr <span style="color:#555">:=</span> <span style="color:#c0f">MyFunction</span>()
     <span style="color:#555">...</span>
 }
+</code></pre></div><h3 id="log-levels">Log levels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#log-levels"></i></a> </h3>
+<p>The purpose of logging is to provide observability - it enables the application communicate back to the administrator about what is happening. To communicate effectively logs should be meaningful and concise. To achieve this, log lines should conform to one of the definitions below:</p>
+<p><strong>Critical:</strong> This log-level represents the most severe situations when the service is entirely unable to continue operating. After emitting a <em>critical</em> log line, it is expected that the service will terminate.</p>
+<p>For example, the code block below demonstrates a <em>critical</em> situation where the server startup routine fails, meaning the service is unable to start and must terminate.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">runServer</span>(..) {
+	..
+	server, err <span style="color:#555">:=</span> app.<span style="color:#c0f">NewServer</span>(options<span style="color:#555">...</span>)
+	<span style="color:#069;font-weight:bold">if</span> err <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		mlog.<span style="color:#c0f">Critical</span>(err.<span style="color:#c0f">Error</span>())
+		<span style="color:#069;font-weight:bold">return</span>
+	}
+	..
+}
+</code></pre></div><p><strong>Error:</strong> This log-level is used when something unexpected has happened to the service, but it does not result in a total loss of service. Log lines using the <em>error</em> level must be actionable, so that the system administrator can investigate and resolve the incident. The <em>error</em> log level may indicate a loss of service for an individual user or request or it may indicate a total failure of a non-critical subsystem within the service.</p>
+<p>For example, the <em>error</em> log level is used in the code snippet below as it represents a partial failure of one non-critical subsystem of the service. Administrator intervention is required to resolve this situation, but the rest of the service is able to continue operating in the meantime.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">SyncPlugins</span>(..) {
+	..
+	reader, appErr <span style="color:#555">:=</span> a.<span style="color:#c0f">FileReader</span>(plugin.path)
+	<span style="color:#069;font-weight:bold">if</span> appErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		mlog.<span style="color:#c0f">Error</span>(<span style="color:#c30">&#34;Failed to open plugin bundle from file store.&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;bundle&#34;</span>, plugin.path), mlog.<span style="color:#c0f">Err</span>(appErr))
+		<span style="color:#069;font-weight:bold">return</span>
+	}
+	..
+}
+</code></pre></div><p><strong>Warn:</strong> This log level is used to indicate that something unexpected has happened, but the server is able to continue operating and it has not suffered any loss of functionality as a consequence of this failure. System administrators may wish to investigate the cause of log lines at this level, but the need is typically less pressing than for those at <em>error</em> level. System administrators may also wish to monitor the rate of occurrence of individual log-lines at this level as this may be indicative of a wider problem. Log lines at the <em>warning</em> level should be as detailed as possible, since these are often the least clear-cut category of message.</p>
+<p>For example, the <em>warning</em> log level may be used to indicate that something went wrong but the overall operation was still able to complete successfully.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (a <span style="color:#555">*</span>App) <span style="color:#c0f">UpdateUserRoles</span>(..) {
+	..
+	<span style="color:#069;font-weight:bold">if</span> result <span style="color:#555">:=</span> <span style="color:#555">&lt;-</span>schan; result.NErr <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
+		<span style="color:#09f;font-style:italic">// soft error since the user roles were still updated
+</span><span style="color:#09f;font-style:italic"></span>		mlog.<span style="color:#c0f">Warn</span>(<span style="color:#c30">&#34;Error during updating user roles&#34;</span>, mlog.<span style="color:#c0f">Err</span>(result.NErr))
+	}
+
+	a.<span style="color:#c0f">InvalidateCacheForUser</span>(userId)
+	..
+}
+</code></pre></div><p><strong>Info:</strong> This log level should be used to record normal, expected application behavior, even if it results in an error for the end user. They are not actionable individually, but the significant changes in the frequency of occurrence of individual log lines at this level may be indicative of a possible problem.</p>
+<p>For example, the <em>info</em> log level may be used to communicate to administrators that certain subsystems within the service have been started or stopped.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (s <span style="color:#555">*</span>Schedulers) <span style="color:#c0f">Start</span>(..) {
+	s.startOnce.<span style="color:#c0f">Do</span>(<span style="color:#069;font-weight:bold">func</span>() {
+		mlog.<span style="color:#c0f">Info</span>(<span style="color:#c30">&#34;Starting schedulers.&#34;</span>)
+		..
+	})
+	..
+}
+</code></pre></div><p><strong>Debug:</strong> This log-level is used for diagnostic information which may be used to debug issues but is not necessary for normal production system logging, nor actionable by system administrators.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> (worker <span style="color:#555">*</span>Worker) <span style="color:#c0f">Run</span>() {
+	mlog.<span style="color:#c0f">Debug</span>(<span style="color:#c30">&#34;Worker started&#34;</span>, mlog.<span style="color:#c0f">String</span>(<span style="color:#c30">&#34;worker&#34;</span>, worker.name))
+	..
 </code></pre></div><h2 id="proposing-a-new-rule">Proposing a new rule&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#proposing-a-new-rule"></i></a> </h2>
 <p>To propose a new rule, follow the process below:</p>
 <ul>
