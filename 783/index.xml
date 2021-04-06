@@ -756,22 +756,6 @@ Cherry Pick Process - Developer When your PR is required on a release branch, yo
     </item>
     
     <item>
-      <title>VPN</title>
-      <link>https://developers.mattermost.com/internal/infrastructure/vpn/</link>
-      <pubDate>Mon, 28 May 2018 16:08:19 +0200</pubDate>
-      
-      <guid>https://developers.mattermost.com/internal/infrastructure/vpn/</guid>
-      <description>Setup VPN access VPN Server: https://vpn.internal.mattermost.com
-  Access the Onelogin link sent in the invitation email
-  Select in the two-factor auth OneLogin Protect or Yubikey (if you have an yubikey device)
-iOS: https://itunes.apple.com/us/app/onelogin-protect/id509252983?mt=8
-Android: https://play.google.com/store/apps/details?id=com.onelogin.newotp&amp;amp;hl=en
-  Configure your two-factor
-  Access the vpn server to download the client (if you don&amp;rsquo;t have) and the config file (Used Locked profile)
- Select Login and type your email and password (the same you used in the Onelogin)  Download the client for your OS Download the User locked profile     Install the GUI client</description>
-    </item>
-    
-    <item>
       <title>Manifest Reference</title>
       <link>https://developers.mattermost.com/extend/plugins/manifest-reference/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 -0500</pubDate>
@@ -797,19 +781,6 @@ The following is a list of things to do. It should be kept as complete and up-to
       
       <guid>https://developers.mattermost.com/internal/onboarding/manager-guide/</guid>
       <description>Mentor For The Day  Schedule a 1-1 each day between new staff and team members (including QA and PM) and other devs who would be relevant to meet with for the first two weeks  These meetings should be about 30 minutes and do not need to be focused on work topics. They should spend some time getting to know each other The first 1-1 should be between you and the new staff member   In addition to the above 1-1s, you should meet personally with the new staff member for 5-10 minutes every day for the first week or so to make sure everything is going well  Channels and Teams  Make sure new staff is added to the private team Private Core and all relevant channels See here for basic list of channels  Meetings and Accounts  Add new staff member to all appropriate meetings  OneLogin Account Set-up  Login to OneLogin and go to https://mattermost.</description>
-    </item>
-    
-    <item>
-      <title>Vault</title>
-      <link>https://developers.mattermost.com/internal/infrastructure/vault/</link>
-      <pubDate>Mon, 06 Nov 2017 19:30:07 -0500</pubDate>
-      
-      <guid>https://developers.mattermost.com/internal/infrastructure/vault/</guid>
-      <description>Vault is a high security secret store. At Mattermost, its primary purpose is to sign SSH keys.
-Installation If you&amp;rsquo;re on macOS and have Brew installed, you can just brew install vault. Otherwise, see the Vault installation instructions.
-Once installed, you&amp;rsquo;ll need to configure it. Add the following to your .bash_profile or .zshrc:
-export VAULT_ADDR=&#39;https://vault.internal.mattermost.com:8200&#39; Authenticating Authentication is done via OneLogin and RADIUS:
-$ vault login -method=radius username=your_username@mattermost.com OneLogin users must have the &amp;ldquo;Developers&amp;rdquo; role in order to authenticate.</description>
     </item>
     
     <item>
