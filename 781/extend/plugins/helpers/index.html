@@ -618,7 +618,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span>    }
 }
-</code></pre></div><p>Although plugin helpers are defined in the <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#Helpers">github.com/mattermost/mattermost-server/plugin</a> package, they aren&rsquo;t part of the RPC exchange with the Mattermost server. This distinction has a number of advantages:</p>
+</code></pre></div><p>Although plugin helpers are defined in the <a href="https://godoc.org/github.com/mattermost/mattermost-server/v5/plugin#Helpers">github.com/mattermost/mattermost-server/v5/plugin</a> package, they aren&rsquo;t part of the RPC exchange with the Mattermost server. This distinction has a number of advantages:</p>
 <ul>
 <li>Compatibility with older Mattermost servers (so long as they support the underlying API and hooks).</li>
 <li>Flexibility in adding new helpers without cluttering the RPC protocol and corresponding API documentation.</li>
@@ -636,7 +636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </span><span style="color:#09f;font-style:italic"></span>	<span style="color:#c0f">GetUsers</span>(options <span style="color:#555">*</span>model.UserGetOptions) ([]<span style="color:#555">*</span>model.User, <span style="color:#555">*</span>model.AppError)
 </code></pre></div><p>Old servers won&rsquo;t do anything with new, unrecognized fields, but also won&rsquo;t break if they are present. When adding new options that will only be supported by some Mattermost server versions, consider wrapping the functionality with a plugin helper to help plugin authors safely use the API.</p>
 <h2 id="how-do-i-add-a-plugin-helper">How do I add a plugin helper?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-add-a-plugin-helper"></i></a> </h2>
-<p>To add a helper to the official <a href="https://godoc.org/github.com/mattermost/mattermost-server/plugin#Helpers">github.com/mattermost/mattermost-server/plugin</a> package:</p>
+<p>To add a helper to the official <a href="https://godoc.org/github.com/mattermost/mattermost-server/v5/plugin#Helpers">github.com/mattermost/mattermost-server/v5/plugin</a> package:</p>
 <ul>
 <li>Extend the <a href="https://github.com/mattermost/mattermost-server/blob/master/plugin/helpers.go"><code>Helpers</code> interface</a> with the new method.</li>
 <li>Add a new method to the concrete <code>HelpersImpl</code> struct in a new or existing <code>helpers_*</code> file:</li>

@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> R&amp;D Teams</title>
+<title> GitLab Omnibus</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="R&amp;D Teams">
+<meta name="og:title" value="GitLab Omnibus">
 
  
-  <meta name="description" content="Find out which engineers are working in different R&amp;D departments at Mattermost.">
-<meta name="twitter:description" content="Find out which engineers are working in different R&amp;D departments at Mattermost.">
-<meta name="og:description" content="Find out which engineers are working in different R&amp;D departments at Mattermost.">
+  <meta name="description" content="Information on updating and building GitLab Omnibus with new versions of Mattermost">
+<meta name="twitter:description" content="Information on updating and building GitLab Omnibus with new versions of Mattermost">
+<meta name="og:description" content="Information on updating and building GitLab Omnibus with new versions of Mattermost">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/internal/rd-teams/">
+<link rel="canonical" href="https://developers.mattermost.com/internal/gitlab-omnibus/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        R&amp;D Teams
+        GitLab Omnibus
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -601,20 +601,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
-                    
-                
 
                 
                     
                 
 
-                <span class="item active">
-                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                     
-                        <a class="active" href="#"> R&amp;D Teams</a>
+                        <a href="https://developers.mattermost.com/internal/rd-teams/"> R&amp;D Teams</a>
                     
                 </span>
-                <ul class="sub-menu" style="display: block">
+                <ul class="sub-menu" >
                     
                 </ul>
             
@@ -643,18 +641,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
+                    
+                
 
                 
                     
                 
 
-                <span class="item ">
-                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                <span class="item active">
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                     
-                        <a href="https://developers.mattermost.com/internal/gitlab-omnibus/"> GitLab Omnibus</a>
+                        <a class="active" href="#"> GitLab Omnibus</a>
                     
                 </span>
-                <ul class="sub-menu" >
+                <ul class="sub-menu" style="display: block">
                     
                 </ul>
             
@@ -664,157 +664,247 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/internal/rd-teams.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/internal/gitlab-omnibus.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            An Introduction to R&amp;D Teams at Mattermost
+                            GitLab Omnibus Release Process
                         
                     </h1>
-                    <h2 id="leadership">Leadership&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#leadership"></i></a> </h2>
+                    <p>GitLab&rsquo;s Omnibus package bundles Mattermost Team Edition (TE) as an optional feature that can be enabled during installation. While GitLab maintains most of this integration, we send them new versions of Mattermost and occasionally assist with support on issues that relate to Mattermost.</p>
+<p>For every monthly GitLab release, we submit a merge request (MR) to <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/">GitLab&rsquo;s repository</a> to update the embedded version of Mattermost. GitLab releases in the middle of the month, so we&rsquo;ll generally submit the newest version of Mattermost to them at the start of the month to give time for the review process to happen.</p>
+<h3 id="setting-up-gitlab-omnibus-for-development">Setting up GitLab Omnibus for development&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#setting-up-gitlab-omnibus-for-development"></i></a> </h3>
+<p>We maintain <a href="https://gitlab.com/mattermost/omnibus-gitlab">our own fork of GitLab Omnibus</a> for use when submitting merge requests upstream. This should be cloned and kept up to date to ensure that we&rsquo;re testing and submitting against the latest code.</p>
+<p>These are the steps for checking out GitLab Omnibus and installing its dependencies:</p>
+<ol>
+<li>
+<p>Clone our fork.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.com/mattermost/omnibus-gitlab.git
+</code></pre></div></li>
+<li>
+<p>Add the upstream repository as a git remote.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add upstream https://gitlab.com/gitlab-org/omnibus-gitlab.git
+</code></pre></div></li>
+<li>
+<p>Install Docker. GitLab packages all dependencies for building GitLab Omnibus in a Docker image which will be pulled later.</p>
+</li>
+</ol>
+<h3 id="submitting-a-new-version-of-mattermost">Submitting a new version of Mattermost&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#submitting-a-new-version-of-mattermost"></i></a> </h3>
+<p>These are the steps to update GitLab Omnibus with a new version of Mattermost:</p>
+<ol>
+<li>
+<p>Ensure our fork&rsquo;s master branch is up to date with upstream.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout master
+git fetch upstream
+git pull upstream master
+git push
+</code></pre></div></li>
+<li>
+<p>Create a branch for the new version of Mattermost.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b mattermost-X.Y
+</code></pre></div></li>
+<li>
+<p>Update the version of Mattermost downloaded at build time by modifying <code>config/software/mattermost.rb</code>. The <code>default_version</code> and <code>md5</code> fields need to be set to the match the latest release of Mattermost TE.</p>
+</li>
+<li>
+<p>Add an entry to the table in <code>doc/gitlab-mattermost/README.md</code> that maps GitLab versions to the corresponding Mattermost version. This step is not necessary for dot releases of Mattermost.</p>
+</li>
+<li>
+<p>Add a changelog entry by using <code>scripts/changelog</code>. This will create an entry in <code>changeslogs/unreleased</code> that needs to be checked in.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scripts/changelog <span style="color:#c30">&#34;Update Mattermost to X.Y&#34;</span>
+</code></pre></div><p>The type will usually be &ldquo;8. Other&rdquo;. You can also go back afterwards and add the author and MR number if you&rsquo;d like.</p>
+</li>
+<li>
+<p>Commit the changes to <code>config/software/mattermost.rb</code>, <code>doc/gitlab-mattermost/README.md</code>, and the newly created file in <code>changelogs/unreleased</code>. The commit message must also a second line containing the type of change made similar to the one listed in the changelog file.</p>
+<pre><code>Update Mattermost to X.Y
+Changelog: other
+</code></pre></li>
+</ol>
+<p>You can now test the build and submit an MR upstream. For an example of how the branch should look after that, see <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/5068">here</a>.</p>
+<h3 id="building-gitlab-omnibus">Building GitLab Omnibus&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-gitlab-omnibus"></i></a> </h3>
+<p>As mentioned above, GitLab Omnibus is built in a Docker container containing all of the needed dependencies. To test it, the generated <code>.deb</code> package needs to be copied off of the Docker container and installed locally on the test server. Details on how to do that follow.</p>
+<p>These steps differ slightly from the more detailed ones available from GitLab (<a href="https://gitlab.com/gitlab-org/omnibus-gitlab/-/blob/master/doc/build/build_package.md">link</a>) since they were changed to keep the Git repository outside of Docker container, but they still work as of March 4, 2021.</p>
+<ol>
+<li>
+<p>Get the current <code>BUILDER_IMAGE_REVISION</code> value from <code>.gitlab-ci.yml</code>.</p>
+</li>
+<li>
+<p>Run the builder in a Docker container. You may have to run these with <code>sudo</code> depending on permissions. This assumes you&rsquo;re using Ubuntu 18.04, but there are other Docker images available for different OSes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/ubuntu_18.04:<span style="color:#a00">${</span><span style="color:#033">BUILDER_IMAGE_REVISION</span><span style="color:#a00">}</span>
+docker run -it registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/ubuntu_18.04:<span style="color:#a00">${</span><span style="color:#033">BUILDER_IMAGE_REVISION</span><span style="color:#a00">}</span> bash
+</code></pre></div></li>
+<li>
+<p>Inside the container, clone the repo and change to the folder. Note that we&rsquo;re cloning our fork here.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://gitlab.com/mattermost/omnibus-gitlab.git ~/omnibus-gitlab
+<span style="color:#366">cd</span> ~/omnibus-gitlab
+</code></pre></div></li>
+<li>
+<p>Change to the correct branch.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout mattermost-X.Y
+</code></pre></div></li>
+<li>
+<p>Specify where to grab GitLab dependencies and assets from.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#366">export</span> <span style="color:#033">ALTERNATIVE_SOURCES</span><span style="color:#555">=</span><span style="color:#366">true</span>
+<span style="color:#366">export</span> <span style="color:#033">ASSET_REGISTRY</span><span style="color:#555">=</span>registry.gitlab.com
+<span style="color:#366">export</span> <span style="color:#033">COMPILE_ASSETS</span><span style="color:#555">=</span><span style="color:#366">true</span>
+</code></pre></div></li>
+<li>
+<p>Install Ruby dependencies.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle install
+bundle binstubs --all
+</code></pre></div></li>
+<li>
+<p>Build everything. This can take a couple of hours, so go grab lunch.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/omnibus build gitlab
+</code></pre></div></li>
+<li>
+<p>From the host machine, copy the compiled package out of the Docker container.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker cp &lt;container&gt;:/root/omnibus-gitlab/pkg/&lt;package&gt;.deb .
+</code></pre></div></li>
+</ol>
+<p>Note that Docker likes to eat up space on the disk without cleaning up after itself, so you&rsquo;ll want to remove old Docker containers with <code>docker rm</code> after building and copying the package to the host machine.</p>
+<h3 id="installing-and-configuring-gitlab-omnibus">Installing and configuring GitLab Omnibus&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-and-configuring-gitlab-omnibus"></i></a> </h3>
+<p>To install GitLab Omnibus with Mattermost, you&rsquo;ll need to configure your DNS with two domain names for the test server: one for GitLab and one for Mattermost. The following steps will use <code>gitlab.dev.mm</code> and <code>mattermost.dev.mm</code> as those domains.</p>
+<p>The package generated above can be installed with <code>sudo dpkg -i &lt;package&gt;.deb</code>.</p>
+<p>After first installing GitLab Omnibus, the external URLs for GitLab need to be configured, and Mattermost needs to be enabled in the GitLab config. To do that:</p>
+<ol>
+<li>
+<p>Open <code>/etc/gitlab/gitlab.rb</code> using vi or your preferred text editor.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vi /etc/gitlab/gitlab.rb
+</code></pre></div></li>
+<li>
+<p>Set the <code>external_url</code> to set GitLab&rsquo;s external URL.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">external_url <span style="color:#c30">&#34;http://gitlab.dev.mm&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Find and uncomment the line which sets <code>mattermost_external_url</code> and set it to Mattermost&rsquo;s external URL.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">mattermost_external_url <span style="color:#c30">&#34;http://mattermost.dev.mm&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Find and uncomment the line which sets <code>mattermost['enable']</code> and set it to <code>true</code>.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">mattermost<span style="color:#555">[</span><span style="color:#c30">&#39;enable&#39;</span><span style="color:#555">]</span> <span style="color:#555">=</span> <span style="color:#069">true</span>
+</code></pre></div></li>
+<li>
+<p>Leave your editor and use <code>gitlab-ctl</code> to reconfigure and restart its services.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo gitlab-ctl reconfigure
+</code></pre></div></li>
+</ol>
+<p>After a few minutes, Mattermost and GitLab should be accessible from their respective URLs and GitLab sign-in should be automatically configured in Mattermost. The default admin login on GitLab has the username <code>root</code> and the password <code>5iveL!fe</code>.</p>
+<p>A few more commands for working with GitLab can be found <a href="https://docs.mattermost.com/process/support.html#other-debugging-information">in our support documentation</a>.</p>
+<h3 id="testing-mattermost-in-gitlab-omnibus">Testing Mattermost in GitLab Omnibus&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#testing-mattermost-in-gitlab-omnibus"></i></a> </h3>
+<p>To test a new version of Mattermost running in GitLab, you&rsquo;ll have to test the three main ways they interact: logging in, creating a Mattermost team for a GitLab group, and adding notifications/slash commands to Mattermost. Using the same URLs as above, the steps for testing are:</p>
+<ol>
+<li>
+<p>Test signing into Mattermost, once when not logged into GitLab and then again after having already logged in.</p>
+<ol>
+<li>
+<p>Visit <code>http://mattermost.dev.mm</code> in a browser.</p>
+</li>
+<li>
+<p>Select <strong>Sign in with GitLab</strong>. You should be directed to the GitLab login screen.</p>
+</li>
+<li>
+<p>Log in as any user. You should be sent back to Mattermost and logged in.</p>
+</li>
+<li>
+<p>Log out and back in through the same process. You should skip the GitLab login screen since you were still logged into GitLab.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test creating a team in Mattermost for a new GitLab group.</p>
+<ol>
+<li>
+<p>Open <code>http://gitlab.dev.mm</code> in another window.</p>
+</li>
+<li>
+<p>Select the plus icon in the header bar and select <strong>New group</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the group and check <strong>Create a Mattermost team for this group</strong>.</p>
+</li>
+<li>
+<p>Go back to Mattermost. You should have been added to a new team matching the name of the group.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test adding the GitLab slash command.</p>
+<ol>
+<li>
+<p>Go to GitLab.</p>
+</li>
+<li>
+<p>Select the plus icon in the header bar and select <strong>New project</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Create blank project</strong>. Enter a name and choose <strong>Create project</strong>.</p>
+</li>
+<li>
+<p>From the sidebar on the left, go to <strong>Settings &gt; Integrations</strong>.</p>
+</li>
+<li>
+<p>Scroll down and select <strong>Mattermost slash commands</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Add to Mattermost</strong>.</p>
+</li>
+<li>
+<p>Select the team you created above from the drop-down, then choose <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Go back to Mattermost and use <code>/&lt;project&gt;</code>.</p>
+</li>
+<li>
+<p>When prompted, select <strong>Connect your GitLab Account</strong>, then choose <strong>Authorize</strong>.</p>
+</li>
+<li>
+<p>You should now be able to use the slash command to do things like creating and viewing issues.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test adding GitLab notifications.</p>
+<ol>
+<li>
+<p>In Mattermost, go to <strong>Integrations &gt; Incoming Webhooks</strong> and add an incoming webhook.</p>
+</li>
+<li>
+<p>Copy the URL of the webhook and return to Mattermost.</p>
+</li>
+<li>
+<p>Go to GitLab. From the sidebar on the left, go to <strong>Settings &gt; Integrations</strong>.</p>
+</li>
+<li>
+<p>Scroll down and select <strong>Mattermost notifications</strong>.</p>
+</li>
+<li>
+<p>Paste the previously copied webhook URL into the <strong>Webhook</strong> field, then select <strong>Save changes</strong>.</p>
+</li>
+<li>
+<p>Create an issue either from the GitLab UI or by using the previously configured slash command. A notification should be posted by the webhook in the channel you created.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="useful-files-and-commands">Useful Files and Commands&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#useful-files-and-commands"></i></a> </h3>
+<p>When working on GitLab Omnibus, the following files might be useful:</p>
 <ul>
-<li>Corey Hulen - CTO</li>
-<li>Chris Overton - VP Engineering</li>
-<li>Chandar Venkataraman - CPO</li>
+<li><code>config/software/mattermost.rb</code> - The script for downloading Mattermost during GitLab Omnibus&rsquo;s build and extracting the required files for it.</li>
+<li><code>doc/gitlab-mattermost/README.md</code> - GitLab&rsquo;s documentation for using the embedded version of Mattermost.</li>
+<li><code>files/gitlab-cookbooks/mattermost/libraries/mattermost_helper.rb</code> - The list of environment variables that GitLab Omnibus passes to Mattermost.</li>
+<li><code>files/gitlab-cookbooks/mattermost/recipes/enable.rb</code> - The script to set up the required files and folders for Mattermost after installation.</li>
 </ul>
-<h2 id="feature-teams">Feature Teams&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#feature-teams"></i></a> </h2>
-<p>Feature teams are full-stack teams owning collections of features within the Mattermost product.</p>
-<h3 id="enterprise-features-team">Enterprise Features Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#enterprise-features-team"></i></a> </h3>
+<p>After installing GitLab Omnibus, the following files and folders might be useful:</p>
 <ul>
-<li>Scott Bishel - Engineering Lead</li>
-<li>Martin Kraft - Engineeer</li>
-<li>Hossein Ahmadian - Engineer</li>
-<li>Anurag Shivarathri - Engineer</li>
-<li>Furqan Malik - QA SDET</li>
-<li>Katie Wiersgalla - Product Manager</li>
-<li>Michael Gamble - UX Designer</li>
-<li>Carrie Warner - Technical Writer</li>
-</ul>
-<h3 id="core-features-team">Core Features Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#core-features-team"></i></a> </h3>
-<ul>
-<li>Scott Bishel - Engineering Lead</li>
-<li>Jesus Espino - Engineer</li>
-<li>Eli Yukelzon - Engineer</li>
-<li>Ashish Bhate - Engineer</li>
-<li>Caleb Roseland - Engineer</li>
-<li>Ogi Marusic - QA</li>
-<li>Eric Sethna - Product Manager</li>
-<li>Andrew Brown - UX Designer</li>
-<li>Carrie Warner - Technical Writer</li>
-</ul>
-<h3 id="integrations-team">Integrations Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#integrations-team"></i></a> </h3>
-<ul>
-<li>Catalin Tomai - Engineering Lead</li>
-<li>Lev Brouk - Engineer</li>
-<li>Jason Frerich - Engineer</li>
-<li>Michael Kochell - Engineer</li>
-<li>Shota Gvinepadze - Engineer</li>
-<li>Ben Schumacher - Engineer</li>
-<li>Daniel Espino Garcia - Engineer</li>
-<li>Dylan Haussermann - QA</li>
-<li>Aaron Rothschild - Product Manager</li>
-<li>Abhijit Singh - UX Designer</li>
-<li>Justine Geffen - Technical Writer</li>
-</ul>
-<h3 id="workflows-team">Workflows Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#workflows-team"></i></a> </h3>
-<ul>
-<li>Jesse Hallam - Engineering Lead</li>
-<li>Christopher Speller - Engineer</li>
-<li>Christopher Poile - Engineer</li>
-<li>Alejandro García Montoro - Engineer</li>
-<li>Prapti Shrestha - QA SDET</li>
-<li>Ian Tao - Product Manager</li>
-<li>Alex Siclari - UX Designer</li>
-<li>Justine Geffen - Technical Writer</li>
-</ul>
-<h3 id="cloud-features-team">Cloud Features Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#cloud-features-team"></i></a> </h3>
-<ul>
-<li>Maria Nuñez - Engineering Lead</li>
-<li>Allan Guwatudde - Engineer</li>
-<li>Mario de Frutos - Engineer</li>
-<li>Pablo Vélez Vidal - Engineer</li>
-<li>Nick Misasi - Engineer</li>
-<li>Steve Mudie - QA</li>
-<li>Adam Clarkson - Product Manager</li>
-<li>Matt Birtch - UX Designer</li>
-<li>Carrie Warner - Technical Writer</li>
-</ul>
-<h2 id="platform-teams">Platform Teams&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#platform-teams"></i></a> </h2>
-<p>Platform Teams are focused on an individual technical specialisation or layer of the Mattermost software stack.</p>
-<h3 id="mobile-platform-team">Mobile Platform Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mobile-platform-team"></i></a> </h3>
-<ul>
-<li>Elias Nahum - Engineering Lead</li>
-<li>Miguel Alatzar - Engineer</li>
-<li>Avinash Lingaloo - Engineer</li>
-<li>Shaz Amjad - Engineer</li>
-<li>Joseph Baylon - QA SDET</li>
-<li>Eric Sethna - Product Manager</li>
-<li>Matt Birtch - UX Designer</li>
-</ul>
-<h3 id="web-and-desktop-platform-team">Web and Desktop Platform Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#web-and-desktop-platform-team"></i></a> </h3>
-<ul>
-<li>Dean Whillier - Engineering Lead</li>
-<li>Harrison Healey - Engineer</li>
-<li>Sudheer Timmaraju - Engineer</li>
-<li>Devin Binnie - Engineer</li>
-<li>Guillermo Vayá - Engineer</li>
-<li>Nevy Angelova - Engineer</li>
-<li>Jelena Gilliam - QA</li>
-<li>Eric Sethna - Product Manager</li>
-<li>Andrew Brown - UX Designer</li>
-</ul>
-<h3 id="server-platform-team">Server Platform Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#server-platform-team"></i></a> </h3>
-<ul>
-<li>George Goldberg - Engineering Lead</li>
-<li>Miguel de la Cruz - Engineer</li>
-<li>Claudio Costa - Engineer</li>
-<li>Agniva De Sarker - Engineer</li>
-<li>Doug Lauder - Engineer</li>
-<li>Ibrahim Acikgoz - Engineer</li>
-<li>Katie Wiersgalla - Product Manager</li>
-</ul>
-<h3 id="cloud-platform-team">Cloud Platform Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#cloud-platform-team"></i></a> </h3>
-<ul>
-<li>Joram Wilander - Engineering Lead</li>
-<li>Gabe Jackson - Engineer</li>
-<li>Ian Whitlock - Engineer</li>
-<li>Szymon Gibała - Engineer</li>
-<li>Adam Clarkson - Product Manager</li>
-</ul>
-<h3 id="qa-platform-team">QA Platform Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#qa-platform-team"></i></a> </h3>
-<ul>
-<li>Linda Mitchell - QA Lead</li>
-<li>Saturnino Abril - QA SDET</li>
-<li>Lindy Isherwood - QA</li>
-</ul>
-<h2 id="site-reliability-engineering-team">Site Reliability Engineering Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#site-reliability-engineering-team"></i></a> </h2>
-<ul>
-<li>Joram Wilander - Engineering Lead</li>
-<li>Stylianos Rigas - Engineer</li>
-<li>Angelos Kyratzakos - Engineer</li>
-<li>Stavros Foteinopoulos - Engineer</li>
-</ul>
-<h2 id="build-and-infrastructure-team">Build and Infrastructure Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#build-and-infrastructure-team"></i></a> </h2>
-<ul>
-<li>Jason Deland - Engineering Lead</li>
-<li>Elisabeth Kulzer - Build Engineer</li>
-<li>Khosrow Moossavi - Build Engineer</li>
-</ul>
-<h2 id="security-team">Security Team&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#security-team"></i></a> </h2>
-<ul>
-<li>Daniel Schalla - Engineering Lead</li>
-<li>Juho Nurminen - Product Security Engineer</li>
-<li>Rohitesh Gupta - Product Security Engineer</li>
-<li>Corey Robinson - Security Engineer, Infrastructure &amp; Operations</li>
-<li>Kennedy Torkura - Cloud Security Engineer</li>
-<li>Katie Wiersgalla - Product Manager</li>
-</ul>
-<h2 id="other">Other&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#other"></i></a> </h2>
-<ul>
-<li>Amy Blais - Release Manager</li>
+<li><code>/etc/gitlab/gitlab.rb</code> - The configuration files for GitLab Omnibus itself. <code>gitlab reconfigure [&lt;service&gt;]</code> must be called to apply any changes made.</li>
+<li><code>/var/opt/gitlab/mattermost/config.json</code> - The location of Mattermost&rsquo;s <code>config.json</code>.</li>
+<li><code>/var/log/gitlab/mattermost/logs/current</code> - The logs for Mattermost.</li>
+<li><code>/var/opt/gitlab/mattermost/data</code> - The data directory for Mattermost.</li>
+<li><code>/opt/gitlab/embedded/service/mattermost</code> - The static files used by Mattermost (web app code, i18n strings, email templates, etc).</li>
 </ul>
 
 
