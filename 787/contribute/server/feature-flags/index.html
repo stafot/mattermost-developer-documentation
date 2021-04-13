@@ -1438,14 +1438,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h5 id="get-telemetry-id-via-curl-and-jq">Get telemetry ID via curl and jq&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#get-telemetry-id-via-curl-and-jq"></i></a> </h5>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -s https://&lt;your-workspace-url&gt;/api/v4/config/client?format<span style="color:#555">=</span>old | jq <span style="color:#c30">&#34;.TelemetryId&#34;</span>
 </code></pre></div><h4 id="target-using-the-telemetry-id">Target using the telemetry ID&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#target-using-the-telemetry-id"></i></a> </h4>
-<p>With the telemetry ID, go to your split in Split and do the following:</p>
+<p>With the telemetry ID, go to your split and do the following:</p>
 <ol>
-<li>Find the section &ldquo;Create whitelists&rdquo; and click &ldquo;Add whitelist&rdquo;.</li>
+<li>Find the section &ldquo;Create whitelists&rdquo; and click <strong>Add whitelist</strong>.</li>
 <li>Choose the treatment value you want the workspace to get.</li>
 <li>Under &ldquo;Server&rdquo; paste in your telemetry ID.</li>
-<li>At the top right, click &ldquo;Save changes&rdquo; and confirm them on the next screen.</li>
+<li>At the top right, click <strong>Save changes</strong> and confirm them on the next screen.</li>
 </ol>
-<p>Now your workspace will have it&rsquo;s feature flag set according to this rule, regardless of what the default for the split is set to.</p>
+<p>Now your workspace will have its feature flag set according to this rule, regardless of what the default for the split is set to.</p>
 <h3 id="add-or-update-a-feature-flag-for-communitymattermostcom">Add or update a feature flag for community.mattermost.com&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#add-or-update-a-feature-flag-for-communitymattermostcom"></i></a> </h3>
 <p>Note that this will set the flag for community.mattermost.com, community-release.mattermost.com, and community-daily.mattermost.com. It is not possible to set a rule for only one.</p>
 <ol>
