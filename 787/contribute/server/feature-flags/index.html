@@ -1400,28 +1400,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>To have the split have any effect, it needs targeting rules to know which environment and servers it should set the feature flag value to. To add basic targeting rules:</p>
 <ol>
 <li>Find your split and click on it.</li>
-<li>Under the name of the split at the top, select the <strong>Environment</strong> that you want to target.</li>
-</ol>
+<li>Under the name of the split at the top, select the <strong>Environment</strong> that you want to target.
 <ul>
 <li>See <a href="#Environments">Environments</a> for a description of each.</li>
 </ul>
-<ol start="3">
-<li>In the center of the screen, select &ldquo;Add Rules&rdquo;.</li>
-<li>Define your treatments:</li>
-</ol>
+</li>
+<li>In the center of the screen, select <strong>Add Rules</strong>.</li>
+<li>Define your treatments:
 <ul>
 <li>Recall that treatments are just the values your feature flag can have.</li>
 <li>Boolean flags should use the default &ldquo;on&rdquo; and &ldquo;off&rdquo; treatments.</li>
 <li>For non-boolean flags, change the treatments to be the possible values. E.g. for a split that specifies a plugin&rsquo;s version you could have three treatments of &ldquo;1.0&rdquo;, &ldquo;1.1&rdquo; and &ldquo;2.0&rdquo;.</li>
 </ul>
-<ol start="5">
-<li>Down the page a bit, set the default rule to one of your treatments.</li>
-</ol>
+</li>
+<li>Down the page a bit, set the default rule to one of your treatments.
 <ul>
 <li>This will set the flag for all servers in the environment while you don&rsquo;t have any other targeting rules configured.</li>
 </ul>
-<ol start="6">
-<li>At the top right, click &ldquo;Save changes&rdquo; and confirm them on the next screen.</li>
+</li>
+<li>At the top right, click <strong>Save changes</strong> and confirm them on the next screen.</li>
 </ol>
 <p>That covers targeting an environment with a split and adding a default rule for all servers in that environment. The next section covers targeting specific servers.</p>
 <h3 id="target-a-specific-server">Target a specific server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#target-a-specific-server"></i></a> </h3>
@@ -1460,7 +1457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Syncing occurs once every 30 seconds so your feature flag will get changes at maximum 30 seconds after they&rsquo;re made.</p>
 <h3 id="environments">Environments&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environments"></i></a> </h3>
 <ul>
-<li>Cloud Test - All the Cloud test servers/workspaces, including those made on PRs and by the /cloud command.</li>
+<li>Cloud Test - All the Cloud test servers/workspaces, including those made on PRs and by the <code>/cloud</code> command.</li>
 <li>Cloud Staging - Mainly community.mattermost.com, including community-release and community-daily. It&rsquo;s not possible to target those separately.</li>
 <li>Cloud Production - All our production Cloud workspaces.</li>
 </ul>
