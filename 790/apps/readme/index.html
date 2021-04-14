@@ -152,7 +152,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             
                         
                     </h1>
-                    
+                    <h1 id="overview">Overview&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#overview"></i></a> </h1>
+<p>Apps are lightweight interactive add-ons to mattermost. Apps can:</p>
+<ul>
+<li>Display interactive, dynamic Modal forms and Message Actions.</li>
+<li>Attach themselves to locations in the Mattermost UI (e.g. channel bar buttons, post menu, channel menu, commands), and can add their custom /commands with full Autocomplete.</li>
+<li>Receive webhooks from Mattermost, and from 3rd parties, and use the Mattermost REST APIs to post messages, etc.</li>
+<li>Be hosted externally (HTTP), on Mattermost Cloud (AWS Lambda), and soon on-prem and in customers&rsquo; own AWS environments.</li>
+<li>Be developed in any language*.</li>
+</ul>
+<h1 id="contents">Contents&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#contents"></i></a> </h1>
+<h2 id="development-environment">Development environment&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#development-environment"></i></a> </h2>
+<ul>
+<li>DRAFT <a href="https://docs.google.com/document/d/1-o9A8l65__rYbx6O-ZdIgJ7LJgZ1f3XRXphAyD7YfF4/edit#">Google Doc</a> - Dev environment doc.</li>
+</ul>
+<h2 id="hello-world">Hello, World&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#hello-world"></i></a> </h2>
+<ul>
+<li><a href="01-anatomy-hello.md">Anatomy</a> of a simple app.</li>
+</ul>
+<h2 id="functions-calls">Functions, Calls&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functions-calls"></i></a> </h2>
+<ul>
+<li>Example: <a href="https://developers.mattermost.com/server/examples/go/helloworld/hello.go#L45">Hello, World</a> <code>send</code> function.</li>
+<li><a href="02-example-post-menu.md">Post Menu Message Flow</a> - message flow to define a Post Menu action, then have a user click it.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Call">Call</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Call">local</a> - describes how to call a function.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#CallRequest">CallRequest</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#CallRequest">local</a> - structure of a request to a function.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Context">Context</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Context">local</a> - extra data passed to call requests.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Expand">Expand</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Expand">local</a> - controls context expansion.</li>
+</ul>
+<h2 id="forms">Forms&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#forms"></i></a> </h2>
+<ul>
+<li>Example: <a href="https://developers.mattermost.com/server/examples/go/helloworld/send_form.json">Hello, World</a> <code>send</code> form.</li>
+<li><a href="03-example-interactivity.md">Interactive Message Flows</a> - message flow to define a Post Menu action, then have a user click it.</li>
+<li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Form">Form</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Form">local</a></li>
+<li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Field">Field</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Field">local</a></li>
+</ul>
+<h2 id="bindings-and-locations">Bindings and Locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h2>
+<ul>
+<li>Example: <a href="https://developers.mattermost.com/server/examples/go/helloworld/bindings.json">Hello, World</a> bindings.</li>
+<li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Binding">Binding</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Binding">local</a></li>
+</ul>
+<h2 id="autocomplete">Autocomplete&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#autocomplete"></i></a> </h2>
+<ul>
+<li>Example: <a href="https://developers.mattermost.com/server/examples/go/helloworld/bindings.json">Hello, World</a> bindings.</li>
+</ul>
+<h2 id="modals">Modals&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#modals"></i></a> </h2>
+<ul>
+<li>Example: <a href="https://developers.mattermost.com/server/examples/go/helloworld/send_form.json">Hello, World</a> <code>send</code> form.</li>
+</ul>
+<h2 id="in-post-interactivity">In-Post Interactivity&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#in-post-interactivity"></i></a> </h2>
+<h2 id="using-mattermost-apis05-using-mattermost-apimd"><a href="05-using-mattermost-api.md">Using Mattermost APIs</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-mattermost-apis05-using-mattermost-apimd"></i></a> </h2>
+<h2 id="using-3rd-party-apis06-using-3rdparty-apimd"><a href="06-using-3rdparty-api.md">Using 3rd party APIs</a>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-3rd-party-apis06-using-3rdparty-apimd"></i></a> </h2>
+<h2 id="app-lifecycle">App Lifecycle&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-lifecycle"></i></a> </h2>
+<ul>
+<li><a href="07-lifecycle.md">App Lifecycle</a></li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/cmd/appsctl">appsctl</a> - CLI tool used to provision Mattermost Apps in development and production.</li>
+</ul>
+
 
                 </div>
             </div>
