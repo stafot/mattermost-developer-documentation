@@ -919,6 +919,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/apis/file1/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
   </url>
   
