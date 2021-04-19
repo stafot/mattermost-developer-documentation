@@ -909,6 +909,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/</loc>
+    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/examples/</loc>
     <lastmod>2017-01-19T12:01:23-04:00</lastmod>
   </url>
@@ -916,10 +921,6 @@
   <url>
     <loc>https://developers.mattermost.com/contribute/devtalks/</loc>
     <lastmod>2017-01-05T09:51:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/</loc>
   </url>
   
   <url>
