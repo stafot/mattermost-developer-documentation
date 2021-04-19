@@ -12,17 +12,6 @@
     
     <item>
       <title></title>
-      <link>https://developers.mattermost.com/apps/getting-started/example-post-menu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/apps/getting-started/example-post-menu/</guid>
-      <description>Post Menu Example In this example, the bindings specify to expand the post the user clicks on:
-Diagram Source https://sequencediagram.org
-title Bindings + Form Example Client-&amp;gt;MM: Visit ChannelA, fetch bindings (Client Bindings Request) MM-&amp;gt;App:Fetch bindings with call (MM Bindings Request) App-&amp;gt;3rd Party Integration:Check user status 3rd Party Integration-&amp;gt;App:Return user status App-&amp;gt;MM:Return bindings (App Bindings Response) MM-&amp;gt;Client:Return bindings, render App&#39;s post menu item Client-&amp;gt;MM:Clicked post menu item. Perform submit call (Client Submit Request) MM-&amp;gt;App:Perform submit call (MM Submit Request) App-&amp;gt;3rd Party Integration:Do something useful 3rd Party Integration-&amp;gt;App:Return something useful App-&amp;gt;MM:Return new modal form (App Form Response) MM-&amp;gt;Client:Return modal form, open modal  Fetch bindings Client Bindings Request GET /plugins/com.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://developers.mattermost.com/apps/getting-started/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
