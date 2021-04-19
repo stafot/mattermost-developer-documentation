@@ -923,10 +923,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/apps/api/using-mattermost-api/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/apps/api/using-third-party-api/</loc>
   </url>
   
@@ -952,6 +948,10 @@
   
   <url>
     <loc>https://developers.mattermost.com/apps/getting-started/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</loc>
   </url>
   
   <url>
