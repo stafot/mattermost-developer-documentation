@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integrations on Mattermost Developers</title>
+    <link>https://developers.mattermost.com/integrations/</link>
+    <description>Recent content in Integrations on Mattermost Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://developers.mattermost.com/integrations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://developers.mattermost.com/integrations/apps/getting-started/anatomy-hello/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrations/apps/getting-started/anatomy-hello/</guid>
+      <description>Hello World! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
+ It contains a manifest.json, declares itself an HTTP application that acts as a bot and attaches to locations in UI. In its bindings function it attaches send-modal to a button in the channel header, and send to a /helloworld command It contains a send function that sends a parameterized message back to the user.</description>
+    </item>
+    
+  </channel>
+</rss>

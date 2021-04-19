@@ -1369,16 +1369,6 @@ The signing procedure varies depending on the platform that the release is desti
     
     <item>
       <title></title>
-      <link>https://developers.mattermost.com/apps/getting-started/anatomy-hello/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/apps/getting-started/anatomy-hello/</guid>
-      <description>Hello World! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
- It contains a manifest.json, declares itself an HTTP application that acts as a bot and attaches to locations in UI. In its bindings function it attaches send-modal to a button in the channel header, and send to a /helloworld command It contains a send function that sends a parameterized message back to the user.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://developers.mattermost.com/apps/getting-started/app-lifecycle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1437,6 +1427,16 @@ An app can use the Mattermost server REST API, as well as new &amp;ldquo;App Ser
       <description>Using 3rd party APIs Mattermost Apps framework provides services for using remote (3rd party) OAuth2 HTTP APIs, and receiving authenticated webhook notifications from remote systems. There are 2 examples here to illustrate the OAuth2 and webhook support.
 Hello OAuth2! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
  It contains a manifest.json, declares itself an HTTP application, requests permissions and binds itself to locations in the Mattermost UI.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://developers.mattermost.com/integrations/apps/getting-started/anatomy-hello/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrations/apps/getting-started/anatomy-hello/</guid>
+      <description>Hello World! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
+ It contains a manifest.json, declares itself an HTTP application that acts as a bot and attaches to locations in UI. In its bindings function it attaches send-modal to a button in the channel header, and send to a /helloworld command It contains a send function that sends a parameterized message back to the user.</description>
     </item>
     
     <item>
