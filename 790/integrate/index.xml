@@ -13,6 +13,16 @@
     
     <item>
       <title></title>
+      <link>https://developers.mattermost.com/integrate/apps/app-lifecycle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/app-lifecycle/</guid>
+      <description>App Lifecycle App Bundle An app bundle is a convenient way to deliver an app to the Mattermost ecosystem. It provides a way to organize code and resources needed for an app to run. An app bundle is created by the developer of the app. Mattermost uses app bundles to provision and install/uninstall apps.
+The app bundle contains a manifest.json file, a static/ folder (optional), and one or several lambda function bundles.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
