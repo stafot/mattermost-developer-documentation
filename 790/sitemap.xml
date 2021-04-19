@@ -919,6 +919,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/examples/file/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
   </url>
   
@@ -991,7 +995,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
+    <loc>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</loc>
   </url>
   
   <url>

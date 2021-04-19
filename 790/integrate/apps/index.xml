@@ -12,6 +12,15 @@
     
     <item>
       <title></title>
+      <link>https://developers.mattermost.com/integrate/apps/examples/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/examples/file/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://developers.mattermost.com/integrate/apps/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -72,10 +81,10 @@ title Bindings + Form Example Client-&amp;gt;MM: Visit ChannelA, fetch bindings 
     
     <item>
       <title>Third Party APIs</title>
-      <link>https://developers.mattermost.com/integrate/apps/using-third-party-api/</link>
+      <link>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://developers.mattermost.com/integrate/apps/using-third-party-api/</guid>
+      <guid>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</guid>
       <description>There are 2 examples here to illustrate the OAuth2 and webhook support.
 Hello OAuth2! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
  It contains a manifest.json, declares itself an HTTP application, requests permissions and binds itself to locations in the Mattermost UI. In its bindings function it declares 3 commands: configure, connect, and send. Its send function mentions the user by their Google name, and lists their Google Calendars.</description>
