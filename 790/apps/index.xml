@@ -29,5 +29,16 @@
 An app can use the Mattermost server REST API, as well as new &amp;ldquo;App Services&amp;rdquo; APIs offered specifically to Mattermost Apps. An app authenticates its requests to Mattermost by providing access tokens, usually Bot Access token, or user&amp;rsquo;s OAuth2 access token. Each call request sent to the app includes Mattermost site URL, and optionally one or more access tokens the app can use.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://developers.mattermost.com/apps/api/using-third-party-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/apps/api/using-third-party-api/</guid>
+      <description>Using 3rd party APIs Mattermost Apps framework provides services for using remote (3rd party) OAuth2 HTTP APIs, and receiving authenticated webhook notifications from remote systems. There are 2 examples here to illustrate the OAuth2 and webhook support.
+Hello OAuth2! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
+ It contains a manifest.json, declares itself an HTTP application, requests permissions and binds itself to locations in the Mattermost UI.</description>
+    </item>
+    
   </channel>
 </rss>
