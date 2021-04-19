@@ -1369,6 +1369,16 @@ The signing procedure varies depending on the platform that the release is desti
     
     <item>
       <title></title>
+      <link>https://developers.mattermost.com/integrate/apps/anatomy-hello/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/anatomy-hello/</guid>
+      <description>Hello World! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
+ It contains a manifest.json, declares itself an HTTP application that acts as a bot and attaches to locations in UI. In its bindings function it attaches send-modal to a button in the channel header, and send to a /helloworld command It contains a send function that sends a parameterized message back to the user.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://developers.mattermost.com/integrate/apps/app-lifecycle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
