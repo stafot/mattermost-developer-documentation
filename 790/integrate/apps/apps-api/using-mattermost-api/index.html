@@ -8,26 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> </title>
+<title> Apps APIs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="">
+<meta name="og:title" value="Apps APIs">
 
  
-  
-    
-      <meta name="description" content="Your one-stop shop for all of your Mattermost contribution, integration, and extension needs.">
-<meta name="twitter:description" content="Your one-stop shop for all of your Mattermost contribution, integration, and extension needs.">
-<meta name="og:description" content="Your one-stop shop for all of your Mattermost contribution, integration, and extension needs.">
+  <meta name="description" content="An app can use the Mattermost server REST API, as well as new App Services APIs offered specifically to Mattermost Apps.">
+<meta name="twitter:description" content="An app can use the Mattermost server REST API, as well as new App Services APIs offered specifically to Mattermost Apps.">
+<meta name="og:description" content="An app can use the Mattermost server REST API, as well as new App Services APIs offered specifically to Mattermost Apps.">
 
-    
-  
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/quickstart/">
+<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -136,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        
+        Apps APIs
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -325,20 +321,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-                            
-                        
 
                         
                             
                         
 
-                        <span class="item active">
-                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/integrate/apps/apps-api/file/"> </a></span>
+                                <a href="https://developers.mattermost.com/integrate/apps/apps-api/file/"> </a></span>
                             
                         </span>
-                        <ul class="sub-menu" style="display: block">
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -347,20 +341,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-                            
-                        
 
                         
                             
                         
 
-                        <span class="item active">
-                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/integrate/apps/quickstart/"> </a></span>
+                                <a href="https://developers.mattermost.com/integrate/apps/quickstart/"> </a></span>
                             
                         </span>
-                        <ul class="sub-menu" style="display: block">
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -389,18 +381,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
+                            
+                        
 
                         
                             
                         
 
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/"> Apps APIs</a></span>
+                                <a class="active" href="https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/"> Apps APIs</a></span>
                             
                         </span>
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
                         </ul>
                     
@@ -491,18 +485,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
+                    
+                
 
                 
                     
                 
 
-                <span class="item ">
-                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                <span class="item active">
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                     
-                        <a href="https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/"> Apps APIs</a>
+                        <a class="active" href="#"> Apps APIs</a>
                     
                 </span>
-                <ul class="sub-menu" >
+                <ul class="sub-menu" style="display: block">
                     
                 </ul>
             
@@ -592,17 +588,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/quickstart.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/apps-api/using-mattermost-api.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            
+                            Using Mattermost APIs with Apps
                         
                     </h1>
-                    
+                    <p>Note: OAuth2 is not yet implemented, for now session tokens are passed in as ActingUserAccessToken</p>
+<p>An app authenticates its requests to Mattermost by providing access tokens, usually Bot Access token, or user&rsquo;s OAuth2 access token. Each call request sent to the app includes Mattermost site URL, and optionally one or more access tokens the app can use.</p>
+<p>What tokens the app gets, and what access the app may have with them depends on the combination of App granted permissions, the tokens requested in call.Expand, and their respective access rights.</p>
+<ul>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Permission">Permission</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Permission">local</a> -
+describes the available permissions.</li>
+<li>tickets:
+<ul>
+<li><a href="">MM-??</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="apps-subscriptions-api">Apps Subscriptions API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#apps-subscriptions-api"></i></a> </h2>
+<ul>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Subscription">Subscription</a> -
+<a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps#Subscription">local</a> - describes the Subscription request.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client.Subscribe">Go Client</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client.Subscribe">local</a> - The methods to post Subscribe/Unsubscribe requests.</li>
+</ul>
+<p>Subscribe and Unsubscribe APIs are invocable with Bot, User, or Admin tokens, however they may fail if the token lacks access to the resource. For instance, the app&rsquo;s Bot account needs to be invited to the channel before the app can subscribe to the events in the channel as the Bot.</p>
+<h2 id="apps-kv-store-api">Apps KV Store API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#apps-kv-store-api"></i></a> </h2>
+<ul>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client.KVDelete">Go Client</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client.KVDelete">local</a> - The methods for KV Get/Set/Delete requests.</li>
+</ul>
+<p>The KV APIs require the use of the Bot Account Token, and will fail if a user token is provided.</p>
+<h2 id="mattermost-rest-api">Mattermost REST API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mattermost-rest-api"></i></a> </h2>
+<ul>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client">Go Client</a> - <a href="http://localhost:6060/pkg/github.com/mattermost/mattermost-plugin-apps/apps/mmclient/#Client">local</a> - mmclient.Client includes the *model.Client4 Mattermost REST API client, pre-initialized with the auth token.</li>
+</ul>
+
 
                 </div>
             </div>

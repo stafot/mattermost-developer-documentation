@@ -40,10 +40,10 @@ The app bundle contains a manifest.json file, a static/ folder (optional), and o
     
     <item>
       <title>Apps APIs</title>
-      <link>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</link>
+      <link>https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</guid>
+      <guid>https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/</guid>
       <description>Note: OAuth2 is not yet implemented, for now session tokens are passed in as ActingUserAccessToken
 An app authenticates its requests to Mattermost by providing access tokens, usually Bot Access token, or user&amp;rsquo;s OAuth2 access token. Each call request sent to the app includes Mattermost site URL, and optionally one or more access tokens the app can use.
 What tokens the app gets, and what access the app may have with them depends on the combination of App granted permissions, the tokens requested in call.</description>
