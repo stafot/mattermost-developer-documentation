@@ -919,10 +919,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/apps/getting-started/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
   </url>
   
@@ -944,10 +940,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/apps/</loc>
   </url>
   
   <url>
