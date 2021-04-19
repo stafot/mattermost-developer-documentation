@@ -923,6 +923,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/hello/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
   </url>
   
