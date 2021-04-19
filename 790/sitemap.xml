@@ -927,10 +927,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/apps/getting-started/app-lifecycle/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/apps/getting-started/example-interactivity/</loc>
   </url>
   
@@ -948,6 +944,10 @@
   
   <url>
     <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrations/apps/app-lifecycle/</loc>
   </url>
   
   <url>
@@ -984,6 +984,10 @@
   
   <url>
     <loc>https://developers.mattermost.com/contribute/gsoc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrations/</loc>
   </url>
   
   <url>
