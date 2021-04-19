@@ -10,5 +10,14 @@
 	<atom:link href="https://developers.mattermost.com/apps/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title></title>
+      <link>https://developers.mattermost.com/apps/getting-started/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/apps/getting-started/quickstart/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
