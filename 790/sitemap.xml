@@ -927,10 +927,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/apps/getting-started/quickstart/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
   </url>
   
@@ -940,6 +936,10 @@
   
   <url>
     <loc>https://developers.mattermost.com/integrate/apps/example-post-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
   </url>
   
   <url>
