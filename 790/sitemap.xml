@@ -909,22 +909,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/integrate/examples/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/anatomy-hello/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
     <lastmod>2017-01-19T12:01:23-04:00</lastmod>
   </url>
   
@@ -934,23 +919,15 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/example-interactivity/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/example-post-menu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
+    <loc>https://developers.mattermost.com/integrate/apps/</loc>
   </url>
   
   <url>
@@ -990,6 +967,14 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/anatomy-hello/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-interactivity/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</loc>
   </url>
   
@@ -999,6 +984,14 @@
   
   <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/osx/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-post-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
   </url>
   
   <url>
