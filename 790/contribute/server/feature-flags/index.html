@@ -1368,13 +1368,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>Tests should be written to verify the feature flag works as expected. Note that in cases where there may be a migration or new data, off to on and on to off should both be tested.</li>
 <li>Log messages by the feature should include the feature flag tag, with the feature flag name as a value, in order to ease debugging.</li>
 </ul>
-<h2 id="deploying-to-splitio">Deploying to split.io&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deploying-to-splitio"></i></a> </h2>
-<p>Deployments to the management system are overseen by the Cloud team. If you have any questions or need help with the process, please ask in the Cloud channel.</p>
+<h2 id="split">Split&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#split"></i></a> </h2>
+<p><a href="https://split.io">Split</a> is the feature flag management service we use for internal testing and for our production Cloud service. It enables us to create and control feature flags for multiple servers and environments as well as gives us the ability to run A/B split tests.</p>
+<p>We&rsquo;ve used Split&rsquo;s SDK to integrate with the Mattermost server. You can find the <a href="https://help.split.io/hc/en-us">Split documentation here</a>.</p>
+<h3 id="who-has-access-to-split">Who has access to Split?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#who-has-access-to-split"></i></a> </h3>
+<p>We currently have a limited number of seats for our Split account, so not everyone gets access. Currently, two people per each engineering team plus some PM/UX folk have access. If you need to manage some feature flags, ask your team lead who has access and can help you out. It&rsquo;s up to each team to determine who has access.</p>
+<h3 id="how-do-i-log-in">How do I log in?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-log-in"></i></a> </h3>
+<p>Login is controlled via OneLogin. If you have access you will be able to log in through there.</p>
+<h3 id="terminology">Terminology&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#terminology"></i></a> </h3>
+<p>In Split, there&rsquo;s some terminology you will need to understand:</p>
+<ul>
+<li><strong>Split</strong> - A feature flag</li>
+<li><strong>Treatment</strong> - The values a split (e.g. feature flag) can have</li>
+<li><strong>Environment</strong> - Different environments that splits can target such as test, staging, and production</li>
+<li><strong>Server</strong> - Single Mattermost workspace</li>
+<li><strong>Segment</strong> - A list of servers that can be targeted by a split</li>
+</ul>
+<h3 id="adding-a-split">Adding a split&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-a-split"></i></a> </h3>
+<p>After you&rsquo;ve added the feature flag in code, you&rsquo;ll need to create a split for it.</p>
 <ol>
-<li>When ready to deploy the feature, create the feature flag (called a split) in split.io. The name of the feature flag should match the name of the split. Everything else can be left at defaults.</li>
-<li>Once created, set the treatment values appropriately. The defaults of &ldquo;on&rdquo; an &ldquo;off&rdquo; can work for most feature flags.</li>
-<li>When ready to deploy to cloud, set the targeting rules appropriately to slowly roll out as required.</li>
+<li>Log in to Split.</li>
+<li>On left sidebar, click <strong>Splits</strong>.</li>
+<li>At the top click <strong>Create split</strong>.</li>
+<li>Fill in the following:
+<ol>
+<li>Enter the name of your feature flag. It must match the name used in code in <code>model/feature_flags.go</code>.</li>
+<li>Select <code>server</code> as the traffic type.</li>
+<li>Optionally add tags and a description.</li>
+<li>Click <strong>Create</strong>.</li>
 </ol>
+</li>
+</ol>
+<p>The split is now created but not targeting anything. The next section covers adding basic targeting rules.</p>
+<h3 id="add-targeting-rules-to-a-split">Add targeting rules to a split&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#add-targeting-rules-to-a-split"></i></a> </h3>
+<p>To have the split have any effect, it needs targeting rules to know which environment and servers it should set the feature flag value to. To add basic targeting rules:</p>
+<ol>
+<li>Find your split and click on it.</li>
+<li>Under the name of the split at the top, select the <strong>Environment</strong> that you want to target.
+<ul>
+<li>See <a href="#Environments">Environments</a> for a description of each.</li>
+</ul>
+</li>
+<li>In the center of the screen, select <strong>Add Rules</strong>.</li>
+<li>Define your treatments:
+<ul>
+<li>Recall that treatments are just the values your feature flag can have.</li>
+<li>Boolean flags should use the default &ldquo;on&rdquo; and &ldquo;off&rdquo; treatments.</li>
+<li>For non-boolean flags, change the treatments to be the possible values. E.g. for a split that specifies a plugin&rsquo;s version you could have three treatments of &ldquo;1.0&rdquo;, &ldquo;1.1&rdquo; and &ldquo;2.0&rdquo;.</li>
+</ul>
+</li>
+<li>Down the page a bit, set the default rule to one of your treatments.
+<ul>
+<li>This will set the flag for all servers in the environment while you don&rsquo;t have any other targeting rules configured.</li>
+</ul>
+</li>
+<li>At the top right, click <strong>Save changes</strong> and confirm them on the next screen.</li>
+</ol>
+<p>That covers targeting an environment with a split and adding a default rule for all servers in that environment. The next section covers targeting specific servers.</p>
+<h3 id="target-a-specific-server">Target a specific server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#target-a-specific-server"></i></a> </h3>
+<p>The ID for a &ldquo;server&rdquo; as seen by Split is the Mattermost server&rsquo;s telemetry ID. To target a specific server you need that telemetry ID. The main way to get the telemetry ID from a server would be from the analytics but you can also manually grab the telemetry ID by one of the following methods:</p>
+<h4 id="get-telemetry-id-via-inspecting-browser-traffic">Get telemetry ID via inspecting browser traffic&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#get-telemetry-id-via-inspecting-browser-traffic"></i></a> </h4>
+<ol>
+<li>In Chrome (any browser with dev tools will work but instructions are specific to Chrome), open the developer console and switch to the Network tab.</li>
+<li>Type &ldquo;config&rdquo; into the filter for the network requests.</li>
+<li>Go to the server&rsquo;s URL (e.g. xxxxxx.test.mattermost.cloud).</li>
+<li>In the network tab, click on the request for <code>/api/v4/config/client?format=old</code>.</li>
+<li>Click on the &ldquo;Response&rdquo; tab and search for &ldquo;TelemetryId&rdquo;.</li>
+<li>Copy the value of &ldquo;TelemetryId&rdquo;.</li>
+</ol>
+<h4 id="get-telemetry-id-via-curl-and-jq">Get telemetry ID via curl and jq&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#get-telemetry-id-via-curl-and-jq"></i></a> </h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -s https://&lt;your-workspace-url&gt;/api/v4/config/client?format<span style="color:#555">=</span>old | jq <span style="color:#c30">&#34;.TelemetryId&#34;</span>
+</code></pre></div><h4 id="target-using-the-telemetry-id">Target using the telemetry ID&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#target-using-the-telemetry-id"></i></a> </h4>
+<p>With the telemetry ID, go to your split and do the following:</p>
+<ol>
+<li>Find the section &ldquo;Create whitelists&rdquo; and click <strong>Add whitelist</strong>.</li>
+<li>Choose the treatment value you want the workspace to get.</li>
+<li>Under &ldquo;Server&rdquo; paste in your telemetry ID.</li>
+<li>At the top right, click <strong>Save changes</strong> and confirm them on the next screen.</li>
+</ol>
+<p>Now your workspace will have its feature flag set according to this rule, regardless of what the default for the split is set to.</p>
+<h3 id="add-or-update-a-feature-flag-for-communitymattermostcom">Add or update a feature flag for community.mattermost.com&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#add-or-update-a-feature-flag-for-communitymattermostcom"></i></a> </h3>
+<p>Note that this will set the flag for community.mattermost.com, community-release.mattermost.com, and community-daily.mattermost.com. It is not possible to set a rule for only one via Split. It is possible to set the flags only for one version of community via environment variables. This will require manual configuration by the SRE team. You can ask for support for this on community.mattermost.com via the <code>@sresupport</code> mention.</p>
+<p>To set a flag via Split for community:</p>
+<ol>
+<li>Open the split for your flag.</li>
+<li>At the top under the split name, select the &ldquo;Cloud Staging&rdquo; environment.</li>
+<li>Find &ldquo;Set targeting rules&rdquo; and click <strong>Add rule</strong>.</li>
+</ol>
+<ul>
+<li>The rule may already exist, and in that case you can edit the existing one.</li>
+</ul>
+<ol start="4">
+<li>Leave the rule set to &ldquo;is in segment&rdquo; and click <strong>Select Segment&hellip;</strong> and choose &ldquo;community&rdquo;.</li>
+<li>Select the treatment you want community.mattermost.com to get.</li>
+<li>At the top right, click <strong>Save changes</strong> and confirm them on the next screen.</li>
+</ol>
+<p>The feature flag is now set for community.mattermost.com.</p>
+<h3 id="environments">Environments&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#environments"></i></a> </h3>
+<ul>
+<li>Cloud Test - All the Cloud test servers/workspaces, including those created on PRs and by the <code>/cloud</code> command.</li>
+<li>Cloud Staging - Mainly community.mattermost.com, including community-release and community-daily. It&rsquo;s not possible to target those separately.</li>
+<li>Cloud Production - All our production Cloud workspaces.</li>
+</ul>
+<h3 id="split-faq">Split FAQ&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#split-faq"></i></a> </h3>
+<p>How long does it take for workspaces/servers to pick up on changes to feature flags in Split?</p>
+<ul>
+<li>Syncing occurs once every 30 seconds so your feature flag will get changes at maximum 30 seconds after they&rsquo;re made.</li>
+</ul>
 <h2 id="timelines-for-rollouts">Timelines for rollouts&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#timelines-for-rollouts"></i></a> </h2>
 <p>The feature flag is initially “off” and will be rolled out slowly. Individual teams should decide how they want to roll out their features as they are responsible for them and know them best. Once we have split.io access for 2-3 people per team, the feature teams can enable/disable feature flags at will without needing to ask the Cloud team.</p>
 <p><strong>Note:</strong> The steps below are an initial guideline and will be iterated on over time.</p>
