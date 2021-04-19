@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mattermost Developers</title>
+    <link>https://developers.mattermost.com/integrate/apps/examples/</link>
+    <description>Recent content on Mattermost Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://developers.mattermost.com/integrate/apps/examples/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interactivity</title>
+      <link>https://developers.mattermost.com/integrate/apps/examples/example-interactivity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/examples/example-interactivity/</guid>
+      <description>Get Bindings Client Bindings Request GET /plugins/com.mattermost.apps/api/v1/bindings?user_id=ws4o4macctyn5ko8uhkkxmgfur&amp;amp;channel_id=qphz13bzbf8c7j778tdnaw3huc&amp;amp;scope=webapp
+ MM Bindings Request POST /plugins/com.mattermost.apps/example/hello/bindings { &amp;#34;path&amp;#34;: &amp;#34;/bindings&amp;#34;, &amp;#34;context&amp;#34;: { &amp;#34;app_id&amp;#34;: &amp;#34;helloworld&amp;#34;, &amp;#34;bot_user_id&amp;#34;: &amp;#34;i4wzxbk1hbbufq8rnecso96oxr&amp;#34;, &amp;#34;acting_user_id&amp;#34;: &amp;#34;81bqom3kjjbo7bcjcnzs6dc8uh&amp;#34;, &amp;#34;user_id&amp;#34;: &amp;#34;81bqom3kjjbo7bcjcnzs6dc8uh&amp;#34;, &amp;#34;team_id&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;channel_id&amp;#34;: &amp;#34;ytqokpzzcinszf7ywrbdfitusw&amp;#34;, &amp;#34;mattermost_site_url&amp;#34;: &amp;#34;http://localhost:8065&amp;#34;, &amp;#34;user_agent&amp;#34;: &amp;#34;webapp&amp;#34;, &amp;#34;bot_access_token&amp;#34;: &amp;#34;gcn6r3ac178zbxwiw5pc38e8zc&amp;#34; } }  App Binding Response { &amp;#34;type&amp;#34;: &amp;#34;ok&amp;#34;, &amp;#34;data&amp;#34;: [ { &amp;#34;location&amp;#34;: &amp;#34;/channel_header&amp;#34;, &amp;#34;bindings&amp;#34;: [ { &amp;#34;location&amp;#34;: &amp;#34;send-button&amp;#34;, &amp;#34;icon&amp;#34;: &amp;#34;http://localhost:8080/static/icon.png&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;send hello message&amp;#34;, &amp;#34;call&amp;#34;: { &amp;#34;path&amp;#34;: &amp;#34;/send-modal&amp;#34; } } ] }, { &amp;#34;location&amp;#34;: &amp;#34;/post_menu&amp;#34;, &amp;#34;bindings&amp;#34;: [ { &amp;#34;location&amp;#34;: &amp;#34;send-button&amp;#34;, &amp;#34;icon&amp;#34;: &amp;#34;http://localhost:8080/static/icon.</description>
+    </item>
+    
+    <item>
+      <title>Post Menu</title>
+      <link>https://developers.mattermost.com/integrate/apps/examples/example-post-menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/examples/example-post-menu/</guid>
+      <description>Diagram Source https://sequencediagram.org
+title Bindings + Form Example Client-&amp;gt;MM: Visit ChannelA, fetch bindings (Client Bindings Request) MM-&amp;gt;App:Fetch bindings with call (MM Bindings Request) App-&amp;gt;3rd Party Integration:Check user status 3rd Party Integration-&amp;gt;App:Return user status App-&amp;gt;MM:Return bindings (App Bindings Response) MM-&amp;gt;Client:Return bindings, render App&#39;s post menu item Client-&amp;gt;MM:Clicked post menu item. Perform submit call (Client Submit Request) MM-&amp;gt;App:Perform submit call (MM Submit Request) App-&amp;gt;3rd Party Integration:Do something useful 3rd Party Integration-&amp;gt;App:Return something useful App-&amp;gt;MM:Return new modal form (App Form Response) MM-&amp;gt;Client:Return modal form, open modal  Fetch bindings Client Bindings Request GET /plugins/com.</description>
+    </item>
+    
+  </channel>
+</rss>
