@@ -292,20 +292,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </h1>
                     <p>Note: OAuth2 is not yet implemented, for now session tokens are passed in as ActingUserAccessToken</p>
 <p>An app authenticates its requests to Mattermost by providing access tokens, usually Bot Access token, or user&rsquo;s OAuth2 access token. Each call request sent to the app includes Mattermost site URL, and optionally one or more access tokens the app can use.</p>
-<p>What tokens the app gets, and what access the app may have with them depends on the combination of App granted permissions, the tokens requested in call.Expand, and their respective access rights.</p>
+<p>What tokens the app gets, and what access the app may have with them depends on the combination of App granted permissions, the tokens requested in <code>call.Expand</code>, and their respective access rights.</p>
 <ul>
-<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Permission">Permission</a> -
-describes the available permissions.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Permission">Permission</a> - Describes the available permissions.</li>
 <li>tickets:
 <ul>
 <li><a href="">MM-??</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="apps-subscriptions-api">Apps Subscriptions API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#apps-subscriptions-api"></i></a> </h2>
+<h2 id="apps-subscriptions-api">Apps subscriptions API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#apps-subscriptions-api"></i></a> </h2>
 <ul>
-<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Subscription">Subscription</a> -
-describes the Subscription request.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Subscription">Subscription</a> - Describes the Subscription request.</li>
 <li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient#Client.Subscribe">Go Client</a> - The methods to post Subscribe/Unsubscribe requests.</li>
 </ul>
 <p>Subscribe and Unsubscribe APIs are invocable with Bot, User, or Admin tokens, however they may fail if the token lacks access to the resource. For instance, the app&rsquo;s Bot account needs to be invited to the channel before the app can subscribe to the events in the channel as the Bot.</p>
@@ -316,7 +314,7 @@ describes the Subscription request.</li>
 <p>The KV APIs require the use of the Bot Account Token, and will fail if a user token is provided.</p>
 <h2 id="mattermost-rest-api">Mattermost REST API&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mattermost-rest-api"></i></a> </h2>
 <ul>
-<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient#Client">Go Client</a> - mmclient.Client includes the *model.Client4 Mattermost REST API client, pre-initialized with the auth token.</li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps/mmclient#Client">Go Client</a> - <code>mmclient.Client</code> includes the <code>model.Client4</code> Mattermost REST API client, pre-initialized with the auth token.</li>
 </ul>
 
 
