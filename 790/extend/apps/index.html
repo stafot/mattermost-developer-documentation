@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Web App</title>
+<title> Apps (Developers Preview)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="Web App">
+<meta name="og:title" value="Apps (Developers Preview)">
 
  
-  <meta name="description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
-<meta name="twitter:description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
-<meta name="og:description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
+  <meta name="description" content="TODO: Mattermost supports plugins that offer powerful features for extending and deeply integrating with both the server and web/desktop apps.">
+<meta name="twitter:description" content="TODO: Mattermost supports plugins that offer powerful features for extending and deeply integrating with both the server and web/desktop apps.">
+<meta name="og:description" content="TODO: Mattermost supports plugins that offer powerful features for extending and deeply integrating with both the server and web/desktop apps.">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/extend/customization/webapp/">
+<link rel="canonical" href="https://developers.mattermost.com/extend/apps/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Web App
+        Apps (Developers Preview)
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -139,18 +139,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
+                    
+                
 
                 
                     
                 
 
-                <span class="item ">
-                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                <span class="item active">
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
                     
-                        <a href="https://developers.mattermost.com/extend/apps/"> Apps (Developers Preview)</a>
+                        <a class="active" href="#"> Apps (Developers Preview)</a>
                     
                 </span>
-                <ul class="sub-menu" >
+                <ul class="sub-menu" style="display: block">
                     
                         
                         
@@ -199,20 +201,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
-                    
-                
 
                 
                     
                 
 
                 <span class="item ">
-                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
                     
                         <a href="https://developers.mattermost.com/extend/customization/"> Customizing Mattermost</a>
                     
                 </span>
-                <ul class="sub-menu" style="display: block">
+                <ul class="sub-menu" >
                     
                         
                         
@@ -259,20 +259,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-                            
-                        
 
                         
                             
                         
 
-                        <span class="item active">
-                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/extend/customization/webapp/"> Web App</a></span>
+                                <a href="https://developers.mattermost.com/extend/customization/webapp/"> Web App</a></span>
                             
                         </span>
-                        <ul class="sub-menu" style="display: block">
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -622,72 +620,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/customization/webapp.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/apps/_index.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            Customize the Mattermost Web App
+                            Apps in Mattermost
                         
                     </h1>
-                    <p>Customizations to the Mattermost Web App can be performed in cases where you need to customize branding, alter localization strings, or fulfill security requirements that are not immediately offered out-of-the-box.</p>
-<h2 id="customization-steps">Customization steps&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#customization-steps"></i></a> </h2>
-<p>With that in mind, customizing and deploying your Mattermost Web App can be done in a few steps:</p>
-<ol>
-<li>Fork the <a href="https://github.com/mattermost/mattermost-webapp">mattermost-webapp</a> repository and then clone your fork in your local environment.</li>
-</ol>
-<pre><code>git clone https://github.com/&lt;yourgithubusername&gt;/mattermost-webapp
-</code></pre><ol start="2">
-<li>Create a separate branch for your customized version, as it&rsquo;s not recommended to perform them in the <code>master</code> branch (more details about that in the next section regarding rebasing).</li>
-</ol>
-<pre><code>git checkout -b custom_branch
-</code></pre><ol start="3">
-<li>
-<p>Perform customization tasks by replacing image assets, changing strings, altering the UI, and whatever else may be necessary. Be mindful not to violate any of the <a href="https://www.mattermost.org/trademark-standards-of-use/">guidelines on trademark use</a> during this process.</p>
-</li>
-<li>
-<p>Once customization has been completed, build the files that will be used in your deployment.</p>
-</li>
-</ol>
-<pre><code>make build
-</code></pre><ol start="5">
-<li>Create a tarball or zip the files <strong>within</strong> the <code>dist</code> directory.</li>
-</ol>
-<pre><code>cd dist
-tar -cvf dist.tar *
-</code></pre><ol start="6">
-<li>In a Mattermost deployment, remove all files seen in the <code>client</code> directory (assuming Mattermost was deployed in the <code>$HOME</code> directory).</li>
-</ol>
-<pre><code>cd ~/mattermost/client &amp;&amp; rm -rf *
-</code></pre><ol start="7">
-<li>Transfer compressed <code>dist</code> files inside Mattermost&rsquo;s <code>client</code> directory, and decompress it.</li>
-</ol>
-<pre><code>tar -xvf dist.tar
-</code></pre><h2 id="rebasing-to-latest-version">Rebasing to latest version&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#rebasing-to-latest-version"></i></a> </h2>
-<p>Challenges arise when creating a separate custom branch from an active open-source project like <code>mattermost-webapp</code>. As the project gets new commits and pull requests on a daily basis, your custom webapp can quickly become outdated.</p>
-<p>To deal with that, you&rsquo;ll need to leverage Git&rsquo;s <a href="https://git-scm.com/docs/git-rebase#_interactive_mode">interactive rebasing functionality</a> in the following way:</p>
-<ol>
-<li>Add an upstream with the original <code>mattermost-webapp</code> repository.</li>
-</ol>
-<pre><code>git remote add upstream https://github.com/mattermost/mattermost-webapp.git
-</code></pre><ol start="2">
-<li>Update <code>master</code> branch to latest upstream commit.</li>
-</ol>
-<pre><code>git checkout master
-git pull upstream master
-</code></pre><ol start="3">
-<li>Perform interactive rebase.</li>
-</ol>
-<pre><code>git checkout custom_branch  
-git rebase -i master
-</code></pre><p>Use <code>git rebase --continue</code> after resolving any conflicts that arise during rebase process</p>
-<ol start="4">
-<li>Push new version back to remote (Note: Rebasing requires that you override previous remote version with a <code>force</code> push. Be sure you&rsquo;ve tested that your rebase was successful before completing this last command).</li>
-</ol>
-<pre><code>git push -f origin custom_branch  
-</code></pre>
+                    <p>Apps are lighweight interactive add-ons to mattermost. Apps can:</p>
+<ul>
+<li>display interactive, dynamic Modal forms and Message Actions.</li>
+<li>attach themselves to locations in the Mattermost UI (e.g. channel bar buttons,
+post menu, channel menu, commands), and can add their custom /commands with
+full Autocomplete.</li>
+<li>receive webhooks from Mattermost, and from 3rd parties, and use the Mattermost
+REST APIs to post messages, etc.</li>
+<li>be hosted externally (HTTP), on Mattermost Cloud (AWS Lambda), and soon
+on-prem and in customers&rsquo; own AWS environments.</li>
+<li>be developed in any language*</li>
+</ul>
+<p>Apps are available as a Developers Preview and we&rsquo;re looking for your feedback! Share constructive feedback in the <a href="https://community.mattermost.com/core/channels/mattermost-apps">Mattermost Apps channel</a> on our Mattermost community instance.</p>
+<p>Read the <a href="https://developers.mattermost.com/extend/apps/quick-start-go/">quick start guide</a> to learn how to write your first app.</p>
+
 
                 </div>
             </div>

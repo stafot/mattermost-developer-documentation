@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Web App</title>
+<title> Quick start guide (Go)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="Web App">
+<meta name="og:title" value="Quick start guide (Go)">
 
  
-  <meta name="description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
-<meta name="twitter:description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
-<meta name="og:description" content="Learn about customizations to the Mattermost Web App that can be performed when you need to customized branding, functionality or security.">
+  <meta name="description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
+<meta name="twitter:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
+<meta name="og:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/extend/customization/webapp/">
+<link rel="canonical" href="https://developers.mattermost.com/extend/apps/quick-start-go/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Web App
+        Quick start guide (Go)
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -157,18 +157,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
+                            
+                        
 
                         
                             
                         
 
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/extend/apps/quick-start-go/"> Quick start guide (Go)</a></span>
+                                <a class="active" href="https://developers.mattermost.com/extend/apps/quick-start-go/"> Quick start guide (Go)</a></span>
                             
                         </span>
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
                         </ul>
                     
@@ -199,20 +201,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
-                    
-                
 
                 
                     
                 
 
                 <span class="item ">
-                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
                     
                         <a href="https://developers.mattermost.com/extend/customization/"> Customizing Mattermost</a>
                     
                 </span>
-                <ul class="sub-menu" style="display: block">
+                <ul class="sub-menu" >
                     
                         
                         
@@ -259,20 +259,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-                            
-                        
 
                         
                             
                         
 
-                        <span class="item active">
-                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/extend/customization/webapp/"> Web App</a></span>
+                                <a href="https://developers.mattermost.com/extend/customization/webapp/"> Web App</a></span>
                             
                         </span>
-                        <ul class="sub-menu" style="display: block">
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -622,72 +620,120 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/customization/webapp.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/apps/quick-start-go.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            Customize the Mattermost Web App
+                            Writing a Mattermost app in Go
                         
                     </h1>
-                    <p>Customizations to the Mattermost Web App can be performed in cases where you need to customize branding, alter localization strings, or fulfill security requirements that are not immediately offered out-of-the-box.</p>
-<h2 id="customization-steps">Customization steps&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#customization-steps"></i></a> </h2>
-<p>With that in mind, customizing and deploying your Mattermost Web App can be done in a few steps:</p>
-<ol>
-<li>Fork the <a href="https://github.com/mattermost/mattermost-webapp">mattermost-webapp</a> repository and then clone your fork in your local environment.</li>
-</ol>
-<pre><code>git clone https://github.com/&lt;yourgithubusername&gt;/mattermost-webapp
-</code></pre><ol start="2">
-<li>Create a separate branch for your customized version, as it&rsquo;s not recommended to perform them in the <code>master</code> branch (more details about that in the next section regarding rebasing).</li>
-</ol>
-<pre><code>git checkout -b custom_branch
-</code></pre><ol start="3">
-<li>
-<p>Perform customization tasks by replacing image assets, changing strings, altering the UI, and whatever else may be necessary. Be mindful not to violate any of the <a href="https://www.mattermost.org/trademark-standards-of-use/">guidelines on trademark use</a> during this process.</p>
-</li>
-<li>
-<p>Once customization has been completed, build the files that will be used in your deployment.</p>
-</li>
-</ol>
-<pre><code>make build
-</code></pre><ol start="5">
-<li>Create a tarball or zip the files <strong>within</strong> the <code>dist</code> directory.</li>
-</ol>
-<pre><code>cd dist
-tar -cvf dist.tar *
-</code></pre><ol start="6">
-<li>In a Mattermost deployment, remove all files seen in the <code>client</code> directory (assuming Mattermost was deployed in the <code>$HOME</code> directory).</li>
-</ol>
-<pre><code>cd ~/mattermost/client &amp;&amp; rm -rf *
-</code></pre><ol start="7">
-<li>Transfer compressed <code>dist</code> files inside Mattermost&rsquo;s <code>client</code> directory, and decompress it.</li>
-</ol>
-<pre><code>tar -xvf dist.tar
-</code></pre><h2 id="rebasing-to-latest-version">Rebasing to latest version&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#rebasing-to-latest-version"></i></a> </h2>
-<p>Challenges arise when creating a separate custom branch from an active open-source project like <code>mattermost-webapp</code>. As the project gets new commits and pull requests on a daily basis, your custom webapp can quickly become outdated.</p>
-<p>To deal with that, you&rsquo;ll need to leverage Git&rsquo;s <a href="https://git-scm.com/docs/git-rebase#_interactive_mode">interactive rebasing functionality</a> in the following way:</p>
-<ol>
-<li>Add an upstream with the original <code>mattermost-webapp</code> repository.</li>
-</ol>
-<pre><code>git remote add upstream https://github.com/mattermost/mattermost-webapp.git
-</code></pre><ol start="2">
-<li>Update <code>master</code> branch to latest upstream commit.</li>
-</ol>
-<pre><code>git checkout master
-git pull upstream master
-</code></pre><ol start="3">
-<li>Perform interactive rebase.</li>
-</ol>
-<pre><code>git checkout custom_branch  
-git rebase -i master
-</code></pre><p>Use <code>git rebase --continue</code> after resolving any conflicts that arise during rebase process</p>
-<ol start="4">
-<li>Push new version back to remote (Note: Rebasing requires that you override previous remote version with a <code>force</code> push. Be sure you&rsquo;ve tested that your rebase was successful before completing this last command).</li>
-</ol>
-<pre><code>git push -f origin custom_branch  
-</code></pre>
+                    <p>This quick start guide will walk you through the basics of writing a Mattermost app.</p>
+<h2 id="prerequisites">Prerequisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#prerequisites"></i></a> </h2>
+<p>Before you can start with your app, you first need to setup an local developers environment following the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">server</a> and <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">webapp</a> setup guides. You must enable the apps feature flag before starting the Mattermost server by setting the enjoinment variable <code>MM_FEATUREFLAGS_AppsEnabled</code>  to <code>true</code> by e.g. adding <code>export MM_FEATUREFLAGS_AppsEnabled=true</code> to your <code>.bashrc</code>.</p>
+<p><strong>Note:</strong> Apps does not work with a production release of Mattermost right now. They can only be run in a development environment.</p>
+<p>You also need have at least <code>go1.16</code> installed. Please follow the guide <a href="https://golang.org/doc/install">here</a> to install the latest version.</p>
+<h2 id="install-apps-plugin">Install Apps plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-apps-plugin"></i></a> </h2>
+<p>The <a href="https://github.com/mattermost/mattermost-plugin-apps">Apps plugin</a>) is a communication bridge between your app and the Mattermost server. To install it on your local server by cloning the code in a directory of your choice:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mattermost/mattermost-plugin-apps.git
+</code></pre></div><p>Then build the plugin using:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make dist
+</code></pre></div><p>And upload it via the System Console to your local Mattermost server..</p>
+<h2 id="building-the-app">Building the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
+<p>Start building your app by creating a directory for the code and setting up a new go-module:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-app
+<span style="color:#366">cd</span> my-app
+go mod init my-app
+</code></pre></div><p>Your apps has to provide a so called manifest. Create a file called <code>manifest.json</code> containing:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#309;font-weight:bold">&#34;app_id&#34;</span>: <span style="color:#c30">&#34;my-app&#34;</span>,
+	<span style="color:#309;font-weight:bold">&#34;display_name&#34;</span>: <span style="color:#c30">&#34;My App!&#34;</span>,
+	<span style="color:#309;font-weight:bold">&#34;app_type&#34;</span>: <span style="color:#c30">&#34;http&#34;</span>,
+	<span style="color:#309;font-weight:bold">&#34;root_url&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080&#34;</span>,
+	<span style="color:#309;font-weight:bold">&#34;requested_permissions&#34;</span>: [
+		<span style="color:#c30">&#34;act_as_bot&#34;</span>
+	],
+	<span style="color:#309;font-weight:bold">&#34;requested_locations&#34;</span>: [
+		<span style="color:#c30">&#34;/channel_header&#34;</span>,
+		<span style="color:#c30">&#34;/command&#34;</span>
+	]
+}
+</code></pre></div><p>The manifest contains user facing metadata like a <code>display_name</code>, permissions that your require</p>
+<p>Create a file named <code>main.go</code> with the following contents:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+
+</code></pre></div><!--
+
+This plugin will register an HTTP handler that will respond with "Hello, world!" when requested.
+
+Build the executable that will be distributed with your plugin:
+
+```bash
+go build -o plugin.exe plugin.go
+```
+
+**Note:** Your executable is platform specific! If you're building the plugin for a server running on a different operating system, you'll need to use a slightly different command. For example, if you're developing the plugin from MacOS and deploying to a Linux server, you'll need to use this command:
+
+```bash
+GOOS=linux GOARCH=amd64 go build -o plugin.exe plugin.go
+```
+
+Also note that the ".exe" extension is required if you'd like your plugin to run on Windows, but is otherwise optional. Consider referencing [mattermost-plugin-starter-template](https://github.com/mattermost/mattermost-plugin-starter-template) for helpful build scripts.
+
+Now, we'll need to define the required manifest describing your plugin's entry point. Create a file named `plugin.json` with the following contents:
+
+```json
+{
+    "id": "com.mattermost.server-hello-world",
+    "name": "Hello World",
+    "server": {
+        "executable": "plugin.exe"
+    }
+}
+```
+
+This manifest gives the server the location of your executable within your plugin bundle. Consult the [manifest reference](https://developers.mattermost.com/extend/plugins/manifest-reference/) for more details, including how to define a cross-platform bundle by defining multiple executables, and how to define a minimum required server version for your plugin.
+
+Note that you may also use `plugin.yaml` to define the manifest.
+
+Bundle the manifest and executable into a tar file:
+
+```bash
+tar -czvf plugin.tar.gz plugin.exe plugin.json
+```
+
+You should now have a file named `plugin.tar.gz` in your workspace. Congratulations! This is your first server plugin!
+
+## Installing the Plugin
+
+Install the plugin in one of the following ways:
+
+1) Through System Console UI:
+
+    - Log in to Mattermost as a System Admin.
+    - Open the System Console at `/admin_console`
+    - Navigate to **Plugins (Beta) > Management** and upload the `plugin.tar.gz` you generated above.
+    - Click **Enable** under the plugin after it has uploaded.
+
+2) Or, manually:
+
+    - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json``, in this case `com.mattermost.server-hello-world/`.
+    - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to `./plugins` relative to your Mattermost installation directory. The resulting directory structure should look something like:
+
+    ```
+    mattermost/
+        plugins/
+            com.mattermost.server-hello-world/
+                plugin.json
+                plugin.exe
+    ```
+    - Restart the Mattermost server.
+
+Once you've installed the plugin in one of the ways above, browse to `https://<your-mattermost-server>/plugins/com.mattermost.server-hello-world`, and you'll be greeted by your plugin.
+-->
+
 
                 </div>
             </div>

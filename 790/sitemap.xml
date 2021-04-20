@@ -368,6 +368,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/extend/apps/quick-start-go/</loc>
+    <lastmod>2020-04-15T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/kubernetes/kubernetes-troubleshooting/</loc>
     <lastmod>2018-11-07T15:24:42+01:00</lastmod>
   </url>
@@ -437,7 +442,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/hello/</loc>
+    <loc>https://developers.mattermost.com/integrate/apps/hello-world/</loc>
   </url>
   
   <url>
@@ -463,10 +468,6 @@
   <url>
     <loc>https://developers.mattermost.com/internal/onboarding/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/examples/</loc>
   </url>
   
   <url>
@@ -504,6 +505,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/extend/apps/</loc>
+    <lastmod>2020-04-15T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/migration/</loc>
     <lastmod>2018-10-01T00:00:00-05:00</lastmod>
   </url>
@@ -519,16 +525,8 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/apps-api/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/extend/plugins/server/ha/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
   </url>
   
   <url>
@@ -536,7 +534,23 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-interactivity/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-post-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
   </url>
   
   <url>
@@ -556,6 +570,10 @@
   <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/guidelines/</loc>
     <lastmod>2017-11-06T19:30:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
   </url>
   
   <url>
@@ -943,10 +961,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/arch/</loc>
   </url>
   
@@ -979,10 +993,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/examples/example-interactivity/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/ubuntu/</loc>
   </url>
   
@@ -992,14 +1002,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/contribute/server/developer-setup/osx/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/examples/example-post-menu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</loc>
   </url>
   
   <url>
