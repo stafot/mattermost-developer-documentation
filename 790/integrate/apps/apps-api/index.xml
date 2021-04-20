@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API Docs on Mattermost Developers</title>
+    <link>https://developers.mattermost.com/integrate/apps/apps-api/</link>
+    <description>Recent content in API Docs on Mattermost Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://developers.mattermost.com/integrate/apps/apps-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apps APIs</title>
+      <link>https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/apps-api/using-mattermost-api/</guid>
+      <description>Note: OAuth2 is not yet implemented, for now session tokens are passed in as ActingUserAccessToken
+An app authenticates its requests to Mattermost by providing access tokens, usually Bot Access token, or user&amp;rsquo;s OAuth2 access token. Each call request sent to the app includes Mattermost site URL, and optionally one or more access tokens the app can use.
+What tokens the app gets, and what access the app may have with them depends on the combination of App granted permissions, the tokens requested in call.</description>
+    </item>
+    
+    <item>
+      <title>Third Party APIs</title>
+      <link>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/integrate/apps/apps-api/using-third-party-api/</guid>
+      <description>There are 2 examples here to illustrate the OAuth2 and webhook support.
+Hello OAuth2! Here is an example of an HTTP App (source), written in Go and runnable on http://localhost:8080.
+ It contains a manifest.json, declares itself an HTTP application, requests permissions and binds itself to locations in the Mattermost UI. In its bindings function it declares 3 commands: configure, connect, and send. Its send function mentions the user by their Google name, and lists their Google Calendars.</description>
+    </item>
+    
+  </channel>
+</rss>

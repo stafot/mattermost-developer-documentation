@@ -403,6 +403,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/webapp/actions/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -433,6 +437,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/hello/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/manifest-reference/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -455,6 +463,10 @@
   <url>
     <loc>https://developers.mattermost.com/internal/onboarding/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/examples/</loc>
   </url>
   
   <url>
@@ -507,8 +519,16 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/apps-api/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/server/ha/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
   </url>
   
   <url>
@@ -919,14 +939,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/app-lifecycle/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/integrate/apps/</loc>
   </url>
   
@@ -964,14 +976,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/contribute/gsoc/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/hello/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/examples/</loc>
   </url>
   
   <url>

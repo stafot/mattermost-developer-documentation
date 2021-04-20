@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mattermost Developers</title>
+    <title>Quickstart on Mattermost Developers</title>
     <link>https://developers.mattermost.com/integrate/apps/quickstart/</link>
-    <description>Recent content on Mattermost Developers</description>
+    <description>Recent content in Quickstart on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
