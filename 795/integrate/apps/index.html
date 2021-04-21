@@ -475,33 +475,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Apps are lightweight, interactive add-ons to Mattermost which use serverless hosting to run without any dedicated infrastructure. Apps can:</p>
 <ul>
 <li>Display interactive, dynamic Modal forms and Message Actions.</li>
+<li>Be written in several different languages.</li>
 <li>Attach themselves to locations in the Mattermost user interface (e.g. channel bar buttons, post menu, channel menu, commands), and can add their custom <code>/</code> commands with full Autocomplete.</li>
 <li>Receive webhooks from Mattermost, and third-parties, and use the Mattermost REST APIs to post messages, etc.</li>
-<li>Be hosted externally (HTTP), on Mattermost Cloud (AWS Lambda), and soon in self-managed as well as customers&rsquo; own AWS environments.</li>
-<li>Work on both Mobile and Desktop Mattermost clients so developers can focus on the functionality of their apps, and can be written in several different languages.</li>
-<li>Can be deployed using our Mattermost Serverless hosting infrastructure that keeps data within the secure cloud environment and allows for unexpected scaling of usage.</li>
+<li>Be hosted externally (HTTP) and on Mattermost Cloud (AWS Lambda)*.</li>
+<li>Work on both Mobile and Desktop apps so developers can focus on the functionality of their apps.</li>
+<li>Be deployed using our Mattermost serverless hosting infrastructure keeping data secure and supporting scalability.</li>
 </ul>
-<p>The new Marketplace in Mattermost Cloud is being launched alongside the new Apps Framework and will include two new listings: ServiceNow and Zendesk helps DevOps support agents monitor new incidents and customer requests while investigating critical events.</p>
 <p>Apps are available as a Developers Preview and we&rsquo;re looking for your feedback! Share constructive feedback in the <a href="https://community.mattermost.com/core/channels/mattermost-apps">Mattermost Apps channel</a> on our Mattermost community instance.</p>
+<ul>
+<li>Apps will soon be available for self-managed deployments as well as customers&rsquo; own AWS environments.</li>
+</ul>
 <p>Read the <a href="https://developers.mattermost.com/integrate/apps/quick-start-go/">quick start guide</a> to learn how to write your first app.</p>
-<h2 id="mattermost-serverless-app-hosting">Mattermost Serverless App Hosting&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mattermost-serverless-app-hosting"></i></a> </h2>
-<p>The Mattermost Apps framework provides the ability to extend Mattermost’s integration capabilities using any programming language. Unlike plugins that must be hosted on the Mattermost server itself, Apps can be hosted anywhere.  The new Mattermost Serverless App Hosting service provides a secure environment for Mattermost Cloud customers to install Apps from the Marketplace and have them hosted in the same secure environment as Mattermost Cloud.  Developers who create Mattermost Serverless apps using a serverless development approach can easily deploy Apps securely, efficiently, and at scale in the Mattermost Cloud compared to other SaaS offerings.</p>
-<p>Currently, when a customer wants to deploy an app to their infrastructure - they need to provision a server that will host some code such as a Python script.  This server will handle any incoming requests at any time and must be equipped for high volume in the case of incidents that trigger many notifications to Mattermost at once, as such - it must be maintained as a high-availability asset that can scale.  The IT Team also needs to deploy code changes to that server over time and maintain the host OS’s security patches and so on. If this server fails, critical notifications in Mattermost will be missed.</p>
-<p>With Mattermost Serverless Hosting, cloud customers will be deploying Apps (note; Not plugins) such as ServiceNow and Zendesk using our Mattermost Serverless hosting infrastructure.  They will install these Apps through the Marketplace, which instantiates a new Serverless function in the cloud and awaits any notifications sent to Mattermost from the external services. It is a high availability environment that scales on-demand.  Code updates to the App are provisioned through Mattermost as they are released.  Since a server is not needed to remain idle for long periods of inactivity, costs are reduced.  Another benefit is code deployments have no downtime associated - and all the data is kept within the same secure environment as Mattermost Cloud.</p>
-<p>With other SaaS offerings, integrations are offered with a limit of Apps on a free account (Slack limits to 10 Apps).  With Mattermost Serverless hosting we are advancing a hosting usage model: integration traffic determines costs, not the number of Apps installed.  Customers benefit from more integrations. Moreover, this model opens up our hosting engine to open source developers who can create Apps that are easy to deploy, without them needing to pay for third-party hosting and managing customers’ data - your data remains in the Mattermost Cloud environment at all times.</p>
-<p>Each “use” of an App is tracked - an example may be receiving a notification from ServiceNow to a Mattermost channel, or a user creating a ServiceNow ticket from Mattermost.  These costs are minimal, less than a penny per execution - and most customers are not expected to pay overages, because they will be below their included usage allocations for their product tier.</p>
-<p>Mattermost serverless hosting allows for easy App installation by a system administrator from the App Marketplace and uses AWS Lambda serverless technology to power our App Hosting in order to provide stable, reliable service for the Mattermost Cloud Infrastructure without the data ever leaving the Mattermost Cloud environment. Serverless app hosting for self-managed customers is planned in Q3 with serverless engines such as OpenFaas, OpenWhisk, or AWS Lambda.</p>
-<p>To get started using the Matterhost service, install either the Zendesk or ServiceNow App from the App Marketplace to experience our first 2 serverless apps in action. If you haven’t yet created a Mattermost Cloud Workspace you can create one HERE, and then visit the Marketplace from within the Mattermost main menu.</p>
-<h2 id="faq">FAQ&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#faq"></i></a> </h2>
-<h3 id="what-serverless-technology-is-powering-matterhost">What serverless technology is powering Matterhost?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-serverless-technology-is-powering-matterhost"></i></a> </h3>
-<p>We are using AWS Lambda service to host our serverless applications with a custom built provisioning system to manage the serverless instances.  The Lambda instances reside within the VPC that hosts our Mattermost Cloud Environment.</p>
-<h3 id="is-it-hard-for-a-developer-to-build-a-serverless-app-for-matterhost">Is it hard for a developer to build a serverless app for Matterhost?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#is-it-hard-for-a-developer-to-build-a-serverless-app-for-matterhost"></i></a> </h3>
-<p>No, it is simple to convert existing apps or to build a new App with the serverless approach in mind. Refer to our developer documentation to learn more: <link>.</p>
-<h3 id="as-a-developer-do-i-need-to-do-anything-different-to-make-my-app-hostable-by-mattermost-serverless">As a developer do I need to do anything different to make my App hostable by Mattermost Serverless?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#as-a-developer-do-i-need-to-do-anything-different-to-make-my-app-hostable-by-mattermost-serverless"></i></a> </h3>
-<p>Yes, you will need to code your application in such a way that it can be run in a serverless environment.  This may be simple using a library such as ‘Vendia’ &laquo;LINK and Details&raquo;  You can read more about this approach in our App Framework Documentation site &laquo;Best practices for Serverless hosting DOC&raquo;</p>
-<h2 id="development-environment">Development environment&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#development-environment"></i></a> </h2>
+<h2 id="mattermost-serverless-app-hosting">Mattermost serverless app hosting&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#mattermost-serverless-app-hosting"></i></a> </h2>
+<p>Mattermost serverless hosting allows for easy app installation from the App Marketplace by a System Admin and uses AWS Lambda serverless technology instead of relying on a physical server. Developers who create apps using a serverless development approach can easily deploy apps securely, efficiently, and at scale in the Mattermost Cloud.</p>
+<h2 id="developing-serverless-apps">Developing serverless apps&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#developing-serverless-apps"></i></a> </h2>
+<h3 id="development-environment">Development environment&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#development-environment"></i></a> </h3>
 <p>Visit the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">Developer Setup Guide</a> for information about setting up your development environment.</p>
-<h2 id="functions-and-calls">Functions and calls&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functions-and-calls"></i></a> </h2>
+<h3 id="app-lifecycle">App lifecycle&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-lifecycle"></i></a> </h3>
+<ul>
+<li><a href="https://developers.mattermost.com/integrate/apps/lifecycle/">App Lifecycle</a></li>
+<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/cmd/appsctl">appsctl</a> - CLI tool used to provision Mattermost Apps in development and production.</li>
+</ul>
+<h3 id="using-mattermost-apis">Using Mattermost APIs&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-mattermost-apis"></i></a> </h3>
+https://developers.mattermost.com/integrate/apps/using-mattermost-api/
+<h3 id="using-third-party-apis">Using third-party APIs&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-third-party-apis"></i></a> </h3>
+https://developers.mattermost.com/integrate/apps/using-third-party-api/
+<h3 id="functions-and-calls">Functions and calls&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functions-and-calls"></i></a> </h3>
 <ul>
 <li>Example: <a href="https://github.com/mattermost/mattermost-plugin-apps/tree/master/examples/go/helloworld/hello.go#L45">Hello, World</a> <code>send</code> function.</li>
 <li><a href="https://developers.mattermost.com/integrate/apps/example-post-menu/">Post Menu Message Flow</a> - Message flow to define a Post Menu action, then have a user click it.</li>
@@ -510,37 +510,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Context">Context</a> - Extra data passed to call requests.</li>
 <li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Expand">Expand</a> - Controls context expansion.</li>
 </ul>
-<h2 id="forms">Forms&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#forms"></i></a> </h2>
+<h3 id="forms">Forms&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#forms"></i></a> </h3>
 <ul>
 <li>Example: <a href="https://github.com/mattermost/mattermost-plugin-apps/tree/master/examples/go/helloworld/send_form.json">Hello, World</a> <code>send</code> form.</li>
 <li><a href="https://developers.mattermost.com/integrate/apps/example-interactivity/">Interactive Message Flows</a> - Message flow to define a Post Menu action, then have a user click it.</li>
 <li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Form">Form</a></li>
 <li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Field">Field</a></li>
 </ul>
-<h2 id="bindings-and-locations">Bindings and locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h2>
+<h3 id="bindings-and-locations">Bindings and locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h3>
 <ul>
 <li>Example: <a href="https://github.com/mattermost/mattermost-plugin-apps/tree/master/examples/go/helloworld/bindings.json">Hello, World</a> bindings.</li>
 <li>godoc <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Binding">Binding</a></li>
 </ul>
-<h2 id="autocomplete">Autocomplete&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#autocomplete"></i></a> </h2>
+<h3 id="autocomplete">Autocomplete&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#autocomplete"></i></a> </h3>
 <ul>
 <li>Example: <a href="https://github.com/mattermost/mattermost-plugin-apps/tree/master/examples/go/helloworld/bindings.json">Hello, World</a> bindings.</li>
 </ul>
-<h2 id="modals">Modals&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#modals"></i></a> </h2>
+<h3 id="modals">Modals&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#modals"></i></a> </h3>
 <ul>
 <li>Example: <a href="https://github.com/mattermost/mattermost-plugin-apps/tree/master/examples/go/helloworld/send_form.json">Hello, World</a> <code>send</code> form.</li>
 </ul>
-<h2 id="in-post-interactivity">In-post interactivity&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#in-post-interactivity"></i></a> </h2>
+<h3 id="in-post-interactivity">In-post interactivity&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#in-post-interactivity"></i></a> </h3>
 <p>(https://developers.mattermost.com/integrate/apps/example-interactivity/)</p>
-<h2 id="using-mattermost-apis">Using Mattermost APIs&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-mattermost-apis"></i></a> </h2>
-https://developers.mattermost.com/integrate/apps/using-mattermost-api/
-<h2 id="using-third-party-apis">Using third-party APIs&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-third-party-apis"></i></a> </h2>
-https://developers.mattermost.com/integrate/apps/using-third-party-api/
-<h2 id="app-lifecycle">App Lifecycle&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-lifecycle"></i></a> </h2>
-<ul>
-<li><a href="https://developers.mattermost.com/integrate/apps/lifecycle/">App Lifecycle</a></li>
-<li>godoc: <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/cmd/appsctl">appsctl</a> - CLI tool used to provision Mattermost Apps in development and production.</li>
-</ul>
 
 
                 </div>
