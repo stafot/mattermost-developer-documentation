@@ -442,6 +442,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/developer-guide/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/integrate/apps/hello-world/</loc>
   </url>
   
