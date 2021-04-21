@@ -619,8 +619,8 @@ Text to show in the item on mobile and webapp collapsed view.
 hint
 string
 Text to show in tooltip
-call
-Call
+call</p>
+<p>Call
 Call to perform.</p>
 <p>The call for these bindings will include in the context the user ID, the channel ID and the team ID.
 /command bindings
@@ -655,9 +655,9 @@ form
 Form
 (Optional) Form representing the parameters the command can receive. If no form is provided, a form call will be made to the specified call.</p>
 <p>The call for these bindings will include in the context the user ID, the post ID, the root post ID if any, the channel ID and the team ID. It will also include the raw command.</p>
-<p>Interaction
-Modal Forms
-Modal Forms open as a modal on the user interface as a result of a Form call response. They are defined by:</p>
+<h2 id="interaction">Interaction&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#interaction"></i></a> </h2>
+<h3 id="modal-forms">Modal Forms&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#modal-forms"></i></a> </h3>
+<p>Modal Forms open as a modal on the user interface as a result of a Form call response. They are defined by:</p>
 <p>title
 string
 Title of the form, shown in the modal.
@@ -738,10 +738,10 @@ bool
 <p>items
 Options
 The list of options to show</p>
-<p>If any select has the refresh value set as true, a form call to the call endpoint any time the select changes value. The form call will include in the context the app id, the user id, the channel id, and the team id. The values will be populated with the current values of the form. The expected response is a form response. The whole form will be updated with the new form.
-On submit, the submit call to the call endpoint will be sent. The submit call will include in the context the app id, the user id, the channel id, and the team id. The values will be populated with the current values of the form.
-Commands as forms
-Commands arguments are treated as forms. When a leaf command is typed, the arguments of the command are fetched. If the command binding has a Form attached, those will be used. If not, a form call will be made to the command call. The call will include in the context the app ID, user ID, the post ID, the root post ID if any, the channel ID and the team ID. The call will expect a form response.</p>
+<p>If any select has the refresh value set as true, a form call to the call endpoint any time the select changes value. The form call will include in the context the app id, the user id, the channel id, and the team id. The values will be populated with the current values of the form. The expected response is a form response. The whole form will be updated with the new form.</p>
+<p>On submit, the submit call to the call endpoint will be sent. The submit call will include in the context the app id, the user id, the channel id, and the team id. The values will be populated with the current values of the form.</p>
+<h2 id="commands-as-forms">Commands as forms&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#commands-as-forms"></i></a> </h2>
+<p>Commands arguments are treated as forms. When a leaf command is typed, the arguments of the command are fetched. If the command binding has a Form attached, those will be used. If not, a form call will be made to the command call. The call will include in the context the app ID, user ID, the post ID, the root post ID if any, the channel ID and the team ID. The call will expect a form response.</p>
 <p>A command form is defined as:</p>
 <p>fields
 Fields
@@ -779,9 +779,9 @@ Machine facing value.
 icon_data
 string
 URL to icon to show on autocomplete.</p>
-<p>When the command is executed, a submit call will be performed on the call endpoint. The call will include in the context the app ID, user ID, the post ID, the root post ID if any, the channel ID and the team ID.
-Embedded Bindings
-Posts can be embedded with bindings. These are used for asynchronous interaction with the user. In order to add an embedded binding you need to add an “app_bindings” property with a list of EmbeddedBindings. An EmbeddedBinding includes:</p>
+<p>When the command is executed, a submit call will be performed on the call endpoint. The call will include in the context the app ID, user ID, the post ID, the root post ID if any, the channel ID and the team ID.</p>
+<h2 id="embedded-bindings">Embedded Bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#embedded-bindings"></i></a> </h2>
+<p>Posts can be embedded with bindings. These are used for asynchronous interaction with the user. In order to add an embedded binding you need to add an “app_bindings” property with a list of EmbeddedBindings. An EmbeddedBinding includes:</p>
 <p>app_id
 string
 The app ID
@@ -829,24 +829,6 @@ call
 Call
 (Optional) Call to perform when the option is selected. If none is defined, it will take the call from the select.</p>
 <p>Whenever a button is clicked or a select field is selected, a submit call is performed to the corresponding call endpoint. The call will include in the context the app ID, user ID, the post ID, the root post ID if any, the channel ID and the team ID.</p>
-<h2 id="from-shota-at-mattermost-apps-httpscommunitymattermostcomcorepl1xiq6ycpbpydbdqa6rhwb19rba">NOTES AND THINGS TO ADD
-Best practices
-Events (user joined channel, etc..)
-The KVStore service
-Terminology
-Error responses for forms
-Communication/interaction explanation
-AWS Lambda support
-From Shota at ~Mattermost Apps (<a href="https://community.mattermost.com/core/pl/1xiq6ycpbpydbdqa6rhwb19rba):">https://community.mattermost.com/core/pl/1xiq6ycpbpydbdqa6rhwb19rba):</a></h2>
-<p>Tips on AWS apps
-OnInstall is called one time, when admin installs the app.
-OnStartup is called on restart of the server if the app is enabled. It&rsquo;s a cluster-level event and is called from one node even if there is an HA environment.
-OnUninstall is called when we uninstall the app.</p>
-<p>Structure of the app bundle ~/my_app.zip |&ndash; manifest.json |&ndash; OnStartup.zip |&ndash; index.js |&ndash; node-modules</p>
-<p>|&ndash; async |&ndash; aws-sdk
-|&ndash; my_python_function.zip |&ndash; lambda_function.py |&ndash; pycache |&ndash; certifi/</p>
-<h2 id="i-would-add-these-as-well">AWS Functions are stateless. A context is coming with the request. If additional state is needed to be stored using KV REST API.
-I would add these as well</h2>
 
 
                 </div>
