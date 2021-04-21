@@ -388,6 +388,15 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/getting-started/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quick-start-go/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/webapp/actions/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -418,6 +427,19 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/incoming-webhooks/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/developer-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/hello-world/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/manifest-reference/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -440,6 +462,11 @@
   <url>
     <loc>https://developers.mattermost.com/internal/onboarding/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/outgoing-webhooks/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -472,6 +499,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/slash-commands/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/onelogin-aws/</loc>
     <lastmod>2018-11-07T16:10:15+01:00</lastmod>
   </url>
@@ -492,6 +524,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/rest-api/</loc>
+    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/server/ha/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -501,7 +538,32 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-interactivity/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/example-post-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/examples/</loc>
+    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
   </url>
   
   <url>
@@ -521,6 +583,10 @@
   <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/guidelines/</loc>
     <lastmod>2017-11-06T19:30:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
   </url>
   
   <url>
@@ -859,26 +925,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/getting-started/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/incoming-webhooks/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/outgoing-webhooks/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/slash-commands/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/extend/plugins/</loc>
     <lastmod>2017-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -886,16 +932,6 @@
   <url>
     <loc>https://developers.mattermost.com/extend/embed/</loc>
     <lastmod>2017-05-10T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/rest-api/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/examples/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
