@@ -1587,11 +1587,6 @@ testCases.forEach((testCase) =&gt; it(testCase.description, () =&gt; {
 }
 </code></pre></div></li>
 </ul>
-<h3 id="4-getting-jest-assertion-failures-at-lines-containing-expecttobecalledwith-expecttohavebeennthcalledwith-or-expecttohavebeencalledtimes-when-running-make-test">4. Getting Jest assertion failures at lines containing <code>expect.toBeCalledWith()</code>, <code>expect.toHaveBeenNthCalledWith()</code> or <code>expect.toHaveBeenCalledTimes()</code> when running <code>make test</code>&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#4-getting-jest-assertion-failures-at-lines-containing-expecttobecalledwith-expecttohavebeennthcalledwith-or-expecttohavebeencalledtimes-when-running-make-test"></i></a> </h3>
-<p><img src="https://developers.mattermost.com/img/extend/jest-assertion-fails-nodeversion.png" width="445" /></p>
-<p>a. Firstly, ensure that your machine has all the <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">required prerequisites</a> installed for the mattermost-webapp project.</p>
-<p>b. If not already, ensure that your machine has Node v10.15.3+ running (preferably Node 10 Latest) with npm v6.4.1+</p>
-<p>c. Rerun <code>make test</code> once your machine has Node v10.15.3+ and npm v6.4.1+ installed. Double check that you&rsquo;ve selected / are currently using Node v10.15.3+ in the mattermost-webapp directory if you&rsquo;re <a href="https://github.com/nvm-sh/nvm">using NVM</a> to manage different versions of Node on your machine (<code>nvm current</code>). The Jest tests should now pass.</p>
 
 
                 </div>

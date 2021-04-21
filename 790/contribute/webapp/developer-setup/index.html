@@ -1362,17 +1362,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Set up your <a href="https://developers.mattermost.com/contribute/server/developer-setup/">development environment for the Mattermost server</a>.</p>
 </li>
 <li>
-<p>Install dependencies:</p>
+<p>Install Node.js 14:</p>
 <ul>
 <li>
-<p>On Mac, use <a href="https://brew.sh/">Homebrew</a> to install Node.js v10 and libpng:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install node@10 libpng
-</code></pre></div></li>
-<li>
-<p>For other platforms, install Node.js v10 from <a href="https://www.npmjs.com/get-npm">https://www.npmjs.com/get-npm</a>.</p>
+<p>If you use <a href="https://github.com/nvm-sh/nvm">NVM</a>, use that to install Node 14.</p>
 </li>
 <li>
-<p>Prefer to use <a href="https://github.com/nvm-sh/nvm">NVM</a> to manage different versions of Node on a given machine? Ensure you&rsquo;re running Node v10.15.3+ and npm v6.4.1+ to <a href="https://developers.mattermost.com/contribute/webapp/unit-testing/#4-getting-jest-assertion-failures-at-lines-containing-expect-tobecalledwith-expect-tohavebeennthcalledwith-or-expect-tohavebeencalledtimes-when-running-make-test">avoid compatibility-related Jest test failures</a>.</p>
+<p>On Mac, use <a href="https://brew.sh/">Homebrew</a> to install it:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install node@14
+</code></pre></div></li>
+<li>
+<p>For other platforms, install it from <a href="https://www.npmjs.com/get-npm">https://www.npmjs.com/get-npm</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If necessary, install libpng:</p>
+<ul>
+<li>
+<p>On Mac, use <a href="https://brew.sh/">Homebrew</a> to install it:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install libpng
+</code></pre></div></li>
+<li>
+<p>On Linux-based operating systems, use your preferred package manager to install it.</p>
 </li>
 </ul>
 </li>

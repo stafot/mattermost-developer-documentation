@@ -565,7 +565,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 <tr>
 <td align="left">form</td>
-<td align="left">Context</td>
+<td align="left">Request for a form.</td>
 </tr>
 <tr>
 <td align="left">lookup</td>
@@ -575,116 +575,263 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table>
 <h3 id="call-context">Call Context&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-context"></i></a> </h3>
 <p>Depending on the location and expansions, calls will have different context. These are all the possible context values.</p>
-<p>app_id
-string
-The app id
-location
-Location
-The location from which the call was performed.
-subject
-Subject
-Event subject.
-bot_user_id
-string
-Bot user id
-acting_user_id
-string
-Id from the user performing the call
-team_id
-string
-Id from the team from within the call was performed.
-channel_id
-string
-Id from the channel from within the call was performed.
-post_id
-string
-Id from the channel from within the call was performed.
-root_post_id
-string
-If the call was performed from a post in a thread, the root post id of that thread.
-mattermost_site_url
-string
-Mattermost base URL
-bot_access_token
-string
-(Expansion)
-acting_user
-User
-(Expansion)
-acting_user_access_token
-string
-(Expansion)
-admin_access_token
-string
-(Expansion)
-app
-App
-(Expansion)
-channel
-Channel
-(Expansion)
-post
-Post
-(Expansion)
-root_post
-Post
-(Expansion)
-team
-Team
-(Expansion)</p>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">CallType</th>
+<th align="left">The type of call being made.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">app_id</td>
+<td align="left">string</td>
+<td align="left">The app id</td>
+</tr>
+<tr>
+<td align="left">location</td>
+<td align="left">Location</td>
+<td align="left">The location from which the call was performed.</td>
+</tr>
+<tr>
+<td align="left">subject</td>
+<td align="left">Subject</td>
+<td align="left">Event subject.</td>
+</tr>
+<tr>
+<td align="left">bot_user_id</td>
+<td align="left">string</td>
+<td align="left">Bot user id</td>
+</tr>
+<tr>
+<td align="left">acting_user_id</td>
+<td align="left">string</td>
+<td align="left">Id from the user performing the call</td>
+</tr>
+<tr>
+<td align="left">team_id</td>
+<td align="left">string</td>
+<td align="left">Id from the team from within the call was performed.</td>
+</tr>
+<tr>
+<td align="left">channel_id</td>
+<td align="left">string</td>
+<td align="left">Id from the channel from within the call was performed.</td>
+</tr>
+<tr>
+<td align="left">post_id</td>
+<td align="left">string</td>
+<td align="left">root_post_id</td>
+</tr>
+<tr>
+<td align="left">root_post_id</td>
+<td align="left">string</td>
+<td align="left">If the call was performed from a post in a thread, the root post id of that thread.</td>
+</tr>
+<tr>
+<td align="left">mattermost_site_url</td>
+<td align="left">string</td>
+<td align="left">Mattermost base URL</td>
+</tr>
+<tr>
+<td align="left">bot_access_token</td>
+<td align="left">string</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">acting_user</td>
+<td align="left">User</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">acting_user_access_token</td>
+<td align="left">string</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">admin_access_token</td>
+<td align="left">string</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">app</td>
+<td align="left">App</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">channel</td>
+<td align="left">Channel</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">post</td>
+<td align="left">Post</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">root_post</td>
+<td align="left">Post</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left">team</td>
+<td align="left">Team</td>
+<td align="left">(Expansion)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="call-response">Call Response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-response"></i></a> </h3>
 <p>There are several types of responses:</p>
-<p>OK. (Empty string)
-error
-An error has occurred.
-form
-Should open a form.
-call
-Should perform another call.
-navigate
-Should navigate the user to a url.</p>
-<p>OK response
-type
-(empty string)</p>
-<p>markdown
-string
-(Optional) Markdown text that will be sent to the user as an ephemeral post.</p>
-<p>Error response
-type
-error</p>
-<p>error
-string
-Markdown text that will be sent to the user as an ephemeral post.</p>
-<p>Form response
-type
-form</p>
-<p>form
-Form
-Form to open.</p>
-<p>Navigate response
-type
-navigate</p>
-<p>navigate_to_url
-string
-URL to navigate to</p>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">CallType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left">OK. (Empty string)</td>
+</tr>
+<tr>
+<td align="left">error</td>
+<td align="left">An error has occurred.</td>
+</tr>
+<tr>
+<td align="left">form</td>
+<td align="left">Should open a form.</td>
+</tr>
+<tr>
+<td align="left">call</td>
+<td align="left">Should perform another call.</td>
+</tr>
+<tr>
+<td align="left">navigate</td>
+<td align="left">Should navigate the user to a url.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ok-response">OK response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#ok-response"></i></a> </h4>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">type</td>
+<td align="left">(Empty string)</td>
+</tr>
+<tr>
+<td align="left">markdown</td>
+<td align="left">string</td>
+</tr>
+</tbody>
+</table>
+<h4 id="error-response">Error response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#error-response"></i></a> </h4>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">type</td>
+<td align="left">error</td>
+</tr>
+<tr>
+<td align="left">error</td>
+<td align="left">string</td>
+</tr>
+</tbody>
+</table>
+<h4 id="form-response">Form response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#form-response"></i></a> </h4>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">type</td>
+<td align="left">form</td>
+</tr>
+<tr>
+<td align="left">error</td>
+<td align="left">form</td>
+</tr>
+</tbody>
+</table>
+<h4 id="navigate-response">Navigate response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#navigate-response"></i></a> </h4>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">navigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">type</td>
+<td align="left">navigate</td>
+</tr>
+<tr>
+<td align="left">navigate_to_url</td>
+<td align="left">string</td>
+</tr>
+</tbody>
+</table>
 <h2 id="special-calls">Special calls&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#special-calls"></i></a> </h2>
 <h3 id="install">Install&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install"></i></a> </h3>
 <p>When the app is installed, a special call is made to inform the app that it has been installed on the instance. This call is used mainly to initialize any needed information. If the app asks for Permissions to act as an user, the call will include among the values, the OAuth2 client secret, under the value “oauth2_client_secret”. The context will include the acting user ID, the app ID, the team ID, and the app and Admin access token expanded by default.</p>
-<p>The expected responses are either OK or Error responses.
-Bindings
-Bindings are what establish the relationship between locations and calls. Whenever it is called, you have to provide the list of bindings available according to the context.</p>
-<p>The context for the bindings call includes the app id, bot access token, team id, channel id, acting user id and mattermost site url. By default it does not expand any value.
-The expected response should include the following:</p>
-<p>data</p>
-<h2 id="bindings">Bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings"></i></a> </h2>
-<p>The list of bindings</p>
+<p>The expected responses are either OK or Error responses.</p>
+<h4 id="bindings">Bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings"></i></a> </h4>
+<p>Bindings are what establish the relationship between locations and calls. Whenever it is called, you have to provide the list of bindings available according to the context. The context for the bindings call includes the app id, bot access token, team id, channel id, acting user id and mattermost site url. By default it does not expand any value.</p>
+<p>The expected response should include the following:</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">data</td>
+<td align="left">bindings</td>
+</tr>
+</tbody>
+</table>
 <p>Bindings are organized by top level locations. Top level bindings just need to define:</p>
-<p>location
-string
-Top level location
-bindings
-Bindings
-A list of bindings under this location</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">string</th>
+<th align="left">The type of call being made.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">location</td>
+<td align="left">string</td>
+<td align="left">Top level location</td>
+</tr>
+<tr>
+<td align="left">bindings</td>
+<td align="left">Bindings</td>
+<td align="left">A list of bindings under this location.</td>
+</tr>
+</tbody>
+</table>
 <p>“/in_post” bindings do not need to be defined in this call.
 /post_menu bindings</p>
 <p>location
