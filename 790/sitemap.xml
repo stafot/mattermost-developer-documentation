@@ -368,11 +368,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/extend/apps/quick-start-go/</loc>
-    <lastmod>2020-04-15T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/kubernetes/kubernetes-troubleshooting/</loc>
     <lastmod>2018-11-07T15:24:42+01:00</lastmod>
   </url>
@@ -408,7 +403,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/quickstart/</loc>
+    <loc>https://developers.mattermost.com/integrate/apps/quick-start-go/</loc>
   </url>
   
   <url>
@@ -506,11 +501,6 @@
   <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/onelogin-aws/</loc>
     <lastmod>2018-11-07T16:10:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/extend/apps/</loc>
-    <lastmod>2020-04-15T00:00:00-05:00</lastmod>
   </url>
   
   <url>
