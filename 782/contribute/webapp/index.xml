@@ -19,10 +19,11 @@
       <guid>https://developers.mattermost.com/contribute/webapp/developer-setup/</guid>
       <description>Set up your development environment for building, running, and testing the Mattermost web app.
   Set up your development environment for the Mattermost server.
-  Install dependencies:
-  On Mac, use Homebrew to install Node.js v10 and libpng:
-brew install node@10 libpng   For other platforms, install Node.js v10 from https://www.npmjs.com/get-npm.
-  Prefer to use NVM to manage different versions of Node on a given machine?</description>
+  Install Node.js 14:
+  If you use NVM, use that to install Node 14.
+  On Mac, use Homebrew to install it:
+brew install node@14   For other platforms, install it from https://www.npmjs.com/get-npm.
+    If necessary, install libpng:</description>
     </item>
     
     <item>
