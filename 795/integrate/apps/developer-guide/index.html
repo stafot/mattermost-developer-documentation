@@ -972,17 +972,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table>
 <h2 id="special-calls">Special calls&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#special-calls"></i></a> </h2>
 <h3 id="install">Install&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install"></i></a> </h3>
-<p>When the app is installed, a special call is made to inform the app that it has been installed on the instance. This call is used mainly to initialize any needed information. If the app asks for Permissions to act as an user, the call will include among the values, the OAuth2 client secret, under the value “oauth2_client_secret”. The context will include the acting user ID, the app ID, the team ID, and the app and Admin access token expanded by default.</p>
-<p>The expected responses are either OK or Error responses.</p>
+<p>When the app is installed, a special call is made to inform the app that it has been installed on the instance. This call is used mainly to initialize any needed information. If the app asks for Permissions to act as an user, the call will include among the values, the OAuth2 client secret, under the value <code>oauth2_client_secret</code>. The context will include the acting user ID, the app ID, the team ID, and the app and Admin access token expanded by default.</p>
+<p>The expected responses are either <code>OK</code> or <code>Error</code> responses.</p>
 <h2 id="bindings">Bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings"></i></a> </h2>
 <p>Bindings are what establish the relationship between locations and calls. Whenever it is called, you have to provide the list of bindings available according to the context. The context for the bindings call includes the app id, bot access token, team id, channel id, acting user id and mattermost site url. By default it does not expand any value.</p>
 <p>The expected response should include the following:</p>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Type</th>
+<th align="left">Function</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -997,9 +997,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1015,14 +1015,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p><code>/in_post </code> bindings do not need to be defined in this call.</p>
+<p><code>/in_post</code> bindings do not need to be defined in this call.</p>
 <h3 id="post_menu-bindings"><code>/post_menu</code> bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#post_menu-bindings"></i></a> </h3>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1048,14 +1048,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p>The call for these bindings will include in the context the user ID, the post ID, the root post ID if any, the channel ID and the team ID.
-/channel_header bindings</p>
+<p>The call for these bindings will include in the context the user ID, the post ID, the root post ID if any, the channel ID and the team ID.</p>
+<h3 id="channel_header-bindings"><code>/channel_header</code> bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#channel_header-bindings"></i></a> </h3>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1086,16 +1086,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p>The call for these bindings will include in the context the user ID, the channel ID and the team ID.</p>
+<p>The call for these bindings will include in the context the user ID, the channel ID, and the team ID.</p>
 <h3 id="command-bindings"><code>/command</code> bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#command-bindings"></i></a> </h3>
 <p>For commands we can distinguish between leaf commands (executable subcommand) and partial commands.</p>
 <p>A partial command must include:</p>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1125,9 +1125,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1165,9 +1165,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1202,8 +1202,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1237,9 +1237,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1279,9 +1279,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1306,9 +1306,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1323,9 +1323,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1345,9 +1345,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
