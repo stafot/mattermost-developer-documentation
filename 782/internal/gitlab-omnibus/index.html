@@ -227,46 +227,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/internal/infrastructure/vpn/"> VPN</a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
-                                <a href="https://developers.mattermost.com/internal/infrastructure/vault/"> Vault</a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
                                 <a href="https://developers.mattermost.com/internal/infrastructure/plugins/"> Adding a Plugin to Community</a></span>
                             
                         </span>
@@ -753,16 +713,13 @@ git push
 <p>Add an entry to the table in <code>doc/gitlab-mattermost/README.md</code> that maps GitLab versions to the corresponding Mattermost version. This step is not necessary for dot releases of Mattermost.</p>
 </li>
 <li>
-<p>Add a changelog entry by using <code>scripts/changelog</code>. This will create an entry in <code>changeslogs/unreleased</code> that needs to be checked in.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scripts/changelog <span style="color:#c30">&#34;Update Mattermost to X.Y&#34;</span>
-</code></pre></div><p>The type will usually be &ldquo;8. Other&rdquo;. You can also go back afterwards and add the author and MR number if you&rsquo;d like.</p>
-</li>
-<li>
-<p>Commit the changes to <code>config/software/mattermost.rb</code>, <code>doc/gitlab-mattermost/README.md</code>, and the newly created file in <code>changelogs/unreleased</code>. The commit message must also a second line containing the type of change made similar to the one listed in the changelog file.</p>
+<p>Commit the changes made to <code>config/software/mattermost.rb</code> and <code>doc/gitlab-mattermost/README.md</code>. The commit message is used to generate a changelog entry, so it must include a second line containing the type of change made. For regular releases, it should be the following:</p>
 <pre><code>Update Mattermost to X.Y
+
 Changelog: other
 </code></pre></li>
 </ol>
+<p>For security backports, the type should be changed to &ldquo;security&rdquo;.</p>
 <p>You can now test the build and submit an MR upstream. For an example of how the branch should look after that, see <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/5068">here</a>.</p>
 <h3 id="building-gitlab-omnibus">Building GitLab Omnibus&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-gitlab-omnibus"></i></a> </h3>
 <p>As mentioned above, GitLab Omnibus is built in a Docker container containing all of the needed dependencies. To test it, the generated <code>.deb</code> package needs to be copied off of the Docker container and installed locally on the test server. Details on how to do that follow.</p>
