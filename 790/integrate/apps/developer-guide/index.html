@@ -427,58 +427,152 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table>
 <h3 id="call">Call&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call"></i></a> </h3>
 <p>A call is the definition of an action. The values are:</p>
-<p>url
-string
-The app endpoint to call. Mattermost will call ROOTURL/url.
-values
-Object
-A set of elements to be interpreted by the app. Forms and slash commands will also populate these values.
-expand
-Expand
-A definition of the information to expand to send to the app.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Field name</th>
+<th align="left">Field type</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">url</td>
+<td align="left">string</td>
+<td align="left">The app endpoint to call. Mattermost will call ROOTURL/url.</td>
+</tr>
+<tr>
+<td align="left">values</td>
+<td align="left">Object</td>
+<td align="left">A set of elements to be interpreted by the app. Forms and slash commands will also populate these values.</td>
+</tr>
+<tr>
+<td align="left">expand</td>
+<td align="left">Expand</td>
+<td align="left">A definition of the information to expand to send to the app.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="expand">Expand&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#expand"></i></a> </h3>
 <p>To avoid extra communication between the app and Mattermost, you can include expansions in the calls. Expansions will send in the call request the whole information of the required fields. You can expand each value to the following leves: “none”, “all” or “summary”.</p>
 <p>TODO: Define differences between all and summary</p>
-<p>The possible expansions are:
-app
-Expands the app information.
-acting_user
-Expands the Acting User information.
-acting_user_access_token
-Include OAuth2 access token in the call request. If the token is not available or is invalid, the user is directed to the OAuth2 flow, and the Call is executed upon completion.
-admin_access_token
-Include the admin access token.
-channel
-Expands the channel information.
-post
-Expands the post information.
-root_post
-Expands the root post information.
-team
-Expands the team information.</p>
+<p>The possible expansions are:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Field name</th>
+<th align="left">Field type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">app</td>
+<td align="left">Expands the app information.</td>
+</tr>
+<tr>
+<td align="left">acting_user</td>
+<td align="left">Expands the Acting User information.</td>
+</tr>
+<tr>
+<td align="left">acting_user_access_token</td>
+<td align="left">A slash command</td>
+</tr>
+<tr>
+<td align="left">admin_access_token</td>
+<td align="left">Include the admin access token.</td>
+</tr>
+<tr>
+<td align="left">channel</td>
+<td align="left">Expands the channel information.</td>
+</tr>
+<tr>
+<td align="left">post</td>
+<td align="left">Expands the post information.</td>
+</tr>
+<tr>
+<td align="left">root_post</td>
+<td align="left">Expands the root post information.</td>
+</tr>
+<tr>
+<td align="left">team</td>
+<td align="left">Expands the team information.</td>
+</tr>
+</tbody>
+</table>
 <p>TODO: Manifest example</p>
 <h2 id="call-handling">Call handling&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-handling"></i></a> </h2>
 <h3 id="call-request">Call Request&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-request"></i></a> </h3>
 <p>When a call is performed, a POST request will be made to the endpoint defined in the call. The call will include a “Mattermost-App-Authorization” header, with a jwtToken. Along the default claims, it will also send the Acting User ID.</p>
 <p>The call request will include:</p>
-<p>type
-CallType
-The type of call being made.
-values
-Object
-The pairs of key values present in the call. Can be populated by forms and slash commands.
-context
-Context
-The context of the call.
-raw_command
-string
-The unparsed command for slash commands.</p>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">CallType</th>
+<th align="left">The type of call being made.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">values</td>
+<td align="left">Object</td>
+<td align="left">The pairs of key values present in the call. Can be populated by forms and slash commands.</td>
+</tr>
+<tr>
+<td align="left">context</td>
+<td align="left">Context</td>
+<td align="left">The context of the call.</td>
+</tr>
+<tr>
+<td align="left">raw_command</td>
+<td align="left">string</td>
+<td align="left">The unparsed command for slash commands.</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">string</td>
+<td align="left">The description for your app. Used in the marketplace.</td>
+</tr>
+<tr>
+<td align="left">homepage_url</td>
+<td align="left">string</td>
+<td align="left">The app homepage. Used in the marketplace and for OAuth purposes.</td>
+</tr>
+<tr>
+<td align="left">root_url</td>
+<td align="left">string</td>
+<td align="left">Base url to send all calls. Only needed for http apps.</td>
+</tr>
+<tr>
+<td align="left">requested_permissions</td>
+<td align="left">Permissions</td>
+<td align="left">All the permissions needed by the app.</td>
+</tr>
+</tbody>
+</table>
 <p>The call type can be:</p>
-<p>Submit. (Empty string)
-form
-Request for a form.
-lookup
-Lookup for dynamic selects in forms.</p>
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">CallType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left">Submit. (Empty string)</td>
+</tr>
+<tr>
+<td align="left">form</td>
+<td align="left">Context</td>
+</tr>
+<tr>
+<td align="left">lookup</td>
+<td align="left">Lookup for dynamic selects in forms.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="call-context">Call Context&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-context"></i></a> </h3>
 <p>Depending on the location and expansions, calls will have different context. These are all the possible context values.</p>
 <p>app_id
