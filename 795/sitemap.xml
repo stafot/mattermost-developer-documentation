@@ -436,10 +436,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/hello-world/</loc>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/extend/plugins/manifest-reference/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
