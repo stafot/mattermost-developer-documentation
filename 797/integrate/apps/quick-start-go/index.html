@@ -461,7 +461,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <h2 id="prerequisites">Prerequisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#prerequisites"></i></a> </h2>
 <p>Before you can start with your app, you first need to set up a local developer environment following the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">server</a> and <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">webapp</a> setup guides. You must enable the apps feature flag before starting the Mattermost server by setting the enjoinment variable <code>MM_FEATUREFLAGS_AppsEnabled</code> to <code>true</code> by e.g. adding <code>export MM_FEATUREFLAGS_AppsEnabled=true</code> to your <code>.bashrc</code>. Please also ensure that <code>Bot Account Creation</code> and <code>OAuth 2.0 Service Provider</code> are enabled in the System Console.</p>
-<p><strong>Note:</strong> Apps do not work with a production release of Mattermost right now. They can only be run in a development environment.</p>
+<p><strong>Note:</strong> Apps do not work with a production release of Mattermost right now. They can only be run in a development environment. A future release will support production environments.</p>
 <p>You also need at least <code>go1.16</code> installed. Please follow the guide <a href="https://golang.org/doc/install">here</a> to install the latest version.</p>
 <h3 id="install-the-apps-plugin">Install the Apps plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-the-apps-plugin"></i></a> </h3>
 <p>The <a href="https://github.com/mattermost/mattermost-plugin-apps">apps plugin</a>) is a communication bridge between your app and the Mattermost server. To install it on your local server by cloning the code in a directory of your choice:</p>
@@ -480,7 +480,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 <p>Create a file called <code>manifest.json</code> containing:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#309;font-weight:bold">&#34;app_id&#34;</span>: <span style="color:#c30">&#34;hello-world&#34;</span>,
-    <span style="color:#309;font-weight:bold">&#34;display_name&#34;</span>: <span style="color:#c30">&#34;Hello, world!&#34;</span>,
+	<span style="color:#309;font-weight:bold">&#34;display_name&#34;</span>: <span style="color:#c30">&#34;Hello, world!&#34;</span>,
 	<span style="color:#309;font-weight:bold">&#34;app_type&#34;</span>: <span style="color:#c30">&#34;http&#34;</span>,
 	<span style="color:#309;font-weight:bold">&#34;root_url&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080&#34;</span>,
 	<span style="color:#309;font-weight:bold">&#34;requested_permissions&#34;</span>: [
@@ -492,7 +492,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	]
 }
 </code></pre></div><h3 id="bindings-and-locations">Bindings and locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h3>
-<p>Locations are named elements in the Mattermost user interface. Bindings specify how  an app&rsquo;s calls should be displayed at, and invoked from, these locations.</p>
+<p>Locations are named elements in the Mattermost user interface. Bindings specify how an app&rsquo;s calls should be displayed at, and invoked from, these locations.</p>
 <p>The app creates a channel header button, and adds a <code>/helloworld send</code> command.</p>
 <p>Create a file called <code>bindings.json</code> containing:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -518,7 +518,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 					<span style="color:#309;font-weight:bold">&#34;icon&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
 					<span style="color:#309;font-weight:bold">&#34;label&#34;</span>: <span style="color:#c30">&#34;helloworld&#34;</span>,
 					<span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Hello World app&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;hint&#34;</span>:        <span style="color:#c30">&#34;[send]&#34;</span>,
+					<span style="color:#309;font-weight:bold">&#34;hint&#34;</span>: <span style="color:#c30">&#34;[send]&#34;</span>,
 					<span style="color:#309;font-weight:bold">&#34;bindings&#34;</span>: [
 						{
 							<span style="color:#309;font-weight:bold">&#34;location&#34;</span>: <span style="color:#c30">&#34;send&#34;</span>,
