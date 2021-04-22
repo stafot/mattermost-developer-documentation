@@ -452,15 +452,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             Writing a Mattermost app in Go
                         
                     </h1>
-                    <p>This quick start guide explains the basics of writing a Mattermost App. In this guide you will build an App that:</p>
+                    <p>This quick start guide explains the basics of writing a Mattermost app. In this guide you will build an app that:</p>
 <ul>
-<li>Contains a <code>manifest.json</code>, declares itself an HTTP application that acts as a bot and attaches to locations in the user interface.</li>
+<li>Contains a <code>manifest.json</code>, declares itself an HTTP application that acts as a bot, and attaches to locations in the user interface.</li>
 <li>Attaches <code>send-modal</code> in its <code>bindings</code> to a button in the channel header, and <code>send</code> to a <code>/helloworld</code> command.</li>
 <li>Contains a <code>send</code> function that sends a parameterized message back to the user.</li>
 <li>Contains a <code>send-modal</code> function that forces displaying the <code>send</code> form as a modal.</li>
 </ul>
 <h2 id="prerequisites">Prerequisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#prerequisites"></i></a> </h2>
-<p>Before you can start with your app, you first need to set up a local developer environment following the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">server</a> and <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">webapp</a> setup guides. You must enable the apps feature flag before starting the Mattermost server by setting the enjoinment variable <code>MM_FEATUREFLAGS_AppsEnabled</code> to <code>true</code> by e.g. adding <code>export MM_FEATUREFLAGS_AppsEnabled=true</code> to your <code>.bashrc</code>. Please also ensure that <code>Bot Account Creation</code> and <code>OAuth 2.0 Service Provider</code> are enabled in the System console.</p>
+<p>Before you can start with your app, you first need to set up a local developer environment following the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">server</a> and <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">webapp</a> setup guides. You must enable the apps feature flag before starting the Mattermost server by setting the enjoinment variable <code>MM_FEATUREFLAGS_AppsEnabled</code> to <code>true</code> by e.g. adding <code>export MM_FEATUREFLAGS_AppsEnabled=true</code> to your <code>.bashrc</code>. Please also ensure that <code>Bot Account Creation</code> and <code>OAuth 2.0 Service Provider</code> are enabled in the System Console.</p>
 <p><strong>Note:</strong> Apps do not work with a production release of Mattermost right now. They can only be run in a development environment.</p>
 <p>You also need at least <code>go1.16</code> installed. Please follow the guide <a href="https://golang.org/doc/install">here</a> to install the latest version.</p>
 <h3 id="install-the-apps-plugin">Install the Apps plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-the-apps-plugin"></i></a> </h3>
@@ -476,7 +476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 go mod init my-app
 go get github.com/mattermost/mattermost-plugin-apps/apps@master
 </code></pre></div><h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
-<p>Your app has to provide a so-called manifest. The manifest declares App metadata. In this example the <em>permission</em> to act as a Bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
+<p>Your app has to provide a so-called manifest. The manifest declares App metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
 <p>Create a file called <code>manifest.json</code> containing:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#309;font-weight:bold">&#34;app_id&#34;</span>: <span style="color:#c30">&#34;hello-world&#34;</span>,
@@ -560,7 +560,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 }
 </code></pre></div><h2 id="icons">Icons&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#icons"></i></a> </h2>
 <p>Apps may include static assets. One example that was already used above is the <code>icon</code> for the two bindings. Static assets must be served under the <code>static</code> path.</p>
-<p>Download an example icon using</p>
+<p>Download an example icon using:</p>
 <pre><code>wget https://github.com/mattermost/mattermost-plugin-apps/raw/master/examples/go/helloworld/icon.png
 </code></pre><h3 id="serving-the-data">Serving the data&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#serving-the-data"></i></a> </h3>
 <p>Lastly, create a file named <code>main.go</code> with the following contents:</p>
@@ -636,7 +636,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 }
 </code></pre></div><p>The apps is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
 <h2 id="installing-the-app">Installing the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
-<p>Run your app using</p>
+<p>Run your app using:</p>
 <pre><code>go run .
 </code></pre><p>Then run the following slash commands in our Mattermost server:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
