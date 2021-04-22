@@ -81,16 +81,6 @@ NOTE: These steps apply for the mattermost-webapp repository only.</description>
     </item>
     
     <item>
-      <title>Migrating to Redux</title>
-      <link>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</link>
-      <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</guid>
-      <description>The Mattermost web app is going through a big restructuring effort to move from using Flux to Redux. When we first started building the webapp, React was still new to the world, and so were the frameworks and design patterns. As a result, the webapp has had a lot of organic growth over the last couple of years, and is using an assortment of different design patterns.
-This campaign is meant to help with that by moving app state and logic into our Redux repository, and by migrating the webapp components to be pure and use Redux to supply their props.</description>
-    </item>
-    
-    <item>
       <title>Migrating to Typescript</title>
       <link>https://developers.mattermost.com/contribute/webapp/migrating-to-typescript/</link>
       <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>

@@ -138,11 +138,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/developer-setup/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/webapp/developer-setup/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
@@ -190,11 +185,6 @@
   <url>
     <loc>https://developers.mattermost.com/internal/mobile-build-process/troubleshooting/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/redux/developer-workflow/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
@@ -248,7 +238,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/actions/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/actions/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -308,7 +298,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/reducers/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/reducers/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -323,12 +313,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/</loc>
-    <lastmod>2018-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/redux/selectors/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/selectors/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -348,13 +333,13 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/react-redux/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/react-redux/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/</loc>
+    <lastmod>2020-04-01T12:00:00-04:00</lastmod>
   </url>
   
   <url>

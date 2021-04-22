@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> OSX Development Environment Setup</title>
+<title> Actions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="OSX Development Environment Setup">
+<meta name="og:title" value="Actions">
 
  
-  <meta name="description" content="Read about how to set up your developer environment in Mattermost using a Mac OS X.">
-<meta name="twitter:description" content="Read about how to set up your developer environment in Mattermost using a Mac OS X.">
-<meta name="og:description" content="Read about how to set up your developer environment in Mattermost using a Mac OS X.">
+  <meta name="description" content="Similar to other frameworks like Flux, actions in Redux represent a single change to the Redux store as a plain JavaScript object.">
+<meta name="twitter:description" content="Similar to other frameworks like Flux, actions in Redux represent a single change to the Redux store as a plain JavaScript object.">
+<meta name="og:description" content="Similar to other frameworks like Flux, actions in Redux represent a single change to the Redux store as a plain JavaScript object.">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/contribute/server/developer-setup/osx/">
+<link rel="canonical" href="https://developers.mattermost.com/contribute/webapp/redux/actions/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        OSX Development Environment Setup
+        Actions
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -597,20 +597,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-                            
-                        
 
                         
                             
                         
 
-                        <span class="item active">
-                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="https://developers.mattermost.com/contribute/server/developer-setup/osx/"> OSX Development Environment Setup</a></span>
+                                <a href="https://developers.mattermost.com/contribute/server/developer-setup/osx/"> OSX Development Environment Setup</a></span>
                             
                         </span>
-                        <ul class="sub-menu" style="display: block">
+                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -779,20 +777,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
+                            
+                        
 
                         
                             
                         
 
                         <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
                             
                                 <a href="https://developers.mattermost.com/contribute/webapp/redux/"> Redux</a></span>
                             
                         </span>
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
-                                <a class="item " href="https://developers.mattermost.com/contribute/webapp/redux/actions/">Actions</a>
+                                <a class="item active" href="https://developers.mattermost.com/contribute/webapp/redux/actions/">Actions</a>
                             
                                 <a class="item " href="https://developers.mattermost.com/contribute/webapp/redux/reducers/">Reducers</a>
                             
@@ -1103,36 +1103,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
+                    
+                
 
                 
                     
                 
 
                 <span class="item ">
-                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
                     
                         <a href="https://developers.mattermost.com/contribute/webapp/redux/"> Redux</a>
                     
                 </span>
-                <ul class="sub-menu" >
+                <ul class="sub-menu" style="display: block">
                     
                         
                         
 
                         
                         
+                            
+                        
 
                         
                             
                         
 
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/contribute/webapp/redux/actions/"> Actions</a></span>
+                                <a class="active" href="https://developers.mattermost.com/contribute/webapp/redux/actions/"> Actions</a></span>
                             
                         </span>
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
                         </ul>
                     
@@ -1304,68 +1308,203 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/contribute/server/developer-setup/osx.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/contribute/webapp/redux/actions.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            How to Set Up Mattermost in Mac OS X
+                            Actions in Redux - Mattermost
                         
                     </h1>
-                    <ol>
+                    <p>Similar to other frameworks like Flux, actions in Redux represent a single change to the Redux store as a plain JavaScript object.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+    type<span style="color:#555">:</span> <span style="color:#c30">&#39;SELECT_CHANNEL&#39;</span>,
+    data<span style="color:#555">:</span> channelId
+}
+</code></pre></div><p>They are created by functions called action creators. In regular Redux, this function will take some arguments and return an action representing how the store should be changed. Something to note with Mattermost Redux is that we typically refer to the action creators as the &ldquo;actions&rdquo; themselves since there&rsquo;s often a single action creator for a given type of action.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> selectChannel(channelId) {
+    <span style="color:#069;font-weight:bold">return</span> {
+        type<span style="color:#555">:</span> <span style="color:#c30">&#39;SELECT_CHANNEL&#39;</span>,
+        data<span style="color:#555">:</span> channelId
+    };
+}
+</code></pre></div><p>This action is later received by the Redux store&rsquo;s reducers which will know how to read the contents of the action and modify the store accordingly.</p>
+<p>Because we use the <a href="https://github.com/gaearon/redux-thunk">Thunk middleware for Redux</a>, we have the ability to use more powerful action creators that can read the state of the store, perform asynchronous actions like network requests, and dispatch multiple actions when needed. Instead of returning a plain object, these action creators return a function that takes the Redux store&rsquo;s <code>dispatch</code> and <code>getState</code> to be able to dispatch actions as needed.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> loadAndSelectChannel(channelId) {
+    <span style="color:#069;font-weight:bold">return</span> async (dispatch, getState) =&gt; {
+        <span style="color:#069;font-weight:bold">const</span> {channels} <span style="color:#555">=</span> getState().entities.channels;
+
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>channels.hasOwnProperty(channelId)) {
+            <span style="color:#09f;font-style:italic">// Optionally call another action to asynchronously load the channel over the network
+</span><span style="color:#09f;font-style:italic"></span>            dispatch(setChannelLoading(<span style="color:#069;font-weight:bold">true</span>));
+
+            await dispatch(loadChannel(channelId));
+
+            dispatch(setChannelLoading(<span style="color:#069;font-weight:bold">false</span>));
+        }
+
+        <span style="color:#09f;font-style:italic">// Switch to the channel
+</span><span style="color:#09f;font-style:italic"></span>        dispatch(selectChannel(channelId));
+    };
+}
+</code></pre></div><p>Actions live in the <code>src/actions</code> directory with the constants that define their types being in the <code>src/action_types</code> directory.</p>
+<h2 id="using-actions">Using Actions&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-actions"></i></a> </h2>
+<p>To use an action, you need to pass it into the <code>dispatch</code> method of the Redux store so that it can be passed off to the reducers.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">const</span> store <span style="color:#555">=</span> createReduxStore();
+
+store.dispatch(loadAndSelectChannel(channelId));
+</code></pre></div><p>Since both the Mattermost web and mobile apps also use React, the <code>dispatch</code> method is provided for us by using the <code>connect</code> function <a href="https://github.com/reactjs/react-redux">React Redux</a> to wrap our components.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#09f;font-style:italic">// src/components/widget/index.jsx
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">import</span> {connect} from <span style="color:#c30">&#39;react-redux&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> {bindActionCreators} from <span style="color:#c30">&#39;redux&#39;</span>;
+
+<span style="color:#069;font-weight:bold">import</span> {loadAndSelectChannel} from <span style="color:#c30">&#39;src/actions/channels&#39;</span>;
+
+<span style="color:#069;font-weight:bold">import</span> Widget from <span style="color:#c30">&#39;./widget&#39;</span>;
+
+<span style="color:#09f;font-style:italic">// mapDispatchToProps is used to automatically attach `store.dispatch` to the actions
+</span><span style="color:#09f;font-style:italic">// so that the component doesn&#39;t need to know that it even exists
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">function</span> mapDispatchToProps(dispatch) {
+    <span style="color:#069;font-weight:bold">return</span> {
+        actions<span style="color:#555">:</span> bindActionCreators({ <span style="color:#09f;font-style:italic">// bindActionCreators does the hard work here
+</span><span style="color:#09f;font-style:italic"></span>            loadAndSelectChannel
+        }, dispatch)
+    };
+}
+
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> connect(<span style="color:#069;font-weight:bold">null</span>, mapDispatchToProps)(Widget);
+
+<span style="color:#09f;font-style:italic">// src/components/widget/widget.jsx
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> <span style="color:#069;font-weight:bold">class</span> Widget <span style="color:#069;font-weight:bold">extends</span> React.PureComponent {
+    handleClick <span style="color:#555">=</span> () =&gt; {
+        <span style="color:#09f;font-style:italic">// Note that we aren&#39;t passing in dispatch here since it&#39;s already been
+</span><span style="color:#09f;font-style:italic"></span>        <span style="color:#09f;font-style:italic">// done by bindActionCreators
+</span><span style="color:#09f;font-style:italic"></span>        <span style="color:#069;font-weight:bold">this</span>.props.actions.loadAndSelectChannel(<span style="color:#069;font-weight:bold">this</span>.props.channelId);
+    };
+
+    render() {
+        <span style="color:#069;font-weight:bold">return</span> (
+            <span style="color:#555">&lt;</span>button onClick<span style="color:#555">=</span>{<span style="color:#069;font-weight:bold">this</span>.handleClick}<span style="color:#555">&gt;</span>
+                {<span style="color:#c30">&#39;Click me!&#39;</span>}
+            <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/button&gt;</span>
+        );
+    }
+}
+</code></pre></div><h2 id="adding-an-action">Adding an Action&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-an-action"></i></a> </h2>
+<p>To add a new Redux action, you must</p>
+<ol>
 <li>
-<p>Install and configure Docker CE: <a href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac/</a>.</p>
-<p><strong>Note:</strong> <a href="https://github.com/mattermost/mattermost-server/pull/10872">MM-9791</a> introduced using <a href="https://docs.docker.com/compose/">docker-compose</a> to manage containers. To preserve your data on upgrade, execute the following steps.</p>
-<p>First, backup from any existing containers:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -h 127.0.0.1 --column-statistics<span style="color:#555">=</span><span style="color:#f60">0</span> -u mmuser -p mattermost_test &gt; mm_mysql_backup.sql
-pg_dump -U mmuser -W -d mattermost_test -h 127.0.0.1 &gt; mm_postgres_backup.bak
-</code></pre></div><p>Then after upgrading and starting the new docker-compose managed containers, restore the data:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysql -u mmuser -p -h 127.0.0.1 mattermost_test &lt; mm_mysql_backup.sql
-psql -U mmuser -W -h 127.0.0.1 -f mm_postgres_backup.bak mattermost_test
-</code></pre></div><p>If you don&rsquo;t migrate your data, the new, docker-compose-managed containers will start out empty. To remove the old containers &ndash; destroying any existing data &ndash; use <code>make clean-old-docker</code>.</p>
+<p>If you&rsquo;re adding a new action type, add a constant to one of the files in <code>src/action_types</code> to be the type of your new action. This is only required if your action is going to be dispatching a unique action instead of just dispatching existing actions.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> keyMirror({
+    DO_ACTION<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>
+});
+</code></pre></div></li>
+<li>
+<p>Add an action creator to <code>src/actions</code>. This function needs to either return a plain JavaScript object for a regular action or a function for a Thunk action. If it&rsquo;s a Thunk action, it should also return an object with two fields: a <code>data</code> field containing the results of the action and an <code>error</code> field containing an error if one occurs.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> doSimpleAction() {
+    <span style="color:#069;font-weight:bold">return</span> {
+        type<span style="color:#555">:</span> ActionTypes.DO_SIMPLE_ACTION,
+        data<span style="color:#555">:</span> <span style="color:#f60">1234</span>
+    };
+}
+
+<span style="color:#069;font-weight:bold">function</span> doThunkAction() {
+    <span style="color:#069;font-weight:bold">return</span> async (dispatch, getState) =&gt; {
+        <span style="color:#069;font-weight:bold">let</span> data;
+        <span style="color:#069;font-weight:bold">try</span> {
+            data <span style="color:#555">=</span> await doSomething();
+        } <span style="color:#069;font-weight:bold">catch</span>(e) {
+            <span style="color:#069;font-weight:bold">const</span> error <span style="color:#555">=</span> {
+                message<span style="color:#555">:</span> e.message
+            };
+
+            dispatch({
+                type<span style="color:#555">:</span> ActionTypes.DO_THUNK_ACTION_FAILED,
+                data<span style="color:#555">:</span> error
+            });
+
+            <span style="color:#069;font-weight:bold">return</span> error;
+        }
+
+        dispatch({
+            type<span style="color:#555">:</span> ActionTypes.DO_THUNK_ACTION,
+            data
+        });
+
+        <span style="color:#069;font-weight:bold">return</span> {
+            data
+        };
+    };
+}
+</code></pre></div></li>
+<li>
+<p>If you&rsquo;re adding a new action type, add or update existing reducers to handle the new action. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers/">here</a>.</p>
 </li>
 <li>
-<p>Download and install homebrew: <a href="https://brew.sh/">https://brew.sh/</a>.</p>
+<p>Add unit tests to make sure that the action has the intended effects on the store. Test location is adjacent to the file being tested. Example, for <code>src/actions/admin.js</code>, test is located at <code>src/actions/admin.test.js</code>.  Add test file if necessary. More information on unit testing reducers is available below.</p>
+</li>
+</ol>
+<h3 id="adding-a-new-api-action">Adding a new API Action&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#adding-a-new-api-action"></i></a> </h3>
+<p>If your action is wrapping an API call, there&rsquo;s a few things that you will need to do differently:</p>
+<ol>
+<li>
+<p>For your endpoint, you&rsquo;ll need to add a new method to the JavaScript client located in <code>src/client/client4.js</code>. This method will look similar to the other methods in that class.</p>
 </li>
 <li>
-<p>Install Go:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install go
+<p>In addition to the new action type that you&rsquo;ll be adding, you&rsquo;ll also normally need to add action types to indicate the status of the request. These are not required for optimistic actions.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#09f;font-style:italic">// For a getUser request
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> keyMirror({
+    <span style="color:#09f;font-style:italic">// Used to update the request state in the store
+</span><span style="color:#09f;font-style:italic"></span>    USER_REQUEST<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>,
+    USER_SUCCESS<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>,
+    USER_FAILURE<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>,
+
+    <span style="color:#09f;font-style:italic">// Used to pass new user data to the store
+</span><span style="color:#09f;font-style:italic"></span>    USER_RECEIVED<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>
+});
 </code></pre></div></li>
 <li>
-<p>Update your shell&rsquo;s initialization script (e.g. <code>.bashrc</code> or <code>.zshrc</code>) and add the following:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">export</span> <span style="color:#033">GOPATH</span><span style="color:#555">=</span><span style="color:#033">$HOME</span>/go
-<span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#033">$PATH</span>:<span style="color:#033">$GOPATH</span>/bin
-<span style="color:#366">ulimit</span> -n <span style="color:#f60">8096</span>
+<p>When adding the action creator, if it simply calls the client, you can use the <code>bindClientFunc</code> helper function to create it for you. More complicated calls will need to dispatch different request actions as necessary.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">function</span> getUser(userId) {
+    <span style="color:#069;font-weight:bold">return</span> bindClientFunc(
+        Client4.getUser, <span style="color:#09f;font-style:italic">// The client method
+</span><span style="color:#09f;font-style:italic"></span>        UserTypes.USER_REQUEST, <span style="color:#09f;font-style:italic">// The type of action dispatched when the request is started
+</span><span style="color:#09f;font-style:italic"></span>        [UserTypes.RECEIVED_USER, UserTypes.USER_SUCCESS], <span style="color:#09f;font-style:italic">// One or more types of actions dispatched when the request is completed
+</span><span style="color:#09f;font-style:italic"></span>        UserTypes.USER_FAILURE, <span style="color:#09f;font-style:italic">// The type of action dispatched when the request fails
+</span><span style="color:#09f;font-style:italic"></span>        userId <span style="color:#09f;font-style:italic">// Any other arguments to the action that will be passed to the client call
+</span><span style="color:#09f;font-style:italic"></span>    );
+}
 </code></pre></div></li>
 <li>
-<p>Re-source your shell&rsquo;s initialization script to update <code>GOPATH</code> and <code>PATH</code> in your current shell:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">source</span> <span style="color:#033">$HOME</span>/.bashrc
+<p>Make the necessary changes to the reducers to handle your action as well as adding a reducer to update the <code>requests</code> section of the store. In most cases, you can use the <code>handleRequest</code> and <code>initialRequestState</code> helper functions to construct the reducer for you. More information about reducers is available <a href="https://developers.mattermost.com/contribute/redux/reducers/">here</a>.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">function</span> getUser(state <span style="color:#555">=</span> initialRequestState(), action) {
+    <span style="color:#069;font-weight:bold">return</span> handleRequest(
+        UserTypes.USER_REQUEST,
+        UserTypes.USER_SUCCESS,
+        UserTypes.USER_FAILURE,
+        state,
+        action
+    );
+}
+
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> combineReducers({
+    getUser
+});
 </code></pre></div></li>
 <li>
-<p>Fork <a href="https://github.com/mattermost/mattermost-server">https://github.com/mattermost/mattermost-server</a></p>
+<p>Add unit tests to make sure that the action has the intended effects on the store. Test location is adjacent to the file being tested. Example, for <code>src/actions/admin.js</code>, test is located at <code>src/actions/admin.test.js</code>.  Add test file if necessary. More information on unit testing reducers is available below.</p>
 </li>
-<li>
-<p>Clone the Mattermost source code from your fork:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/YOUR_GITHUB_USERNAME/mattermost-server.git
-</code></pre></div></li>
-<li>
-<p>Start the server:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">cd</span> mattermost-server
-make run-server
-</code></pre></div><p><strong>Note:</strong> If you see lot of <code>nc: bad address 'elasticsearch'</code> messages, eventually exiting with the message <code>Service elasticsearch:9200 did not start within 300 seconds. Aborting...</code>,  increase the memory available for the Docker Engine by going to <a href="https://docs.docker.com/docker-for-mac/#advanced">Docker&rsquo;s preferences -&gt; Advanced</a>.</p>
-</li>
-<li>
-<p>Test your environment:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl http://localhost:8065/api/v4/system/ping
-make stop-server
-</code></pre></div><p>If successful, the <code>curl</code> step will return a JSON object:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#309;font-weight:bold">&#34;AndroidLatestVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;AndroidMinVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;DesktopLatestVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;DesktopMinVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;IosLatestVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;IosMinVersion&#34;</span>:<span style="color:#c30">&#34;&#34;</span>,<span style="color:#309;font-weight:bold">&#34;status&#34;</span>:<span style="color:#c30">&#34;OK&#34;</span>}
-</code></pre></div><p><strong>Note:</strong> Browsing directly to http://localhost:8065/ will display a <code>404 Not Found</code> until the web app is configured. See <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">Web App Developer Setup</a> and <a href="https://developers.mattermost.com/contribute/mobile/developer-setup/">Mobile App Developer Setup</a> for additional setup.</p>
-<p>The <code>stop-server</code> make target does not stop all the docker containers started by <code>run-server</code>. To stop the running docker containers:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make stop-docker
-</code></pre></div></li>
+</ol>
+<h3 id="testing-an-action">Testing an Action&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#testing-an-action"></i></a> </h3>
+<p>Unit tests for actions are located in the same directory, adjacent to the file being tested. These tests are written using <a href="https://jestjs.io/">Jest Testing Framework</a>. In that folder, there are many examples of how those tests should look. Most follow the same general pattern of:</p>
+<ol>
+<li>Construct the initial test state. Note that this doesn&rsquo;t need to be shared between tests as it is in many other cases.</li>
+<li>Mock any actions that would contact the server. This is done using the <a href="https://github.com/node-nock/nock">nock server mocking framework</a> to mock the server.</li>
+<li>Dispatch the action and look for the results.</li>
 </ol>
 
 

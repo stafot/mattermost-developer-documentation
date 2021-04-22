@@ -871,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>A short usage example of a <code>PostType</code> component using the post utility functions to format text.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>; <span style="color:#09f;font-style:italic">// accessed through webpack externals
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> {makeStyleFromTheme} from <span style="color:#c30">&#39;mattermost-redux/utils/theme_utils&#39;</span>;
+
 <span style="color:#069;font-weight:bold">const</span> PostUtils <span style="color:#555">=</span> <span style="color:#366">window</span>.PostUtils; <span style="color:#09f;font-style:italic">// must be accessed through `window`
 </span><span style="color:#09f;font-style:italic"></span>
 <span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> <span style="color:#069;font-weight:bold">class</span> PostTypeFormatted <span style="color:#069;font-weight:bold">extends</span> React.PureComponent {
@@ -879,15 +879,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span>
     render() {
-        <span style="color:#069;font-weight:bold">const</span> style <span style="color:#555">=</span> getStyle(<span style="color:#069;font-weight:bold">this</span>.props.theme);
         <span style="color:#069;font-weight:bold">const</span> post <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">this</span>.props.post;
 
         <span style="color:#069;font-weight:bold">const</span> formattedText <span style="color:#555">=</span> PostUtils.formatText(post.message); <span style="color:#09f;font-style:italic">// format the text
 </span><span style="color:#09f;font-style:italic"></span>
         <span style="color:#069;font-weight:bold">return</span> (
-            <span style="color:#555">&lt;</span>div
-                style<span style="color:#555">=</span>{style.container}
-            <span style="color:#555">&gt;</span>
+            <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
                 {<span style="color:#c30">&#39;Formatted text: &#39;</span>}
                 {PostUtils.messageHtmlToComponent(formattedText)} <span style="color:#09f;font-style:italic">// convert the html to components
 </span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
