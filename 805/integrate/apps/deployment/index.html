@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> Deployment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<meta http-equiv="content-language" content="en-us" />
+
+<meta name="og:site_name" value="Mattermost.com">
+<meta name="og:title" value="Deployment">
+
+ 
+  <meta name="description" content="TODO">
+<meta name="twitter:description" content="TODO">
+<meta name="og:description" content="TODO">
+
+
+
+ 
+<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/deployment/">
+
+
+<link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://developers.mattermost.com/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://developers.mattermost.com/css/tabs.css">
+<link rel="stylesheet" href="https://developers.mattermost.com/css/bar.css">
+<link rel="stylesheet" href="https://developers.mattermost.com/css/styles.css">
+<link rel="stylesheet" href="https://developers.mattermost.com/css/code.css">
+<link rel="stylesheet" href="https://developers.mattermost.com/css/note.css">
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53S4TVZ');</script>
+
+
+    </head>
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53S4TVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+    
+<header class="with-notification-bar">
+
+    <a href="https://developers.mattermost.com/"><img src="https://developers.mattermost.com/img/logo.svg" alt="Mattermost Logo" width="212px"></a>
+    <div class="header__menu-toggle">
+        <i class="fa fa-bars"></i>
+    </div>
+    <ul class="header__links--right">
+        <li><a href="https://developers.mattermost.com/">Home</a></li>
+        
+            
+            
+            
+                
+                    <li><a href="https://developers.mattermost.com/contribute/getting-started/">Contribute</a></li>
+                
+            
+        
+            
+            
+            
+                
+                    <li class="active"><a href="https://developers.mattermost.com/integrate/getting-started/">Integrate</a></li>
+                
+            
+        
+            
+            
+            
+                
+                    <li><a href="https://developers.mattermost.com/extend/getting-started/">Extend</a></li>
+                
+            
+        
+            
+            
+            
+                
+                    <li><a href="https://developers.mattermost.com/blog/">Blog</a></li>
+                
+            
+        
+            
+            
+            
+                
+                    <li><a href="https://docs.mattermost.com/">Admin Docs</a></li>
+                
+            
+        
+    </ul>
+</header>
+
+
+<div class='notification-bar sticky-top'>
+    <div class="notification-bar__content">
+        <a class="notification-bar__close">
+            <span aria-hidden="true">×</span>
+        </a>
+        <a href="https://mattermost.com/careers">
+            We&#39;re hiring!
+        </a>
+    </div>
+</div>
+
+
+
+
+    <div id="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 sidebar">
+    <div class="sidebar__menu-toggle">
+        Deployment
+        <i class="fa fa-bars pull-right"></i>
+    </div>
+    <div class="row sidebar__links">
+        
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/getting-started/"> Getting Started</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/getting-started/how-should-i-integrate/"> How Should I Integrate?</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/incoming-webhooks/"> Incoming Webhooks</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/outgoing-webhooks/"> Outgoing Webhooks</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/slash-commands/"> Slash Commands</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/rest-api/"> API Reference</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/examples/"> Examples</a>
+                    
+                </span>
+                <ul class="sub-menu" >
+                    
+                </ul>
+            
+                
+                
+
+                
+                
+                    
+                
+
+                
+                    
+                
+
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
+                    
+                        <a href="https://developers.mattermost.com/integrate/apps/"> Apps (Developers Preview)</a>
+                    
+                </span>
+                <ul class="sub-menu" style="display: block">
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/quick-start-go/"> Quick start guide (Go)</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/manifest/"> Manifest</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/call/"> Call</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/bindings/"> Bindings</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/interactivity/"> Interactivity</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                                <a class="item " href="https://developers.mattermost.com/integrate/apps/interactivity/example-post-menu/">Post Menu Example</a>
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/using-mattermost-api/"> Apps APIs</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/using-third-party-api/"> Third-party APIs</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/lifecycle/"> App Lifecycle</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+                            
+                        
+
+                        
+                            
+                        
+
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a class="active" href="https://developers.mattermost.com/integrate/apps/deployment/"> Deployment</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" style="display: block">
+                            
+                        </ul>
+                    
+                </ul>
+            
+        
+    </div>
+</div>
+
+                <div class="col-lg-9 doc-content">
+                    
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/deployment/_index.md" class="float-right edit-github">
+    Edit on GitHub
+</a>
+
+
+                    <h1 class="mt-0 doc-title">
+                        
+                            Deploying Apps
+                        
+                    </h1>
+                    <p>Serverless hosting allows for easy app installation from the App Marketplace by a System Admin and uses AWS Lambda serverless technology instead of relying on a physical server. Developers who create apps using a serverless development approach can easily deploy apps securely, efficiently, and at scale in the Mattermost Cloud.</p>
+<h2 id="deployment-to-aws">Deployment to AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deployment-to-aws"></i></a> </h2>
+<h3 id="app-bundle">App Bundle&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-bundle"></i></a> </h3>
+<p>An app bundle is a convenient way to deliver an app to the Mattermost ecosystem. It provides a way to organize code and resources needed for an app to run. An app bundle is created by the developer of the app. Mattermost uses app bundles to provision and install/uninstall apps.</p>
+<p>The app bundle contains a <code>manifest.json</code> file, a <code>static/</code> folder (optional), and one or several lambda function bundles.</p>
+<ul>
+<li>The <code>static/</code> folder contains all the static files the app needs. For the Mattermost AWS apps static files are automatically provisioned and stored in the dedicated AWS S3 bucket. Apps have unlimited access to them by providing the static file name to the Apps Plugin. For the third-party hosted AWS apps, static files are stored in the different S3 bucket (specified by the third-party). For the HTTP Apps, when creating a server, the developer should store the static files in the <code>/static/$FILE_NAME</code> relative URL.</li>
+<li>The <code>manifest.json</code> file contains details about the app such as appID, appVersion, appType (HTTP or an AWS app), requested permissions, requested locations, and information about the functions such as function path, name, runtime and handler.</li>
+<li>Each of the lambda function bundles is a valid and runnable AWS Lambda function, which are provisioned in the AWS by the <a href="https://github.com/mattermost/mattermost-apps-cloud-deployer">Mattermost Apps Cloud Deployer</a>. The AWS Lambda function bundle is a <code>.zip</code> file which contains scripts or compiled programs and their dependencies. Note that it must be less than 50 MB.Exact specification of the bundle varies for different runtimes. For example one can see more details for <code>node.js</code> bundles <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-package.html">here</a>.</li>
+</ul>
+<h3 id="making-your-app-runnable-as-an-aws-lambda-function">Making your App runnable as an AWS lambda function&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#making-your-app-runnable-as-an-aws-lambda-function"></i></a> </h3>
+<p>In order for your App to run as an AWS lambda function it must use of the supported languages for AWS lambda. You can find the list <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">here</a>.</p>
+<p>It&rsquo;s important do design a app in <em>stateless</em> way. It&rsquo;s lifetime only spans one request. No persistent information should be stored expect using the <a href="https://developers.mattermost.com/integrate/apps/using-mattermost-api/#apps-kv-store-api">store API endpoints</a> provided by Apps Framework.</p>
+<p>A language library is used to emulate an HTTP to your app. For go you might use <a href="https://github.com/awslabs/aws-lambda-go-api-proxy">https://github.com/awslabs/aws-lambda-go-api-proxy</a>.</p>
+<p>Finally you need to define the AWS function in the manifest of your app by adding a <code>aws_lambda</code> to it which has the following fields:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>path</code></td>
+<td align="left">The lambda function with its Path the longest-matching prefix of the call&rsquo;s Path will be invoked for a call.</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left">A human readable name.</td>
+</tr>
+<tr>
+<td align="left"><code>handler</code></td>
+<td align="left">The name of the handler function.</td>
+</tr>
+<tr>
+<td align="left"><code>runtime</code></td>
+<td align="left">The AWS lambda runtime to use.</td>
+</tr>
+</tbody>
+</table>
+<p>For a go app the manifest snippet would look like this:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#309;font-weight:bold">&#34;aws_lambda&#34;</span>: [
+        {
+            <span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;go-function&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;handler&#34;</span>: <span style="color:#c30">&#34;$YOUR_APP_NAME&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;runtime&#34;</span>: <span style="color:#c30">&#34;go1.x&#34;</span>
+        }
+    ]
+}
+</code></pre></div><h3 id="deploying-third-party-apps-to-aws">Deploying third-party apps to AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deploying-third-party-apps-to-aws"></i></a> </h3>
+<p>Note that third-party apps are not supported in the Mattermost Cloud, they are used only for developer testing convenience. Provisioning in the third party AWS cloud environment is done by the <strong>appsctl</strong> tool using the command:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest
+appsctl provision app /PATH/TO/YOUR/APP/BUNDLE
+</code></pre></div><p>It reads appropriate AWS credentials from environment variables:</p>
+<p><code>APPS_PROVISION_AWS_ACCESS_KEY</code></p>
+<p><code>APPS_PROVISION_AWS_SECRET_KEY</code></p>
+<p>We need an app bundle to provision an app. The bundle might be provisioned from the local disk, from S3 (not implemented yet) or from some URL (not implemented yet). Provisioning consists of three parts:</p>
+<ol>
+<li>Creating the lambda functions with appropriate policies.</li>
+<li>Storing static assets in the dedicated S3 bucket.</li>
+<li>Storing app’s manifest file in the same dedicated S3 bucket.</li>
+</ol>
+<p>AWS Lambda functions have semantic names, which means that a function described in the manifest.json file translates to AWS as <code>$appID_$appVersion_$functionName</code> to avoid collisions with other apps&rsquo; or other versions&rsquo; functions. And <strong>appsctl</strong> provisions lambda functions using this name. For example a name of a <code>servicenow</code> app&rsquo;s lambda function might be <code>com-mattermost-servicenow_0-1-0_go-function</code>. App developer does not need to worry about the AWS lambda function names, Apps Plugin takes care of it. Dedicated S3 bucket name is stored in the environment variable:</p>
+<p><code>MM_APPS_S3_BUCKET</code></p>
+<p>which stores all apps&rsquo; static assets and manifest files.</p>
+<p>All files in the static folder of the bundle are considered to be the app&rsquo;s static assets and are stored in the above mentioned bucket. Stored assets also have semantic keys and are generated using the rule - <code>static/$appID_$appVersion/filename</code>. For example <code>servicenow</code> app&rsquo;s static file key can be <code>&quot;static/com.mattermost.servicenow_0.1.0_app/photo.png&quot;</code>. The app developer does not need to worry about the static asset keys, as the Apps Plugin takes care of it.</p>
+<p>The <code>manifest.json</code> file of an app is stored in the same S3 bucket as well with the key - <code>manifests/$appID_$appVersion.json</code>.</p>
+<p><img src="provisioning-in-3rd-party-aws.png" alt="Flow of provisioning third-party apps to AWS"></p>
+<h3 id="provisioning-in-mattermost-aws-cloud">Provisioning in Mattermost AWS Cloud&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#provisioning-in-mattermost-aws-cloud"></i></a> </h3>
+<p>To be provisioned in AWS Mattermost Cloud an app bundle is uploaded to the specific S3 bucket. On a new app release, a bundle is created by the circleCI and uploaded to S3. <a href="https://github.com/mattermost/mattermost-apps-cloud-deployer">Mattermost apps cloud deployer</a>, running as a k8s cron job every hour, detects the S3 upload, creates appropriate lambda functions, assets, and manifest the same way the <strong>appsclt</strong> does for the third-party accounts.</p>
+<p>The deployer needs lambda function names, asset keys, and manifest key to provision the app. It calls the <code>aws.GetProvisionDataFromFile(/PATH/TO/THE/APP/BUNDLE)</code> from the Apps Plugin to get the provision data. Same data can be generated using the command:</p>
+<p><code>appsctl generate-terraform-data /PATH/TO/YOUR/APP/BUNDLE</code></p>
+<p><img src="provisioning-in-mm-aws.png" alt="Flow of provisioning in Mattermost AWS Cloud"></p>
+<h2 id="http-server">HTTP Server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#http-server"></i></a> </h2>
+<p>While a serverless infrastructure is the recommenced way to host apps they can be hosted as a traditional HTTP server using e.g. <code>systemd</code>. It&rsquo;s important that your app is not reachable via the public internet and only by the Mattermost server.</p>
+<h2 id="submit-to-marketplace">Submit to Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#submit-to-marketplace"></i></a> </h2>
+<p>TBD</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center">
+    <div class="container-fluid">
+        <div class="footer__copyright">© Mattermost, Inc. All Rights Reserved.</div>
+        <div class="footer__icons">
+            <a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCNR05H72hi692y01bWaFXNA" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fa fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+<script src="https://developers.mattermost.com/js/tabs.js"></script>
+<script src="https://developers.mattermost.com/js/main.js"></script>
+
+</body>
+</html>
