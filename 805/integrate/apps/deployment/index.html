@@ -525,7 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 <tr>
 <td align="left"><code>name</code></td>
-<td align="left">A human readable name.</td>
+<td align="left">A human-readable name.</td>
 </tr>
 <tr>
 <td align="left"><code>handler</code></td>
@@ -533,7 +533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 <tr>
 <td align="left"><code>runtime</code></td>
-<td align="left">The AWS lambda runtime to use.</td>
+<td align="left">The AWS Lambda runtime to use.</td>
 </tr>
 </tbody>
 </table>
@@ -561,7 +561,7 @@ appsctl provision app /PATH/TO/YOUR/APP/BUNDLE
 <li>Storing static assets in the dedicated S3 bucket.</li>
 <li>Storing app’s manifest file in the same dedicated S3 bucket.</li>
 </ol>
-<p>AWS Lambda functions have semantic names, which means that a function described in the manifest.json file translates to AWS as <code>$appID_$appVersion_$functionName</code> to avoid collisions with other apps&rsquo; or other versions&rsquo; functions. And <strong>appsctl</strong> provisions lambda functions using this name. For example a name of a <code>servicenow</code> app&rsquo;s lambda function might be <code>com-mattermost-servicenow_0-1-0_go-function</code>. App developer does not need to worry about the AWS lambda function names, Apps Plugin takes care of it. Dedicated S3 bucket name is stored in the environment variable:</p>
+<p>AWS Lambda functions have semantic names, which means that a function described in the manifest.json file translates to AWS as <code>$appID_$appVersion_$functionName</code> to avoid collisions with other apps&rsquo; or other versions&rsquo; functions. And <strong>appsctl</strong> provisions lambda functions using this name. For example a name of a <code>servicenow</code> app&rsquo;s lambda function might be <code>com-mattermost-servicenow_0-1-0_go-function</code>. An App developer does not need to worry about the AWS Lambda function names, Apps Plugin takes care of it. Dedicated S3 bucket name is stored in the environment variable:</p>
 <p><code>MM_APPS_S3_BUCKET</code></p>
 <p>which stores all apps&rsquo; static assets and manifest files.</p>
 <p>All files in the static folder of the bundle are considered to be the app&rsquo;s static assets and are stored in the above mentioned bucket. Stored assets also have semantic keys and are generated using the rule - <code>static/$appID_$appVersion/filename</code>. For example <code>servicenow</code> app&rsquo;s static file key can be <code>&quot;static/com.mattermost.servicenow_0.1.0_app/photo.png&quot;</code>. The app developer does not need to worry about the static asset keys, as the Apps Plugin takes care of it.</p>
@@ -572,7 +572,7 @@ appsctl provision app /PATH/TO/YOUR/APP/BUNDLE
 <p>The deployer needs lambda function names, asset keys, and manifest key to provision the app. It calls the <code>aws.GetProvisionDataFromFile(/PATH/TO/THE/APP/BUNDLE)</code> from the Apps Plugin to get the provision data. Same data can be generated using the command:</p>
 <p><code>appsctl generate-terraform-data /PATH/TO/YOUR/APP/BUNDLE</code></p>
 <p><img src="provisioning-in-mm-aws.png" alt="Flow of provisioning in Mattermost AWS Cloud"></p>
-<h2 id="http-server">HTTP Server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#http-server"></i></a> </h2>
+<h2 id="http-server">HTTP server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#http-server"></i></a> </h2>
 <p>While a serverless infrastructure is the recommenced way to host apps they can be hosted as a traditional HTTP server using e.g. <code>systemd</code>. It&rsquo;s important that your app is not reachable via the public internet and only by the Mattermost server.</p>
 <h2 id="submit-to-marketplace">Submit to Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#submit-to-marketplace"></i></a> </h2>
 <p>TBD</p>
