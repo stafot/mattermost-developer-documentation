@@ -458,6 +458,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             
                         </ul>
                     
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/deployment/"> Deployment</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
                 </ul>
             
         
@@ -476,8 +496,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             Bindings
                         
                     </h1>
-                    <p>Bindings (<a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Binding">godoc</a>) are what establish the relationship between locations and calls. Whenever it is called, you have to provide the list of bindings available according to the context. The context for the bindings call includes the app id, bot access token, team id, channel id, acting user id and mattermost site url. By default it does not expand any value.</p>
-<p>One example bindings response is the one from the <a href="https://github.com/mattermost/mattermost-plugin-apps/blog/master/examples/go/helloworld/bindings.json">Hello World!</a> app.</p>
+                    <p>Bindings (<a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps#Binding">godoc</a>) are what establish the relationship between locations and calls. Whenever it&rsquo;s called, you have to provide the list of bindings available according to the context. The context for the bindings call includes the app ID, bot access token, team ID, channel ID, acting user ID and Mattermost site URL. By default it doesn&rsquo;t expand any value.</p>
+<p>One example bindings response is the one from the <a href="https://github.com/mattermost/mattermost-plugin-apps/blob/master/examples/go/helloworld/bindings.json">Hello World!</a> app.</p>
 <p>The expected response should include the following:</p>
 <table>
 <thead>
@@ -491,7 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>data</code></td>
 <td align="left">bindings</td>
-<td align="left">The list of bindings</td>
+<td align="left">The list of bindings.</td>
 </tr>
 </tbody>
 </table>
@@ -508,7 +528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>location</code></td>
 <td align="left">string</td>
-<td align="left">Top level location</td>
+<td align="left">Top level location.</td>
 </tr>
 <tr>
 <td align="left"><code>bindings</code></td>
@@ -517,7 +537,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p><code>/in_post</code> bindings do not need to be defined in this call.</p>
+<p><code>/in_post</code> bindings don&rsquo;t need to be defined in this call.</p>
 <h3 id="post_menu-bindings"><code>/post_menu</code> bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#post_menu-bindings"></i></a> </h3>
 <table>
 <thead>
@@ -536,17 +556,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>icon</code></td>
 <td align="left">string</td>
-<td align="left">(Optional) Url to the icon</td>
+<td align="left">(Optional) URL to the icon.</td>
 </tr>
 <tr>
 <td align="left"><code>label</code></td>
 <td align="left">string</td>
-<td align="left">Text to show in the item</td>
+<td align="left">Text to show in the item.</td>
 </tr>
 <tr>
 <td align="left"><code>call</code></td>
 <td align="left">Call</td>
-<td align="left">Call to perform</td>
+<td align="left">Call to perform.</td>
 </tr>
 </tbody>
 </table>
@@ -569,17 +589,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>icon</code></td>
 <td align="left">string</td>
-<td align="left">(Optional) Url to the icon</td>
+<td align="left">(Optional) URL to the icon.</td>
 </tr>
 <tr>
 <td align="left"><code>label</code></td>
 <td align="left">string</td>
-<td align="left">Text to show in the item on mobile and webapp collapsed view</td>
+<td align="left">Text to show in the item on mobile and webapp collapsed view.</td>
 </tr>
 <tr>
 <td align="left"><code>hint</code></td>
 <td align="left">string</td>
-<td align="left">Text to show in tooltip</td>
+<td align="left">Text to show in tooltip.</td>
 </tr>
 <tr>
 <td align="left"><code>call</code></td>
@@ -588,7 +608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p>The call for these bindings will include in the context the user ID, the channel ID, and the team ID.</p>
+<p>The context of the call for these bindings will include the user ID, the channel ID, and the team ID.</p>
 <h3 id="command-bindings"><code>/command</code> bindings&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#command-bindings"></i></a> </h3>
 <p>For commands we can distinguish between leaf commands (executable subcommand) and partial commands.</p>
 <p>A partial command must include:</p>
@@ -651,7 +671,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>call</code></td>
 <td align="left">Call</td>
-<td align="left">Call to perform when executing the command</td>
+<td align="left">Call to perform when executing the command.</td>
 </tr>
 <tr>
 <td align="left"><code>form</code></td>
@@ -660,7 +680,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 </tbody>
 </table>
-<p>The call for these bindings will include in the context the user ID, the post ID, the root post ID if any, the channel ID and the team ID. It will also include the raw command.</p>
+<p>The context of the call for these bindings will include the user ID, the post ID, the root post ID (if any), the channel ID and the team ID. It will also include the raw command.</p>
 <h2 id="example-data-flow">Example data flow&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#example-data-flow"></i></a> </h2>
 <details><summary>Client Bindings Request</summary>
 <p><code>GET /plugins/com.mattermost.apps/api/v1/bindings?user_id=ws4o4macctyn5ko8uhkkxmgfur&amp;channel_id=qphz13bzbf8c7j778tdnaw3huc&amp;scope=webapp</code></p>
