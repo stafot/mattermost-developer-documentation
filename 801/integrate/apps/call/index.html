@@ -498,6 +498,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             
                         </ul>
                 
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/deployment/"> Deployment</a>
+                            
+                        </span>
+
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                
                 </ul>
             
             
@@ -521,26 +543,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">Field name</th>
-<th align="left">Field type</th>
-<th align="left">Function</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>url</code></td>
+<td align="left"><code>path</code></td>
 <td align="left">string</td>
-<td align="left">The app endpoint to call. Mattermost will call <code>$ROOTURL/url</code>.</td>
-</tr>
-<tr>
-<td align="left"><code>values</code></td>
-<td align="left">Object</td>
-<td align="left">A set of elements to be interpreted by the app. Forms and slash commands will also populate these values.</td>
+<td align="left">The path of the call. For HTTP apps, the path is appended to the app&rsquo;s <code>RootURL</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>expand</code></td>
 <td align="left">Expand</td>
 <td align="left">A definition of the information to expand to send to the app.</td>
+</tr>
+<tr>
+<td align="left"><code>state</code></td>
+<td align="left">Object</td>
+<td align="left">A set of elements to be interpreted by the app. Forms and slash commands will also populate these values.</td>
 </tr>
 </tbody>
 </table>
@@ -551,8 +573,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">Field name</th>
-<th align="left">Field type</th>
+<th align="left">Name</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -562,11 +584,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 <tr>
 <td align="left"><code>acting_user</code></td>
-<td align="left">Expands the Acting User information.</td>
+<td align="left">Expands the acting user information.</td>
 </tr>
 <tr>
 <td align="left"><code>acting_user_access_token</code></td>
-<td align="left">A slash command</td>
+<td align="left">Include the user-level access token.</td>
 </tr>
 <tr>
 <td align="left"><code>admin_access_token</code></td>
@@ -588,6 +610,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <td align="left"><code>team</code></td>
 <td align="left">Expands the team information.</td>
 </tr>
+<tr>
+<td align="left"><code>user</code></td>
+<td align="left">Expands the subject user information.</td>
+</tr>
+<tr>
+<td align="left"><code>oauth2_app</code></td>
+<td align="left">Expands the remote OAuth2 configuration data.</td>
+</tr>
+<tr>
+<td align="left"><code>oauth2_user</code></td>
+<td align="left">Expands the remote OAuth2 user.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="call-handling">Call handling&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-handling"></i></a> </h2>
@@ -597,9 +631,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">CallType</th>
-<th align="left">The type of call being made.</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -619,24 +653,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <td align="left">The unparsed command for slash commands.</td>
 </tr>
 <tr>
-<td align="left"><code>description</code></td>
+<td align="left"><code>selected_field</code></td>
 <td align="left">string</td>
-<td align="left">The description for your app. Used in the marketplace.</td>
+<td align="left">Used in lookups and form refresh to communicate what field.</td>
 </tr>
 <tr>
-<td align="left"><code>homepage_url</code></td>
+<td align="left"><code>query</code></td>
 <td align="left">string</td>
-<td align="left">The app homepage. Used in the marketplace and for OAuth purposes.</td>
-</tr>
-<tr>
-<td align="left"><code>root_url</code></td>
-<td align="left">string</td>
-<td align="left">Base url to send all calls. Only needed for http apps.</td>
-</tr>
-<tr>
-<td align="left"><code>requested_permissions</code></td>
-<td align="left">Permissions</td>
-<td align="left">All the permissions needed by the app.</td>
+<td align="left">Used in lookups and form refresh what query strings is entered by the user.</td>
 </tr>
 </tbody>
 </table>
@@ -644,8 +668,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">CallType</th>
+<th align="left">Type</th>
+<th align="left">Meaning</th>
 </tr>
 </thead>
 <tbody>
@@ -672,16 +696,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">CallType</th>
-<th align="left">The type of call being made.</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>app_id</code></td>
 <td align="left">string</td>
-<td align="left">The app id</td>
+<td align="left">The app ID.</td>
 </tr>
 <tr>
 <td align="left"><code>location</code></td>
@@ -696,37 +720,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>bot_user_id</code></td>
 <td align="left">string</td>
-<td align="left">Bot user id</td>
+<td align="left">Bot user ID.</td>
 </tr>
 <tr>
 <td align="left"><code>acting_user_id</code></td>
 <td align="left">string</td>
-<td align="left">Id from the user performing the call</td>
+<td align="left">ID from the user performing the call.</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">string</td>
+<td align="left">ID from the user which is the subject of the call.</td>
 </tr>
 <tr>
 <td align="left"><code>team_id</code></td>
 <td align="left">string</td>
-<td align="left">Id from the team from within the call was performed.</td>
+<td align="left">ID from the team from within which the call was performed.</td>
 </tr>
 <tr>
 <td align="left"><code>channel_id</code></td>
 <td align="left">string</td>
-<td align="left">Id from the channel from within the call was performed.</td>
+<td align="left">ID from the channel from within which the call was performed.</td>
 </tr>
 <tr>
 <td align="left"><code>post_id</code></td>
 <td align="left">string</td>
-<td align="left">root_post_id</td>
+<td align="left">ID from the post from within which the call was performed.</td>
 </tr>
 <tr>
 <td align="left"><code>root_post_id</code></td>
 <td align="left">string</td>
-<td align="left">If the call was performed from a post in a thread, the root post id of that thread.</td>
+<td align="left">If the call was performed from a post in a thread, the root post ID of that thread.</td>
 </tr>
 <tr>
 <td align="left"><code>mattermost_site_url</code></td>
 <td align="left">string</td>
-<td align="left">Mattermost base URL</td>
+<td align="left">Mattermost base URL.</td>
+</tr>
+<tr>
+<td align="left"><code>app_path</code></td>
+<td align="left">string</td>
+<td align="left">App&rsquo;s path on the Mattermost instance (appendable to <code>mattermost_site_url</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>mattermost_site_url</code></td>
+<td align="left">string</td>
+<td align="left">Mattermost base URL.</td>
+</tr>
+<tr>
+<td align="left"><code>user_agent</code></td>
+<td align="left">string</td>
+<td align="left">User agent used to perform the call. It can be either <code>webapp</code> or <code>mobile</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>bot_access_token</code></td>
@@ -746,6 +790,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td align="left"><code>admin_access_token</code></td>
 <td align="left">string</td>
+<td align="left">(Expansion)</td>
+</tr>
+<tr>
+<td align="left"><code>oauth2</code></td>
+<td align="left">App</td>
 <td align="left">(Expansion)</td>
 </tr>
 <tr>
@@ -773,6 +822,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <td align="left">Team</td>
 <td align="left">(Expansion)</td>
 </tr>
+<tr>
+<td align="left"><code>user</code></td>
+<td align="left">User</td>
+<td align="left">(Expansion)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="call-response">Call Response&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#call-response"></i></a> </h3>
@@ -780,8 +834,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">CallType</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -798,12 +852,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <td align="left">Should open a form.</td>
 </tr>
 <tr>
-<td align="left"><code>call</code></td>
-<td align="left">Should perform another call.</td>
-</tr>
-<tr>
 <td align="left"><code>navigate</code></td>
-<td align="left">Should navigate the user to a url.</td>
+<td align="left">Should navigate the user to a URL.</td>
 </tr>
 </tbody>
 </table>
@@ -811,18 +861,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">Response</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>type</code></td>
-<td align="left">ok</td>
+<td align="left">string</td>
+<td align="left">Use <code>ok</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>markdown</code></td>
 <td align="left">string</td>
+<td align="left">(Optional) Markdown text that will be sent to the user as an ephemeral post.</td>
 </tr>
 </tbody>
 </table>
@@ -830,18 +883,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">Error</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>type</code></td>
-<td align="left">error</td>
+<td align="left">string</td>
+<td align="left">Use <code>error</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>error</code></td>
 <td align="left">string</td>
+<td align="left">Markdown text that will be sent to the user as an ephemeral post.</td>
 </tr>
 </tbody>
 </table>
@@ -849,18 +905,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">form</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>type</code></td>
-<td align="left">form</td>
+<td align="left">string</td>
+<td align="left">Use <code>form</code>.</td>
 </tr>
 <tr>
-<td align="left"><code>error</code></td>
+<td align="left"><code>form</code></td>
 <td align="left">form</td>
+<td align="left">Form to open.</td>
 </tr>
 </tbody>
 </table>
@@ -868,18 +927,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <table>
 <thead>
 <tr>
-<th align="left">type</th>
-<th align="left">navigate</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>type</code></td>
-<td align="left">navigate</td>
+<td align="left">string</td>
+<td align="left">Use <code>navigate</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>navigate_to_url</code></td>
 <td align="left">string</td>
+<td align="left">URL to navigate to.</td>
+</tr>
+<tr>
+<td align="left"><code>navigate_to_url</code></td>
+<td align="left">string</td>
+<td align="left">URL to navigate to.</td>
 </tr>
 </tbody>
 </table>

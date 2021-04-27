@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Incoming Webhooks</title>
+<title> Deployment</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="Incoming Webhooks">
+<meta name="og:title" value="Deployment">
 
  
-  <meta name="description" content="Incoming webhooks let you post some data to a Mattermost endpoint to create a message in a channel.">
-<meta name="twitter:description" content="Incoming webhooks let you post some data to a Mattermost endpoint to create a message in a channel.">
-<meta name="og:description" content="Incoming webhooks let you post some data to a Mattermost endpoint to create a message in a channel.">
+  <meta name="description" content="TODO">
+<meta name="twitter:description" content="TODO">
+<meta name="og:description" content="TODO">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/integrate/incoming-webhooks/">
+<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/deployment/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Incoming Webhooks
+        Deployment
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -190,22 +190,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
-                    
-                
 
                 
                 
                     
                 
 
-                <span class="item active">
-                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
+                <span class="item ">
+                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                     
-                        <a class="active" href="#"> Incoming Webhooks</a>
+                        <a href="https://developers.mattermost.com/integrate/incoming-webhooks/"> Incoming Webhooks</a>
                     
                 </span>
 
-                <ul class="sub-menu" style="display: block">
+                <ul class="sub-menu" >
                     
                 </ul>
             
@@ -302,18 +300,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 
                 
+                    
+                
 
                 
                 
 
                 <span class="item ">
-                    <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style=""></i>
+                    <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style=""></i>
                     
                         <a href="https://developers.mattermost.com/integrate/apps/"> Apps (Developers Preview)</a>
                     
                 </span>
 
-                <ul class="sub-menu" >
+                <ul class="sub-menu" style="display: block">
                     
                         
                         
@@ -501,20 +501,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
+                            
+                        
 
                         
                         
                             
                         
 
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="https://developers.mattermost.com/integrate/apps/deployment/"> Deployment</a>
+                                <a class="active" href="#"> Deployment</a>
                             
                         </span>
 
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
                         </ul>
                 
@@ -527,131 +529,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/incoming-webhooks/_index.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/deployment/_index.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            Incoming Webhooks at Mattermost
+                            Deploying Apps
                         
                     </h1>
-                    <p>Incoming webhooks let you POST some data to a Mattermost endpoint to create a message in a channel.</p>
-<h3 id="basic-usage">Basic Usage&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#basic-usage"></i></a> </h3>
-<p>Follow <a href="https://docs.mattermost.com/developer/webhooks-incoming.html#simple-incoming-webhook">the admin guide</a> to create the webhook endpoint. It&rsquo;ll look something like this:</p>
-<pre><code>https://your-mattermost-server.com/hooks/xxx-generatedkey-xxx
-</code></pre><p><strong>Treat this endpoint as a secret.</strong> Anyone who has it will be able to post messages to your Mattermost instance.</p>
-<p>To use the endpoint, have your application make the following request:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#c0f">POST</span> <span style="color:#0cf;font-weight:bold">/hooks/xxx-generatedkey-xxx</span> <span style="color:#069;font-weight:bold">HTTP</span><span style="color:#555">/</span><span style="color:#f60">1.1</span>
-Host<span style="color:#555">:</span> your-mattermost-server
-Content-Type<span style="color:#555">:</span> application/json
-Content-Length<span style="color:#555">:</span> 63
-
-{<span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;Hello, this is some text\nThis is more text. :tada:&#34;</span>}
-</code></pre></div><p>As a curl:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -i -X POST -H <span style="color:#c30">&#39;Content-Type: application/json&#39;</span> -d <span style="color:#c30">&#39;{&#34;text&#34;: &#34;Hello, this is some text\nThis is more text. :tada:&#34;}&#39;</span> http://<span style="color:#555">{</span>your-mattermost-site<span style="color:#555">}</span>/hooks/xxx-generatedkey-xxx
-</code></pre></div><p>For compatibility with Slack incoming webhooks, if no <code>Content-Type</code> header is set then the request body must be prefixed with <code>payload=</code>, like so:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#033">payload</span><span style="color:#555">={</span><span style="color:#c30">&#34;text&#34;</span>: <span style="color:#c30">&#34;Hello, this is some text\nThis is more text. :tada:&#34;</span><span style="color:#555">}</span>
-</code></pre></div><p>A successful request will get the following response:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#069;font-weight:bold">HTTP</span><span style="color:#555">/</span><span style="color:#f60">1.1</span> <span style="color:#f60">200</span> <span style="color:#c00;font-weight:bold">OK</span>
-Content-Type<span style="color:#555">:</span> text/plain
-X-Request-Id<span style="color:#555">:</span> hoan6o9ws7rp5xj7wu9rmysrte
-X-Version-Id<span style="color:#555">:</span> 4.7.1.dev.12799cd77e172e8a2eba0f9091ec1471.false
-Date<span style="color:#555">:</span> Sun, 04 Mar 2018 17:19:09 GMT
-Content-Length<span style="color:#555">:</span> 2
-
-<span style="color:#a00;background-color:#faa">ok</span>
-</code></pre></div><p>All webhook posts will display a <code>BOT</code> indicator next to the username in Mattermost clients, to help prevent against <a href="https://en.wikipedia.org/wiki/Phishing">phishing attacks</a>.</p>
-<h3 id="parameters">Parameters&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#parameters"></i></a> </h3>
-<p>Incoming webhooks support more than just the <code>text</code> field. Here is a full list of supported parameters.</p>
+                    <p>Serverless hosting allows for easy app installation from the App Marketplace by a System Admin and uses AWS Lambda serverless technology instead of relying on a physical server. Developers who create apps using a serverless development approach can easily deploy apps securely, efficiently, and at scale in the Mattermost Cloud.</p>
+<h2 id="deployment-to-aws">Deployment to AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deployment-to-aws"></i></a> </h2>
+<h3 id="app-bundle">App Bundle&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#app-bundle"></i></a> </h3>
+<p>An app bundle is a convenient way to deliver an app to the Mattermost ecosystem. It provides a way to organize code and resources needed for an app to run. An app bundle is created by the developer of the app. Mattermost uses app bundles to provision and install/uninstall apps.</p>
+<p>The app bundle contains a <code>manifest.json</code> file, a <code>static/</code> folder (optional), and one or several lambda function bundles.</p>
+<ul>
+<li>The <code>static/</code> folder contains all the static files the app needs. For the Mattermost AWS apps, static files are automatically provisioned and stored in the dedicated AWS S3 bucket. Apps have unlimited access to them by providing the static file name to the Apps Plugin. For the third-party hosted AWS apps, static files are stored in a different S3 bucket (specified by the third-party). For the HTTP apps, when creating a server, the developer should store the static files in the <code>/static/$FILE_NAME</code> relative URL.</li>
+<li>The <code>manifest.json</code> file contains details about the app such as appID, appVersion, appType (HTTP or an AWS app), requested permissions, requested locations, and information about the functions such as function path, name, runtime, and handler.</li>
+<li>Each of the lambda function bundles is a valid and runnable AWS Lambda function, provisioned in AWS by the <a href="https://github.com/mattermost/mattermost-apps-cloud-deployer">Mattermost Apps Cloud Deployer</a>. The AWS Lambda function bundle is a <code>.zip</code> file which contains scripts or compiled programs and their dependencies. Note that it must be smaller than 50 MB. Exact specification of the bundle varies for different runtimes. For example one can see more details for <code>node.js</code> bundles <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-package.html">here</a>.</li>
+</ul>
+<h3 id="making-your-app-runnable-as-an-aws-lambda-function">Making your app runnable as an AWS Lambda function&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#making-your-app-runnable-as-an-aws-lambda-function"></i></a> </h3>
+<p>In order for your app to run as an AWS Lambda function it must use one of the supported languages for AWS Lambda. You can find the list <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">here</a>.</p>
+<p>It&rsquo;s important to design an app in a <em>stateless</em> way, as its lifetime only spans one request. No persistent information should be stored except using the <a href="https://developers.mattermost.com/integrate/apps/using-mattermost-api/#apps-kv-store-api">store API endpoints</a> provided by the Apps Framework.</p>
+<p>A language library is used to emulate an HTTP to your app. For go you might use <a href="https://github.com/awslabs/aws-lambda-go-api-proxy">https://github.com/awslabs/aws-lambda-go-api-proxy</a>.</p>
+<p>Finally you need to define the AWS function in the manifest of your app by adding <code>aws_lambda</code> to it which has the following fields:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
+<th align="left">Name</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>text</td>
-<td><a href="https://docs.mattermost.com/help/messaging/formatting-text.html">Markdown-formatted</a> message to display in the post.<br> To trigger notifications, use <code>@&lt;username&gt;</code>, <code>@channel</code> and <code>@here</code> like you would in normal Mattermost messaging.</td>
-<td>If <code>attachments</code> is not set, yes</td>
+<td align="left"><code>path</code></td>
+<td align="left">The lambda function with its path being the longest-matching prefix of the call&rsquo;s path which will be invoked for a call.</td>
 </tr>
 <tr>
-<td>channel</td>
-<td>Overrides the channel the message posts in. Use the channel&rsquo;s name and not the display name, e.g. use <code>town-square</code>, not <code>Town Square</code>.<br> Use an &ldquo;@&rdquo; followed by a username to send to a direct message.<br> Defaults to the channel set during webhook creation.<br> The webhook can post to any public channel and private channel the webhook creator is in.<br> Posts to direct messages will appear in the DM between the targeted user and the webhook creator.</td>
-<td>No</td>
+<td align="left"><code>name</code></td>
+<td align="left">A human-readable name.</td>
 </tr>
 <tr>
-<td>username</td>
-<td>Overrides the username the message posts as.<br> Defaults to the username set during webhook creation or the webhook creator&rsquo;s username if the former was not set.<br> Must be enabled <a href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames">in the configuration</a>.</td>
-<td>No</td>
+<td align="left"><code>handler</code></td>
+<td align="left">The name of the handler function.</td>
 </tr>
 <tr>
-<td>icon_url</td>
-<td>Overrides the profile picture the message posts with.<br> Defaults to the URL set during webhook creation or the webhook creator&rsquo;s profile picture if the former was not set.<br> Must be enabled <a href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">in the configuration</a>.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>icon_emoji</td>
-<td>Overrides the profile picture and <code>icon_url</code> parameter.<br> Defaults to none and is not set during webhook creation.<br> Must be enabled <a href="https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons">in the configuration</a>.<br> The expected content is an emoji name, as typed in a message, either with or without <code>:</code>.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>attachments</td>
-<td><a href="https://docs.mattermost.com/developer/message-attachments.html">Message attachments</a> used for richer formatting options.</td>
-<td>If <code>text</code> is not set, yes</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Sets the post <code>type</code>, mainly for use by plugins.<br> If not blank, must begin with &ldquo;custom_&rdquo;.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>props</td>
-<td>Sets the post <code>props</code>, a JSON property bag for storing extra or meta data on the post.<br> Mainly used by other integrations accessing posts through the REST API.<br> The following keys are reserved: &ldquo;from_webhook&rdquo;, &ldquo;override_username&rdquo;, &ldquo;override_icon_url&rdquo;, &ldquo;override_icon_emoji&rdquo;, &ldquo;webhook_display_name&rdquo;, &ldquo;card&rdquo;, and &ldquo;attachments&rdquo;.<br> Props <code>card</code> allows for extra information (markdown formatted text) to be sent to Mattermost that will only be displayed in the RHS panel after a user clicks on an &lsquo;info&rsquo; icon displayed alongside the post.<br> The info icon cannot be customized and is only rendered visible to the user if there is <code>card</code> data passed into the message.<br> This is only available in v5.14+.<br> There is currently no Mobile support for <code>card</code> functionality.</td>
-<td>No</td>
+<td align="left"><code>runtime</code></td>
+<td align="left">The AWS Lambda runtime to use.</td>
 </tr>
 </tbody>
 </table>
-<p>An example request using some more parameters would look like this:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#c0f">POST</span> <span style="color:#0cf;font-weight:bold">/hooks/xxx-generatedkey-xxx</span> <span style="color:#069;font-weight:bold">HTTP</span><span style="color:#555">/</span><span style="color:#f60">1.1</span>
-Host<span style="color:#555">:</span> your-mattermost-server
-Content-Type<span style="color:#555">:</span> application/json
-Content-Length<span style="color:#555">:</span> 630
-
-{
-  <span style="color:#309;font-weight:bold">&#34;channel&#34;</span>: <span style="color:#c30">&#34;town-square&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;username&#34;</span>: <span style="color:#c30">&#34;test-automation&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;icon_url&#34;</span>: <span style="color:#c30">&#34;https://www.mattermost.org/wp-content/uploads/2016/04/icon.png&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;#### Test results for July 27th, 2017\n@channel please review failed tests.\n\n| Component  | Tests Run   | Tests Failed                                   |\n|:-----------|:-----------:|:-----------------------------------------------|\n| Server     | 948         | :white_check_mark: 0                           |\n| Web Client | 123         | :warning: 2 [(see details)](http://linktologs) |\n| iOS Client | 78          | :warning: 3 [(see details)](http://linktologs) |&#34;</span>
+<p>For a go app the manifest snippet would look like this:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#309;font-weight:bold">&#34;aws_lambda&#34;</span>: [
+        {
+            <span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;go-function&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;handler&#34;</span>: <span style="color:#c30">&#34;$YOUR_APP_NAME&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;runtime&#34;</span>: <span style="color:#c30">&#34;go1.x&#34;</span>
+        }
+    ]
 }
-</code></pre></div><p>An example request displaying additional data in the right-hand side panel, by passing Markdown text into the <code>card</code> field of the <code>props</code> object would look like this:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#c0f">POST</span> <span style="color:#0cf;font-weight:bold">/hooks/xxx-generatedkey-xxx</span> <span style="color:#069;font-weight:bold">HTTP</span><span style="color:#555">/</span><span style="color:#f60">1.1</span>
-Host<span style="color:#555">:</span> your-mattermost-server
-Content-Type<span style="color:#555">:</span> application/json
-
-
-{
-  <span style="color:#309;font-weight:bold">&#34;channel&#34;</span>: <span style="color:#c30">&#34;town-square&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;username&#34;</span>: <span style="color:#c30">&#34;Winning-bot&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;text&#34;</span>: <span style="color:#c30">&#34;#### We won a new deal!&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;props&#34;</span>: {
-    <span style="color:#309;font-weight:bold">&#34;card&#34;</span>: <span style="color:#c30">&#34;Salesforce Opportunity Information:\n\n [Opportunity Name](http://salesforce.com/OPPORTUNITY_ID)\n\n-Salesperson: **Bob McKnight** \n\n Amount: **$300,020.00**&#34;</span>
-  }
-}
-</code></pre></div><p>When there is <code>props</code> object with a <code>card</code> property attached to the webhook payload, the posted message displays a small info icon next to the timestamp. Clicking this icon expands the right-hand side panel to display the Markdown included in the <code>card</code> property:</p>
-<p><img src="https://user-images.githubusercontent.com/915956/64055959-ec0cfe80-cb44-11e9-8ee3-b64d47c86032.png" alt="image"></p>
-<h3 id="slack-compatibility">Slack Compatibility&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#slack-compatibility"></i></a> </h3>
-<p>See the <a href="https://docs.mattermost.com/developer/webhooks-incoming.html#slack-compatibility">admin guide&rsquo;s notes on Slack compatibility</a>.</p>
-<h3 id="tips-and-best-practices">Tips and Best Practices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#tips-and-best-practices"></i></a> </h3>
+</code></pre></div><h3 id="deploying-third-party-apps-to-aws">Deploying third-party apps to AWS&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deploying-third-party-apps-to-aws"></i></a> </h3>
+<p>Note that third-party apps are not supported in the Mattermost Cloud - they&rsquo;re used only for developer testing convenience. Provisioning in the third-party AWS cloud environment is done by the <strong>appsctl</strong> tool using the command:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest
+appsctl provision app /PATH/TO/YOUR/APP/BUNDLE
+</code></pre></div><p>It reads appropriate AWS credentials from environment variables:</p>
+<p><code>APPS_PROVISION_AWS_ACCESS_KEY</code></p>
+<p><code>APPS_PROVISION_AWS_SECRET_KEY</code></p>
+<p>We need an app bundle to provision an app. The bundle might be provisioned from the local disk, from S3 (not implemented yet), or from a URL (not implemented yet). Provisioning consists of three parts:</p>
 <ol>
-<li>If the <code>text</code> is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later <a href="https://docs.mattermost.com/administration/important-upgrade-notes.html">can support posts up to 16383 characters</a>.</li>
-<li>Your webhook integration may be written in any programming language as long as it supports sending an HTTP POST request.</li>
-<li>Both <code>application/x-www-form-urlencoded</code> and <code>multipart/form-data</code> are supported <code>Content-Type</code> headers. If no <code>Content-Type</code> is provided, <code>application/json</code> is assumed.</li>
+<li>Creating the lambda functions with appropriate policies.</li>
+<li>Storing static assets in the dedicated S3 bucket.</li>
+<li>Storing the app’s manifest file in the same dedicated S3 bucket.</li>
 </ol>
+<p>AWS Lambda functions have semantic names, which means that a function described in the <code>manifest.json</code> file translates to AWS as <code>$appID_$appVersion_$functionName</code> to avoid collisions with other apps&rsquo; or other versions&rsquo; functions. And <strong>appsctl</strong> provisions lambda functions using this name. For example the name of a <code>servicenow</code> app&rsquo;s lambda function might be <code>com-mattermost-servicenow_0-1-0_go-function</code>. You don&rsquo;t need to worry about the AWS Lambda function names, as the Apps Plugin takes care of it. The dedicated S3 bucket name is stored in the environment variable:</p>
+<p><code>MM_APPS_S3_BUCKET</code></p>
+<p>This also stores all apps&rsquo; static assets and manifest files.</p>
+<p>All files in the static folder of the bundle are considered to be the app&rsquo;s static assets and are stored in the above-mentioned bucket. Stored assets also have semantic keys and are generated using the rule - <code>static/$appID_$appVersion/filename</code>. For example the <code>servicenow</code> app&rsquo;s static file key can be <code>&quot;static/com.mattermost.servicenow_0.1.0_app/photo.png&quot;</code>. You don&rsquo;t need to worry about the static asset keys, as the Apps Plugin takes care of it.</p>
+<p>The <code>manifest.json</code> file of an app is stored in the same S3 bucket as the key - <code>manifests/$appID_$appVersion.json</code>.</p>
+<p><img src="provisioning-in-3rd-party-aws.png" alt="Flow of provisioning third-party apps to AWS"></p>
+<h3 id="provisioning-in-mattermost-cloud">Provisioning in Mattermost Cloud&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#provisioning-in-mattermost-cloud"></i></a> </h3>
+<p>In order to be provisioned in Mattermost Cloud an app bundle is uploaded to the specific S3 bucket. On a new app release, a bundle is created by GitLab CI and uploaded to S3. The <a href="https://github.com/mattermost/mattermost-apps-cloud-deployer">Mattermost apps cloud deployer</a>, running as a k8s cron job every hour, detects the S3 upload, and creates appropriate lambda functions, assets, and manifest the same way the <strong>appsclt</strong> does for the third-party accounts.</p>
+<p>The deployer needs lambda function names, asset keys, and the manifest key to provision the app. It calls the <code>aws.GetProvisionDataFromFile(/PATH/TO/THE/APP/BUNDLE)</code> from the Apps Plugin to get the provision data. Same data can be generated using the command:</p>
+<p><code>appsctl generate-terraform-data /PATH/TO/YOUR/APP/BUNDLE</code></p>
+<p><img src="provisioning-in-mm-aws.png" alt="Flow of provisioning in Mattermost Cloud"></p>
+<h2 id="http-server">HTTP server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#http-server"></i></a> </h2>
+<p>While a serverless infrastructure is the recommended way to host apps, they can be hosted as a traditional HTTP server (for example, using <code>systemd</code>). It&rsquo;s important that your app is only reachable by the Mattermost server, and not the public internet.</p>
+<h2 id="submit-to-marketplace">Submit to Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#submit-to-marketplace"></i></a> </h2>
+<p>TBD</p>
 
 
                 </div>
