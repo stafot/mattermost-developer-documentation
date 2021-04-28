@@ -329,6 +329,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
+                                <a href="https://developers.mattermost.com/integrate/apps/quick-start-js/"> Quick start guide (JS)</a>
+                            
+                        </span>
+
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
                                 <a href="https://developers.mattermost.com/integrate/apps/quick-start-go/"> Quick start guide (Go)</a>
                             
                         </span>
@@ -553,7 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 go run . 
 </code></pre></div><p>In the Mattermost Desktop App run:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
-/apps install --app-id hello-oauth2
+/apps install hello-oauth2
 </code></pre><p>You need to configure your <a href="https://console.cloud.google.com/apis/credentials">Google API Credentials</a> for the App. Use <code>$MATTERMOST_SITE_URL$/com.mattermost.apps/apps/hello-oauth2/oauth2/remote/complete</code>
 for the <code>Authorized redirect URIs</code> field. After configuring the credentials, in the Mattermost Desktop App run:</p>
 <pre><code>/hello-oauth2 configure --client-id $CLIENT_ID --client-secret $CLIENT_SECRET
