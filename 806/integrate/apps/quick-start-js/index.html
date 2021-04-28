@@ -573,11 +573,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><strong>Note:</strong> Apps do not work with a production release of Mattermost right now. They can only be run in a development environment. A future release will support production environments.</p>
 <p>You also need to install <code>nodejs</code> installed. Please follow the guide <a href="https://nodejs.org/en/download/">here</a> to install the latest version.</p>
 <h3 id="install-the-apps-plugin">Install the Apps plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-the-apps-plugin"></i></a> </h3>
-<p>The <a href="https://github.com/mattermost/mattermost-plugin-apps">apps plugin</a> is a communication bridge between your app and the Mattermost server. To install it on your local server by cloning the code in a directory of your choice:</p>
+<p>The <a href="https://github.com/mattermost/mattermost-plugin-apps">apps plugin</a> is a communication bridge between your app and the Mattermost server. To install it on your local server by cloning the code in a directory of your choice run:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mattermost/mattermost-plugin-apps.git
 </code></pre></div><p>Then build the plugin using:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make dist
-</code></pre></div><p>And upload it via the System Console to your local Mattermost server.</p>
+</code></pre></div><p>Then upload it via the System Console to your local Mattermost server.</p>
 <h2 id="building-the-app">Building the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
 <p>Start building your app by creating a directory for the code:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-app
@@ -599,7 +599,7 @@ server.listen(port, host, () =&gt; {
     console.log(<span style="color:#c30">`App is running on http://</span><span style="color:#a00">${</span>host<span style="color:#a00">}</span><span style="color:#c30">:</span><span style="color:#a00">${</span>port<span style="color:#a00">}</span><span style="color:#c30">`</span>);
 });
 </code></pre></div><h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
-<p>Your app has to provide a so-called manifest. The manifest declares App metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
+<p>Your app has to provide a so-called manifest. The manifest declares app metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
 <p>The apps needs to server the manifest via HTTP. Therefore you need to add a new <code>case</code> to <code>requestListener</code>:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/manifest.json&#34;</span><span style="color:#555">:</span>
     res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
@@ -763,20 +763,20 @@ server.listen(port, host, () =&gt; {
         res.end(<span style="color:#c30">&#34;{}&#34;</span>);
     });
     <span style="color:#069;font-weight:bold">break</span>;
-</code></pre></div><p>The apps is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
-<h2 id="installing-the-app">Installing the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
+</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
+<h2 id="installing-the-app">Installing the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
 <p>Run your app using:</p>
 <pre><code>node app.js
-</code></pre><p>Then run the following slash commands in our Mattermost server:</p>
+</code></pre><p>Then run the following slash commands on your Mattermost server:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
 /apps install --app-id hello-world
 </code></pre><p>Confirm the installation in the modal that pops up. You can insert any secret into the <strong>App secret</strong> field for now.</p>
-<h2 id="using-the-app">Using the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
-<p>Select the &ldquo;Hello World&rdquo; channel header button, which brings up a modal:</p>
+<h2 id="using-the-app">Using the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
+<p>Select the &ldquo;Hello World&rdquo; channel header button in Mattermost, which brings up a modal:</p>
 <p><img src="modal.png" alt="image"></p>
 <p>Type <code>testing</code> and select <strong>Submit</strong>, you should see:</p>
 <p><img src="submit.png" alt="image"></p>
-<p>You can also use the <code>/helloworld send</code> command by e.g. typing <code>/helloworld send --message Hi!</code></p>
+<p>You can also use the <code>/helloworld send</code> command by typing <code>/helloworld send --message Hi!</code>. This posts the message to the Mattermost channel that you&rsquo;re currently in.</p>
 <p><img src="command.png" alt="image"></p>
 
 

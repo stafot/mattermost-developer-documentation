@@ -28,7 +28,7 @@
       
       <guid>https://developers.mattermost.com/contribute/mobile/e2e/android/</guid>
       <description>Local setup   Install the latest Android SDK.
-sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanager --licenses   Create the emulator using npm run e2e:android-create-emulator from the /detox folder. Android testing requires an emulator named detox_emu_api_30 and the script helps to create it automatically.
+sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanager --licenses   Create the emulator using npm run e2e:android-create-emulator from the /detox folder. Android testing requires an emulator named detox_pixel_4_xl_api_30 and the script helps to create it automatically.
   Test run in debug mode This is the typical flow for local development and test writing:
  Open a terminal window and run react-native packager by npm install &amp;amp;&amp;amp; npm start from the root folder.</description>
     </item>
