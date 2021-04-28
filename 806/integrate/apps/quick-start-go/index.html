@@ -577,7 +577,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mattermost/mattermost-plugin-apps.git
 </code></pre></div><p>Then build the plugin using:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make dist
-</code></pre></div><p>And upload it via the System Console to your local Mattermost server.</p>
+</code></pre></div><p>Then upload it via the System Console to your local Mattermost server.</p>
 <h2 id="building-the-app">Building the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
 <p>Start building your app by creating a directory for the code and setting up a new go module:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-app
@@ -585,7 +585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 go mod init my-app
 go get github.com/mattermost/mattermost-plugin-apps/apps@master
 </code></pre></div><h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
-<p>Your app has to provide a so-called manifest. The manifest declares App metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
+<p>Your app has to provide a so-called manifest. The manifest declares app metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
 <p>Create a file called <code>manifest.json</code> containing:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#309;font-weight:bold">&#34;app_id&#34;</span>: <span style="color:#c30">&#34;hello-world&#34;</span>,
@@ -670,8 +670,8 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 </code></pre></div><h2 id="icons">Icons&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#icons"></i></a> </h2>
 <p>Apps may include static assets. One example that was already used above is the <code>icon</code> for the two bindings. Static assets must be served under the <code>static</code> path.</p>
 <p>Download an example icon using:</p>
-<pre><code>wget https://github.com/mattermost/mattermost-plugin-apps/raw/master/examples/go/helloworld/icon.png
-</code></pre><h3 id="serving-the-data">Serving the data&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#serving-the-data"></i></a> </h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/mattermost/mattermost-plugin-apps/raw/master/examples/go/helloworld/icon.png
+</code></pre></div><h3 id="serving-the-data">Serving the data&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#serving-the-data"></i></a> </h3>
 <p>Lastly, create a file named <code>main.go</code> with the following contents:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">package</span> main
 
@@ -701,7 +701,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	<span style="color:#09f;font-style:italic">// Serve its own manifest as HTTP for convenience in dev. mode.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/manifest.json&#34;</span>, <span style="color:#c0f">writeJSON</span>(manifestData))
 
-	<span style="color:#09f;font-style:italic">// Returns the Channel Header and Command bindings for the App.
+	<span style="color:#09f;font-style:italic">// Returns the Channel Header and Command bindings for the app.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/bindings&#34;</span>, <span style="color:#c0f">writeJSON</span>(bindingsData))
 
 	<span style="color:#09f;font-style:italic">// The form for sending a Hello message.
@@ -713,7 +713,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	<span style="color:#09f;font-style:italic">// Forces the send form to be displayed as a modal.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/send-modal/submit&#34;</span>, <span style="color:#c0f">writeJSON</span>(formData))
 
-	<span style="color:#09f;font-style:italic">// Serves the icon for the App.
+	<span style="color:#09f;font-style:italic">// Serves the icon for the app.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/static/icon.png&#34;</span>, <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;image/png&#34;</span>, iconData))
 
 	http.<span style="color:#c0f">ListenAndServe</span>(<span style="color:#c30">&#34;:8080&#34;</span>, <span style="color:#069;font-weight:bold">nil</span>)
@@ -744,19 +744,19 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	<span style="color:#069;font-weight:bold">return</span> <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;application/json&#34;</span>, data)
 }
 </code></pre></div><p>The apps is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
-<h2 id="installing-the-app">Installing the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
+<h2 id="installing-the-app">Installing the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
 <p>Run your app using:</p>
 <pre><code>go run .
-</code></pre><p>Then run the following slash commands in our Mattermost server:</p>
+</code></pre><p>Then run the following slash commands on your Mattermost server:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
 /apps install --app-id hello-world
 </code></pre><p>Confirm the installation in the modal that pops up. You can insert any secret into the <strong>App secret</strong> field for now.</p>
-<h2 id="using-the-app">Using the App&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
-<p>Select the &ldquo;Hello World&rdquo; channel header button, which brings up a modal:</p>
+<h2 id="using-the-app">Using the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
+<p>Select the &ldquo;Hello World&rdquo; channel header button in Mattermost, which brings up a modal:</p>
 <p><img src="modal.png" alt="image"></p>
 <p>Type <code>testing</code> and select <strong>Submit</strong>, you should see:</p>
 <p><img src="submit.png" alt="image"></p>
-<p>You can also use the <code>/helloworld send</code> command by e.g. typing <code>/helloworld send --message Hi!</code></p>
+<p>You can also use the <code>/helloworld send</code> command by typing <code>/helloworld send --message Hi!</code>. This posts the message to the Mattermost channel that you&rsquo;re currently in.</p>
 <p><img src="command.png" alt="image"></p>
 
 
