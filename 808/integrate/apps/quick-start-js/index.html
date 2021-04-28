@@ -8,22 +8,22 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Quick start guide (Go)</title>
+<title> Quick start guide (JS)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta http-equiv="content-language" content="en-us" />
 
 <meta name="og:site_name" value="Mattermost.com">
-<meta name="og:title" value="Quick start guide (Go)">
+<meta name="og:title" value="Quick start guide (JS)">
 
  
-  <meta name="description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
-<meta name="twitter:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
-<meta name="og:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in Go.&#34;">
+  <meta name="description" content="This quick start guide will walk you through the basics of writing a Mattermost app in JavaScript.&#34;">
+<meta name="twitter:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in JavaScript.&#34;">
+<meta name="og:description" content="This quick start guide will walk you through the basics of writing a Mattermost app in JavaScript.&#34;">
 
 
 
  
-<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/quick-start-go/">
+<link rel="canonical" href="https://developers.mattermost.com/integrate/apps/quick-start-js/">
 
 
 <link rel="shortcut icon" type="image/png" href="https://developers.mattermost.com/img/favicon-32x32.png" />
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Quick start guide (Go)
+        Quick start guide (JS)
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -320,28 +320,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         
                         
-
-                        
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
-                                <a href="https://developers.mattermost.com/integrate/apps/quick-start-js/"> Quick start guide (JS)</a>
-                            
-                        </span>
-
-                        <ul class="sub-menu" >
-                            
-                        </ul>
-                
-                        
-                        
-
-                        
-                        
                             
                         
 
@@ -353,11 +331,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="item active">
                             <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="#"> Quick start guide (Go)</a>
+                                <a class="active" href="#"> Quick start guide (JS)</a>
                             
                         </span>
 
                         <ul class="sub-menu" style="display: block">
+                            
+                        </ul>
+                
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="https://developers.mattermost.com/integrate/apps/quick-start-go/"> Quick start guide (Go)</a>
+                            
+                        </span>
+
+                        <ul class="sub-menu" >
                             
                         </ul>
                 
@@ -551,14 +551,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/quick-start-go/_index.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/integrate/apps/quick-start-js/_index.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
                         
-                            Writing a Mattermost app in Go
+                            Writing a Mattermost app in JavaScript
                         
                     </h1>
                     <p>This quick start guide explains the basics of writing a Mattermost app. In this guide you will build an app that:</p>
@@ -571,7 +571,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="prerequisites">Prerequisites&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#prerequisites"></i></a> </h2>
 <p>Before you can start with your app, you first need to set up a local developer environment following the <a href="https://developers.mattermost.com/contribute/server/developer-setup/">server</a> and <a href="https://developers.mattermost.com/contribute/webapp/developer-setup/">webapp</a> setup guides. You must enable the apps feature flag before starting the Mattermost server by setting the enjoinment variable <code>MM_FEATUREFLAGS_AppsEnabled</code> to <code>true</code> by e.g. adding <code>export MM_FEATUREFLAGS_AppsEnabled=true</code> to your <code>.bashrc</code>. Please also ensure that <code>Bot Account Creation</code> and <code>OAuth 2.0 Service Provider</code> are enabled in the System Console.</p>
 <p><strong>Note:</strong> Apps do not work with a production release of Mattermost right now. They can only be run in a development environment. A future release will support production environments.</p>
-<p>You also need at least <code>go1.16</code> installed. Please follow the guide <a href="https://golang.org/doc/install">here</a> to install the latest version.</p>
+<p>You also need to install <code>nodejs</code> installed. Please follow the guide <a href="https://nodejs.org/en/download/">here</a> to install the latest version.</p>
 <h3 id="install-the-apps-plugin">Install the Apps plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#install-the-apps-plugin"></i></a> </h3>
 <p>The <a href="https://github.com/mattermost/mattermost-plugin-apps">apps plugin</a> is a communication bridge between your app and the Mattermost server. To install it on your local server by cloning the code in a directory of your choice run:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mattermost/mattermost-plugin-apps.git
@@ -579,69 +579,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make dist
 </code></pre></div><p>Then upload it via the System Console to your local Mattermost server.</p>
 <h2 id="building-the-app">Building the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
-<p>Start building your app by creating a directory for the code and setting up a new go module:</p>
+<p>Start building your app by creating a directory for the code:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-app
 <span style="color:#366">cd</span> my-app
-go mod init my-app
-go get github.com/mattermost/mattermost-plugin-apps/apps@master
+</code></pre></div><p>Then create create a file called <code>app.js</code> containing a simple HTTP server:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> http <span style="color:#555">=</span> require(<span style="color:#c30">&#34;http&#34;</span>);
+
+<span style="color:#069;font-weight:bold">const</span> host <span style="color:#555">=</span> <span style="color:#c30">&#34;localhost&#34;</span>;
+<span style="color:#069;font-weight:bold">const</span> port <span style="color:#555">=</span> <span style="color:#f60">8000</span>;
+
+<span style="color:#069;font-weight:bold">const</span> requestListener <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span> (req, res) {
+    <span style="color:#069;font-weight:bold">switch</span> (req.url) {
+        <span style="color:#09f;font-style:italic">// cases will be added later
+</span><span style="color:#09f;font-style:italic"></span>    }
+}
+
+<span style="color:#069;font-weight:bold">const</span> server <span style="color:#555">=</span> http.createServer(requestListener);
+server.listen(port, host, () =&gt; {
+    console.log(<span style="color:#c30">`App is running on http://</span><span style="color:#a00">${</span>host<span style="color:#a00">}</span><span style="color:#c30">:</span><span style="color:#a00">${</span>port<span style="color:#a00">}</span><span style="color:#c30">`</span>);
+});
 </code></pre></div><h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
 <p>Your app has to provide a so-called manifest. The manifest declares app metadata. In this example the <em>permission</em> to act as a bot, and to <em>bind</em> itself to the channel header, and to <code>/</code> commands is requested.</p>
-<p>Create a file called <code>manifest.json</code> containing:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#309;font-weight:bold">&#34;app_id&#34;</span>: <span style="color:#c30">&#34;hello-world&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;display_name&#34;</span>: <span style="color:#c30">&#34;Hello, world!&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;app_type&#34;</span>: <span style="color:#c30">&#34;http&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;root_url&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;requested_permissions&#34;</span>: [
-		<span style="color:#c30">&#34;act_as_bot&#34;</span>
-	],
-	<span style="color:#309;font-weight:bold">&#34;requested_locations&#34;</span>: [
-		<span style="color:#c30">&#34;/channel_header&#34;</span>,
-		<span style="color:#c30">&#34;/command&#34;</span>
-	]
-}
+<p>The apps needs to server the manifest via HTTP. Therefore you need to add a new <code>case</code> to <code>requestListener</code>:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/manifest.json&#34;</span><span style="color:#555">:</span>
+    res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
+    res.end(JSON.stringify({
+        app_id<span style="color:#555">:</span> <span style="color:#c30">&#34;hello-world&#34;</span>,
+        display_name<span style="color:#555">:</span> <span style="color:#c30">&#34;Hello, world!&#34;</span>,
+        app_type<span style="color:#555">:</span> <span style="color:#c30">&#34;http&#34;</span>,
+        root_url<span style="color:#555">:</span> <span style="color:#c30">&#34;http://localhost:8080&#34;</span>,
+        requested_permissions<span style="color:#555">:</span> [
+            <span style="color:#c30">&#34;act_as_bot&#34;</span>
+        ],
+        requested_locations<span style="color:#555">:</span> [
+            <span style="color:#c30">&#34;/channel_header&#34;</span>,
+            <span style="color:#c30">&#34;/command&#34;</span>
+        ]
+    }));
+    <span style="color:#069;font-weight:bold">break</span>;
 </code></pre></div><h3 id="bindings-and-locations">Bindings and locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h3>
 <p>Locations are named elements in the Mattermost user interface. Bindings specify how an app&rsquo;s calls should be displayed at, and invoked from, these locations.</p>
 <p>The app creates a channel header button, and adds a <code>/helloworld send</code> command.</p>
-<p>Create a file called <code>bindings.json</code> containing:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;ok&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;data&#34;</span>: [
-		{
-			<span style="color:#309;font-weight:bold">&#34;location&#34;</span>: <span style="color:#c30">&#34;/channel_header&#34;</span>,
-			<span style="color:#309;font-weight:bold">&#34;bindings&#34;</span>: [
-				{
-					<span style="color:#309;font-weight:bold">&#34;location&#34;</span>: <span style="color:#c30">&#34;send-button&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;icon&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;label&#34;</span>:<span style="color:#c30">&#34;send hello message&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;call&#34;</span>: {
-						<span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/send-modal&#34;</span>
-					}
-				}
-			]
-		},
-		{
-			<span style="color:#309;font-weight:bold">&#34;location&#34;</span>: <span style="color:#c30">&#34;/command&#34;</span>,
-			<span style="color:#309;font-weight:bold">&#34;bindings&#34;</span>: [
-				{
-					<span style="color:#309;font-weight:bold">&#34;icon&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;label&#34;</span>: <span style="color:#c30">&#34;helloworld&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Hello World app&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;hint&#34;</span>: <span style="color:#c30">&#34;[send]&#34;</span>,
-					<span style="color:#309;font-weight:bold">&#34;bindings&#34;</span>: [
-						{
-							<span style="color:#309;font-weight:bold">&#34;location&#34;</span>: <span style="color:#c30">&#34;send&#34;</span>,
-							<span style="color:#309;font-weight:bold">&#34;label&#34;</span>: <span style="color:#c30">&#34;send&#34;</span>,
-							<span style="color:#309;font-weight:bold">&#34;call&#34;</span>: {
-								<span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/send&#34;</span>
-							}
-						}
-					]
-				}
-			]
-		}
-	]
-}
+<p>Add another <code>case</code> to <code>requestListener</code>:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/bindings&#34;</span><span style="color:#555">:</span>
+    res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
+    res.end(JSON.stringify({
+        type<span style="color:#555">:</span> <span style="color:#c30">&#34;ok&#34;</span>,
+        data<span style="color:#555">:</span> [
+            {
+                location<span style="color:#555">:</span> <span style="color:#c30">&#34;/channel_header&#34;</span>,
+                bindings<span style="color:#555">:</span> [
+                    {
+                        location<span style="color:#555">:</span> <span style="color:#c30">&#34;send-button&#34;</span>,
+                        icon<span style="color:#555">:</span> <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
+                        label<span style="color:#555">:</span> <span style="color:#c30">&#34;send hello message&#34;</span>,
+                        call<span style="color:#555">:</span> {
+                            path<span style="color:#555">:</span> <span style="color:#c30">&#34;/send-modal&#34;</span>
+                        }
+                    }
+                ]
+            },
+            {
+                location<span style="color:#555">:</span> <span style="color:#c30">&#34;/command&#34;</span>,
+                bindings<span style="color:#555">:</span> [
+                    {
+                        icon<span style="color:#555">:</span> <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
+                        label<span style="color:#555">:</span> <span style="color:#c30">&#34;helloworld&#34;</span>,
+                        description<span style="color:#555">:</span> <span style="color:#c30">&#34;Hello World app&#34;</span>,
+                        hint<span style="color:#555">:</span> <span style="color:#c30">&#34;[send]&#34;</span>,
+                        bindings<span style="color:#555">:</span> [
+                            {
+                                location<span style="color:#555">:</span> <span style="color:#c30">&#34;send&#34;</span>,
+                                label<span style="color:#555">:</span> <span style="color:#c30">&#34;send&#34;</span>,
+                                call<span style="color:#555">:</span> {
+                                    path<span style="color:#555">:</span> <span style="color:#c30">&#34;/send&#34;</span>
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }));
+    <span style="color:#069;font-weight:bold">break</span>;
 </code></pre></div><h3 id="functions-and-form">Functions and form&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#functions-and-form"></i></a> </h3>
 <p>Functions handle user events and webhooks. The Hello World app exposes two functions:</p>
 <ul>
@@ -649,107 +669,107 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 <li><code>/send-modal</code> that forces the modal to be displayed.</li>
 </ul>
 <p>The functions use a simple form with one text field named <code>&quot;message&quot;</code>, the form submits to <code>/send</code>.</p>
-<p>Create a file called <code>send_form.json</code> containing:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;form&#34;</span>,
-	<span style="color:#309;font-weight:bold">&#34;form&#34;</span>: {
-		<span style="color:#309;font-weight:bold">&#34;title&#34;</span>: <span style="color:#c30">&#34;Hello, world!&#34;</span>,
-		<span style="color:#309;font-weight:bold">&#34;icon&#34;</span>: <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
-		<span style="color:#309;font-weight:bold">&#34;fields&#34;</span>: [
-			{
-				<span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;text&#34;</span>,
-				<span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;message&#34;</span>,
-				<span style="color:#309;font-weight:bold">&#34;label&#34;</span>: <span style="color:#c30">&#34;message&#34;</span>
-			}
-		],
-		<span style="color:#309;font-weight:bold">&#34;call&#34;</span>: {
-			<span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/send&#34;</span>
-		}
-	}
-}
+<p><code>/send/form</code> and  <code>send-modal/submit</code> both return the same data:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/send/form&#34;</span><span style="color:#555">:</span>
+<span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/send-modal/submit&#34;</span><span style="color:#555">:</span>
+    res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
+    res.end(JSON.stringify({
+        type<span style="color:#555">:</span> <span style="color:#c30">&#34;form&#34;</span>,
+        form<span style="color:#555">:</span> {
+            title<span style="color:#555">:</span> <span style="color:#c30">&#34;Hello, world!&#34;</span>,
+            icon<span style="color:#555">:</span> <span style="color:#c30">&#34;http://localhost:8080/static/icon.png&#34;</span>,
+            fields<span style="color:#555">:</span> [
+                {
+                    type<span style="color:#555">:</span> <span style="color:#c30">&#34;text&#34;</span>,
+                    name<span style="color:#555">:</span> <span style="color:#c30">&#34;message&#34;</span>,
+                    label<span style="color:#555">:</span> <span style="color:#c30">&#34;message&#34;</span>
+                }
+            ],
+            call<span style="color:#555">:</span> {
+                path<span style="color:#555">:</span> <span style="color:#c30">&#34;/send&#34;</span>
+            }
+        }
+    }));
+    <span style="color:#069;font-weight:bold">break</span>;
 </code></pre></div><h2 id="icons">Icons&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#icons"></i></a> </h2>
 <p>Apps may include static assets. One example that was already used above is the <code>icon</code> for the two bindings. Static assets must be served under the <code>static</code> path.</p>
 <p>Download an example icon using:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/mattermost/mattermost-plugin-apps/raw/master/examples/go/helloworld/icon.png
+</code></pre></div><p><code>fs</code> is used to load the file:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> fs <span style="color:#555">=</span> require(<span style="color:#c30">&#34;fs&#34;</span>).promises;
+</code></pre></div><p>And then add another <code>case</code> to handle the icon:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/static/icon.png&#34;</span><span style="color:#555">:</span>
+    fs.readFile(__dirname <span style="color:#555">+</span> <span style="color:#c30">&#34;/icon.png&#34;</span>)
+        .then(contents =&gt; {
+            res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;image/png&#34;</span>);
+            res.end(contents);
+        })
+    <span style="color:#069;font-weight:bold">break</span>;
 </code></pre></div><h3 id="serving-the-data">Serving the data&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#serving-the-data"></i></a> </h3>
-<p>Lastly, create a file named <code>main.go</code> with the following contents:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">package</span> main
+<p>Finally, add the application logic that gets executed when either the slash command is run or the modal submitted:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/send/submit&#34;</span><span style="color:#555">:</span>
+    <span style="color:#069;font-weight:bold">let</span> body <span style="color:#555">=</span> <span style="color:#c30">&#34;&#34;</span>;
+    req.on(<span style="color:#c30">&#34;data&#34;</span>, chunk =&gt; {
+        body <span style="color:#555">+=</span> chunk;
+    });
+    req.on(<span style="color:#c30">&#34;end&#34;</span>, () =&gt; {
+        <span style="color:#069;font-weight:bold">const</span> call <span style="color:#555">=</span> JSON.parse(body);
 
-<span style="color:#069;font-weight:bold">import</span> (
-	_ <span style="color:#c30">&#34;embed&#34;</span>
-	<span style="color:#c30">&#34;encoding/json&#34;</span>
-	<span style="color:#c30">&#34;fmt&#34;</span>
-	<span style="color:#c30">&#34;net/http&#34;</span>
+        <span style="color:#069;font-weight:bold">let</span> message <span style="color:#555">=</span> <span style="color:#c30">&#34;Hello, world!&#34;</span>;
+        <span style="color:#069;font-weight:bold">const</span> user_message <span style="color:#555">=</span> call.values.message;
+        <span style="color:#069;font-weight:bold">if</span> (user_message) {
+            message <span style="color:#555">+=</span> <span style="color:#c30">&#34; ...and &#34;</span> <span style="color:#555">+</span> user_message <span style="color:#555">+</span> <span style="color:#c30">&#34;!&#34;</span>;
+        }
 
-	<span style="color:#c30">&#34;github.com/mattermost/mattermost-plugin-apps/apps&#34;</span>
-	<span style="color:#c30">&#34;github.com/mattermost/mattermost-plugin-apps/apps/mmclient&#34;</span>
-)
+        <span style="color:#09f;font-style:italic">// Use the app bot to do API calls
+</span><span style="color:#09f;font-style:italic"></span>        <span style="color:#069;font-weight:bold">const</span> options <span style="color:#555">=</span> {
+            method<span style="color:#555">:</span> <span style="color:#c30">&#34;POST&#34;</span>,
+            headers<span style="color:#555">:</span> {
+                <span style="color:#c30">&#34;Authorization&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;BEARER &#34;</span> <span style="color:#555">+</span> call.context.bot_access_token,
+            }
+        };
+        <span style="color:#069;font-weight:bold">const</span> users <span style="color:#555">=</span> [
+            call.context.bot_user_id,
+            call.context.acting_user_id,
+        ];
 
-<span style="color:#09f;font-style:italic">//go:embed icon.png
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> iconData []<span style="color:#078;font-weight:bold">byte</span>
+        <span style="color:#09f;font-style:italic">// Get the DM channel between the user and the bot
+</span><span style="color:#09f;font-style:italic"></span>        <span style="color:#069;font-weight:bold">let</span> url <span style="color:#555">=</span> call.context.mattermost_site_url <span style="color:#555">+</span> <span style="color:#c30">&#34;/api/v4/channels/direct&#34;</span>;
+        <span style="color:#069;font-weight:bold">let</span> mm_req <span style="color:#555">=</span> http.request(url, options, (mm_res) =&gt; {
+            <span style="color:#069;font-weight:bold">let</span> body <span style="color:#555">=</span> <span style="color:#c30">&#34;&#34;</span>;
+            mm_res.on(<span style="color:#c30">&#34;data&#34;</span>, chunk =&gt; {
+                body <span style="color:#555">+=</span> chunk;
+            });
+            mm_res.on(<span style="color:#c30">&#34;end&#34;</span>, () =&gt; {
+                <span style="color:#069;font-weight:bold">const</span> channel <span style="color:#555">=</span> JSON.parse(body);
 
-<span style="color:#09f;font-style:italic">//go:embed manifest.json
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> manifestData []<span style="color:#078;font-weight:bold">byte</span>
+                <span style="color:#069;font-weight:bold">const</span> post <span style="color:#555">=</span> {
+                    channel_id<span style="color:#555">:</span> channel.id,
+                    message<span style="color:#555">:</span> message,
+                }
 
-<span style="color:#09f;font-style:italic">//go:embed bindings.json
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> bindingsData []<span style="color:#078;font-weight:bold">byte</span>
+                <span style="color:#09f;font-style:italic">// Create a post
+</span><span style="color:#09f;font-style:italic"></span>                <span style="color:#069;font-weight:bold">let</span> url <span style="color:#555">=</span> call.context.mattermost_site_url <span style="color:#555">+</span> <span style="color:#c30">&#34;/api/v4/posts&#34;</span>;
+                <span style="color:#069;font-weight:bold">let</span> mm_req <span style="color:#555">=</span> http.request(url, options);
 
-<span style="color:#09f;font-style:italic">//go:embed send_form.json
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> formData []<span style="color:#078;font-weight:bold">byte</span>
+                mm_req.write(JSON.stringify(post));
+                mm_req.end();
+            });
+        });
+        mm_req.write(JSON.stringify(users));
+        mm_req.end();
 
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
-	<span style="color:#09f;font-style:italic">// Serve its own manifest as HTTP for convenience in dev. mode.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/manifest.json&#34;</span>, <span style="color:#c0f">writeJSON</span>(manifestData))
-
-	<span style="color:#09f;font-style:italic">// Returns the Channel Header and Command bindings for the app.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/bindings&#34;</span>, <span style="color:#c0f">writeJSON</span>(bindingsData))
-
-	<span style="color:#09f;font-style:italic">// The form for sending a Hello message.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/send/form&#34;</span>, <span style="color:#c0f">writeJSON</span>(formData))
-
-	<span style="color:#09f;font-style:italic">// The main handler for sending a Hello message.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/send/submit&#34;</span>, send)
-
-	<span style="color:#09f;font-style:italic">// Forces the send form to be displayed as a modal.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/send-modal/submit&#34;</span>, <span style="color:#c0f">writeJSON</span>(formData))
-
-	<span style="color:#09f;font-style:italic">// Serves the icon for the app.
-</span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/static/icon.png&#34;</span>, <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;image/png&#34;</span>, iconData))
-
-	http.<span style="color:#c0f">ListenAndServe</span>(<span style="color:#c30">&#34;:8080&#34;</span>, <span style="color:#069;font-weight:bold">nil</span>)
-}
-
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">send</span>(w http.ResponseWriter, req <span style="color:#555">*</span>http.Request) {
-	c <span style="color:#555">:=</span> apps.CallRequest{}
-	json.<span style="color:#c0f">NewDecoder</span>(req.Body).<span style="color:#c0f">Decode</span>(<span style="color:#555">&amp;</span>c)
-
-	message <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello, world!&#34;</span>
-	v, ok <span style="color:#555">:=</span> c.Values[<span style="color:#c30">&#34;message&#34;</span>]
-	<span style="color:#069;font-weight:bold">if</span> ok <span style="color:#555">&amp;&amp;</span> v <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nil</span> {
-		message <span style="color:#555">+=</span> fmt.<span style="color:#c0f">Sprintf</span>(<span style="color:#c30">&#34; ...and %s!&#34;</span>, v)
-	}
-	mmclient.<span style="color:#c0f">AsBot</span>(c.Context).<span style="color:#c0f">DM</span>(c.Context.ActingUserID, message)
-
-	json.<span style="color:#c0f">NewEncoder</span>(w).<span style="color:#c0f">Encode</span>(apps.CallResponse{})
-}
-
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">writeData</span>(ct <span style="color:#078;font-weight:bold">string</span>, data []<span style="color:#078;font-weight:bold">byte</span>) <span style="color:#069;font-weight:bold">func</span>(w http.ResponseWriter, r <span style="color:#555">*</span>http.Request) {
-	<span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">func</span>(w http.ResponseWriter, req <span style="color:#555">*</span>http.Request) {
-		w.<span style="color:#c0f">Header</span>().<span style="color:#c0f">Set</span>(<span style="color:#c30">&#34;Content-Type&#34;</span>, ct)
-		w.<span style="color:#c0f">Write</span>(data)
-	}
-}
-
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">writeJSON</span>(data []<span style="color:#078;font-weight:bold">byte</span>) <span style="color:#069;font-weight:bold">func</span>(w http.ResponseWriter, r <span style="color:#555">*</span>http.Request) {
-	<span style="color:#069;font-weight:bold">return</span> <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;application/json&#34;</span>, data)
-}
-</code></pre></div><p>The apps is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
+        res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
+        res.end(<span style="color:#c30">&#34;{}&#34;</span>);
+    });
+    <span style="color:#069;font-weight:bold">break</span>;
+</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the revived <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
 <h2 id="installing-the-app">Installing the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
 <p>Run your app using:</p>
-<pre><code>go run .
+<pre><code>node app.js
 </code></pre><p>Then run the following slash commands on your Mattermost server:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
-/apps install hello-world
+/apps install --app-id hello-world
 </code></pre><p>Confirm the installation in the modal that pops up. You can insert any secret into the <strong>App secret</strong> field for now.</p>
 <h2 id="using-the-app">Using the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
 <p>Select the &ldquo;Hello World&rdquo; channel header button in Mattermost, which brings up a modal:</p>
