@@ -19,10 +19,11 @@
       <guid>https://developers.mattermost.com/contribute/webapp/developer-setup/</guid>
       <description>Set up your development environment for building, running, and testing the Mattermost web app.
   Set up your development environment for the Mattermost server.
-  Install dependencies:
-  On Mac, use Homebrew to install Node.js v10 and libpng:
-brew install node@10 libpng   For other platforms, install Node.js v10 from https://www.npmjs.com/get-npm.
-  Prefer to use NVM to manage different versions of Node on a given machine?</description>
+  Install Node.js 14:
+  If you use NVM, use that to install Node 14.
+  On Mac, use Homebrew to install it:
+brew install node@14   For other platforms, install it from https://www.npmjs.com/get-npm.
+    If necessary, install libpng:</description>
     </item>
     
     <item>
@@ -77,16 +78,6 @@ Not familiar with Cypress? Here is some documentation that will help you get sta
       <description>make i18n-extract is a command used for localization. It allows you to validate that your strings have been successfully extracted from your source code before you continue.
 This page demonstrates how to review your results and to verify if your extraction was successful or not. If the extraction was not successful this page also provides a workaround to correct for this.
 NOTE: These steps apply for the mattermost-webapp repository only.</description>
-    </item>
-    
-    <item>
-      <title>Migrating to Redux</title>
-      <link>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</link>
-      <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</guid>
-      <description>The Mattermost web app is going through a big restructuring effort to move from using Flux to Redux. When we first started building the webapp, React was still new to the world, and so were the frameworks and design patterns. As a result, the webapp has had a lot of organic growth over the last couple of years, and is using an assortment of different design patterns.
-This campaign is meant to help with that by moving app state and logic into our Redux repository, and by migrating the webapp components to be pure and use Redux to supply their props.</description>
     </item>
     
     <item>

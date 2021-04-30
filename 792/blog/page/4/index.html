@@ -134,6 +134,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                     <div class="well well-sm">
     <h5>
+        <a href="https://developers.mattermost.com/blog/idiomatic-error-handling/">Go: Idiomatic Error Handling</a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Oct 18, 2018
+            
+                
+                    by Jesse Hallam
+                
+            
+        </small>
+    </h5>
+    <small>At Mattermost, we’re in the midst of an epic to make our error handling code more idiomatic and thus ultimately more accessible.</small>
+    <hr>
+    <p>Go is an extremely opinionated programming language. import something in a file that&rsquo;s not used? It won&rsquo;t compile, and there&rsquo;s no flag to override. While there are workarounds, the end result remains the same: Go files are never cluttered by unused imports. This is true for all Go code everywhere, making every Go project more accessible.
+Not all Go opinions are enforced by the compiler. Some are documented in Effective Go, and yet others are reflected only in the coding style of the Go standard library.</p>
+    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/idiomatic-error-handling/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
+                
+                    <div class="well well-sm">
+    <h5>
         <a href="https://developers.mattermost.com/blog/plugins-v2/">Plugin System Overhaul</a>
         <small class="blog-item__date pull-right">
             Posted
@@ -212,23 +232,6 @@ npm install -g npm@6 </p>
  a new repository for webapp client code, hosted at github.com/mattermost/mattermost-webapp existing repository (/platform) renamed to /mattermost-server, containing the server code.  Why the change? Separates PRs for client and server with better naming conventions. This is similar to React Native and Redux repositories and helps us:
  work on one part of the system (webapp/server) without worrying about the other.</p>
     <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/repo-split/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="https://developers.mattermost.com/blog/2021-04-16-migrating-operator-custom-resource/"></a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Jan 1, 0001
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>Migrating thousands of Mattermost installations to new Kubernetes Custom Resources More than a year after the release of Mattermost Operator 1.0 with ClusterInstallation Custom Resources (CRs) in version v1alpha1, with many lessons learned in the process we decided it is time to migrate CRs to the new v1beta1 version.
-This blog post mentions some challenges we have encountered during the migration and describes how we solved them.
-Objectives As part of Mattermost Cloud offering, we have thousands of Mattermost instances running in our Kubernetes clusters and each of them is represented as a Custom Resource managed by the Mattermost Operator.</p>
-    <a class="btn btn-primary btn-sm" href="https://developers.mattermost.com/blog/2021-04-16-migrating-operator-custom-resource/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">

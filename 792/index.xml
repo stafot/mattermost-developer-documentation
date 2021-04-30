@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 14:59:29 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://developers.mattermost.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -266,28 +266,17 @@ Sometimes you need to specify the build number instead of just increasing it by 
     
     <item>
       <title>Developer Setup</title>
-      <link>https://developers.mattermost.com/contribute/redux/developer-setup/</link>
-      <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/redux/developer-setup/</guid>
-      <description>Prerequisites  Git  Setup   Install Node.js and npm.
-  Fork the repository at https://github.com/mattermost/mattermost-redux.
-  Clone your fork using the following command. If you have the mattermost-webapp environment set up or are planning on setting it up, you would typically clone your copy to $GOHOME/src/github.com/mattermost/mattermost-redux.
-git clone https://github.com/&amp;lt;yourgithubusername&amp;gt;mattermost-redux   Run the tests to confirm everything is installed correctly. Doing this will also use npm to install any other required dependencies.</description>
-    </item>
-    
-    <item>
-      <title>Developer Setup</title>
       <link>https://developers.mattermost.com/contribute/webapp/developer-setup/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
       
       <guid>https://developers.mattermost.com/contribute/webapp/developer-setup/</guid>
       <description>Set up your development environment for building, running, and testing the Mattermost web app.
   Set up your development environment for the Mattermost server.
-  Install dependencies:
-  On Mac, use Homebrew to install Node.js v10 and libpng:
-brew install node@10 libpng   For other platforms, install Node.js v10 from https://www.npmjs.com/get-npm.
-  Prefer to use NVM to manage different versions of Node on a given machine?</description>
+  Install Node.js 14:
+  If you use NVM, use that to install Node 14.
+  On Mac, use Homebrew to install it:
+brew install node@14   For other platforms, install it from https://www.npmjs.com/get-npm.
+    If necessary, install libpng:</description>
     </item>
     
     <item>
@@ -298,7 +287,7 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
       <guid>https://developers.mattermost.com/contribute/mobile/push-notifications/ios/</guid>
       <description>Push notifications on iOS are managed and dispatched using Apple&amp;rsquo;s Push Notification Service. You must have a Paid Apple Developer account to create certificates needed to send notifications using this service.
   Generate a Certificate from Keychain Access
-  Launch the Keychain Access application in your Mac and select KeyChain Access -\Certificate Assistant -\Request a Certificate From a Certificate Authority&amp;hellip;   Enter your email address in User Email Address and check the &amp;ldquo;Save to disk&amp;rdquo; option, then click Continue   Save the certificate request     Log in to Apple developer account and click Certificates, Identifiers and Profiles   Select iOS from the dropdown   Select App IDs from the side menu and look for the Bundle Identifier you are using for the Mattermost app   Select the App ID and click Edit   Scroll down to the Push Notification Section and click Create a Production SSL Certificate   In the About Creating a Certificate Signing Request (CSR) screen click Continue /img/ios_csr.</description>
+  Launch the Keychain Access application in your Mac and select KeyChain Access -\Certificate Assistant -\Request a Certificate From a Certificate Authority&amp;hellip;   Enter your email address in User Email Address and check the &amp;ldquo;Save to disk&amp;rdquo; option, then click Continue   Save the certificate request     Log in to Apple developer account and click Certificates, Identifiers and Profiles   Select the plus icon to create a new certificate   Select a new &amp;ldquo;Apple Push Notifications service SSL (Sandbox &amp;amp; Production)&amp;rdquo;   Choose the App ID you&amp;rsquo;re generating a certificate for.</description>
     </item>
     
     <item>
@@ -327,7 +316,7 @@ How to use Adding the feature flag in code  Add the new flag to the feature flag
       
       <guid>https://developers.mattermost.com/contribute/mobile/e2e/android/</guid>
       <description>Local setup   Install the latest Android SDK.
-sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanager --licenses   Create the emulator using npm run e2e:android-create-emulator from the /detox folder. Android testing requires an emulator named detox_emu_api_30 and the script helps to create it automatically.
+sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanager --licenses   Create the emulator using npm run e2e:android-create-emulator from the /detox folder. Android testing requires an emulator named detox_pixel_4_xl_api_30 and the script helps to create it automatically.
   Test run in debug mode This is the typical flow for local development and test writing:
  Open a terminal window and run react-native packager by npm install &amp;amp;&amp;amp; npm start from the root folder.</description>
     </item>
@@ -375,16 +364,6 @@ The make build set of commands uses npm ci, sometimes the npm ci command will no
     </item>
     
     <item>
-      <title>Redux Workflow</title>
-      <link>https://developers.mattermost.com/contribute/redux/developer-workflow/</link>
-      <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/redux/developer-workflow/</guid>
-      <description>Project Structure If you look at the Mattermost Redux repository, you&amp;rsquo;ll see the following folders:
- src contains all source code that is compiled and shipped with the library.  src/actions contains the Redux actions used by the library. Most of the logic that uses the stored data and contacts the server is located here. src/client contains the JavaScript drivers to communicate with the Mattermost server. If you&amp;rsquo;re not wanting to use all of the logic from this library but are instead building your own, this code will be the most useful for you.</description>
-    </item>
-    
-    <item>
       <title>Server Workflow</title>
       <link>https://developers.mattermost.com/contribute/server/developer-workflow/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
@@ -414,7 +393,7 @@ Workflow Here&amp;rsquo;s a general workflow for a Mattermost developer working 
       
       <guid>https://developers.mattermost.com/contribute/mobile/push-notifications/service/</guid>
       <description>Install the Mattermost Push Notification Service Now that the app can receive push notifications, we need to make sure that the Mattermost Push Notification Service is able to send the notification to the device. This guide will focus on installing and configuring the push notification service.
-Requirements  A linux box server with at least 1GB of memory. A copy of the Mattermost Push Notification Service. Custom Android and/or iOS Mattermost mobile apps.</description>
+Requirements  A Linux box server with at least 1GB of memory. A copy of the Mattermost Push Notification Service. Custom Android and/or iOS Mattermost mobile apps.</description>
     </item>
     
     <item>
@@ -460,10 +439,10 @@ Core Committers Below is the list of core committers working on Mattermost:
     
     <item>
       <title>Actions</title>
-      <link>https://developers.mattermost.com/contribute/redux/actions/</link>
+      <link>https://developers.mattermost.com/contribute/webapp/redux/actions/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
       
-      <guid>https://developers.mattermost.com/contribute/redux/actions/</guid>
+      <guid>https://developers.mattermost.com/contribute/webapp/redux/actions/</guid>
       <description>Similar to other frameworks like Flux, actions in Redux represent a single change to the Redux store as a plain JavaScript object.
 { type: &amp;#39;SELECT_CHANNEL&amp;#39;, data: channelId } They are created by functions called action creators. In regular Redux, this function will take some arguments and return an action representing how the store should be changed. Something to note with Mattermost Redux is that we typically refer to the action creators as the &amp;ldquo;actions&amp;rdquo; themselves since there&amp;rsquo;s often a single action creator for a given type of action.</description>
     </item>
@@ -581,10 +560,10 @@ The manifest tells Mattermost what the plugin is and provides a set of metadata 
     
     <item>
       <title>Reducers</title>
-      <link>https://developers.mattermost.com/contribute/redux/reducers/</link>
+      <link>https://developers.mattermost.com/contribute/webapp/redux/reducers/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
       
-      <guid>https://developers.mattermost.com/contribute/redux/reducers/</guid>
+      <guid>https://developers.mattermost.com/contribute/webapp/redux/reducers/</guid>
       <description>Reducers in Redux are pure functions that describe how the data in the store changes after any given action. A reducer receives the previous state of the store and an action as a JavaScript object (see here for more information on actions) and should output the resulting state without receiving any outside data. Because reducers are pure, they will always produce the same resulting state for a given state and action.</description>
     </item>
     
@@ -601,10 +580,10 @@ Not familiar with Cypress? Here is some documentation that will help you get sta
     
     <item>
       <title>Selectors</title>
-      <link>https://developers.mattermost.com/contribute/redux/selectors/</link>
+      <link>https://developers.mattermost.com/contribute/webapp/redux/selectors/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
       
-      <guid>https://developers.mattermost.com/contribute/redux/selectors/</guid>
+      <guid>https://developers.mattermost.com/contribute/webapp/redux/selectors/</guid>
       <description>Selectors are functions used to compute data from the data in the Redux stores. This is done using Reselect, a library designed to do this efficiently by memoizing any results so that they are only recalculated if relevant parts of the store change. The code for this is in the src/selectors folder of the Mattermost Redux repository.
 For more information about reselect and how we use it at Mattermost, check out this developer talk given by core developer Harrison Healey.</description>
     </item>
@@ -632,22 +611,12 @@ NOTE: These steps apply for the mattermost-webapp repository only.</description>
     
     <item>
       <title>Using Redux with React</title>
-      <link>https://developers.mattermost.com/contribute/redux/react-redux/</link>
+      <link>https://developers.mattermost.com/contribute/webapp/redux/react-redux/</link>
       <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
       
-      <guid>https://developers.mattermost.com/contribute/redux/react-redux/</guid>
+      <guid>https://developers.mattermost.com/contribute/webapp/redux/react-redux/</guid>
       <description>Using Redux with React is fairly straightforward thanks to the React Redux library. It provides the connect function to create higher order components that have access to the Redux store to set their props.
 A typical Redux-connected component will be in its own folder with two files: index.jsx containing the code to connect to the Redux store and the file where the component is actually implemented. This helps to keep the Redux logic separate from the rendering for the component which keeps it more easily readable and makes it easier to test since it can be done without the whole Redux store.</description>
-    </item>
-    
-    <item>
-      <title>Migrating to Redux</title>
-      <link>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</link>
-      <pubDate>Sun, 20 Aug 2017 11:35:32 -0400</pubDate>
-      
-      <guid>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</guid>
-      <description>The Mattermost web app is going through a big restructuring effort to move from using Flux to Redux. When we first started building the webapp, React was still new to the world, and so were the frameworks and design patterns. As a result, the webapp has had a lot of organic growth over the last couple of years, and is using an assortment of different design patterns.
-This campaign is meant to help with that by moving app state and logic into our Redux repository, and by migrating the webapp components to be pure and use Redux to supply their props.</description>
     </item>
     
     <item>
@@ -846,6 +815,15 @@ After signing into the master account, you can access other accounts within the 
     </item>
     
     <item>
+      <title>Engineering Guilds</title>
+      <link>https://developers.mattermost.com/contribute/getting-started/guilds/</link>
+      <pubDate>Mon, 25 Jan 2021 16:50:35 +0000</pubDate>
+      
+      <guid>https://developers.mattermost.com/contribute/getting-started/guilds/</guid>
+      <description>Our Engineering Guilds are a forum for sharing knowledge, discussing and agreeing on plans, and disseminating information related to a particular subject or technical topic. Many (although not all) Engineering Guilds are affiliated to a particular &amp;ldquo;platform&amp;rdquo; that forms a part of Mattermost, and are therefore associated with a particular Platform Team. However, the participants in each Guild span many engineering teams at Mattermost in order to get people together to share knowledge and disseminate decisions across the Engineering organization.</description>
+    </item>
+    
+    <item>
       <title>Migrating Plugins</title>
       <link>https://developers.mattermost.com/extend/plugins/migration/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 -0500</pubDate>
@@ -1008,6 +986,15 @@ Feature teams will commit a total of 4 engineers plus a lead to SET for each rot
       <guid>https://developers.mattermost.com/internal/gitlab-omnibus/</guid>
       <description>GitLab&amp;rsquo;s Omnibus package bundles Mattermost Team Edition (TE) as an optional feature that can be enabled during installation. While GitLab maintains most of this integration, we send them new versions of Mattermost and occasionally assist with support on issues that relate to Mattermost.
 For every monthly GitLab release, we submit a merge request (MR) to GitLab&amp;rsquo;s repository to update the embedded version of Mattermost. GitLab releases in the middle of the month, so we&amp;rsquo;ll generally submit the newest version of Mattermost to them at the start of the month to give time for the review process to happen.</description>
+    </item>
+    
+    <item>
+      <title>Migrating thousands of Mattermost installations to new Kubernetes Custom Resources</title>
+      <link>https://developers.mattermost.com/blog/migrating-thousands-of-mattermost-installations-to-new-kubernetes-custom-resources/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://developers.mattermost.com/blog/migrating-thousands-of-mattermost-installations-to-new-kubernetes-custom-resources/</guid>
+      <description>Case study of migrating Mattermost installations to the new Custom Resource.</description>
     </item>
     
     <item>
@@ -1365,17 +1352,6 @@ The signing procedure varies depending on the platform that the release is desti
       <description>A reminder that Mattermost will be separating the /platform repo into two repositories on September 6th, 2017:
  a new repository for webapp client code, hosted at github.com/mattermost/mattermost-webapp existing repository (/platform) renamed to /mattermost-server, containing the server code.  Why the change? Separates PRs for client and server with better naming conventions. This is similar to React Native and Redux repositories and helps us:
  work on one part of the system (webapp/server) without worrying about the other.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://developers.mattermost.com/blog/2021-04-16-migrating-operator-custom-resource/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://developers.mattermost.com/blog/2021-04-16-migrating-operator-custom-resource/</guid>
-      <description>Migrating thousands of Mattermost installations to new Kubernetes Custom Resources More than a year after the release of Mattermost Operator 1.0 with ClusterInstallation Custom Resources (CRs) in version v1alpha1, with many lessons learned in the process we decided it is time to migrate CRs to the new v1beta1 version.
-This blog post mentions some challenges we have encountered during the migration and describes how we solved them.
-Objectives As part of Mattermost Cloud offering, we have thousands of Mattermost instances running in our Kubernetes clusters and each of them is represented as a Custom Resource managed by the Mattermost Operator.</description>
     </item>
     
     <item>

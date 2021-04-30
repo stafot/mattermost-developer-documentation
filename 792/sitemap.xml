@@ -138,11 +138,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/developer-setup/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/webapp/developer-setup/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
@@ -190,11 +185,6 @@
   <url>
     <loc>https://developers.mattermost.com/internal/mobile-build-process/troubleshooting/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/redux/developer-workflow/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
@@ -248,7 +238,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/actions/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/actions/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -308,8 +298,12 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/reducers/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/reducers/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quick-start-js/</loc>
   </url>
   
   <url>
@@ -323,12 +317,7 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/</loc>
-    <lastmod>2018-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/contribute/redux/selectors/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/selectors/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
@@ -348,13 +337,13 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/redux/react-redux/</loc>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/react-redux/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/contribute/webapp/webapp-to-redux/</loc>
-    <lastmod>2017-08-20T11:35:32-04:00</lastmod>
+    <loc>https://developers.mattermost.com/contribute/webapp/redux/</loc>
+    <lastmod>2020-04-01T12:00:00-04:00</lastmod>
   </url>
   
   <url>
@@ -403,6 +392,15 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/getting-started/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/quick-start-go/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/webapp/actions/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -433,6 +431,11 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/incoming-webhooks/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/manifest-reference/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -455,6 +458,15 @@
   <url>
     <loc>https://developers.mattermost.com/internal/onboarding/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/outgoing-webhooks/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/manifest/</loc>
   </url>
   
   <url>
@@ -487,8 +499,22 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/slash-commands/</loc>
+    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/call/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/onelogin-aws/</loc>
     <lastmod>2018-11-07T16:10:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/contribute/getting-started/guilds/</loc>
+    <lastmod>2021-01-25T16:50:35+00:00</lastmod>
   </url>
   
   <url>
@@ -507,6 +533,19 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/rest-api/</loc>
+    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/bindings/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/interactivity/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/server/ha/</loc>
     <lastmod>2018-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -516,7 +555,28 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/interactivity/example-post-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/examples/</loc>
+    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-mattermost-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/extend/plugins/best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/using-third-party-api/</loc>
   </url>
   
   <url>
@@ -536,6 +596,10 @@
   <url>
     <loc>https://developers.mattermost.com/internal/infrastructure/guidelines/</loc>
     <lastmod>2017-11-06T19:30:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
   </url>
   
   <url>
@@ -559,6 +623,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/deployment/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/sustained-engineering/</loc>
     <lastmod>2019-02-06T14:28:35-05:00</lastmod>
   </url>
@@ -569,8 +637,28 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/blog/</loc>
+    <lastmod>2021-04-16T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/categories/</loc>
+    <lastmod>2021-04-16T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/categories/cloud/</loc>
+    <lastmod>2021-04-16T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/</loc>
-    <lastmod>2021-03-12T14:59:29-05:00</lastmod>
+    <lastmod>2021-04-16T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://developers.mattermost.com/blog/migrating-thousands-of-mattermost-installations-to-new-kubernetes-custom-resources/</loc>
+    <lastmod>2021-04-16T00:00:00-04:00</lastmod>
   </url>
   
   <url>
@@ -581,16 +669,6 @@
   <url>
     <loc>https://developers.mattermost.com/contribute/mobile/storybook/</loc>
     <lastmod>2021-02-25T11:17:44+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/blog/</loc>
-    <lastmod>2021-02-02T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/categories/</loc>
-    <lastmod>2021-02-02T00:00:00-04:00</lastmod>
   </url>
   
   <url>
@@ -874,26 +952,6 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/getting-started/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/incoming-webhooks/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/outgoing-webhooks/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/slash-commands/</loc>
-    <lastmod>2017-08-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/extend/plugins/</loc>
     <lastmod>2017-07-10T00:00:00-05:00</lastmod>
   </url>
@@ -904,22 +962,8 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/rest-api/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/examples/</loc>
-    <lastmod>2017-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://developers.mattermost.com/contribute/devtalks/</loc>
     <lastmod>2017-01-05T09:51:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/blog/2021-04-16-migrating-operator-custom-resource/</loc>
   </url>
   
   <url>
