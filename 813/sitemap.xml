@@ -623,6 +623,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/deployment/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/sustained-engineering/</loc>
     <lastmod>2019-02-06T14:28:35-05:00</lastmod>
   </url>
@@ -634,10 +638,6 @@
   
   <url>
     <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/deployment/</loc>
   </url>
   
   <url>
