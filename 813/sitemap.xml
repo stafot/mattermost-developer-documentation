@@ -627,6 +627,10 @@
   </url>
   
   <url>
+    <loc>https://developers.mattermost.com/integrate/apps/system-admin-guide/</loc>
+  </url>
+  
+  <url>
     <loc>https://developers.mattermost.com/internal/sustained-engineering/</loc>
     <lastmod>2019-02-06T14:28:35-05:00</lastmod>
   </url>
@@ -954,10 +958,6 @@
   <url>
     <loc>https://developers.mattermost.com/contribute/devtalks/</loc>
     <lastmod>2017-01-05T09:51:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://developers.mattermost.com/integrate/apps/system-admin-guide/</loc>
   </url>
   
   <url>
