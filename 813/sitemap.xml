@@ -632,12 +632,12 @@
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
+    <loc>https://developers.mattermost.com/internal/gitlab-omnibus/</loc>
+    <lastmod>2021-03-12T14:59:29-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://developers.mattermost.com/internal/gitlab-omnibus/</loc>
-    <lastmod>2021-03-12T14:59:29-05:00</lastmod>
+    <loc>https://developers.mattermost.com/integrate/apps/lifecycle/</loc>
   </url>
   
   <url>
