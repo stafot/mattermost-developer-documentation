@@ -604,7 +604,7 @@ server.listen(port, host, () =&gt; {
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">case</span> <span style="color:#c30">&#34;/manifest.json&#34;</span><span style="color:#555">:</span>
     res.setHeader(<span style="color:#c30">&#34;Content-Type&#34;</span>, <span style="color:#c30">&#34;application/json&#34;</span>);
     res.end(JSON.stringify({
-        app_id<span style="color:#555">:</span> <span style="color:#c30">&#34;helloworld&#34;</span>,
+        app_id<span style="color:#555">:</span> <span style="color:#c30">&#34;hello-world&#34;</span>,
         display_name<span style="color:#555">:</span> <span style="color:#c30">&#34;Hello, world!&#34;</span>,
         app_type<span style="color:#555">:</span> <span style="color:#c30">&#34;http&#34;</span>,
         root_url<span style="color:#555">:</span> <span style="color:#c30">&#34;http://localhost:8080&#34;</span>,
@@ -769,7 +769,7 @@ server.listen(port, host, () =&gt; {
 <pre><code>node app.js
 </code></pre><p>Then run the following slash commands on your Mattermost server:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
-/apps install --app-id helloworld
+/apps install --app-id hello-world
 </code></pre><p>Confirm the installation in the modal that pops up. You can insert any secret into the <strong>App secret</strong> field for now.</p>
 <h2 id="using-the-app">Using the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-app"></i></a> </h2>
 <p>Select the &ldquo;Hello World&rdquo; channel header button in Mattermost, which brings up a modal:</p>
@@ -780,7 +780,7 @@ server.listen(port, host, () =&gt; {
 <p><img src="command.png" alt="image"></p>
 <h2 id="uninstalling-the-app">Uninstalling the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#uninstalling-the-app"></i></a> </h2>
 <p>Uninstall the app using:</p>
-<pre><code>/apps uninstall helloworld
+<pre><code>/apps uninstall hello-world
 </code></pre>
 
                 </div>
