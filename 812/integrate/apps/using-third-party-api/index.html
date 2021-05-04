@@ -573,11 +573,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/mattermost/mattermost-plugin-apps.git
 <span style="color:#366">cd</span> mattermost-plugin-apps/examples/go/hello-oauth2
 go run . 
-</code></pre></div><p>In the Mattermost Desktop App run:</p>
+</code></pre></div><p>In the Mattermost Desktop client run:</p>
 <pre><code>/apps debug-add-manifest --url http://localhost:8080/manifest.json
 /apps install hello-oauth2
-</code></pre><p>You need to configure your <a href="https://console.cloud.google.com/apis/credentials">Google API Credentials</a> for the App. Use <code>$MATTERMOST_SITE_URL$/com.mattermost.apps/apps/hello-oauth2/oauth2/remote/complete</code>
-for the <code>Authorized redirect URIs</code> field. After configuring the credentials, in the Mattermost Desktop App run:</p>
+</code></pre><p>You need to configure your <a href="https://console.cloud.google.com/apis/credentials">Google API Credentials</a> for the app. Use <code>$MATTERMOST_SITE_URL$/com.mattermost.apps/apps/hello-oauth2/oauth2/remote/complete</code> for the <code>Authorized redirect URIs</code> field. After configuring the credentials, in the Mattermost Desktop client run:</p>
 <pre><code>/hello-oauth2 configure --client-id $CLIENT_ID --client-secret $CLIENT_SECRET
 </code></pre><p>Now, you can connect your account to Google with <code>/hello-oauth2 connect</code> command, and then try <code>/hello-oauth2 send</code>.</p>
 <h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
@@ -599,7 +598,7 @@ for the <code>Authorized redirect URIs</code> field. After configuring the crede
 	]
 }
 </code></pre></div><h3 id="bindings-and-locations">Bindings and locations&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#bindings-and-locations"></i></a> </h3>
-<p>The Hello OAuth2! creates three commands: <code>/helloworld configure|connect|send</code>.</p>
+<p>The Hello OAuth2 app creates three commands: <code>/helloworld configure | connect | send</code>.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;ok&#34;</span>,
 	<span style="color:#309;font-weight:bold">&#34;data&#34;</span>: [
@@ -713,13 +712,13 @@ for the <code>Authorized redirect URIs</code> field. After configuring the crede
 	})
 }
 </code></pre></div><h4 id="oauth2-call-handlers">OAuth2 call handlers&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#oauth2-call-handlers"></i></a> </h4>
-<p>To handle the OAuth2 &ldquo;connect&rdquo; flow, the app provides two calls: <code>/oauth2/connect</code> that returns the URL to redirect the user to, and <code>/oauth2/complete</code> which gets invoked once the flow is finished, and the <code>state</code> parameter is verified.</p>
+<p>To handle the OAuth2 <code>connect</code> flow, the app provides two calls: <code>/oauth2/connect</code> that returns the URL to redirect the user to, and <code>/oauth2/complete</code> which gets invoked once the flow is finished, and the <code>state</code> parameter is verified.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#09f;font-style:italic">// Handle an OAuth2 connect URL request.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/oauth2/connect&#34;</span>, oauth2Connect)
 
 	<span style="color:#09f;font-style:italic">// Handle a successful OAuth2 connection.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/oauth2/complete&#34;</span>, oauth2Complete)
-</code></pre></div><p><strong>oauth2Connect</strong> extracts the necessary data from the request&rsquo;s context and values (&ldquo;state&rdquo;), and composes a Google OAuth2 initial URL.</p>
+</code></pre></div><p><code>oauth2Connect</code> extracts the necessary data from the request&rsquo;s context and values (&ldquo;state&rdquo;), and composes a Google OAuth2 initial URL.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">oauth2Connect</span>(w http.ResponseWriter, req <span style="color:#555">*</span>http.Request) {
 	creq <span style="color:#555">:=</span> apps.CallRequest{}
 	json.<span style="color:#c0f">NewDecoder</span>(req.Body).<span style="color:#c0f">Decode</span>(<span style="color:#555">&amp;</span>creq)
@@ -731,7 +730,7 @@ for the <code>Authorized redirect URIs</code> field. After configuring the crede
 		Data: url,
 	})
 }
-</code></pre></div><p><strong>oauth2Complete</strong> is called upon the successful completion (including the validation of the &ldquo;state&rdquo;). It is responsible for creating an OAuth2 token, and storing it in the Mattermost OAuth2 user store.</p>
+</code></pre></div><p><code>oauth2Complete</code> is called upon the successful completion (including the validation of the &ldquo;state&rdquo;). It is responsible for creating an OAuth2 token, and storing it in the Mattermost OAuth2 user store.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">oauth2Complete</span>(w http.ResponseWriter, req <span style="color:#555">*</span>http.Request) {
 	creq <span style="color:#555">:=</span> apps.CallRequest{}
 	json.<span style="color:#c0f">NewDecoder</span>(req.Body).<span style="color:#c0f">Decode</span>(<span style="color:#555">&amp;</span>creq)
@@ -745,7 +744,7 @@ for the <code>Authorized redirect URIs</code> field. After configuring the crede
 	json.<span style="color:#c0f">NewEncoder</span>(w).<span style="color:#c0f">Encode</span>(apps.CallResponse{})
 }
 </code></pre></div><h4 id="obtaining-an-oauth2-config-for-a-call">Obtaining an OAuth2 &ldquo;Config&rdquo; for a call&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#obtaining-an-oauth2-config-for-a-call"></i></a> </h4>
-<p>The App is responsible for composing its own remote OAuth2 config, using the remote system-specific settings. The ClientID and ClientSecret are stored in Mattermost OAuth2App record, and are included in the request context if specified with expand.oauth2_app=&quot;all&rdquo;.</p>
+<p>The app is responsible for composing its own remote OAuth2 config, using the remote system-specific settings. The <code>ClientID</code> and <code>ClientSecret</code> are stored in Mattermost OAuth2App record, and are included in the request context if specified with <code>expand.oauth2_app=&quot;all&quot;</code>.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
 	<span style="color:#c30">&#34;golang.org/x/oauth2&#34;</span>
 	<span style="color:#c30">&#34;golang.org/x/oauth2/google&#34;</span>
@@ -765,7 +764,7 @@ for the <code>Authorized redirect URIs</code> field. After configuring the crede
 	}
 }
 </code></pre></div><h3 id="send-command"><code>send</code> command&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#send-command"></i></a> </h3>
-<p><code>/hello-oauth2 send</code> sends the user a message that includes the Google user name on the account, and lists the Google Calendars. The form requests that submit calls expand &ldquo;oauth2_user&rdquo; which is where the app stored the OAuth2 token upon a successful connect.</p>
+<p><code>/hello-oauth2 send</code> sends the user a message that includes the Google user name on the account, and lists the Google Calendars. The form requests that submit calls expand <code>oauth2_user</code> which is where the app stored the OAuth2 token upon a successful connect.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;form&#34;</span>,
 	<span style="color:#309;font-weight:bold">&#34;form&#34;</span>: {
