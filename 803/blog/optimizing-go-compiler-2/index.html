@@ -145,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="blog-item__info">
                             April 23, 2021
-                            <small class="blog-item__count">2407 words</small>
+                            <small class="blog-item__count">2404 words</small>
                         </div>
                     </div>
                     <hr>
@@ -158,66 +158,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">copyArrayToSlice</span>(dest []<span style="color:#078;font-weight:bold">byte</span>, src <span style="color:#555">*</span>[<span style="color:#f60">8</span>]<span style="color:#078;font-weight:bold">byte</span>) {
 	_ = dest[<span style="color:#f60">8</span>]                                <span style="color:#09f;font-style:italic">// 1. bounds check
 </span><span style="color:#09f;font-style:italic"></span>	temp <span style="color:#555">:=</span> binary.LittleEndian.<span style="color:#c0f">Uint64</span>(src[:]) <span style="color:#09f;font-style:italic">// 2. read the contents of the source array into temp
-</span><span style="color:#09f;font-style:italic"></span>	binary.LittleEndian.<span style="color:#c0f">PutUint64</span>(dest, temp)  <span style="color:#09f;font-style:italic">// 3. write the contents into the destiny slice
+</span><span style="color:#09f;font-style:italic"></span>	binary.LittleEndian.<span style="color:#c0f">PutUint64</span>(dest, temp)  <span style="color:#09f;font-style:italic">// 3. write the contents into the destination slice
 </span><span style="color:#09f;font-style:italic"></span>}
 </code></pre></div><p>Let&rsquo;s use our first tool, SSA, to understand what the compiler is generating. If we generate the SSA for the original function, <code>copyArrayToSlice</code>, and look at the <code>lower</code> phase, we&rsquo;ll see the following:</p>
 <pre><code>b1:
 
-	v1 (?) = InitMem &lt;mem&gt;
-	v7 (5) = Arg &lt;*[8]byte&gt; {src} (b.ptr[*byte], src[*[8]byte])
-	v8 (?) = MOVQconst &lt;int&gt; [8] (b.cap[int], b.len[int])
-	v9 (+6) = Arg &lt;int&gt; {dest} [8] (b.len[int], dest+8[int])
-	v248 (84) = Arg &lt;*byte&gt; {dest}
-	v153 (6) = CMPQconst &lt;flags&gt; [8] v9
+    v1 (?) = InitMem &lt;mem&gt;
+    v7 (5) = Arg &lt;*[8]byte&gt; {src} (b.ptr[*byte], src[*[8]byte])
+    v8 (?) = MOVQconst &lt;int&gt; [8] (b.cap[int], b.len[int])
+    v9 (+6) = Arg &lt;int&gt; {dest} [8] (b.len[int], dest+8[int])
+    v248 (84) = Arg &lt;*byte&gt; {dest}
+    v153 (6) = CMPQconst &lt;flags&gt; [8] v9
+
 UGT v153 → b43 b3 (likely) (6)
 
 b3: ← b1
 
-	v12 (6) = LoweredPanicBoundsC &lt;mem&gt; [0] v8 v9 v1
+    v12 (6) = LoweredPanicBoundsC &lt;mem&gt; [0] v8 v9 v1
+
 Exit v12 (6)
-
-b24:
-BlockInvalid (+83)
-
-b25:
-BlockInvalid (84)
-
-b27:
-BlockInvalid (85)
-
-b29:
-BlockInvalid (86)
-
-b31:
-BlockInvalid (87)
-
-b33:
-BlockInvalid (88)
-
-b35:
-BlockInvalid (89)
-
-b37:
-BlockInvalid (90)
-
-b39:
-BlockInvalid (91)
 
 b43: ← b1
 
-	v18 (+7) = LoweredNilCheck &lt;void&gt; v7 v1
-	v29 (7) = InlMark &lt;void&gt; [0] v1
-	v152 (+8) = InlMark &lt;void&gt; [1] v1
-	v34 (+79) = MOVQload &lt;uint64&gt; v7 v1
-	v171 (+84) = MOVBstore &lt;mem&gt; v248 v34 v1
-	v168 (+85) = SHRQconst &lt;uint64&gt; [8] v34
-	v216 (+89) = SHRQconst &lt;uint64&gt; [40] v34
-	v180 (+91) = SHRQconst &lt;uint64&gt; [56] v34
-	v219 (88) = MOVLstore &lt;mem&gt; [1] v248 v168 v171
-	v243 (90) = MOVWstore &lt;mem&gt; [5] v248 v216 v219
-	v255 (91) = MOVBstore &lt;mem&gt; [7] v248 v180 v243
+    v18 (+7) = LoweredNilCheck &lt;void&gt; v7 v1
+    v29 (7) = InlMark &lt;void&gt; [0] v1
+    v152 (+8) = InlMark &lt;void&gt; [1] v1
+    v34 (+79) = MOVQload &lt;uint64&gt; v7 v1
+    v171 (+84) = MOVBstore &lt;mem&gt; v248 v34 v1
+    v168 (+85) = SHRQconst &lt;uint64&gt; [8] v34
+    v216 (+89) = SHRQconst &lt;uint64&gt; [40] v34
+    v180 (+91) = SHRQconst &lt;uint64&gt; [56] v34
+    v219 (88) = MOVLstore &lt;mem&gt; [1] v248 v168 v171
+    v243 (90) = MOVWstore &lt;mem&gt; [5] v248 v216 v219
+    v255 (91) = MOVBstore &lt;mem&gt; [7] v248 v180 v243
+
 Ret v255 (+8)
-</code></pre><p>The interesting blocks are <code>b1</code>, which initialize the values with the arguments of the function, and <code>b43</code>, which makes the actual copy.</p>
+
+</code></pre><p>The interesting blocks are <code>b1</code>, which initialize the values with the arguments of the function, and <code>b43</code>, which makes the actual copy. The <code>b3</code> block simply handles the situation where the bounds check in the first line of our functions fails, issuing a <code>panic</code> as expected.</p>
 <h2 id="definition-block">Definition block&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#definition-block"></i></a> </h2>
 <p>Let&rsquo;s take a closer look at the block where the values are initialized, <code>b1</code>:</p>
 <pre><code>v1 (?) = InitMem &lt;mem&gt;
@@ -265,7 +242,7 @@ v255 (91) = MOVBstore &lt;mem&gt; [7] v248 v180 v243
     one as temp                ┗ src
 </code></pre><p>we now can understand that this loads the contents from the <code>src</code> argument (remember that <code>v7</code>represented<code>src</code>), into the memory we initialized at the very beginning (represented by <code>v1</code>). There are no auxiliary arguments, so we can safely forget about those! The result of this instruction is represented by the <code>v34</code> value, which we can understand as the <code>temp</code> variable.</p>
 <p>This first line of the block, then, seems perfectly fine: it loads the whole contents of the <code>src</code> array into memory (which is effectively the <code>temp</code> variable we defined in the code), and it does it with a single instruction. We can no longer optimize this.</p>
-<p>But remember that the original function did two things: first, it loaded the contents of the <code>src</code> array into a temporal variable, and then it stored those contents into the <code>dest</code> slice. We have already loaded the contents into memory with the line we discussed above, so the rest of the block should do the rest of the work: store those contents from memory into the <code>dest</code> slice (which was represented by value <code>v248</code>). Let&rsquo;s see the rest of the block again:</p>
+<p>But remember that the original function did two things: first, it loaded the contents of the <code>src</code> array into a temporary variable, and then it stored those contents into the <code>dest</code> slice. We have already loaded the contents into memory with the line we discussed above, so the rest of the block should do the rest of the work: store those contents from memory into the <code>dest</code> slice (which was represented by value <code>v248</code>). Let&rsquo;s see the rest of the block again:</p>
 <pre><code>v171 (+84) = MOVBstore &lt;mem&gt; v248 v34 v1
 v168 (+85) = SHRQconst &lt;uint64&gt; [8] v34
 v216 (+89) = SHRQconst &lt;uint64&gt; [40] v34
