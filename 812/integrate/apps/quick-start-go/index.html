@@ -703,6 +703,11 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 <span style="color:#09f;font-style:italic">//go:embed send_form.json
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> formData []<span style="color:#078;font-weight:bold">byte</span>
 
+<span style="color:#069;font-weight:bold">const</span> (
+	host = <span style="color:#c30">&#34;localhost&#34;</span>
+	port = <span style="color:#f60">8080</span>
+)
+
 <span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
 	<span style="color:#09f;font-style:italic">// Serve its own manifest as HTTP for convenience in dev. mode.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/manifest.json&#34;</span>, <span style="color:#c0f">writeJSON</span>(manifestData))
@@ -722,7 +727,9 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	<span style="color:#09f;font-style:italic">// Serves the icon for the app.
 </span><span style="color:#09f;font-style:italic"></span>	http.<span style="color:#c0f">HandleFunc</span>(<span style="color:#c30">&#34;/static/icon.png&#34;</span>, <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;image/png&#34;</span>, iconData))
 
-	http.<span style="color:#c0f">ListenAndServe</span>(<span style="color:#c30">&#34;:8080&#34;</span>, <span style="color:#069;font-weight:bold">nil</span>)
+	addr <span style="color:#555">:=</span> fmt.<span style="color:#c0f">Sprintf</span>(<span style="color:#c30">&#34;%v:%v&#34;</span>, host, port)
+	fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">`hello-world app listening at http://%s`</span>, addr)
+	http.<span style="color:#c0f">ListenAndServe</span>(addr, <span style="color:#069;font-weight:bold">nil</span>)
 }
 
 <span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">send</span>(w http.ResponseWriter, req <span style="color:#555">*</span>http.Request) {
@@ -736,7 +743,10 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 	}
 	mmclient.<span style="color:#c0f">AsBot</span>(c.Context).<span style="color:#c0f">DM</span>(c.Context.ActingUserID, message)
 
-	json.<span style="color:#c0f">NewEncoder</span>(w).<span style="color:#c0f">Encode</span>(apps.CallResponse{})
+    json.<span style="color:#c0f">NewEncoder</span>(w).<span style="color:#c0f">Encode</span>(apps.CallResponse{
+		Type:     apps.CallResponseTypeOK,
+		Markdown: <span style="color:#c30">&#34;Created a post in your DM channel.&#34;</span>,
+	})
 }
 
 <span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">writeData</span>(ct <span style="color:#078;font-weight:bold">string</span>, data []<span style="color:#078;font-weight:bold">byte</span>) <span style="color:#069;font-weight:bold">func</span>(w http.ResponseWriter, r <span style="color:#555">*</span>http.Request) {
@@ -749,7 +759,7 @@ go get github.com/mattermost/mattermost-plugin-apps/apps@master
 <span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">writeJSON</span>(data []<span style="color:#078;font-weight:bold">byte</span>) <span style="color:#069;font-weight:bold">func</span>(w http.ResponseWriter, r <span style="color:#555">*</span>http.Request) {
 	<span style="color:#069;font-weight:bold">return</span> <span style="color:#c0f">writeData</span>(<span style="color:#c30">&#34;application/json&#34;</span>, data)
 }
-</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the received <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
+</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the received <code>&quot;message&quot;</code> field and sends a message back to the user as the bot. Also, an ephemeral message is posted in the current channel.</p>
 <h2 id="installing-the-app">Installing the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
 <p>Run your app using:</p>
 <pre><code>go run .

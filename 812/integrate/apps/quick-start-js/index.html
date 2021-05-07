@@ -579,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 make dist
 </code></pre></div><p>Then upload it to your local Mattermost server via the System Console.</p>
 <h2 id="building-the-app">Building the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#building-the-app"></i></a> </h2>
-<p>Start building your app by creating a directory for the code, setup a new package and install  <a href="https://www.npmjs.com/package/node-fetch"><code>node-fetch</code></a> and <a href="https://expressjs.com/"><code>express</code></a>, which will be used later:</p>
+<p>Start building your app by creating a directory for the code, setup a new package and install <a href="https://www.npmjs.com/package/node-fetch"><code>node-fetch</code></a> and <a href="https://expressjs.com/"><code>express</code></a>, which will be used later:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-app
 <span style="color:#366">cd</span> my-app
 npm init
@@ -592,8 +592,8 @@ app.use(express.json());
 <span style="color:#069;font-weight:bold">const</span> host <span style="color:#555">=</span> <span style="color:#c30">&#39;localhost&#39;</span>;
 <span style="color:#069;font-weight:bold">const</span> port <span style="color:#555">=</span> <span style="color:#f60">8080</span>;
 
-app.listen(port,host,  () =&gt; {
-    console.log(<span style="color:#c30">`hello-world app listening at http://</span><span style="color:#a00">${</span>host<span style="color:#a00">}</span><span style="color:#c30">:</span><span style="color:#a00">${</span>port<span style="color:#a00">}</span><span style="color:#c30">`</span>)
+app.listen(port, host, () =&gt; {
+    console.log(<span style="color:#c30">`hello-world app listening at http://</span><span style="color:#a00">${</span>host<span style="color:#a00">}</span><span style="color:#c30">:</span><span style="color:#a00">${</span>port<span style="color:#a00">}</span><span style="color:#c30">`</span>);
 });
 </code></pre></div><h3 id="manifest">Manifest&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#manifest"></i></a> </h3>
 <p>Your app has to provide a manifest, which declares app metadata. In this example, the following permissions are requested:</p>
@@ -699,13 +699,15 @@ app.listen(port,host,  () =&gt; {
 });
 </code></pre></div><h3 id="serving-the-data">Serving the data&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#serving-the-data"></i></a> </h3>
 <p>Finally, add the application logic that gets executed when either the slash command is run or the modal submitted:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">app.post(<span style="color:#c30">&#39;/send/submit&#39;</span>, (req, res) =&gt; {
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">app.use(express.json());
+
+app.post(<span style="color:#c30">&#39;/send/submit&#39;</span>, async (req, res) =&gt; {
     <span style="color:#069;font-weight:bold">const</span> call <span style="color:#555">=</span> req.body;
 
     <span style="color:#069;font-weight:bold">let</span> message <span style="color:#555">=</span> <span style="color:#c30">&#39;Hello, world!&#39;</span>;
-    <span style="color:#069;font-weight:bold">const</span> user_message <span style="color:#555">=</span> call.values.message;
-    <span style="color:#069;font-weight:bold">if</span> (user_message) {
-        message <span style="color:#555">+=</span> <span style="color:#c30">&#39; ...and &#39;</span> <span style="color:#555">+</span> user_message <span style="color:#555">+</span> <span style="color:#c30">&#39;!&#39;</span>;
+    <span style="color:#069;font-weight:bold">const</span> submittedMessage <span style="color:#555">=</span> call.values.message;
+    <span style="color:#069;font-weight:bold">if</span> (submittedMessage) {
+        message <span style="color:#555">+=</span> <span style="color:#c30">&#39; ...and &#39;</span> <span style="color:#555">+</span> submittedMessage <span style="color:#555">+</span> <span style="color:#c30">&#39;!&#39;</span>;
     }
 
     <span style="color:#069;font-weight:bold">const</span> users <span style="color:#555">=</span> [
@@ -724,25 +726,28 @@ app.listen(port,host,  () =&gt; {
     };
 
     <span style="color:#09f;font-style:italic">// Get the DM channel between the user and the bot
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">const</span> mattermost_site_url <span style="color:#555">=</span> call.context.mattermost_site_url;
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">const</span> mattermostSiteURL <span style="color:#555">=</span> call.context.mattermost_site_url;
 
-    fetch(mattermost_site_url <span style="color:#555">+</span> <span style="color:#c30">&#39;/api/v4/channels/direct&#39;</span>, options).
-        then((mm_res) =&gt; mm_res.json()).
-        then((channel) =&gt; {
-            <span style="color:#069;font-weight:bold">const</span> post <span style="color:#555">=</span> {
-                channel_id<span style="color:#555">:</span> channel.id,
-                message,
-            };
+    <span style="color:#069;font-weight:bold">const</span> channel <span style="color:#555">=</span> await fetch(mattermostSiteURL <span style="color:#555">+</span> <span style="color:#c30">&#39;/api/v4/channels/direct&#39;</span>, options).
+        then((res) =&gt; res.json())
 
-            <span style="color:#09f;font-style:italic">// Create a post
-</span><span style="color:#09f;font-style:italic"></span>            options.body <span style="color:#555">=</span> JSON.stringify(post);
+    <span style="color:#069;font-weight:bold">const</span> post <span style="color:#555">=</span> {
+        channel_id<span style="color:#555">:</span> channel.id,
+        message,
+    };
 
-            fetch(mattermost_site_url <span style="color:#555">+</span> <span style="color:#c30">&#39;/api/v4/posts&#39;</span>, options);
-        });
+    <span style="color:#09f;font-style:italic">// Create a post
+</span><span style="color:#09f;font-style:italic"></span>    options.body <span style="color:#555">=</span> JSON.stringify(post);
 
-    res.json({});
+    fetch(mattermostSiteURL <span style="color:#555">+</span> <span style="color:#c30">&#39;/api/v4/posts&#39;</span>, options);
+
+
+    res.json({
+        type<span style="color:#555">:</span> <span style="color:#c30">&#39;ok&#39;</span>,
+        markdown<span style="color:#555">:</span> <span style="color:#c30">&#39;Created a post in your DM channel.&#39;</span>
+    });
 });
-</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the received <code>&quot;message&quot;</code> field and sends a message back to the user as the bot.</p>
+</code></pre></div><p>The app is a simple HTTP server that serves the files you created above. The only application logic is in <code>send</code>, which takes the received <code>&quot;message&quot;</code> field and sends a message back to the user as the bot. Also, an ephemeral message is posted in the current channel.</p>
 <h2 id="installing-the-app">Installing the app&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#installing-the-app"></i></a> </h2>
 <p>Run your app using:</p>
 <pre><code>node app.js
