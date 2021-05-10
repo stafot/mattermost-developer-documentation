@@ -561,22 +561,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </h1>
                     <p>Apps are lightweight, interactive add-ons to Mattermost which can use any HTTP-compatible hosting mechanism to run without dedicated infrastructure. Apps can:</p>
 <ul>
-<li>Display interactive, dynamic Modal forms and Message Actions.</li>
+<li>Display interactive, dynamic modal forms and message actions.</li>
 <li>Be written in any language.</li>
-<li>Attach themselves to locations in the Mattermost user interface (e.g. channel bar buttons, post menu, channel menu, commands), and can add their custom slash commands with full Autocomplete.</li>
+<li>Attach themselves to locations in the Mattermost user interface (e.g. channel bar buttons, post menu, channel menu, commands), and can add their custom slash commands with full autocomplete.</li>
 <li>Receive webhooks from Mattermost, and third-parties, and use the Mattermost REST APIs to post messages, etc.</li>
 <li>Work on both Mobile and Desktop clients so developers can focus on the functionality of their apps.</li>
 <li>Be deployed using our serverless hosting infrastructure keeping data secure and supporting scalability by being stateless.</li>
+<li>Include dynamic fields, code as an on-demand function, and interactive modals.</li>
 </ul>
 <p>When you develop using the Apps Framework, your apps can:</p>
 <ul>
 <li>Create slash commands</li>
-<li>Post messages to channels</li>
-<li>Add buttons to channel headers, menus</li>
-<li>Interactive modals</li>
-<li>Dynamic fields</li>
-<li>Code as an on-demand function</li>
 </ul>
+<p><img src="app-slash-command.png" alt="image"></p>
+<ul>
+<li>Post messages to channels</li>
+</ul>
+<p><img src="app-bot.png" alt="image"></p>
+<ul>
+<li>Add buttons to channel headers and post menus</li>
+</ul>
+<p><img src="app-channel-header.png" alt="image"></p>
+<p><img src="app-action.png" alt="image"></p>
 <p>Apps are available as a Developers Preview and we&rsquo;re looking for your feedback! Share constructive feedback in the <a href="https://community.mattermost.com/core/channels/mattermost-apps">Mattermost Apps channel</a> on our Mattermost community instance.</p>
 <ul>
 <li>Apps will soon be available for self-managed deployments as well as customers&rsquo; own AWS environments.</li>
@@ -584,18 +590,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Read the <a href="https://developers.mattermost.com/integrate/apps/quick-start-js/">JavaScript start guide</a> or <a href="https://developers.mattermost.com/integrate/apps/quick-start-go/">Go quick start guide</a> to learn how to write your first app.</p>
 <h2 id="faq">FAQ&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#faq"></i></a> </h2>
 <h3 id="when-would-you-build-an-app-vs-a-custom-slash-command-vs-a-webhook-vs-a-plugin">When would you build an app vs a custom slash command vs a webhook vs a plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#when-would-you-build-an-app-vs-a-custom-slash-command-vs-a-webhook-vs-a-plugin"></i></a> </h3>
-<p>That depends on your use case, as they each have benefits. Apps can be advertised, shared, and installed by others via the Marketplace. Comparatively, a custom slash command requires some configuration and is less interactive.</p>
-<p>The built-in incoming webhook is rigid and requires specific fields to be posted to it&rsquo;s URL, but some external systems don&rsquo;t allow the customization of the fields included in the webhook payload. Compared to built-in webhooks, An App can be customized to receive an HTTP webhook posting from another system, and can process the incoming data then augment it or make an actionable message in a channel.</p>
-<p>A plugin should be used when you need to alter the React UX in Mattermost or have an application that requires low-latency with the server (such as replacing characters in any message). Currently, plugins have several UX hooks that Apps cannot access, however we plan to add/migrate more UX hooks into the Apps Framework over time.</p>
+<p>That depends on your use case, as they each have benefits.</p>
+<p>The built-in <a href="https://developers.mattermost.com/integrate/incoming-webhooks/">incoming webhook</a> is great for simple use cases. It requires the incoming payload to contain a valid <a href="https://pkg.go.dev/github.com/nhannv/mattermost-server/model#Post">Post</a> JSON object - but some external systems don&rsquo;t allow the customization of the fields included in the webhook payload. Compared to built-in webhooks, an App or plugin can be customized to receive an HTTP webhook posting from another system, and can process the incoming data then augment it or make an actionable message in a channel.</p>
+<p>A plugin should be used when you need to <a href="https://developers.mattermost.com/extend/plugins/webapp/best-practices/">directly alter the UI</a> in Mattermost or you have a feature that requires low latency with the server (such as replacing characters in any message <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks.MessageWillBePosted">before it is saved</a>). Currently, plugins have several <a href="https://developers.mattermost.com/extend/plugins/server/reference/#Hooks">UX hooks</a> that Apps cannot access, however we plan to add/migrate more UX hooks into the Apps Framework over time. Please see the <a href="https://developers.mattermost.com/extend/plugins/">plugin documentation</a> for more information.</p>
 <h3 id="whats-the-difference-between-the-apps-framework-and-the-plugin-framework">What&rsquo;s the difference between the apps framework and the plugin framework?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#whats-the-difference-between-the-apps-framework-and-the-plugin-framework"></i></a> </h3>
-<p>The App framework provides a few differences from plugins.</p>
+<p>The App framework provides a few differences from plugins, including:</p>
 <ul>
-<li>We’ve made our interactive elements easier to use and develop.</li>
-<li>Works on both desktop and mobile clients without any extra code.</li>
-<li>You host the app code or build for Matterhost and distribute through the Marketplace.</li>
+<li>Interactive elements are easier to use and develop.</li>
+<li>Compatible with both Mobile and Desktop clients without any extra code.</li>
 </ul>
 <h3 id="what-language-should-i-use-to-write-apps">What language should I use to write apps?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-language-should-i-use-to-write-apps"></i></a> </h3>
-<p>Any language you want. However, the only language with an official driver right now is Go.  we are planning to release other drivers in the future in conjunction with our community.</p>
+<p>Any language you want. We currently have an <a href="https://pkg.go.dev/github.com/mattermost/mattermost-plugin-apps/apps">official driver for Go</a>, and we are planning to release other drivers in the future in conjunction with our community.</p>
 
 
                 </div>
